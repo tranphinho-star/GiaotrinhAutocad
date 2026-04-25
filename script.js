@@ -3,6 +3,12 @@
 // ============================
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Auth guard - redirect to login if not authenticated
+    if (sessionStorage.getItem('cad_authenticated') !== 'true') {
+        window.location.href = 'login.html';
+        return;
+    }
+
     initMobileMenu();
     initSidebar();
     initSearch();

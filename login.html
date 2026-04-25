@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Đăng nhập - Giáo trình AutoCAD 2007">
+    <title>Đăng Nhập | Giáo Trình AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+    <style>
+        /* Login Page Specific Styles */
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background */
+        .login-page::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 150, 215, 0.15), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(255, 107, 53, 0.08), transparent),
+                radial-gradient(ellipse 60% 40% at 20% 60%, rgba(6, 150, 215, 0.08), transparent);
+            z-index: 0;
+        }
+
+        .login-page::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(6, 150, 215, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(6, 150, 215, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 300px; height: 300px;
+            background: rgba(6, 150, 215, 0.12);
+            top: 10%; left: 15%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px; height: 250px;
+            background: rgba(255, 107, 53, 0.08);
+            bottom: 15%; right: 10%;
+            animation-delay: -3s;
+        }
+
+        .orb-3 {
+            width: 200px; height: 200px;
+            background: rgba(0, 200, 83, 0.06);
+            top: 60%; left: 60%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(15px, 15px) scale(1.02); }
+        }
+
+        /* Login Card */
+        .login-card {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 440px;
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(148, 163, 184, 0.12);
+            border-radius: var(--radius-xl);
+            padding: 3rem 2.5rem;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                0 0 60px rgba(6, 150, 215, 0.08);
+            animation: cardAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+            background-size: 200% 100%;
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            animation: gradientSlide 3s ease infinite;
+        }
+
+        @keyframes gradientSlide {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Logo Area */
+        .login-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-logo-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: var(--radius-md);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: white;
+            box-shadow: 0 8px 30px var(--primary-glow);
+            margin-bottom: 1.2rem;
+            position: relative;
+        }
+
+        .login-logo-icon::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: calc(var(--radius-md) + 3px);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            z-index: -1;
+            opacity: 0.3;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .login-logo h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .login-logo p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Form */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1rem;
+            z-index: 1;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.85rem 1rem 0.85rem 2.8rem;
+            background: rgba(26, 34, 54, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(6, 150, 215, 0.15);
+            background: rgba(26, 34, 54, 1);
+        }
+
+        .form-input:focus ~ .input-icon,
+        .form-input:focus + .input-icon {
+            color: var(--primary-light);
+        }
+
+        /* Password toggle */
+        .password-toggle {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 4px;
+            transition: var(--transition);
+        }
+
+        .password-toggle:hover {
+            color: var(--primary-light);
+        }
+
+        /* Login Button */
+        .login-btn {
+            width: 100%;
+            padding: 0.95rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .login-btn:hover::before {
+            left: 100%;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--primary-glow);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .login-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .login-btn .btn-text {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Spinner */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Error Message */
+        .error-message {
+            background: rgba(255, 61, 0, 0.1);
+            border: 1px solid rgba(255, 61, 0, 0.3);
+            color: #FF6B6B;
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            animation: shakeX 0.5s ease;
+        }
+
+        .error-message.show {
+            display: flex;
+        }
+
+        @keyframes shakeX {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-5px); }
+            80% { transform: translateX(5px); }
+        }
+
+        /* Success state */
+        .success-message {
+            text-align: center;
+            display: none;
+            animation: cardAppear 0.5s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 200, 83, 0.1);
+            border: 2px solid rgba(0, 200, 83, 0.3);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+
+        .success-message h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--success);
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer link */
+        .login-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .login-footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .login-footer a {
+            color: var(--primary-light);
+            font-weight: 500;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 2rem 1.5rem;
+                border-radius: var(--radius-lg);
+            }
+
+            .login-logo-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+
+            .login-logo h1 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-page">
+        <!-- Floating orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <!-- Login Card -->
+        <div class="login-card">
+            <!-- Logo -->
+            <div class="login-logo">
+                <div class="login-logo-icon">CAD</div>
+                <h1>Giáo Trình AutoCAD 2007</h1>
+                <p>Đăng nhập để truy cập nội dung</p>
+            </div>
+
+            <!-- Login Form -->
+            <form class="login-form" id="loginForm" autocomplete="off">
+                <!-- Error -->
+                <div class="error-message" id="errorMsg">
+                    <span>⚠️</span>
+                    <span id="errorText">Tên đăng nhập hoặc mật khẩu không đúng!</span>
+                </div>
+
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username">Tên đăng nhập</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="username" 
+                            class="form-input" 
+                            placeholder="Nhập tên đăng nhập..."
+                            required
+                            autofocus
+                        >
+                        <span class="input-icon" style="left:14px;">👤</span>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="form-input" 
+                            placeholder="Nhập mật khẩu..."
+                            required
+                            style="padding-right: 2.8rem;"
+                        >
+                        <span class="input-icon" style="left:14px;">🔒</span>
+                        <button type="button" class="password-toggle" id="togglePassword" aria-label="Hiện mật khẩu">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn" id="loginBtn">
+                    <span class="btn-text">
+                        <span class="spinner" id="spinner"></span>
+                        <span id="btnLabel">🔓 Đăng Nhập</span>
+                    </span>
+                </button>
+            </form>
+
+            <!-- Success -->
+            <div class="success-message" id="successMsg">
+                <div class="success-icon">✅</div>
+                <h2>Đăng nhập thành công!</h2>
+                <p>Đang chuyển hướng đến trang chủ...</p>
+            </div>
+
+            <!-- Footer -->
+            <div class="login-footer" id="loginFooter">
+                <p>📐 Giáo Trình AutoCAD 2007 — <a href="index.html">Trang chủ</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================
+        // LOGIN AUTHENTICATION
+        // ============================
+        
+        // Check if already logged in
+        if (sessionStorage.getItem('cad_authenticated') === 'true') {
+            window.location.href = 'index.html';
+        }
+
+        const form = document.getElementById('loginForm');
+        const errorMsg = document.getElementById('errorMsg');
+        const successMsg = document.getElementById('successMsg');
+        const spinner = document.getElementById('spinner');
+        const btnLabel = document.getElementById('btnLabel');
+        const loginBtn = document.getElementById('loginBtn');
+        const togglePassword = document.getElementById('togglePassword');
+
+        // Toggle password visibility
+        togglePassword.addEventListener('click', () => {
+            const input = document.getElementById('password');
+            if (input.type === 'password') {
+                input.type = 'text';
+                togglePassword.textContent = '🙈';
+            } else {
+                input.type = 'password';
+                togglePassword.textContent = '👁️';
+            }
+        });
+
+        // Simple hash function for client-side credential check
+        async function hashString(str) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(str);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Pre-computed hashes
+        const VALID_USER_HASH = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'; // admin
+        const VALID_PASS_HASH = 'b6692ea5df920cad691c20319a6fffd7a4a766b8b149c3cd3e89c75e77e4fad2'; // 2810
+
+        // Handle form submit
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+
+            // Hide previous errors
+            errorMsg.classList.remove('show');
+
+            // Show loading
+            loginBtn.disabled = true;
+            spinner.style.display = 'inline-block';
+            btnLabel.textContent = 'Đang xác thực...';
+
+            // Simulate network delay for UX
+            await new Promise(resolve => setTimeout(resolve, 800));
+
+            // Hash and compare
+            const userHash = await hashString(username);
+            const passHash = await hashString(password);
+
+            if (userHash === VALID_USER_HASH && passHash === VALID_PASS_HASH) {
+                // Success
+                sessionStorage.setItem('cad_authenticated', 'true');
+                
+                form.style.display = 'none';
+                successMsg.classList.add('show');
+
+                // Redirect after animation
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            } else {
+                // Failed
+                errorMsg.classList.add('show');
+                loginBtn.disabled = false;
+                spinner.style.display = 'none';
+                btnLabel.textContent = '🔓 Đăng Nhập';
+
+                // Shake the card
+                const card = document.querySelector('.login-card');
+                card.style.animation = 'none';
+                card.offsetHeight; // trigger reflow
+                card.style.animation = 'shakeX 0.5s ease';
+            }
+        });
+
+        // Remove error on input change
+        document.getElementById('username').addEventListener('input', () => errorMsg.classList.remove('show'));
+        document.getElementById('password').addEventListener('input', () => errorMsg.classList.remove('show'));
+
+        // Enter key on username focuses password
+        document.getElementById('username').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('password').focus();
+            }
+        });
+    </script>
+</body>
+</html>
