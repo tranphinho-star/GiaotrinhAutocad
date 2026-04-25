@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 4: Thiết Lập Bản Vẽ Cơ Bản | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content">
+        <a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a>
+        <nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div>
+            <ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html" class="active"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 4</span>
+                <h1>Các Thiết Lập Bản Vẽ Cơ Bản</h1>
+                <p class="chapter-desc">Thiết lập không gian vẽ, thu phóng, đẩy bản vẽ và các chế độ hỗ trợ vẽ.</p>
+            </div>
+
+            <h2>1. Giới hạn không gian vẽ - Lệnh LIMITS</h2>
+            <div class="command-box">
+                <div class="cmd-header"><span class="cmd-label">LIMITS</span></div>
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                    <tbody><tr><td>Format → Drawing Limits</td><td><code>Limits</code></td></tr></tbody>
+                </table>
+            </div>
+            <p>Sau khi khởi động AutoCAD với hệ đo Metric, không gian mặc định là <strong>420 x 297</strong> đơn vị (khổ A3). Để vẽ công trình lớn hơn, cần mở rộng không gian.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">Limits</span> ↵
+<span class="prompt">Specify lower left corner [ON/OFF] &lt;0,0&gt;:</span> ↵  <span class="comment">Nhấn Enter (giữ gốc 0,0)</span>
+<span class="prompt">Specify upper right corner &lt;420,297&gt;:</span> <span class="input">42000,29700</span> ↵  <span class="comment">42m x 29.7m</span>
+            </div>
+            <div class="info-box warning">
+                <span class="icon">⚠️</span>
+                <div>
+                    <div class="info-title">Lưu ý</div>
+                    <div class="info-text">Sau khi thay đổi Limits, màn hình vẫn chưa thay đổi. Cần thực hiện lệnh <strong>Zoom All</strong> để thu không gian vào màn hình.</div>
+                </div>
+            </div>
+
+            <h2>2. Thu phóng màn hình - Lệnh ZOOM</h2>
+            <div class="command-box">
+                <div class="cmd-header"><span class="cmd-label">ZOOM</span><span class="cmd-shortcut">Z</span></div>
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                    <tbody><tr><td>View → Zoom</td><td><code>Zoom</code> hoặc <code>Z</code></td></tr></tbody>
+                </table>
+            </div>
+            <table class="ref-table">
+                <thead><tr><th>Tham số</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><code>A</code> (All)</td><td>Thu toàn bộ giới hạn bản vẽ vào màn hình</td></tr>
+                    <tr><td><code>E</code> (Extents)</td><td>Nhìn tổng quan tất cả đối tượng trên màn hình</td></tr>
+                    <tr><td><code>W</code> (Window)</td><td>Phóng to vùng được chọn bằng cửa sổ</td></tr>
+                    <tr><td><code>P</code> (Previous)</td><td>Quay lại tỷ lệ zoom trước đó</td></tr>
+                    <tr><td><code>D</code> (Dynamic)</td><td>Thu phóng động bằng chuột</td></tr>
+                    <tr><td><code>C</code> (Center)</td><td>Zoom theo tâm và độ cao</td></tr>
+                    <tr><td><code>S</code> (Scale)</td><td>Zoom theo hệ số tỷ lệ (nX hoặc nXP)</td></tr>
+                    <tr><td><code>Real time</code></td><td>Thu phóng thời gian thực (mặc định)</td></tr>
+                </tbody>
+            </table>
+
+            <h2>3. Đẩy bản vẽ - Lệnh PAN</h2>
+            <div class="command-box">
+                <div class="cmd-header"><span class="cmd-label">PAN</span><span class="cmd-shortcut">P</span></div>
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Menu Bar</th><th>Nhập lệnh</th><th>Chuột</th></tr></thead>
+                    <tbody><tr><td>View → Pan</td><td><code>Pan</code></td><td>Giữ nút giữa chuột + kéo</td></tr></tbody>
+                </table>
+            </div>
+            <p>Lệnh Pan dùng để di chuyển vùng nhìn mà không thay đổi tỷ lệ. Giữ nút giữa chuột (con lăn) và kéo để đẩy bản vẽ.</p>
+
+            <h2>4. Đơn vị đo bản vẽ - Lệnh UNITS</h2>
+            <div class="command-box">
+                <div class="cmd-header"><span class="cmd-label">UNITS</span><span class="cmd-shortcut">UN</span></div>
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                    <tbody><tr><td>Format → Units...</td><td><code>Units</code> hoặc <code>UN</code></td></tr></tbody>
+                </table>
+            </div>
+            <p>Xuất hiện hộp thoại <strong>Drawing Units</strong> cho phép thiết lập đơn vị đo chiều dài và góc, độ chính xác hiển thị.</p>
+
+            <table class="ref-table">
+                <thead><tr><th>Mục</th><th>Tuỳ chọn</th><th>Mô tả</th></tr></thead>
+                <tbody>
+                    <tr><td rowspan="5"><strong>Length Type</strong></td><td>Decimal</td><td>Thập phân (mặc định Metric)</td></tr>
+                    <tr><td>Architectural</td><td>Kiến trúc (feet-inches)</td></tr>
+                    <tr><td>Engineering</td><td>Kỹ thuật (feet-decimal inches)</td></tr>
+                    <tr><td>Fractional</td><td>Phân số</td></tr>
+                    <tr><td>Scientific</td><td>Khoa học (1.0E+01)</td></tr>
+                    <tr><td rowspan="3"><strong>Angle Type</strong></td><td>Decimal Degrees</td><td>Độ thập phân (mặc định)</td></tr>
+                    <tr><td>Deg/Min/Sec</td><td>Độ / Phút / Giây</td></tr>
+                    <tr><td>Radians</td><td>Radian</td></tr>
+                    <tr><td><strong>Precision</strong></td><td>0 → 0.00000000</td><td>Số chữ số thập phân hiển thị</td></tr>
+                    <tr><td><strong>Insertion Scale</strong></td><td>Millimeters / Inches</td><td>Đơn vị mặc định khi chèn Block</td></tr>
+                </tbody>
+            </table>
+
+            <h2>5. Lệnh SNAP, GRID, ORTHO</h2>
+            
+            <h3>a. Lệnh SNAP</h3>
+            <p>Điều khiển bước nhảy con trỏ (Cursor). Bật/tắt bằng <kbd>F9</kbd> hoặc nhấp đúp nút <strong>Snap</strong> trên thanh trạng thái.</p>
+
+            <h3>b. Lệnh GRID</h3>
+            <p>Tạo các điểm lưới trên giới hạn bản vẽ. Bật/tắt bằng <kbd>F7</kbd>.</p>
+            <p>Khoảng cách các điểm lưới theo phương X, Y có thể khác nhau, tuỳ theo định nghĩa trong hộp thoại <strong>Drafting Setting</strong>.</p>
+
+            <h3>c. Lệnh ORTHO</h3>
+            <p>Giới hạn chuyển động chuột theo phương thẳng đứng hoặc nằm ngang. Bật/tắt bằng <kbd>F8</kbd>.</p>
+
+            <h3>📌 Tổng hợp phím tắt Status Bar</h3>
+            <table class="ref-table">
+                <thead><tr><th>Phím</th><th>Chức năng</th><th>Mô tả</th></tr></thead>
+                <tbody>
+                    <tr><td><kbd>F3</kbd></td><td>OSNAP</td><td>Bật/tắt truy bắt điểm đối tượng</td></tr>
+                    <tr><td><kbd>F7</kbd></td><td>GRID</td><td>Bật/tắt hiển thị lưới</td></tr>
+                    <tr><td><kbd>F8</kbd></td><td>ORTHO</td><td>Giới hạn di chuyển ngang/đứng</td></tr>
+                    <tr><td><kbd>F9</kbd></td><td>SNAP</td><td>Bật/tắt bước nhảy con trỏ</td></tr>
+                    <tr><td><kbd>F10</kbd></td><td>POLAR</td><td>Dẫn hướng cực (Polar Tracking)</td></tr>
+                    <tr><td><kbd>F11</kbd></td><td>OTRACK</td><td>Dẫn hướng theo đối tượng</td></tr>
+                    <tr><td><kbd>F12</kbd></td><td>DYN</td><td>Nhập lệnh động (Dynamic Input)</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box tip">
+                <span class="icon">💡</span>
+                <div>
+                    <div class="info-title">Mẹo</div>
+                    <div class="info-text">Bật <kbd>F8</kbd> (Ortho) khi vẽ các đường thẳng ngang hoặc đứng để đảm bảo chính xác tuyệt đối. Bật <kbd>F10</kbd> (Polar) khi cần vẽ đường xiên theo góc cố định (vd: 30°, 45°, 60°).</div>
+                </div>
+            </div>
+
+            <h2>6. Lệnh MVSETUP - Tạo khung bản vẽ</h2>
+            <div class="command-box">
+                <div class="cmd-header"><span class="cmd-label">MVSETUP</span></div>
+            </div>
+            <p>Lệnh Mvsetup cho phép tạo khung bản vẽ với tỷ lệ và khổ giấy phù hợp để in ấn.</p>
+
+            <h2>📋 Tổng hợp lệnh thiết lập</h2>
+            <table class="ref-table">
+                <thead><tr><th>Lệnh</th><th>Phím tắt</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><code>Limits</code></td><td>—</td><td>Giới hạn không gian vẽ</td></tr>
+                    <tr><td><code>Zoom</code></td><td><code>Z</code></td><td>Thu phóng màn hình</td></tr>
+                    <tr><td><code>Pan</code></td><td><code>P</code></td><td>Đẩy bản vẽ</td></tr>
+                    <tr><td><code>Units</code></td><td><code>UN</code></td><td>Đơn vị đo bản vẽ</td></tr>
+                    <tr><td><code>Snap</code></td><td><kbd>F9</kbd></td><td>Bước nhảy con trỏ</td></tr>
+                    <tr><td><code>Grid</code></td><td><kbd>F7</kbd></td><td>Mạng lưới điểm</td></tr>
+                    <tr><td><code>Ortho</code></td><td><kbd>F8</kbd></td><td>Giới hạn phương chuyển động</td></tr>
+                </tbody>
+            </table>
+
+            <div class="chapter-nav">
+                <a href="chuong3.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Hệ Toạ Độ & Truy Bắt Điểm</span></div></a>
+                <a href="chuong5.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Các Lệnh Vẽ Cơ Bản</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

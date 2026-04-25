@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 6: Lệnh Hiệu Chỉnh Căn Bản | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html" class="active"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 6</span>
+                <h1>Các Lệnh Hiệu Chỉnh Căn Bản</h1>
+                <p class="chapter-desc">Xóa, phục hồi, huỷ bỏ lệnh và tái tạo màn hình.</p>
+            </div>
+
+            <h2>1. Lệnh xóa đối tượng ERASE (E)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">ERASE</span><span class="cmd-shortcut">E</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th><th>Phím tắt</th></tr></thead>
+                <tbody><tr><td>Modify → Erase</td><td><code>Erase</code> hoặc <code>E</code></td><td><kbd>DEL</kbd></td></tr></tbody></table>
+            </div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">E</span> ↵
+<span class="prompt">Select objects:</span> <span class="comment">Chọn đối tượng cần xóa (có thể chọn nhiều)</span>
+<span class="prompt">Select objects:</span> ↵  <span class="comment">Enter để kết thúc → đối tượng bị xóa</span>
+            </div>
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Cách chọn nhanh</div><div class="info-text">Chọn trước đối tượng rồi nhấn <kbd>DEL</kbd> cũng có tác dụng tương tự lệnh Erase.</div></div></div>
+
+            <h2>2. Lệnh phục hồi đối tượng bị xóa OOPS</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">OOPS</span></div></div>
+            <p>Phục hồi đối tượng <strong>vừa bị xóa bằng lệnh Erase</strong>. Chỉ phục hồi được lần xóa cuối cùng.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">OOPS</span> ↵  <span class="comment">Đối tượng vừa xóa sẽ xuất hiện lại</span>
+            </div>
+
+            <h2>3. Lệnh huỷ bỏ lệnh UNDO (U)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">UNDO</span><span class="cmd-shortcut">Ctrl + Z</span></div></div>
+            <p>Huỷ bỏ lệnh vừa thực hiện. Có thể thực hiện nhiều lần để quay lại nhiều bước.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">U</span> ↵  <span class="comment">Huỷ lệnh cuối cùng</span>
+            </div>
+
+            <h2>4. Lệnh phục hồi sau UNDO - REDO</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">REDO</span><span class="cmd-shortcut">Ctrl + Y</span></div></div>
+            <p>Phục hồi đối tượng vừa bị Undo. Phải thực hiện ngay sau Undo mới có hiệu lực.</p>
+
+            <h2>5. Lệnh tái tạo màn hình REDRAW (R)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">REDRAW</span><span class="cmd-shortcut">R</span></div></div>
+            <p>Tẩy sạch các dấu "+" (Blipmode) và vẽ lại tất cả đối tượng trên màn hình một cách nhanh chóng.</p>
+
+            <h2>6. Lệnh tái tạo đối tượng REGEN (RE)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">REGEN</span><span class="cmd-shortcut">RE</span></div></div>
+            <p>Tái tạo toàn bộ bản vẽ, tính toán lại vị trí và kích thước của các đối tượng. Chậm hơn Redraw nhưng chính xác hơn.</p>
+            
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Khi nào dùng REGEN?</div><div class="info-text">Dùng khi đường tròn hiển thị không trơn (thành đa giác) hoặc sau khi thay đổi biến hệ thống. REGEN sẽ tính toán lại và hiển thị chính xác.</div></div></div>
+
+            <h2>7. Phương pháp chọn đối tượng (Selection)</h2>
+            <p>AutoCAD cung cấp <strong>2 phương pháp chọn bằng cửa sổ</strong>:</p>
+            
+            <table class="ref-table">
+                <thead><tr><th>Phương pháp</th><th>Hướng kéo</th><th>Hiệu ứng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Window</strong> (Cửa sổ)</td><td>Trái → Phải ➡️</td><td>Chỉ chọn đối tượng <strong>nằm hoàn toàn bên trong</strong> cửa sổ</td></tr>
+                    <tr><td><strong>Crossing</strong> (Giao cắt)</td><td>Phải → Trái ⬅️</td><td>Chọn đối tượng <strong>nằm trong + đi qua</strong> cửa sổ</td></tr>
+                </tbody>
+            </table>
+
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 640 220" style="max-width:640px;width:100%;background:rgba(0,0,0,0.15);border-radius:12px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Window selection (left) -->
+              <rect x="30" y="40" width="160" height="120" fill="rgba(0,150,215,0.15)" stroke="#0696D7" stroke-width="2"/>
+              <text x="55" y="28" fill="#0696D7" font-size="13" font-weight="bold">Window (L→R)</text>
+              <!-- Objects -->
+              <line x1="60" y1="80" x2="160" y2="80" stroke="#4CAF50" stroke-width="2.5"/>
+              <text x="90" y="75" fill="#4CAF50" font-size="9">✓ Được chọn</text>
+              <circle cx="110" cy="130" r="20" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <line x1="20" y1="120" x2="120" y2="120" stroke="#FF5252" stroke-width="2.5"/>
+              <text x="22" y="115" fill="#FF5252" font-size="9">✗ Bị bỏ qua</text>
+              <text x="30" y="40" fill="#0696D7" font-size="9">P1</text>
+              <text x="175" y="165" fill="#0696D7" font-size="9">P2</text>
+              <path d="M 55 38 L 185 38" fill="none" stroke="#0696D7" stroke-width="1" stroke-dasharray="3" marker-end="url(#arrow)"/>
+              <!-- Crossing selection (right) -->
+              <rect x="340" y="40" width="160" height="120" fill="rgba(76,175,80,0.15)" stroke="#4CAF50" stroke-width="2" stroke-dasharray="6"/>
+              <text x="360" y="28" fill="#4CAF50" font-size="13" font-weight="bold">Crossing (R→L)</text>
+              <!-- Objects -->
+              <line x1="370" y1="80" x2="470" y2="80" stroke="#4CAF50" stroke-width="2.5"/>
+              <text x="395" y="75" fill="#4CAF50" font-size="9">✓ Được chọn</text>
+              <line x1="330" y1="120" x2="430" y2="120" stroke="#4CAF50" stroke-width="2.5"/>
+              <text x="335" y="115" fill="#4CAF50" font-size="9">✓ Cũng được chọn!</text>
+              <circle cx="420" cy="130" r="20" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <text x="485" y="40" fill="#4CAF50" font-size="9">P1</text>
+              <text x="335" y="165" fill="#4CAF50" font-size="9">P2</text>
+              <path d="M 480 38 L 360 38" fill="none" stroke="#4CAF50" stroke-width="1" stroke-dasharray="3"/>
+              <!-- Legend -->
+              <text x="30" y="200" fill="#aaa" font-size="10">Đường viền liền = Window (chỉ chọn đối tượng hoàn toàn bên trong)</text>
+              <text x="30" y="215" fill="#aaa" font-size="10">Đường viền đứt = Crossing (chọn cả đối tượng đi qua đường viền)</text>
+            </svg>
+            </div>
+
+            <h2>8. Lặp lại lệnh cuối (Repeat Last Command)</h2>
+            <p>Có 3 cách lặp lại lệnh vừa thực hiện:</p>
+            <table class="ref-table">
+                <thead><tr><th>Cách</th><th>Thao tác</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Enter</strong></td><td>Nhấn <kbd>Enter</kbd> hoặc <kbd>Space</kbd> khi dòng lệnh trống</td></tr>
+                    <tr><td><strong>Right-click</strong></td><td>Nhấp chuột phải → chọn <strong>Repeat [Tên lệnh]</strong></td></tr>
+                    <tr><td><strong>Mũi tên ↑</strong></td><td>Nhấn <kbd>↑</kbd> để duyệt lịch sử lệnh</td></tr>
+                </tbody>
+            </table>
+
+            <h2>📋 Tổng hợp lệnh hiệu chỉnh căn bản</h2>
+            <table class="ref-table">
+                <thead><tr><th>Lệnh</th><th>Viết tắt</th><th>Phím tắt</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><code>Erase</code></td><td><code>E</code></td><td><kbd>DEL</kbd></td><td>Xóa đối tượng</td></tr>
+                    <tr><td><code>Oops</code></td><td>—</td><td>—</td><td>Phục hồi đối tượng vừa xóa</td></tr>
+                    <tr><td><code>Undo</code></td><td><code>U</code></td><td><kbd>Ctrl+Z</kbd></td><td>Huỷ lệnh vừa thực hiện</td></tr>
+                    <tr><td><code>Redo</code></td><td>—</td><td><kbd>Ctrl+Y</kbd></td><td>Phục hồi sau Undo</td></tr>
+                    <tr><td><code>Redraw</code></td><td><code>R</code></td><td>—</td><td>Tái tạo màn hình (nhanh)</td></tr>
+                    <tr><td><code>Regen</code></td><td><code>RE</code></td><td>—</td><td>Tái tạo đối tượng (chính xác)</td></tr>
+                </tbody>
+            </table>
+
+            <div class="chapter-nav">
+                <a href="chuong5.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Các Lệnh Vẽ Cơ Bản</span></div></a>
+                <a href="chuong7.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Lệnh Hiệu Chỉnh Tạo Hình</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

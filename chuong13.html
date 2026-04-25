@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 13: Tạo Khối (Block) | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html" class="active"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 13</span>
+                <h1>Tạo Khối (Block)</h1>
+                <p class="chapter-desc">Gộp nhiều đối tượng thành một khối duy nhất để tái sử dụng nhiều lần (như Bàn, Ghế, Cửa...).</p>
+            </div>
+
+            <h2>1. Định nghĩa Block là gì?</h2>
+            <p>Khối (Block) là một tập hợp các đối tượng được nhóm lại thành một đối tượng duy nhất (VD: vẽ 1 cái bồn cầu gồm hinh ovan, hcn, elip... sau đó gom lại thành 1 cục đặt tên là "BonCau").</p>
+            <ul>
+                <li><strong>Ưu điểm:</strong> Giảm dung lượng bản vẽ, dễ quản lý.</li>
+                <li><strong>Cập nhật đồng loạt:</strong> Khi sửa 1 block gốc, tất cả các block copy từ nó trong bản vẽ sẽ tự động cập nhật theo (ví dụ đổi cánh cửa 800 thành 900 trên toàn bộ mặt bằng).</li>
+            </ul>
+
+            <h2>2. Lệnh tạo khối cục bộ BLOCK (B)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">BLOCK / MAKE BLOCK</span><span class="cmd-shortcut">B</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                <tbody><tr><td>Draw → Block → Make...</td><td><code>Block</code> hoặc <code>B</code></td></tr></tbody></table>
+            </div>
+
+            <p>Hộp thoại <strong>Block Definition</strong> hiện ra. Ta cần khai báo 3 yếu tố quan trọng nhất:</p>
+            <ol>
+                <li><strong>Name:</strong> Đặt tên cho Block (VD: CuaSo, GheSofa...).</li>
+                <li><strong>Base point (Pick point):</strong> Chọn điểm mốc chèn Block. Đây là tay cầm để di chuyển cực kỳ quan trọng (Thường nằm ở tâm, gốc hay bản lề cửa).</li>
+                <li><strong>Objects (Select objects):</strong> Quét chọn tất cả các đối tượng sẽ biến thành Block.</li>
+            </ol>
+            <p>Sau khi chọn xong, nhấn <strong>OK</strong>.</p>
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Thuộc tính Object khi tạo Block</div><div class="info-text">Retain: Giữ nguyên đối tượng gốc.<br>Convert to block: Biến đối tượng gốc thành Block (Khuyên dùng).<br>Delete: Xóa luôn đối tượng gốc.</div></div></div>
+
+            <h2>3. Lệnh tạo khối toàn cục WBLOCK (W)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">WBLOCK / WRITE BLOCK</span><span class="cmd-shortcut">W</span></div></div>
+            <p>Block tạo bằng lệnh <code>B</code> chỉ dùng được trong Tệp bản vẽ hiện tại. Lệnh <code>W</code> cho phép <strong>xuất Block thành một file .DWG riêng biệt</strong> để dùng cho mọi bản vẽ khác (Xây dựng thư viện CAD cá nhân).</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">W</span> ↵
+<span class="prompt">Trong hộp thoại Write Block:</span>
+- Chọn Source là <span class="input">Objects</span> (hoặc chọn thẳng tên Block đã có sẵn).
+- Chọn <b>Base point</b> và <b>Select objects</b> như phần trên.
+- Chọn đường dẫn để lưu thành Tệp DWG ở mục <span class="input">File name and path</span>.
+            </div>
+
+            <h2>4. Lệnh chèn khối INSERT (I)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">INSERT</span><span class="cmd-shortcut">I</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                <tbody><tr><td>Insert → Block...</td><td><code>Insert</code> hoặc <code>I</code></td></tr></tbody></table>
+            </div>
+            <p>Dùng để lấy một Block đã có sẵn đưa ra màn hình làm việc.</p>
+            <ul>
+                <li>Bảng <strong>Name</strong>: Chọn tên Block đã tạo bằng lệnh B.</li>
+                <li>Nút <strong>Browse...</strong>: Tìm file Block tải bên ngoài về, được tạo bằng lệnh W.</li>
+                <li>Đánh dấu vào phần <strong>Specify On-screen</strong> để có thể dùng chuột chọn vị trí đặt, góc xoay và phóng to thu nhỏ.</li>
+            </ul>
+
+            <h2>5. Phá vỡ đối tượng EXPLODE (X)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">EXPLODE</span><span class="cmd-shortcut">X</span></div></div>
+            <p>Khi muốn chỉnh sửa bên trong một cục Block, ta dùng lệnh <code>X</code> để phá rã Block đó thành các đoạn line, circle rạc rời như ban đầu.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">X</span> ↵
+<span class="prompt">Select objects:</span>  <span class="comment">Chọn Block rồi Enter.</span>
+            </div>
+            
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Block Editor</div><div class="info-text">Trong CAD 2007 trở đi, ta có thể nhấp <b>đúp chuột trái</b> vào cục Block để mở môi trường <i>Block Editor (BEDIT)</i>, sửa xong đóng lại và Save, toàn bộ Block cùng tên sẽ tự động được sửa theo (Không cần phá X ra rồi B lại nữa).</div></div></div>
+
+            <div class="chapter-nav">
+                <a href="chuong12.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Kích Thước Bản Vẽ</span></div></a>
+                <a href="chuong14.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Bảng Phím Tắt</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

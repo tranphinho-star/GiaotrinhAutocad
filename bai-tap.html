@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập Thực Hành | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html">Lý thuyết</a></li><li><a href="bai-tap.html" class="active">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Bài Tập (1-15)</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html" class="active"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📝 Thực Hành</span>
+                <h1>Bài Tập Ứng Dụng Nâng Cao</h1>
+                <p class="chapter-desc">Hệ thống bài tập từ cơ bản đến nâng cao chia theo nhóm lệnh. Học viên cần tự thực hành để ghi nhớ cú pháp.</p>
+            </div>
+
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Hướng dẫn làm bài</div><div class="info-text">Tự đặt <b>Limits</b> phù hợp. Thiết lập <b>OSNAP (F3)</b> và <b>ORTHO (F8)</b> một cách linh hoạt. Vẽ khung tên chuẩn A4 (297x210) và lưu vào trước khi in thử nét.</div></div></div>
+
+            <h2 id="bt1">Mức độ 1: Ứng dụng Toạ độ và Truy bắt điểm</h2>
+            <p><strong>Yêu cầu:</strong> Vẽ các hình khép kín bằng lệnh <code>Line</code> (L) sử dụng các loại toạ độ tuyệt đối, toạ độ tương đối (<code>@x,y</code>) và hệ toạ độ cực (<code>@chiều_dài&lt;góc</code>).</p>
+            <div class="command-syntax">
+<span class="prompt">Hình 1: Ngôi sao 5 cánh vươn thẳng</span>
+<span class="comment">Gợi ý: Dùng vòng tròn lệnh quay (360/5) hoặc kết hợp ORTHO bắt điểm INT, END.</span>
+<span class="prompt">Hình 2: Lục giác đều bằng lệnh Line</span>
+<span class="comment">Gợi ý: Xuất phát 1 điểm, L @50&lt;0, L @50&lt;60, L @50&lt;120... cuối cùng gõ C (Close).</span>
+            </div>
+
+            <h2 id="bt2">Mức độ 2: Ứng dụng vẽ đường tròn, cung tròn phức tạp</h2>
+            <p><strong>Yêu cầu:</strong> Dùng lệnh <code>Circle</code> (C) tuỳ chọn 3P, TTR; và <code>Polygon</code> (POL), <code>Arc</code> (A).</p>
+            <div class="command-syntax">
+<span class="prompt">Hình 1: Cho một tam giác đều cạnh 100. Vẽ 3 vòng tròn tiếp xúc ngoài 3 cạnh tam giác và tiếp xúc nhau.</span>
+<span class="comment">Gợi ý: Dùng tuỳ chọn TAN, TAN, TAN từ Option menu Draw > Circle.</span>
+<span class="prompt">Hình 2: Biểu tượng bông hoa (6 cung dái mây đan vào tâm).</span>
+<span class="comment">Gợi ý: Vẽ vòng tròn tâm trước. Dùng Polygon ngoại tiếp. Vẽ các cung tròn từ tâm ra đỉnh lục giác Polygon.</span>
+            </div>
+
+            <h2 id="bt3">Mức độ 3: Lệnh hiệu chỉnh cắt xén</h2>
+            <p><strong>Yêu cầu:</strong> Thực hành Trim, Fillet, Chamfer và Offset tạo chi tiết Cơ khí.</p>
+            <div class="command-syntax">
+<span class="prompt">Bài tập Cờ lê / Bánh răng:</span>
+<span class="comment">- B1: Vẽ các đường Tâm (Layer Trục).</span>
+<span class="comment">- B2: Vẽ cung tròn ngoài, cung lõm cờ lê. Offset đường mốc kích thước bề dày.</span>
+<span class="comment">- B3: Dùng TR (Trim) cắt các phần gợn thừa bên ngoài đường bao. Phải nhắp 2 phát Enter liên tiếp cắt biên sát rạt.</span>
+<span class="comment">- B4: Bo mép lệnh F (Fillet R=5).</span>
+            </div>
+
+            <h2 id="bt4">Mức độ 4: Sao chép đối xứng và nhân bản dãy</h2>
+            <p><strong>Yêu cầu:</strong> Dùng <code>Mirror</code> (MI) và <code>Array</code> (AR) giảm trừ công việc.</p>
+            <div class="command-syntax">
+<span class="prompt">Vẽ đồng hồ mặt kim:</span>
+<span class="comment">- Vẽ tâm bán kính to. Vẽ vạch phút 12 giờ.</span>
+<span class="comment">- Dùng lệnh AR (Array) Polar tâm quay ngay điểm giữa. Số lượng: 60 chi tiết. Điểm chèn góc: 360 độ.</span>
+<span class="comment">- Kế đó, vẽ vạch giờ đậm, chọn AR thay góc lượng số phần 12 thay vì 60.</span>
+            </div>
+
+            <h2 id="bt5">Mức độ 5: Bài tập Tổng hợp hoàn thiện</h2>
+            <p><strong>Yêu cầu:</strong> Hoàn thành vẽ một mẫu <strong>Cửa sổ xếp vòm</strong> dùng mọi tính năng.</p>
+            <ul>
+                <li>Thiết lập tạo Layer LA: Nét Bao Rộng (Vàng, 0.40), Nét Đứt kính cắt (Xanh Lơ, Dashed, 0),...</li>
+                <li>Vẽ kích thước tổng (M). Đục vòm cong bằng (A, M). Hatch mặt kính hiệu chỉnh Scale = 300, Angle = 45°.</li>
+                <li>Ghi chú kích thước khung bằng Linear, dóng xiên song (Dim).</li>
+                <li>Biến mặt bằng cánh cửa đó thành một cục <code>Block</code> đặt tên "CuaSo-R150". Mở cửa sổ chèn rải rác.</li>
+            </ul>
+
+            <h2 id="bt6">Đồ án thực hành 2D: Mặt bằng Kiến Trúc</h2>
+            <div class="info-box warning"><span class="icon">🏆</span><div><div class="info-title">Nhiệm vụ giữa khoá</div><div class="info-text">Dùng Pline tạo độ dày tường, Mline nét tường trong. Tạo cầu thang, tủ bếp rồi ghi Kích thuớc toàn bộ vào không gian layout tỷ lệ 1/100 cho một căn nhà phố chuẩn kích 5x20.</div></div></div>
+
+            <div class="section-divider" style="margin: 40px 0; border-top: 2px dashed rgba(255,255,255,0.1);"></div>
+            <h2 style="color: #E040FB; text-align: center;">📐 BÀI TẬP 2D NÂNG CAO (9 bài) 📐</h2>
+            <p style="text-align:center;color:#aaa;">Từ sách "AutoCAD 2024 Tutorial: 2D Fundamentals" — Tất cả kích thước theo inches. Thời gian: 90 phút.</p>
+
+            <h2 id="bt_2d_1">Bài 1: Angle Spacer</h2>
+            <p>Kết hợp <strong>Line</strong>, <strong>Circle</strong>, <strong>Arc</strong> và toạ độ tương đối:</p>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 400 280" style="max-width:400px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <rect x="60" y="200" width="300" height="5" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="60" y1="200" x2="60" y2="45" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="60" y1="45" x2="160" y2="45" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="160" y1="45" x2="220" y2="25" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="220" y1="25" x2="360" y2="25" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="360" y1="25" x2="360" y2="120" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="360" y1="120" x2="300" y2="120" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="300" y1="120" x2="300" y2="200" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="200" cy="140" r="30" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <text x="175" y="145" fill="#FF9800" font-size="10">Ø1.5</text>
+              <!-- Dimensions -->
+              <text x="170" y="18" fill="#aaa" font-size="9">1.0 → .75</text>
+              <text x="40" y="130" fill="#aaa" font-size="9">6.5</text>
+              <text x="145" y="215" fill="#aaa" font-size="9">← 2.5 →← 2.5 →</text>
+              <text x="300" y="170" fill="#aaa" font-size="9">5.5</text>
+              <text x="180" y="265" fill="#aaa" font-size="9">8.0</text>
+            </svg>
+            </div>
+
+            <h2 id="bt_2d_2">Bài 2: Base Plate</h2>
+            <p>Sử dụng <strong>Circle</strong>, <strong>Line</strong> góc vát và toạ độ cực:</p>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 360 280" style="max-width:360px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <rect x="40" y="30" width="280" height="220" fill="none" stroke="#0696D7" stroke-width="1.5" rx="3"/>
+              <line x1="40" y1="180" x2="100" y2="250" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="320" y1="180" x2="260" y2="250" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="130" cy="120" r="28" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="210" cy="145" r="45" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <text x="115" y="125" fill="#FF9800" font-size="9">Ø1.00</text>
+              <text x="195" y="150" fill="#FF9800" font-size="9">Ø2.00</text>
+              <text x="135" y="20" fill="#aaa" font-size="9">4.25</text>
+              <text x="15" y="140" fill="#aaa" font-size="9">4.00</text>
+              <text x="135" y="270" fill="#aaa" font-size="9">5.50</text>
+            </svg>
+            </div>
+
+            <h2 id="bt_2d_3">Bài 3: T-Clip</h2>
+            <p>Hình dạng chữ T — sử dụng toạ độ <strong>tương đối @</strong>:</p>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 380 240" style="max-width:380px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 50 200 L 50 80 L 120 30 L 330 30 L 330 80 L 240 80 L 240 120 L 280 120 L 280 200 Z" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <rect x="170" y="80" width="50" height="40" fill="none" stroke="#0696D7" stroke-width="1" stroke-dasharray="4"/>
+              <text x="155" y="20" fill="#aaa" font-size="9">6.50</text>
+              <text x="100" y="25" fill="#aaa" font-size="9">1.50→←3.50</text>
+              <text x="25" y="145" fill="#aaa" font-size="9">4.00</text>
+              <text x="250" y="105" fill="#aaa" font-size="9">1.00</text>
+              <text x="140" y="220" fill="#aaa" font-size="9">← 4.75 →</text>
+            </svg>
+            </div>
+
+            <h2 id="bt_2d_4">Bài 4: Channel Plate</h2>
+            <p>Hình chữ C phức tạp — Kết hợp <strong>Line</strong> góc 45° và <strong>Offset</strong>:</p>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 320 300" style="max-width:320px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 40 20 L 40 280 L 280 280 L 280 220 L 200 220 L 200 160 L 240 160 L 240 80 L 200 80 L 200 20 Z" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="40" y1="20" x2="70" y2="50" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="200" y1="20" x2="170" y2="50" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="40" y1="280" x2="70" y2="250" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="280" y1="280" x2="250" y2="250" stroke="#0696D7" stroke-width="1.5"/>
+              <text x="100" y="15" fill="#aaa" font-size="9">1.25</text>
+              <text x="15" y="155" fill="#aaa" font-size="9">1.25</text>
+              <text x="100" y="295" fill="#aaa" font-size="9">1.50</text>
+              <text x="248" y="155" fill="#aaa" font-size="9">.50</text>
+              <text x="75" y="55" fill="#FF9800" font-size="8">45°</text>
+            </svg>
+            </div>
+
+            <h2 id="bt_2d_5">Bài 5: Slider Block</h2>
+            <p>Hình ngũ giác kết hợp <strong>Circle</strong> — dùng toạ độ cực <code>@d&lt;θ</code>:</p>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 350 220" style="max-width:350px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 30 190 L 30 100 L 200 20 L 320 100 L 320 190 Z" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="175" cy="100" r="28" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="260" cy="160" r="10" fill="none" stroke="#0696D7" stroke-width="1"/>
+              <text x="160" y="105" fill="#FF9800" font-size="9">Ø1.00</text>
+              <text x="145" y="15" fill="#aaa" font-size="9">3.50</text>
+              <text x="230" y="175" fill="#FF9800" font-size="8">Ø.50</text>
+              <text x="5" y="155" fill="#aaa" font-size="9">1.50</text>
+              <text x="130" y="210" fill="#aaa" font-size="9">4.50</text>
+              <text x="285" y="145" fill="#aaa" font-size="8">60°</text>
+            </svg>
+            </div>
+
+            <h2 id="bt_2d_6">Bài 6: Circular Spacer</h2>
+            <p>Vòng tròn đồng tâm với 3 lỗ phân bố 120° — Dùng <strong>Array Polar</strong>:</p>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 300 300" style="max-width:300px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="150" cy="150" r="130" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="150" cy="150" r="90" fill="none" stroke="#0696D7" stroke-width="1" stroke-dasharray="4"/>
+              <circle cx="150" cy="150" r="50" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="150" cy="150" r="35" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="150" cy="60" r="15" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="228" cy="195" r="15" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="72" cy="195" r="15" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <text x="135" y="22" fill="#FF9800" font-size="9">Ø1.00</text>
+              <text x="40" y="148" fill="#aaa" font-size="9">Ø5.00</text>
+              <text x="8" y="165" fill="#aaa" font-size="8">Ø7.00</text>
+              <text x="120" y="145" fill="#aaa" font-size="8">Ø2.75</text>
+              <text x="155" y="80" fill="#FF9800" font-size="8">120° TYP.</text>
+            </svg>
+            </div>
+
+            <h2 id="bt_2d_7">Bài 7: Angle Base</h2>
+            <p>Chi tiết với 2 lỗ và <strong>cung tròn nối</strong> — kỹ năng ARC + Fillet:</p>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 340 200" style="max-width:340px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 30 170 L 30 60 L 130 60 L 170 30 L 310 30 L 310 170 Z" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="80" cy="115" r="18" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="240" cy="100" r="22" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <text x="65" y="120" fill="#FF9800" font-size="9">Ø.75</text>
+              <text x="222" y="105" fill="#FF9800" font-size="9">Ø1.00</text>
+              <text x="135" y="20" fill="#aaa" font-size="9">3.50</text>
+              <text x="10" y="120" fill="#aaa" font-size="9">2.50</text>
+              <text x="130" y="185" fill="#aaa" font-size="9">5.50</text>
+            </svg>
+            </div>
+
+            <h2 id="bt_2d_8">Bài 8: Index Key</h2>
+            <p>Chi tiết chìa khoá — Sử dụng <strong>Line góc</strong> và <strong>Arc</strong>:</p>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 320 180" style="max-width:320px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 30 140 L 30 50 L 130 50 L 175 25 L 290 25 L 290 100 L 230 100 L 230 140 Z" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="100" cy="95" r="15" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <text x="85" y="100" fill="#FF9800" font-size="9">Ø.50</text>
+              <text x="120" y="18" fill="#aaa" font-size="9">2.25</text>
+              <text x="10" y="100" fill="#aaa" font-size="9">2.00</text>
+              <text x="100" y="155" fill="#aaa" font-size="9">4.00</text>
+            </svg>
+            </div>
+
+            <h2 id="bt_2d_9">Bài 9: Guide Block</h2>
+            <p>Chi tiết hướng dẫn phức tạp — Kết hợp <strong>Circle</strong>, <strong>Arc nối</strong> và <strong>đường vát</strong>:</p>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 350 240" style="max-width:350px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 30 200 L 30 60 L 100 20 L 250 20 L 320 60 L 320 200 Z" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="175" cy="110" r="35" fill="none" stroke="#0696D7" stroke-width="1.5"/>
+              <circle cx="175" cy="110" r="18" fill="none" stroke="#0696D7" stroke-width="1"/>
+              <circle cx="100" cy="160" r="12" fill="none" stroke="#0696D7" stroke-width="1"/>
+              <circle cx="250" cy="160" r="12" fill="none" stroke="#0696D7" stroke-width="1"/>
+              <text x="155" y="115" fill="#FF9800" font-size="9">Ø1.50</text>
+              <text x="155" y="100" fill="#FF9800" font-size="8">Ø.75</text>
+              <text x="130" y="15" fill="#aaa" font-size="9">3.50</text>
+              <text x="10" y="130" fill="#aaa" font-size="9">4.25</text>
+              <text x="130" y="230" fill="#aaa" font-size="9">5.50</text>
+            </svg>
+            </div>
+
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Gợi ý chung cho 9 bài tập 2D</div><div class="info-text">Bắt đầu bằng <strong>Drawing Units</strong> (Decimal, Precision=2). Set <strong>Limits</strong> = 12 x 9. Dùng <strong>Grid</strong> (F7) + <strong>Snap</strong> (F9) để vẽ chính xác. Kết hợp toạ độ tương đối <code>@X,Y</code> và cực tương đối <code>@D&lt;θ</code> cho đường xiên.</div></div></div>
+
+            <div class="section-divider" style="margin: 40px 0; border-top: 2px dashed rgba(255,255,255,0.1);"></div>
+            <h2 style="color: #0696D7; text-align: center;">🔥 THỰC HÀNH AUTOCAD 3D 🔥</h2>
+
+            <h2 id="bt7">Mức độ 6: Mô hình Tạo Hình Cơ Bản 3D</h2>
+            <p><strong>Yêu cầu:</strong> Đổi góc nhìn Vpoint sang chiếu trục đo 3D (Đông Nam Isometric) và dùng các lệnh Box, Cone, Sphere tạo tổ hợp.</p>
+            <div class="command-syntax">
+<span class="prompt">Bài tập xây Kim tự tháp bằng các lăng trụ chồng lên nhau:</span>
+<span class="comment">- B1: Vẽ lệnh (Box) hình vuông 100x100 dày 50.</span>
+<span class="comment">- B2: Dời (UCS) Origin hoặc 3point lên mặt trên của tấm ván Box vừa dựng.</span>
+<span class="comment">- B3: Vẽ một Cone nón đa giác 4 cạnh chồng lên làm kim tự tháp chóp vát. </span>
+            </div>
+
+            <h2 id="bt8">Mức độ 7: Khoét Lỗ và Khối Rắn Cơ Khí</h2>
+            <p><strong>Yêu cầu:</strong> Dựng cụm chi tiết máy bulông bích nối bằng đùn Extrude và Revolve.</p>
+            <div class="command-syntax">
+<span class="prompt">Vẽ mặt bích trục Cốt:</span>
+<span class="comment">- Vẽ mặt cắt rỗng Pline và Revolve (REV) 360 độ quanh trục đối xứng dọc giữa.</span>
+<span class="comment">- Chọn UCS quay mặt phẳng Top hướng lên nắp tròn, vẽ đường tròn C (đường kính lỗ khoét).</span>
+<span class="comment">- Vớt nó thành ống đặc (Extrude) dài xuyên phôi. </span>
+<span class="comment">- Array Polar ống đó thành 6 cái quanh tâm. Dùng SUBTRACT (SU) trừ khối bích lớn trụ trừ đi 6 mũi khoan ảo. Xuyên lủng!.</span>
+            </div>
+
+            <h2 id="bt9">Mức độ 8: Chỉnh Camera, Vật liệu Render </h2>
+            <p><strong>Yêu cầu:</strong> Hoàn thành Đồ án 3D Ngôi nhà sàn bằng cách gán ánh sáng mặt trời.</p>
+            <ul>
+                <li>Lệnh <code>DV</code> đặt góc nhìn thấp xuống hiên nhà. Lens quy về 35mm.</li>
+                <li>Dùng <code>RMAT</code> Gõ tìm thư viện Wood, Glass dán lên Tường, Sàn, Cửa sổ kính trong suốt.</li>
+                <li>Đặt 1 nguồn Point Light trong phòng màu vàng. Và 1 nguồn Sun bóng đổ từ hướng đông gắt chéo.</li>
+                <li>Gõ <code>RENDER</code> ở mức độ <strong>Photo Raytrace</strong> để chắt ra đĩa tấm hình lưu niệm.</li>
+            </ul>
+
+            <h2 id="bt10">Mức độ 9: Bố cục bản vẽ & Hình chiếu tự động</h2>
+            <p><strong>Yêu cầu:</strong> Dùng Solview/Soldraw tạo bản vẽ kỹ thuật chuẩn từ mô hình 3D.</p>
+            <div class="command-syntax">
+<span class="prompt">Quy trình tạo bản vẽ kỹ thuật 3 hình chiếu:</span>
+<span class="comment">- B1: Đặt TileMode=0 → chuyển sang Layout (Paper Space).</span>
+<span class="comment">- B2: Gõ SOLVIEW → chọn UCS, đặt tỉ lệ cho hình chiếu đứng.</span>
+<span class="comment">- B3: SOLVIEW → Ortho tạo hình chiếu bằng từ hình chiếu đứng vừa tạo.</span>
+<span class="comment">- B4: SOLVIEW → Ortho tạo hình chiếu cạnh.</span>
+<span class="comment">- B5: Gõ SOLDRAW → chọn tất cả viewport → AutoCAD tự gạch mặt cắt.</span>
+<span class="comment">- B6: Dùng DIM ghi kích thước. Chỉnh DIMLFAC nếu tỉ lệ viewport khác 1:1.</span>
+            </div>
+
+            <h2 id="bt11">Mức độ 10: Phân tích & Kiểm tra Solid nâng cao</h2>
+            <p><strong>Yêu cầu:</strong> Dùng INTERFERE, MASSPROP, SECTION phân tích mô hình cơ khí.</p>
+            <ul>
+                <li>Tạo 2 khối Cylinder giao nhau. Dùng <code>INTERFERE</code> kiểm tra phần giao nhau (không mất gốc).</li>
+                <li>Dùng <code>SECTION</code> cắt một mặt cắt ngang qua chi tiết máy. Extrude kết quả Region để xem tiết diện.</li>
+                <li>Chọn chi tiết hoàn chỉnh → gõ <code>MASSPROP</code> → ghi nhận thể tích, trọng tâm, moment quán tính.</li>
+                <li>Dùng <code>SOLPROF</code> (trong Layout) tạo đường bao thấy/khuất cho bản vẽ 2D chuyên nghiệp.</li>
+            </ul>
+
+            <h2 id="bt12">Mức độ 11: Vẽ 3 hình chiếu từ vật thể</h2>
+            <p><strong>Yêu cầu:</strong> Vẽ hình chiếu đứng, bằng, cạnh từ các vật thể sau. Sử dụng XLINE làm đường chiếu phụ trợ.</p>
+            <ul>
+                <li><strong>BT11.1 - Khối chữ L:</strong> Khối hộp 100×80×60 bị cắt bỏ góc trên phải tạo bậc 40×30. Vẽ 3 hình chiếu + đường khuất.</li>
+                <li><strong>BT11.2 - Trụ có lỗ:</strong> Trụ tròn Ø60×100 có lỗ suốt Ø25. Vẽ Front/Top/Side view.</li>
+                <li><strong>BT11.3 - Gối đỡ:</strong> Tấm đế 120×80×15, phía trên có 2 tai bán trụ R25 cao 50. Lỗ Ø20 xuyên qua 2 tai. Vẽ đầy đủ 3 hình chiếu.</li>
+            </ul>
+
+            <h2 id="bt13">Mức độ 12: Ghi kích thước có dung sai</h2>
+            <p><strong>Yêu cầu:</strong> Thực hành ghi dung sai qua Dimension Style Manager.</p>
+            <ul>
+                <li><strong>BT12.1:</strong> Vẽ trục Ø50 dài 120. Ghi kích thước đường kính với dung sai <code>Ø50 ±0.05</code>. Thiết lập Method = Symmetrical.</li>
+                <li><strong>BT12.2:</strong> Vẽ tấm có lỗ lắp ghép Ø30H7. Ghi dung sai dạng Limits: <code>30.021/30.000</code>. Thiết lập Method = Limits.</li>
+                <li><strong>BT12.3:</strong> Vẽ chi tiết có mặt xiên 45°. Ghi dung sai góc <code>45° ±0.5°</code>.</li>
+            </ul>
+
+            <h2 id="bt14">Mức độ 13: Ghi dung sai hình học (GD&T)</h2>
+            <p><strong>Yêu cầu:</strong> Sử dụng lệnh TOLERANCE tạo Feature Control Frame.</p>
+            <ul>
+                <li><strong>BT13.1 - Flatness:</strong> Tạo khung dung sai độ phẳng <code>▱ 0.05</code> cho mặt đáy chi tiết. Không cần datum.</li>
+                <li><strong>BT13.2 - Perpendicularity:</strong> Ghi dung sai vuông góc <code>⊥ Ø0.08 | A</code> cho lỗ so với mặt chuẩn A.</li>
+                <li><strong>BT13.3 - Position:</strong> Chi tiết có 4 lỗ Ø10 trên vòng tròn Ø80. Ghi Position tolerance <code>⊕ Ø0.25 Ⓜ | A | B | C</code>.</li>
+            </ul>
+
+            <h2 id="bt15">Mức độ 14: Vẽ biểu diễn ren và bulong</h2>
+            <p><strong>Yêu cầu:</strong> Thực hành vẽ ren đơn giản hóa và mặt cắt bulong.</p>
+            <ul>
+                <li><strong>BT14.1:</strong> Vẽ bulong M12×40 lục giác (mặt đứng + mặt bằng). Đường kính đầu = 1.5d, cao đầu = 0.7d.</li>
+                <li><strong>BT14.2:</strong> Vẽ 2 tấm ghép bằng bulong M10×50 + đai ốc + vòng đệm. Hatch mặt cắt ANSI31.</li>
+                <li><strong>BT14.3:</strong> Vẽ lỗ ren trong M16×1.5 (simplified). Ghi callout: <code>M16×1.5 - 6H</code> bằng MLEADER.</li>
+            </ul>
+            <div style="margin:1rem 0;"><a href="opl-baitap14.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(255,107,53,0.15),rgba(255,107,53,0.05));border:1px solid rgba(255,107,53,0.3);color:#FF8A5C;padding:0.7rem 1.5rem;border-radius:10px;font-weight:600;font-size:0.95rem;transition:all 0.3s;">📖 Xem OPL chi tiết (Hướng dẫn từng bước có hình)</a></div>
+
+            <h2 id="bt16">Mức độ 15: Hoàn thiện bản vẽ kỹ thuật</h2>
+            <p><strong>Yêu cầu:</strong> Tạo bản vẽ kỹ thuật hoàn chỉnh từ A đến Z.</p>
+            <ul>
+                <li><strong>BT15.1:</strong> Tạo Drawing Template (.dwt) khổ A3 với khung bản vẽ, khung tên, revision block. Dùng ATTDEF tạo attributes.</li>
+                <li><strong>BT15.2:</strong> Vẽ chi tiết "Gối đỡ trục" gồm: 3 hình chiếu + mặt cắt + đầy đủ kích thước + dung sai + vật liệu. Xuất sang Layout, set viewport 1:2.</li>
+                <li><strong>BT15.3:</strong> Tạo bản vẽ lắp ráp "Cụm van bi" (3-5 chi tiết). Ghi số thứ tự + bảng kê chi tiết (BOM).</li>
+            </ul>
+            <div style="margin:1rem 0;"><a href="opl-baitap15.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(255,107,53,0.15),rgba(255,107,53,0.05));border:1px solid rgba(255,107,53,0.3);color:#FF8A5C;padding:0.7rem 1.5rem;border-radius:10px;font-weight:600;font-size:0.95rem;transition:all 0.3s;">📖 Xem OPL chi tiết (Hướng dẫn từng bước có hình)</a></div>
+
+            <h2 id="bt17">Mức độ 16: Tính toán và vẽ bánh răng</h2>
+            <p><strong>Yêu cầu:</strong> Áp dụng công thức tính toán bánh răng rồi vẽ trong AutoCAD.</p>
+            <ul>
+                <li><strong>BT16.1 - Tính toán:</strong> Cho bánh răng thẳng m=2.5, Z=24. Tính: D (đường kính chia), Da (đỉnh), Df (chân), p (bước), h (chiều cao). Vẽ 3 vòng tròn tương ứng.</li>
+                <li><strong>BT16.2 - Ăn khớp:</strong> Vẽ cặp bánh răng ăn khớp (Z₁=20, Z₂=40, m=3). Tính khoảng cách trục a, vẽ 2 vòng chia tiếp xúc nhau.</li>
+                <li><strong>BT16.3 - Biểu đồ cam:</strong> Vẽ biểu đồ chuyển vị cam: Rise 30mm (0°-120° Harmonic), Dwell (120°-180°), Return (180°-300° Uniform), Dwell (300°-360°). Dùng LINE + ARC.</li>
+            </ul>
+            <div style="margin:1rem 0;"><a href="opl-baitap16.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(255,107,53,0.15),rgba(255,107,53,0.05));border:1px solid rgba(255,107,53,0.3);color:#FF8A5C;padding:0.7rem 1.5rem;border-radius:10px;font-weight:600;font-size:0.95rem;transition:all 0.3s;">📖 Xem OPL chi tiết (Hướng dẫn từng bước có hình)</a></div>
+
+            <div class="chapter-nav">
+                <a href="chuong25.html"><div><span class="nav-dir">← Lý thuyết</span><span class="nav-title">Chương 25: Bánh Răng & Cam</span></div></a>
+                <a href="index.html" class="nav-next"><div><span class="nav-dir">Hoàn thành ✔️</span><span class="nav-title">Về Trang Chủ</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

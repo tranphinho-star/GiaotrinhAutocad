@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 18: Hiệu Chỉnh Khối 3D và 3D Operation | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html" class="active"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 18 (3D)</span>
+                <h1>Hiệu chỉnh Vật Thể Cắt Khối Solid</h1>
+                <p class="chapter-desc">Bo góc, vát cạnh, chẻ gọt (Slice) khối rắn và các lệnh Copy - Rotate nâng cao 3 chiều.</p>
+            </div>
+
+            <h2>1. Hiệu chỉnh vật thể đặc (Chamfer, Fillet)</h2>
+            <p>Lệnh bo tròn và vát mép y hệt như 2D trên mặt khối. Nhưng giao diện lời nhắc sẽ hơi khác một chút khi đụng vào mép 3D.</p>
+            <ul>
+                <li><strong>FILLET (F):</strong> AutoCAD hỏi bán kính bo (R=x). Khi bạn nhấp vào cạnh của mép bàn gỗ (solid), nó sẽ lăn trục R trên đúng cái mép vỡ cọ đó.</li>
+                <li><strong>CHAMFER (CHA):</strong> Cắt vát 1 lớp sườn thoi dọc ở góc vuông tủ gỗ (Nhập k/c bù xù Dist 1 và Dist 2).</li>
+            </ul>
+
+            <h2>2. Lệnh Cắt Khối Như Thái Đậu Phụ (SLICE)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">SLICE / DRAW SOLIDS SLICE</span><span class="cmd-shortcut">SL</span></div></div>
+            <p>Cầm dao vô hình chia chẻ Solid làm hai nửa với mặt phẳng dao cắt băng qua.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">SL</span> ↵ 
+<span class="prompt">Select objects:</span> Nhấp cục mộc Solid.
+<span class="prompt">Slicing plane by Object/Zaxis/View/XY/YZ/ZX/&lt;3 points&gt;:</span> Chỉ định mặt dao thái. Mặc định dùng "3 points" thì nhích kích đủ 3 điểm trên mặt nhọn đó (Làm mốc rọc).
+<span class="prompt">Both sides/&lt;Point on desired side...&gt;:</span> Nó kêu giữ một nửa cục. Các bẹn nhấp trỏ sang phần cục muốn sống. Gõ Both (B) nếu luyến tiếc giữ cả 2 dính lìa nhau rạc rạc đi đôi.
+            </div>
+
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">SECTION vs SLICE</div><div class="info-text">SEC(Section): Giống Slide (dao rọc băng) nhưng không cắt vứt cục thịt. Nó chà mờ để lại "Vết bẩn Màng bao Region" tiết diện dao. Lấy đó dùng Extrude tiếp tục.</div></div></div>
+
+            <h2>3. Lệnh 3D Operations Biến đổi trong Không Gian</h2>
+
+            <h3>3D Mirror (Đổi vế Lật cánh chong chóng 3D)</h3>
+            <p>Với 2D thì là Flip dọc đường nẹp. Với 3D lật đối xứng phải là rạch dao qua tấm Gương lồi Plane măt phẳng (3 điểm).</p>
+            
+            <h3>3D Rotate (Quay theo trục tăm 3D)</h3>
+            <p>Ở 2D chỉ quay trượt dĩa ngửa cổ (vuông xới màn hình Z axis). Xoay Rotate3D sẽ tự do hỏi trục xoay là cái cọc nào (Object), xoay bao độ xung quanh cọc.</p>
+
+            <h3>3D Array (Mảng đa lập thể hàng nghìn cột)</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">3DARRAY</span><span class="cmd-shortcut">3A</span></div></div>
+            <p>Rải ra mạng lưới tầng tầng lớp lớp chung cư.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">3A</span> ↵ 
+<span class="prompt">Rectangular or Polar array (R/P):</span> Nhập kiểu R (Dãy cột xếp) / P (Hoa đào rải xòe).
+<span class="prompt">Number of rows (---) &lt;1&gt;:</span> Số lượng hàng vạch ngang màn hình.
+<span class="prompt">Number of columns (|||) &lt;1&gt;:</span> Số lượng cột đứng.
+<span class="prompt">Number of levels (...) &lt;1&gt;:</span> TẦNG CHỒNG CAO TÒA THÁP (Tần suất bay lên phương Z!).
+            </div>
+            
+            <p>Sau đó cứ nhập khoảng cách cao độ cho cái mảng xòe bung ma trận. Chớp mắt vài giây Card VGA có một mô hình thành phố (cấm lưu file lỡ hỏng ram C).!</p>
+
+            <h2>4. Phân tích & Căn chỉnh khối rắn nâng cao</h2>
+
+            <h3>SECTION — Mặt cắt của khối rắn</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">SECTION</span><span class="cmd-shortcut">SEC</span></div></div>
+            <p>Tạo mặt cắt (Region) tại vị trí mặt phẳng cắt xuyên qua khối Solid. Khối rắn gốc <strong>không bị phá hủy</strong> — chỉ xuất ra Region tiết diện để phân tích hoặc Extrude tiếp.</p>
+
+            <h3>ALIGN — Căn chỉnh đối tượng 3D</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">ALIGN</span><span class="cmd-shortcut">AL</span></div></div>
+            <p>Sắp xếp các đối tượng 3D bằng cách canh chỉnh theo cặp điểm nguồn – đích. Dùng để ghép chính xác các chi tiết vào vị trí mong muốn trong không gian 3D.</p>
+
+            <h3>SOLPROF — Tạo đường bao khuất & thấy</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">SOLID PROFILE</span><span class="cmd-shortcut">SOLPROF</span></div></div>
+            <p>Tạo các đường bao khuất (hidden) và đường bao thấy (visible) trên các mô hình 3D. Trước khi dùng, cần đặt biến <code>TileMode = 0</code>.</p>
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Lưu ý</div><div class="info-text">Lệnh Solprof cần thực hiện trong <b>Paper Space</b> (Layout). Kết quả sẽ tạo ra các layer riêng chứa nét thấy (PV-) và nét khuất (PH-).</div></div></div>
+
+            <h3>INTERFERE — Kiểm tra giao nhau giữa các Solid</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">INTERFERENCE</span><span class="cmd-shortcut">INTERFERE</span></div></div>
+            <p>Kiểm tra và tạo miền giao nhau giữa các Solid mà <strong>không bị mất đi</strong> khối gốc. Khác với <code>Intersect</code> (phép Boolean giao sẽ xoá khối gốc), <code>Interfere</code> giữ nguyên cả hai khối và tạo thêm một khối mới là phần giao.</p>
+
+            <div class="chapter-nav">
+                <a href="chuong17.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Khối Rắn & Boolean</span></div></a>
+                <a href="chuong19.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Ánh Sáng & Render</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Giáo trình AutoCAD 2007 đầy đủ - Học AutoCAD từ cơ bản đến nâng cao với lý thuyết chi tiết và bài tập thực hành">
+    <title>Giáo Trình AutoCAD 2007 | Lý Thuyết & Thực Hành</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">CAD</div>
+                <span>AutoCAD 2007</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Trang chủ</a></li>
+                    <li><a href="chuong1.html">Lý thuyết</a></li>
+                    <li><a href="bai-tap.html">Bài tập</a></li>
+                    <li><a href="chuong14.html">Phím tắt</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Giáo trình đầy đủ • Cập nhật 2007
+            </div>
+            <h1>Giáo Trình AutoCAD 2007<br>Từ Cơ Bản Đến Nâng Cao</h1>
+            <p>Học AutoCAD một cách có hệ thống với 14 chương lý thuyết chi tiết, hơn 90 lệnh vẽ và bài tập thực hành. Biên soạn bởi Phạm Gia Hậu - Trường CĐ KT-CN TP.HCM.</p>
+            <div class="hero-buttons">
+                <a href="chuong1.html" class="btn btn-primary">
+                    📖 Bắt đầu học ngay
+                </a>
+                <a href="bai-tap.html" class="btn btn-secondary">
+                    ✏️ Bài tập thực hành
+                </a>
+            </div>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-number">25</span>
+                    <span class="stat-label">Chương</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Lệnh AutoCAD</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">944</span>
+                    <span class="stat-label">Trang PDF</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">40+</span>
+                    <span class="stat-label">Bài tập</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapters Section -->
+    <section class="section" id="chapters">
+        <div class="section-header">
+            <h2>📚 Nội Dung Giáo Trình</h2>
+            <p>14 chương lý thuyết từ cơ bản đến nâng cao, kèm bài tập thực hành</p>
+            <div class="section-divider"></div>
+        </div>
+
+        <!-- Search -->
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Tìm kiếm chương, lệnh AutoCAD...">
+        </div>
+
+        <div class="chapters-grid" id="chaptersGrid">
+            <!-- Chapter 1 -->
+            <a href="chuong1.html" class="chapter-card fade-in" data-keywords="giới thiệu autocad khởi động phím tắt quy ước">
+                <div class="card-header">
+                    <div class="chapter-number">01</div>
+                    <div class="card-title">Mở Đầu - Giới Thiệu Chung</div>
+                </div>
+                <div class="card-description">Giới thiệu AutoCAD trong hệ thống phần mềm đồ hoạ, khả năng chính, làm quen giao diện và các phím đặc biệt.</div>
+                <div class="card-tags">
+                    <span class="tag">Cơ bản</span>
+                    <span class="tag">Giao diện</span>
+                    <span class="tag">Phím tắt</span>
+                </div>
+            </a>
+
+            <!-- Chapter 2 -->
+            <a href="chuong2.html" class="chapter-card fade-in" data-keywords="file new save open close exit lưu mở tạo đóng thoát">
+                <div class="card-header">
+                    <div class="chapter-number">02</div>
+                    <div class="card-title">Các Lệnh Về File</div>
+                </div>
+                <div class="card-description">Tạo file mới, lưu bản vẽ, mở bản vẽ có sẵn, đóng và thoát khỏi AutoCAD.</div>
+                <div class="card-tags">
+                    <span class="tag">New</span>
+                    <span class="tag">Save</span>
+                    <span class="tag">Open</span>
+                    <span class="tag">Close</span>
+                </div>
+            </a>
+
+            <!-- Chapter 3 -->
+            <a href="chuong3.html" class="chapter-card fade-in" data-keywords="toạ độ tuyệt đối tương đối cực osnap truy bắt điểm endpoint midpoint center intersection">
+                <div class="card-header">
+                    <div class="chapter-number">03</div>
+                    <div class="card-title">Hệ Toạ Độ & Truy Bắt Điểm</div>
+                </div>
+                <div class="card-description">Hệ toạ độ Đề-các, toạ độ cực, 6 phương pháp nhập toạ độ và 15 phương thức truy bắt điểm OSNAP.</div>
+                <div class="card-tags">
+                    <span class="tag">OSNAP</span>
+                    <span class="tag">Toạ độ</span>
+                    <span class="tag">Line</span>
+                    <span class="tag">Circle</span>
+                </div>
+            </a>
+
+            <!-- Chapter 4 -->
+            <a href="chuong4.html" class="chapter-card fade-in" data-keywords="limits zoom pan snap grid ortho units thiết lập bản vẽ">
+                <div class="card-header">
+                    <div class="chapter-number">04</div>
+                    <div class="card-title">Thiết Lập Bản Vẽ Cơ Bản</div>
+                </div>
+                <div class="card-description">Giới hạn không gian vẽ (Limits), thu phóng (Zoom), đẩy bản vẽ (Pan), Snap, Grid và Ortho.</div>
+                <div class="card-tags">
+                    <span class="tag">Limits</span>
+                    <span class="tag">Zoom</span>
+                    <span class="tag">Snap</span>
+                    <span class="tag">Grid</span>
+                </div>
+            </a>
+
+            <!-- Chapter 5 -->
+            <a href="chuong5.html" class="chapter-card fade-in" data-keywords="line circle arc pline polygon rectang ellipse spline mline point divide measure vẽ đường thẳng đường tròn cung">
+                <div class="card-header">
+                    <div class="chapter-number">05</div>
+                    <div class="card-title">Các Lệnh Vẽ Cơ Bản</div>
+                </div>
+                <div class="card-description">13 lệnh vẽ: Line, Circle, Arc, Pline, Polygon, Rectang, Ellipse, Spline, Mline, Point, Divide, Measure...</div>
+                <div class="card-tags">
+                    <span class="tag">Line</span>
+                    <span class="tag">Circle</span>
+                    <span class="tag">Arc</span>
+                    <span class="tag">Polygon</span>
+                    <span class="tag tag-orange">13 lệnh</span>
+                </div>
+            </a>
+
+            <!-- Chapter 6 -->
+            <a href="chuong6.html" class="chapter-card fade-in" data-keywords="erase oops undo redo redraw regen xóa phục hồi">
+                <div class="card-header">
+                    <div class="chapter-number">06</div>
+                    <div class="card-title">Lệnh Hiệu Chỉnh Căn Bản</div>
+                </div>
+                <div class="card-description">Lệnh xóa (Erase), phục hồi (Oops), huỷ bỏ (Undo), Redo, tái tạo màn hình (Redraw, Regen).</div>
+                <div class="card-tags">
+                    <span class="tag">Erase</span>
+                    <span class="tag">Undo</span>
+                    <span class="tag">Redo</span>
+                    <span class="tag">Redraw</span>
+                </div>
+            </a>
+
+            <!-- Chapter 7 -->
+            <a href="chuong7.html" class="chapter-card fade-in" data-keywords="offset trim extrim break extend lengthen chamfer fillet pedit xline ray donut trace solid region union subtract intersect boundary">
+                <div class="card-header">
+                    <div class="chapter-number">07</div>
+                    <div class="card-title">Lệnh Hiệu Chỉnh Tạo Hình</div>
+                </div>
+                <div class="card-description">19 lệnh: Offset, Trim, Break, Extend, Chamfer, Fillet, Pedit, Xline, Donut, Solid, Region, Union...</div>
+                <div class="card-tags">
+                    <span class="tag">Offset</span>
+                    <span class="tag">Trim</span>
+                    <span class="tag">Fillet</span>
+                    <span class="tag">Chamfer</span>
+                    <span class="tag tag-orange">19 lệnh</span>
+                </div>
+            </a>
+
+            <!-- Chapter 8 -->
+            <a href="chuong8.html" class="chapter-card fade-in" data-keywords="move copy rotate scale mirror stretch array di dời sao chép quay thu phóng đối xứng">
+                <div class="card-header">
+                    <div class="chapter-number">08</div>
+                    <div class="card-title">Biến Đổi & Sao Chép Hình</div>
+                </div>
+                <div class="card-description">Lệnh Move, Copy, Rotate, Scale, Mirror, Stretch, Array - biến đổi và sao chép đối tượng.</div>
+                <div class="card-tags">
+                    <span class="tag">Move</span>
+                    <span class="tag">Copy</span>
+                    <span class="tag">Mirror</span>
+                    <span class="tag">Array</span>
+                </div>
+            </a>
+
+            <!-- Chapter 9 -->
+            <a href="chuong9.html" class="chapter-card fade-in" data-keywords="layer linetype ltscale lớp đường nét màu quản lý">
+                <div class="card-header">
+                    <div class="chapter-number">09</div>
+                    <div class="card-title">Quản Lý Bản Vẽ Theo Lớp</div>
+                </div>
+                <div class="card-description">Tạo và quản lý Layer, nhập dạng đường Linetype, định tỷ lệ đường Ltscale và biến CELTSCALE.</div>
+                <div class="card-tags">
+                    <span class="tag">Layer</span>
+                    <span class="tag">Linetype</span>
+                    <span class="tag">Ltscale</span>
+                </div>
+            </a>
+
+            <!-- Chapter 10 -->
+            <a href="chuong10.html" class="chapter-card fade-in" data-keywords="hatch bhatch hatchedit mặt cắt ký hiệu vật liệu">
+                <div class="card-header">
+                    <div class="chapter-number">10</div>
+                    <div class="card-title">Hình Cắt Mặt Cắt & Vật Liệu</div>
+                </div>
+                <div class="card-description">Trình tự vẽ mặt cắt, lệnh Hatch/BHatch và hiệu chỉnh mặt cắt HatchEdit.</div>
+                <div class="card-tags">
+                    <span class="tag">Hatch</span>
+                    <span class="tag">BHatch</span>
+                    <span class="tag">HatchEdit</span>
+                </div>
+            </a>
+
+            <!-- Chapter 11 -->
+            <a href="chuong11.html" class="chapter-card fade-in" data-keywords="text mtext style ddedit textfill qtext văn bản chữ">
+                <div class="card-header">
+                    <div class="chapter-number">11</div>
+                    <div class="card-title">Nhập & Hiệu Chỉnh Văn Bản</div>
+                </div>
+                <div class="card-description">Tạo kiểu chữ Style, nhập dòng chữ Text, đoạn văn bản Mtext, hiệu chỉnh DDedit.</div>
+                <div class="card-tags">
+                    <span class="tag">Text</span>
+                    <span class="tag">MText</span>
+                    <span class="tag">Style</span>
+                    <span class="tag">DDedit</span>
+                </div>
+            </a>
+
+            <!-- Chapter 12 -->
+            <a href="chuong12.html" class="chapter-card fade-in" data-keywords="dimension dimstyle dimlinear dimaligned dimradius dimdiameter kích thước ghi hiệu chỉnh">
+                <div class="card-header">
+                    <div class="chapter-number">12</div>
+                    <div class="card-title">Ghi & Hiệu Chỉnh Kích Thước</div>
+                </div>
+                <div class="card-description">Thành phần kích thước, tạo DimStyle, ghi kích thước thẳng, hướng tâm và hiệu chỉnh.</div>
+                <div class="card-tags">
+                    <span class="tag">DimStyle</span>
+                    <span class="tag">DimLinear</span>
+                    <span class="tag">DimRadius</span>
+                </div>
+            </a>
+
+            <!-- Chapter 13 -->
+            <a href="chuong13.html" class="chapter-card fade-in" data-keywords="block insert wblock explode khối tạo chèn phá vỡ">
+                <div class="card-header">
+                    <div class="chapter-number">13</div>
+                    <div class="card-title">Tạo Khối & Ghi Khối</div>
+                </div>
+                <div class="card-description">Tạo Block, chèn Block Insert, lưu Block thành file Wblock, phá vỡ Block Explode.</div>
+                <div class="card-tags">
+                    <span class="tag">Block</span>
+                    <span class="tag">Insert</span>
+                    <span class="tag">Wblock</span>
+                    <span class="tag">Explode</span>
+                </div>
+            </a>
+
+            <!-- Chapter 14 -->
+            <a href="chuong14.html" class="chapter-card fade-in" data-keywords="phím tắt shortcut lệnh command tham khảo">
+                <div class="card-header">
+                    <div class="chapter-number">14</div>
+                    <div class="card-title">Bảng Phím Tắt AutoCAD</div>
+                </div>
+                <div class="card-description">Tổng hợp bảng phím tắt các lệnh thường dùng trong AutoCAD để tăng tốc độ vẽ.</div>
+                <div class="card-tags">
+                    <span class="tag tag-orange">Tham khảo</span>
+                    <span class="tag">Shortcut</span>
+                    <span class="tag">Phím tắt</span>
+                </div>
+            </a>
+
+            <!-- Chapter 15 -->
+            <a href="chuong15.html" class="chapter-card fade-in" data-keywords="3D toạ độ vpoint ucs view góc nhìn">
+                <div class="card-header">
+                    <div class="chapter-number">15</div>
+                    <div class="card-title">Điểm Nhìn & Tọa Độ 3D</div>
+                </div>
+                <div class="card-description">Thay đổi góc nhìn 3D (Vpoint), làm việc với hệ tọa độ người dùng (UCS) và cao độ (Thickness).</div>
+                <div class="card-tags">
+                    <span class="tag tag-3d">3D</span>
+                    <span class="tag">Vpoint</span>
+                    <span class="tag">UCS</span>
+                </div>
+            </a>
+
+            <!-- Chapter 16 -->
+            <a href="chuong16.html" class="chapter-card fade-in" data-keywords="3d box cone cylinder sphere 3dface tạo khối vẽ mặt">
+                <div class="card-header">
+                    <div class="chapter-number">16</div>
+                    <div class="card-title">Tạo Hình Cơ Bản 3D</div>
+                </div>
+                <div class="card-description">Lệnh vẽ các khối 3D sơ cấp (Box, Cone, Cylinder, Sphere) và vẽ bề mặt 3D (3Dface, Edgesurf).</div>
+                <div class="card-tags">
+                    <span class="tag tag-3d">3D</span>
+                    <span class="tag">Box</span>
+                    <span class="tag">3DFace</span>
+                </div>
+            </a>
+
+            <!-- Chapter 17 -->
+            <a href="chuong17.html" class="chapter-card fade-in" data-keywords="3d extrude revolve solid union subtract boolean">
+                <div class="card-header">
+                    <div class="chapter-number">17</div>
+                    <div class="card-title">Khối Rắn & Phép Toán Boolean</div>
+                </div>
+                <div class="card-description">Tạo vật thể đặc từ hình 2D (Extrude, Revolve) và cộng trừ khối (Union, Subtract, Intersect).</div>
+                <div class="card-tags">
+                    <span class="tag tag-3d">3D</span>
+                    <span class="tag">Extrude</span>
+                    <span class="tag">Union</span>
+                </div>
+            </a>
+
+            <!-- Chapter 18 -->
+            <a href="chuong18.html" class="chapter-card fade-in" data-keywords="3d fillet chamfer slice rotate3d mirror3d 3darray hiệu chỉnh">
+                <div class="card-header">
+                    <div class="chapter-number">18</div>
+                    <div class="card-title">Hiệu Chỉnh Khối 3D</div>
+                </div>
+                <div class="card-description">Bo vát cạnh (Fillet, Chamfer), cắt khối (Slice) và các phép biến đổi 3D (Rotate3D, Mirror3D, 3DArray).</div>
+                <div class="card-tags">
+                    <span class="tag tag-3d">3D</span>
+                    <span class="tag">Slice</span>
+                    <span class="tag">Rotate3D</span>
+                </div>
+            </a>
+
+            <!-- Chapter 19 -->
+            <a href="chuong19.html" class="chapter-card fade-in" data-keywords="3d render material rmat light dview tô bóng vật liệu ánh sáng">
+                <div class="card-header">
+                    <div class="chapter-number">19</div>
+                    <div class="card-title">Ánh Sáng, Vật Liệu & Render</div>
+                </div>
+                <div class="card-description">Thiết lập camera (Dview), tô bóng (Shade), gán vật liệu (Rmat), đặt nguồn sáng và kết xuất (Render).</div>
+                <div class="card-tags">
+                    <span class="tag tag-3d">3D</span>
+                    <span class="tag">Render</span>
+                    <span class="tag">Material</span>
+                </div>
+            </a>
+
+            <!-- Chapter 20 -->
+            <a href="chuong20.html" class="chapter-card fade-in" data-keywords="orthographic views hình chiếu trục đo hidden lines mặt xiên projection">
+                <div class="card-header">
+                    <div class="chapter-number">20</div>
+                    <div class="card-title">Hình Chiếu Trục Đo</div>
+                </div>
+                <div class="card-description">Vẽ 3 hình chiếu chuẩn, đường khuất, mặt xiên, quy ước chiếu góc thứ nhất và thứ ba.</div>
+                <div class="card-tags">
+                    <span class="tag tag-orange">Chuyên ngành</span>
+                    <span class="tag">Orthographic</span>
+                </div>
+            </a>
+
+            <!-- Chapter 21 -->
+            <a href="chuong21.html" class="chapter-card fade-in" data-keywords="tolerance dung sai kích thước lắp ghép fit clearance interference">
+                <div class="card-header">
+                    <div class="chapter-number">21</div>
+                    <div class="card-title">Dung Sai Kích Thước</div>
+                </div>
+                <div class="card-description">Dung sai cộng trừ, giới hạn, dung sai góc, lắp ghép tiêu chuẩn ISO, Metric/Inch.</div>
+                <div class="card-tags">
+                    <span class="tag tag-orange">Chuyên ngành</span>
+                    <span class="tag">Tolerancing</span>
+                </div>
+            </a>
+
+            <!-- Chapter 22 -->
+            <a href="chuong22.html" class="chapter-card fade-in" data-keywords="GDT geometric tolerance dung sai hình học flatness straightness perpendicularity">
+                <div class="card-header">
+                    <div class="chapter-number">22</div>
+                    <div class="card-title">Dung Sai Hình Học (GD&T)</div>
+                </div>
+                <div class="card-description">Dung sai hình dạng, hướng, vị trí, độ đảo theo tiêu chuẩn ASME Y14.5.</div>
+                <div class="card-tags">
+                    <span class="tag tag-orange">Chuyên ngành</span>
+                    <span class="tag">GD&T</span>
+                </div>
+            </a>
+
+            <!-- Chapter 23 -->
+            <a href="chuong23.html" class="chapter-card fade-in" data-keywords="thread fastener ren bulong đai ốc bolt nut washer spring lò xo">
+                <div class="card-header">
+                    <div class="chapter-number">23</div>
+                    <div class="card-title">Ren & Bulong</div>
+                </div>
+                <div class="card-description">Thuật ngữ ren, ký hiệu Metric/UNC, biểu diễn ren, bulong, đai ốc, lò xo.</div>
+                <div class="card-tags">
+                    <span class="tag tag-orange">Chuyên ngành</span>
+                    <span class="tag">Threads</span>
+                </div>
+            </a>
+
+            <!-- Chapter 24 -->
+            <a href="chuong24.html" class="chapter-card fade-in" data-keywords="working drawing bản vẽ kỹ thuật assembly detail title block layout">
+                <div class="card-header">
+                    <div class="chapter-number">24</div>
+                    <div class="card-title">Bản Vẽ Kỹ Thuật</div>
+                </div>
+                <div class="card-description">Bản vẽ lắp ráp, chi tiết, bảng kê (BOM), khung tên, Drawing Template, Layout.</div>
+                <div class="card-tags">
+                    <span class="tag tag-orange">Chuyên ngành</span>
+                    <span class="tag">Working Drawing</span>
+                </div>
+            </a>
+
+            <!-- Chapter 25 -->
+            <a href="chuong25.html" class="chapter-card fade-in" data-keywords="gear bearing cam bánh răng ổ lăn cam spur bevel worm module">
+                <div class="card-header">
+                    <div class="chapter-number">25</div>
+                    <div class="card-title">Bánh Răng, Ổ Lăn & Cam</div>
+                </div>
+                <div class="card-description">Spur/Bevel/Worm gear, công thức Module, ổ lăn, biểu đồ chuyển vị cam.</div>
+                <div class="card-tags">
+                    <span class="tag tag-orange">Chuyên ngành</span>
+                    <span class="tag">Gears</span>
+                    <span class="tag">Cams</span>
+                </div>
+            </a>
+
+            <!-- Bài tập -->
+            <a href="bai-tap.html" class="chapter-card fade-in" data-keywords="bài tập thực hành vẽ kỹ thuật">
+                <div class="card-header">
+                    <div class="chapter-number exercise">BT</div>
+                    <div class="card-title">Bài Tập Thực Hành</div>
+                </div>
+                <div class="card-description">Bài tập thực hành từ cơ bản đến nâng cao, vẽ các bản vẽ kỹ thuật cơ khí và xây dựng.</div>
+                <div class="card-tags">
+                    <span class="tag tag-orange">Thực hành</span>
+                    <span class="tag tag-orange">Bài tập</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>✨ Đặc Điểm Giáo Trình</h2>
+            <p>Nội dung được biên soạn phù hợp cho người mới bắt đầu và nâng cao</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="chapters-grid">
+            <div class="chapter-card" style="cursor: default;">
+                <div class="card-header">
+                    <div class="chapter-number" style="background: linear-gradient(135deg, #00C853, #009624);">📐</div>
+                    <div class="card-title">Lý Thuyết Chi Tiết</div>
+                </div>
+                <div class="card-description">Mỗi lệnh AutoCAD đều được giải thích cú pháp, phương pháp nhập lệnh và ví dụ minh hoạ cụ thể.</div>
+            </div>
+            <div class="chapter-card" style="cursor: default;">
+                <div class="card-header">
+                    <div class="chapter-number" style="background: linear-gradient(135deg, #FFB300, #FF8F00);">💡</div>
+                    <div class="card-title">Command Syntax</div>
+                </div>
+                <div class="card-description">Cú pháp lệnh được trình bày theo format dễ theo dõi với Menu Bar, nhập lệnh và Toolbar.</div>
+            </div>
+            <div class="chapter-card" style="cursor: default;">
+                <div class="card-header">
+                    <div class="chapter-number" style="background: linear-gradient(135deg, #E040FB, #AA00FF);">🎯</div>
+                    <div class="card-title">Bài Tập Thực Hành</div>
+                </div>
+                <div class="card-description">Bài tập được phân loại theo mức độ từ cơ bản đến nâng cao, giúp rèn luyện kỹ năng vẽ kỹ thuật.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>📐 Giáo Trình AutoCAD 2007 — Biên soạn: <strong>Phạm Gia Hậu</strong></p>
+            <p style="margin-top: 0.5rem;">Trường Cao Đẳng Kinh Tế Công Nghệ TP.HCM — Khoa Cơ Khí – Xây Dựng</p>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Lên đầu trang">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

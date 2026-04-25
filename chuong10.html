@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 10: Hình Cắt - Mặt Cắt | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html" class="active"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 10</span>
+                <h1>Tạo Hình Cắt - Mặt Cắt</h1>
+                <p class="chapter-desc">Sử dụng lệnh Hatch để tô vật liệu, tạo mặt cắt và tô màu chuyển sắc (Gradient).</p>
+            </div>
+
+            <h2>1. Lệnh vẽ mặt cắt HATCH (H)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">BHATCH / HATCH</span><span class="cmd-shortcut">H</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                <tbody><tr><td>Draw → Hatch...</td><td><code>Bhatch</code> hoặc <code>H</code></td></tr></tbody></table>
+            </div>
+
+            <p>Hộp thoại <strong>Hatch and Gradient</strong> xuất hiện, gồm các thiết lập quan trọng:</p>
+
+            <h3>a. Tab Hatch (Mặt cắt vật liệu)</h3>
+            <table class="ref-table">
+                <thead><tr><th>Mục</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Type</strong></td><td>Loại mẫu (Predefined: có sẵn; User defined: người dùng tự tạo; Custom)</td></tr>
+                    <tr><td><strong>Pattern</strong></td><td>Tên mẫu vật liệu. Chọn nút <code>[...]</code> để xem trước bằng hình ảnh</td></tr>
+                    <tr><td><strong>Swatch</strong></td><td>Khung xem trước mẫu đã chọn. Nhấp vào đây cũng mở bảng chọn mẫu</td></tr>
+                    <tr><td><strong>Angle</strong></td><td>Góc nghiêng của mặt cắt so với trục X</td></tr>
+                    <tr><td><strong>Scale</strong></td><td>Tỷ lệ của mẫu. Tăng lên nếu bị quá mau (đen sì), giảm xuống nếu quá thưa</td></tr>
+                </tbody>
+            </table>
+
+            <h3>b. Chọn vùng gạch mặt cắt (Boundaries)</h3>
+            <p>Có 2 cách chọn vùng để gạch Hatch:</p>
+            <ul>
+                <li><strong>Add: Pick point</strong>: Nhấp vào <strong>bên trong</strong> một vùng kín. AutoCAD tự tìm đường bao.</li>
+                <li><strong>Add: Select objects</strong>: Chọn trực tiếp vào đường bao cắt (đường biên phải là Pline kín hoặc các đoạn thẳng kín).</li>
+            </ul>
+
+            <div class="info-box warning"><span class="icon">⚠️</span><div><div class="info-title">Lỗi không Hatch được</div><div class="info-text">AutoCAD sẽ báo lỗi "A closed boundary could not be determined" nếu vùng tô KHÔNG KÍN hoàn toàn hoặc màn hình đang chứa quá nhiều đối tượng phức tạp (hãy Zoom gần lại).</div></div></div>
+
+            <div class="command-syntax">
+<span class="prompt">Các bước thực hiện nhanh:</span>
+<span class="input">1. Gõ H → Enter</span>
+<span class="input">2. Chọn mẫu (Swatch)</span>
+<span class="input">3. Chọn Type / Angle / Scale</span>
+<span class="input">4. Click [Add: Pick point]</span>
+<span class="input">5. Click chuột vào trong vùng kín</span>
+<span class="input">6. Space (hoặc Enter) quay lại hộp thoại</span>
+<span class="input">7. Preview xem thử → OK (nếu đẹp)</span>
+            </div>
+
+            <h2>2. Lệnh tô màu chuyển sắc GRADIENT</h2>
+            <p>Chuyển qua tab <strong>Gradient</strong> trong cùng hộp thoại trên.</p>
+            <ul>
+                <li><strong>One color</strong>: Chuyển sắc từ một màu tùy chọn sang phần đậm/nhạt hơn của chính nó.</li>
+                <li><strong>Two colors</strong>: Chuyển sắc hòa trộn giữa 2 màu (VD: Đỏ - Vàng, Xanh - Trắng).</li>
+                <li><strong>Orientation</strong>: Căn giữa mẫu màu, hoặc chọn góc chuyển màu phù hợp.</li>
+            </ul>
+            <p>Rất phù hợp để tô màu khối ống trụ, mặt kính, giả lập bóng đổ 3D trong không gian 2D.</p>
+
+            <h2>3. Lệnh hiệu chỉnh mặt cắt HATCHEDIT (HE)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">HATCHEDIT</span><span class="cmd-shortcut">HE</span></div></div>
+            <p>Khi cần sửa loại vật liệu, góc nghiêng hay tỷ lệ của mặt cắt đã tạo, ta không cần xóa đi làm lại, mà chỉ cần:</p>
+            <div class="command-syntax">
+<span class="prompt">Cách 1:</span> <span class="input">Nhấp đúp chuột trái vào mẫu Hatch đã vẽ</span> 
+<span class="prompt">Cách 2:</span> <span class="input">Gõ lệnh HE ↵ → Chọn mẫu Hatch cần sửa</span> 
+            </div>
+            <p>Hộp thoại Hatch sẽ hiện lên lại để ta chỉnh sửa góc (Angle) hoặc tỷ lệ (Scale).</p>
+
+            <h2>4. Các mẫu Hatch thông dụng trong kỹ thuật</h2>
+            <table class="ref-table">
+                <thead><tr><th>Tên mẫu</th><th>Ý nghĩa</th><th>Ứng dụng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>ANSI31</strong></td><td>Gạch xiên 45° (kim loại)</td><td>Mặt cắt thép, gang</td></tr>
+                    <tr><td><strong>ANSI32</strong></td><td>Gạch xiên kép</td><td>Thép không gỉ</td></tr>
+                    <tr><td><strong>ANSI37</strong></td><td>Gạch + chấm</td><td>Đồng thau, đồng đỏ</td></tr>
+                    <tr><td><strong>AR-CONC</strong></td><td>Bê tông</td><td>Mặt cắt bê tông</td></tr>
+                    <tr><td><strong>AR-SAND</strong></td><td>Chấm (cát)</td><td>Đất, đá, gạch</td></tr>
+                    <tr><td><strong>EARTH</strong></td><td>Đường ngang</td><td>Đất nền</td></tr>
+                    <tr><td><strong>GRASS</strong></td><td>Nét ngắn vạch dọc</td><td>Mặt cắt cỏ/thực vật</td></tr>
+                </tbody>
+            </table>
+
+            <h2>5. Hatch Origin — Gốc mẫu Hatch</h2>
+            <p>Khi mẫu Hatch (như gạch AR-BRSTD) bị lệch, cần chỉnh lại gốc:</p>
+            <div class="command-syntax">
+<span class="prompt">Trong hộp thoại Hatch:</span>
+<span class="comment">Mở rộng mục "Hatch Origin"</span>
+<span class="comment">Chọn "Specified Origin" → Click to set new origin</span>
+<span class="comment">→ Pick góc dưới trái vùng hatch</span>
+            </div>
+
+            <h2>6. Annotative Hatch — Mặt cắt theo tỷ lệ</h2>
+            <p>Khi bản vẽ dùng nhiều Viewport với tỷ lệ khác nhau, <strong>Annotative Hatch</strong> tự động điều chỉnh mật độ gạch theo tỷ lệ viewport.</p>
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Bật Annotative cho Hatch</div><div class="info-text">Trong hộp thoại Hatch, check ô <strong>Annotative</strong>. Khi zoom in/out trong Viewport, mẫu Hatch sẽ giữ nguyên mật độ so với khổ giấy in.</div></div></div>
+
+            <div class="chapter-nav">
+                <a href="chuong9.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Quản Lý Theo Lớp</span></div></a>
+                <a href="chuong11.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Ghi Văn Bản - Text</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

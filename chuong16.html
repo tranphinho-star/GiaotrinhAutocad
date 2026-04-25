@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 16: Tạo hình cơ bản 3D (Khối và Mặt) | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html" class="active"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 16 (3D)</span>
+                <h1>Tạo Từng Mặt và Từng Khối Sơ Cấp 3D</h1>
+                <p class="chapter-desc">Hệ thống các lệnh cơ bản nhất để xây dựng hình không gian (Bề mặt rỗng và Khối cơ bản).</p>
+            </div>
+
+            <h2>1. Tạo hình từ các khối Surfaces cơ bản (Rỗng)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">3D SURFACES</span><span class="cmd-shortcut">3D</span></div></div>
+            <p>Menu <code>Draw / Surfaces / 3D surfaces</code>. Lệnh gõ <code>3D</code>. Hệ thống cung cấp các khối đa diện nhưng KHÔNG CÓ RUỘT (Chỉ có bề màng bao quanh).</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Tên Hình</th><th>Mô tả cách tạo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Box (B)</strong></td><td>Hình hộp: Tọa độ góc, dài, rộng, cao, góc xoay. Nếu chọn Cube thì tự thành khối vuông.</td></tr>
+                        <tr><td><strong>Cone (C)</strong></td><td>Hình nón/chóp: Chọn chóp nón nhọn (Radius top = 0) hoặc chóp lăng trụ (Chỉ có mặt hông).</td></tr>
+                        <tr><td><strong>Dish (DI)</strong></td><td>Hình chảo (½ Cầu nửa ngửa lên): Cần Tâm, Bán kính, số lưới dọc, số lưới ngang.</td></tr>
+                    </tbody>
+                </table>
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Tên Hình</th><th>Mô tả cách tạo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Dome (DO)</strong></td><td>Hình bát (½ Cầu úp xuống): Cần Tâm, Bán kính, số mảnh đứng/ngang.</td></tr>
+                        <tr><td><strong>Sphere (S)</strong></td><td>Hình quả cầu tròn: Cần Tâm và Bán kính R.</td></tr>
+                        <tr><td><strong>Torus (T)</strong></td><td>Hình vòng xuyến (Lốp xăm): Tọa độ tâm xuyến, R lớn (vòng bán kính lớn chảo lõi), R nhỏ (tiết diện xoay nòng).</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="margin-top: 20px;">Ngoài ra còn có <code>Pyramid (P)</code>: Vẽ kim tự tháp khối chóp chóp cụt, <code>Mesh (M)</code>: Lưới bề mặt qua 4 điểm góc, <code>Wedge (W)</code>: Khối hình nêm (Cây Chêm).</p>
+
+
+            <h2>2. Lệnh Vẽ Mặt Đơn & Quy Tắc Khung Dây Lưới Lưới (MESH)</h2>
+            
+            <h3>Mặt phẳng 3D bằng 3DFACE</h3>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">3DFACE</span> ↵ (Draw/Surfaces/3D Face)
+<span class="prompt">First point:</span> Chọn góc 1
+<span class="prompt">Second point:</span> Chọn góc 2
+<span class="prompt">Third point:</span> Chọn góc 3
+<span class="prompt">Fourth point:</span> Chọn góc 4 (nhấn Enter tạo bề mặt tam giác nếu bỏ qua 4)
+            </div>
+            <p>Mỗi mặt là một đối tượng màng độc lập, tạo nên các thành vách (Không thể nổ EXPLODE). Lệnh <code>EDGE</code> dùng để ẩn hoặc hiện (Select Edge -> Display) các đường viền gân màng đan nhau của 3DFACE.</p>
+
+
+            <h3>Lưới 4 Cạnh Khép Kín (EDGESURF)</h3>
+            <p>Màng lưới giăng kín 4 Cạnh giăng nhau dính tại 4 đỉnh chung.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">EDGESURF</span> ↵ 
+<span class="prompt">Select edge 1:</span> nhấp cạnh 1 quyết định chiều M (biến lưới Surftab1)
+<span class="prompt">Select edge 2:</span> nhấp cạnh 2 quyết định chiều N (biến lưới Surftab2)
+            </div>
+
+            <h3>Mặt tròn xoay (REVSURF)</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">Revolved Surface</span><span class="cmd-shortcut">REVSURF</span></div></div>
+            <p>Tạo mặt bao tròn xoay bằng cách quay 1 biên dạng (đường sinh) vòng qua 1 đoạn thẳng (Trục xoay).</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">REVSURF</span> ↵ 
+<span class="prompt">Select path curve:</span> nhấp đường sinh
+<span class="prompt">Select axis of revolution:</span> nhấp trục xoay (Line)
+<span class="prompt">Start angle:</span> Góc ban đầu (mặc định 0).
+<span class="prompt">Included angle (<full circle>):</span> Nhấn Enter để quay kín 360 độ vòng tròn.
+            </div>
+
+            <div class="info-box warning"><span class="icon">🏆</span><div><div class="info-title">SURFTAB1 và SURFTAB2</div><div class="info-text">Số lượng lưới chia chẻ các mặt này ra được tùy thuộc vào 2 biến hệ thống <b>Surftab1</b> và <b>Surftab2</b>. Mặc định là 6 x 6. Trước khi vẽ màng xoay, bạn phải gõ biến để tăng lên ví dụ "24" để bề mặt mịn, không bị gãy khấc đa giác nát.</div></div></div>
+
+            <h2>3. Các loại Surface nâng cao</h2>
+
+            <h3>RULESURF — Mặt lưới qua 2 đường sinh</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">RULED SURFACE</span><span class="cmd-shortcut">RULESURF</span></div></div>
+            <p>Vẽ mặt lưới nối bởi các đường sinh tựa lên 2 đường chuẩn. Mật độ đường sinh thay đổi bằng biến <code>Surftab1</code>.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">RULESURF</span> ↵
+<span class="prompt">Select first defining curve:</span> Nhấp đường chuẩn 1
+<span class="prompt">Select second defining curve:</span> Nhấp đường chuẩn 2
+            </div>
+
+            <h3>TABSURF — Mặt trụ đùn theo vector</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">TABULATED SURFACE</span><span class="cmd-shortcut">TABSURF</span></div></div>
+            <p>Mặt trụ tạo bởi đường chuẩn (curve) và 1 đường thẳng vector định hướng đùn. Mật độ đường sinh = biến <code>Surftab1</code>.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">TABSURF</span> ↵
+<span class="prompt">Select path curve:</span> Nhấp đường chuẩn (Pline, Spline, Arc, Circle...)
+<span class="prompt">Select direction vector:</span> Nhấp đoạn thẳng (Line) làm hướng đùn
+            </div>
+
+            <h3>3DMESH — Lưới đa giác M×N tự do</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">3D MESH</span><span class="cmd-shortcut">3DMESH</span></div></div>
+            <p>Vẽ mặt lưới đa giác 3 chiều bằng cách cho số đỉnh theo 2 hướng M, N và toạ độ từng đỉnh. Số đỉnh tối đa 256.</p>
+
+            <h3>PFACE — Polygon Face</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">POLYFACE MESH</span><span class="cmd-shortcut">PFACE</span></div></div>
+            <p>Tạo mặt polygon 3D gồm nhiều mặt phẳng đa giác Polyface ghép với nhau tạo thành lưới — linh hoạt hơn 3DFACE vì cho phép ghép nhiều mặt liền mạch.</p>
+
+            <div class="chapter-nav">
+                <a href="chuong15.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Tọa Độ 3D</span></div></a>
+                <a href="chuong17.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Khối Rắn & Phép Toán Boolean</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

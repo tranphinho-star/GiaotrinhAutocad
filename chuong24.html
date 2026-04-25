@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 24: Bản Vẽ Kỹ Thuật | AutoCAD</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav"><li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li><li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ</a></li><li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi</a></li><li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li><li><a href="chuong14.html"><span class="nav-number">14</span> Phím tắt</a></li><li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li><li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li><li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li><li><a href="chuong23.html"><span class="nav-number">23</span> Ren Bulong</a></li><li><a href="chuong24.html" class="active"><span class="nav-number">24</span> Bản vẽ KT</a></li><li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li><li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li></ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 24</span>
+                <h1>Bản Vẽ Kỹ Thuật Hoàn Chỉnh</h1>
+                <p class="chapter-desc">Working Drawings: bản vẽ lắp ráp, chi tiết, bảng kê, khung tên và Layout.</p>
+            </div>
+
+            <h2>1. Phân loại bản vẽ</h2>
+            <table class="ref-table">
+                <thead><tr><th>Loại</th><th>Tiếng Anh</th><th>Mục đích</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Bản vẽ lắp ráp</strong></td><td>Assembly Drawing</td><td>Thể hiện vị trí các chi tiết trong cụm lắp</td></tr>
+                    <tr><td><strong>Bản vẽ chi tiết</strong></td><td>Detail Drawing</td><td>Đầy đủ thông tin gia công 1 chi tiết</td></tr>
+                    <tr><td><strong>Bản vẽ bố cục</strong></td><td>Design Layout</td><td>Phác thảo ý tưởng thiết kế</td></tr>
+                </tbody>
+            </table>
+
+            <h2>2. Khung tên bản vẽ (Title Block)</h2>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 550 160" style="max-width:550px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="530" height="140" fill="none" stroke="#0696D7" stroke-width="2"/>
+              <line x1="10" y1="45" x2="540" y2="45" stroke="#0696D7" stroke-width="1"/>
+              <line x1="10" y1="80" x2="540" y2="80" stroke="#0696D7" stroke-width="1"/>
+              <line x1="10" y1="115" x2="540" y2="115" stroke="#0696D7" stroke-width="1"/>
+              <line x1="180" y1="10" x2="180" y2="80" stroke="#0696D7" stroke-width="1"/>
+              <line x1="380" y1="10" x2="380" y2="80" stroke="#0696D7" stroke-width="1"/>
+              <line x1="270" y1="80" x2="270" y2="150" stroke="#0696D7" stroke-width="1"/>
+              <text x="95" y="32" fill="#FF9800" font-size="11" text-anchor="middle" font-weight="bold">CÔNG TY</text>
+              <text x="280" y="32" fill="#4CAF50" font-size="11" text-anchor="middle" font-weight="bold">TÊN BẢN VẼ</text>
+              <text x="460" y="32" fill="#E040FB" font-size="11" text-anchor="middle" font-weight="bold">SỐ BẢN VẼ</text>
+              <text x="30" y="65" fill="#aaa" font-size="9">Drawn: Nguyễn A</text>
+              <text x="200" y="65" fill="#aaa" font-size="9">Date: 15/03/2026</text>
+              <text x="400" y="65" fill="#aaa" font-size="9">Scale: 1:1 | Sheet: 1/3</text>
+              <text x="30" y="100" fill="#aaa" font-size="9">Rev A: Initial release</text>
+              <text x="290" y="100" fill="#aaa" font-size="9">Dung sai: ±0.05 | Góc: ±0.5°</text>
+              <text x="30" y="135" fill="#aaa" font-size="9">Checked: Trần B</text>
+              <text x="290" y="135" fill="#aaa" font-size="9">Vật liệu: Steel AISI 1020</text>
+            </svg>
+            </div>
+
+            <h2>3. Bảng kê chi tiết (Parts List/BOM)</h2>
+            <table class="ref-table">
+                <thead><tr><th>Item</th><th>Part No.</th><th>Mô tả</th><th>Vật liệu</th><th>SL</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>AX-001</td><td>Trục chính</td><td>Steel 4140</td><td>1</td></tr>
+                    <tr><td>2</td><td>AX-002</td><td>Bạc đạn</td><td>Bronze</td><td>2</td></tr>
+                    <tr><td>3</td><td>AX-003</td><td>Bulong M10×35</td><td>Grade 8.8</td><td>6</td></tr>
+                </tbody>
+            </table>
+
+            <h2>4. Tạo Drawing Template (.dwt)</h2>
+            <div class="command-syntax">
+<span class="prompt">B1:</span> Thiết lập Units, Limits (A3: 420×297)
+<span class="prompt">B2:</span> Vẽ khung bản vẽ bằng RECTANG (cách lề 10mm)
+<span class="prompt">B3:</span> Vẽ khung tên góc dưới phải (~180×60)
+<span class="prompt">B4:</span> Tạo Attributes (ATTDEF) cho các ô thay đổi
+<span class="prompt">B5:</span> Save As → chọn .dwt (Drawing Template)
+            </div>
+
+            <h2>5. Layout và Paper Space</h2>
+            <div class="command-syntax">
+<span class="prompt">Chuyển Layout:</span> Click tab "Layout1" hoặc TILEMODE=0
+<span class="prompt">Tạo Viewport:</span> MVIEW ↵ → kéo vùng hiển thị
+<span class="prompt">Set tỷ lệ:</span> Z → 1/2XP (tỷ lệ 1:2)
+<span class="comment">Lock viewport: nhấp phải → Display Locked → Yes</span>
+            </div>
+
+            <h2>6. Bản vẽ chi tiết cần có</h2>
+            <ul>
+                <li>✅ Đủ hình chiếu mô tả hình dạng</li>
+                <li>✅ Mặt cắt nếu cần thiết</li>
+                <li>✅ Đầy đủ kích thước và dung sai</li>
+                <li>✅ Ký hiệu độ nhám bề mặt</li>
+                <li>✅ Vật liệu và xử lý nhiệt</li>
+                <li>✅ Ghi chú sản xuất (notes)</li>
+            </ul>
+
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Tỷ lệ Viewport</div><div class="info-text">Gõ <code>Z</code> → <code>1/2XP</code> = tỷ lệ 1:2. Gõ <code>2XP</code> = tỷ lệ 2:1. Lock viewport sau khi set xong.</div></div></div>
+
+            <div class="chapter-nav">
+                <a href="chuong23.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Ren & Bulong</span></div></a>
+                <a href="chuong25.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Bánh Răng & Cam</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

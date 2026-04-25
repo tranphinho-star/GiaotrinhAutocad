@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 11: Văn Bản & Ký Hiệu | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html" class="active"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 11</span>
+                <h1>Trình Bày Văn Bản - Text</h1>
+                <p class="chapter-desc">Tạo kiểu chữ (Style), viết chữ 1 dòng (Dtext), nhiều dòng (Mtext) và các ký hiệu đặc biệt.</p>
+            </div>
+
+            <h2>1. Định kiểu chữ STYLE (ST)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">STYLE</span><span class="cmd-shortcut">ST</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                <tbody><tr><td>Format → Text Style...</td><td><code>Style</code> hoặc <code>ST</code></td></tr></tbody></table>
+            </div>
+            <p>Trước khi viết chữ, ta phải định nghĩa kiểu chữ trong hộp thoại <strong>Text Style</strong>:</p>
+            
+            <table class="ref-table">
+                <thead><tr><th>Mục</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>New</strong></td><td>Tạo kiểu mới (VD: "Chunho", "Chuto", "TieuDe").</td></tr>
+                    <tr><td><strong>Font Name</strong></td><td>Chọn tên font. NÊN DÙNG các font hệ thống như <i>Arial, Times New Roman, .VnTime</i> hoặc font CAD có cờ (<i>vntime.shx</i>) để tránh lỗi font tiếng Việt.</td></tr>
+                    <tr><td><strong>Height</strong></td><td>Chiều cao chữ (Thường <b>để bằng 0</b> để khi viết ta có thể tự do nhập thông số chiều cao khác nhau).</td></tr>
+                    <tr><td><strong>Width Factor</strong></td><td>Tỷ lệ rộng/cao của chữ (chuẩn là 1.0, nhập 0.8 để chữ hẹp lại).</td></tr>
+                    <tr><td><strong>Oblique Angle</strong></td><td>Góc nghiêng của chữ (Text italic).</td></tr>
+                    <tr><td><strong>Effects</strong></td><td>Lật ngược chữ, lật trái phải, viết thẳng đứng (vertical do font .shx cung cấp).</td></tr>
+                </tbody>
+            </table>
+
+            <h2>2. Lệnh viết chữ DTEXT (DT) - Single Line Text</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">DTEXT</span><span class="cmd-shortcut">DT</span></div></div>
+            <p>Viết chữ đơn dòng. Thích hợp viết nhãn, chú thích ngắn.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">DT</span> ↵
+<span class="prompt">Specify start point of text or [Justify/Style]:</span> <span class="comment">Chọn điểm đặt chữ</span>
+<span class="prompt">Specify height &lt;2.5000&gt;:</span> <span class="input">10</span>    <span class="comment">Nhập chiều cao chữ</span>
+<span class="prompt">Specify rotation angle of text &lt;0&gt;:</span> <span class="input">0</span> ↵ <span class="comment">Góc nghiêng dòng chữ</span>
+<span class="prompt">Enter text:</span>                  <span class="comment">Gõ dòng chữ vào (Nhấn Enter 2 lần để thoát)</span>
+            </div>
+
+            <h2>3. Lệnh viết đoạn văn MTEXT (T, MT) - Multi Line Text</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">MTEXT</span><span class="cmd-shortcut">T, MT</span></div></div>
+            <p>Viết văn bản nhiều dòng như Word. Rất mạnh mẽ với thanh công cụ định dạng đi kèm.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">T</span> ↵
+<span class="prompt">Specify first corner:</span>  <span class="comment">Chọn góc 1 của khung văn bản</span>
+<span class="prompt">Specify opposite corner:</span> <span class="comment">Chọn góc 2 (đáy) của khung văn bản</span>
+            </div>
+            <p>Sau đó hộp thoại Text Formatting hiện ra. Ta có thể bôi đen chữ để đổi Font, Color, in đậm, in nghiêng, chèn phân số (Stack), hay chia cột như Word.</p>
+
+            <h2>4. Hiệu chỉnh văn bản DED / ED</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">DDEDIT</span><span class="cmd-shortcut">ED</span></div></div>
+            <p>Sửa lỗi đoạn văn bản đã đánh:</p>
+            <ul>
+                <li><strong>Cách 1:</strong> Gõ <code>ED</code> ↵ → Nhấp chuột vào dòng chữ cần sửa.</li>
+                <li><strong>Cách 2 (Nhanh nhất):</strong> Click <b>đúp chuột trái</b> vào dòng văn bản cần lấy lại nội dung. (Áp dụng cho Dtext và Mtext).</li>
+            </ul>
+
+            <h2>5. Chèn các ký hiệu đặc biệt</h2>
+            <p>Khi dùng lệnh DTEXT (DT), nếu gõ font không bắt được ký hiệu, dùng tổ hợp phím sau (hoạt động tốt với các font mã xược (gõ TCVN) hoặc unicode):</p>
+            <table class="ref-table">
+                <thead><tr><th>Cú pháp nhập</th><th>Hiển thị</th><th>Ý nghĩa</th></tr></thead>
+                <tbody>
+                    <tr><td><code>%%c</code></td><td>Ø</td><td>Ký hiệu đường kính (Phi)</td></tr>
+                    <tr><td><code>%%d</code></td><td>°</td><td>Ký hiệu Độ (Góc)</td></tr>
+                    <tr><td><code>%%p</code></td><td>±</td><td>Ký hiệu Cộng/Trừ (Dung sai)</td></tr>
+                    <tr><td><code>%%u</code>TEXT<code>%%u</code></td><td><u>TEXT</u></td><td>Gạch chân (Underline) đoạn "TEXT"</td></tr>
+                    <tr><td><code>%%o</code>TEXT<code>%%o</code></td><td><span style="text-decoration:overline">TEXT</span></td><td>Gạch trên đỉnh chữ (Overline)</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Trong lệnh MTEXT (T)</div><div class="info-text">Chỉ cần click chuột phải trong vùng gõ chữ → Chọn <b>Symbol</b> → Sẽ có bảng danh sách chọn nhanh Phi, Độ, ± và hàng trăm ký hiệu từ Character Map.</div></div></div>
+
+            <div class="chapter-nav">
+                <a href="chuong10.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Tạo Hình Cắt Mặt Cắt</span></div></a>
+                <a href="chuong12.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Kích Thước Bản Vẽ</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 2: Các Lệnh Về File | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content">
+        <a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a>
+        <nav><ul class="nav-links">
+            <li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li>
+            <li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li>
+        </ul></nav>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header"><h3>📚 Mục Lục</h3></div>
+            <ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html" class="active"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 2</span>
+                <h1>Các Lệnh Về File</h1>
+                <p class="chapter-desc">Quản lý file bản vẽ: tạo mới, lưu, mở, đóng và thoát khỏi AutoCAD.</p>
+            </div>
+
+            <h2>1. Tạo File bản vẽ mới - Lệnh NEW</h2>
+            <div class="command-box">
+                <div class="cmd-header">
+                    <span class="cmd-label">NEW</span>
+                    <span class="cmd-shortcut">Ctrl + N</span>
+                </div>
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Menu Bar</th><th>Nhập lệnh</th><th>Toolbar</th></tr></thead>
+                    <tbody><tr><td>File → New...</td><td><code>New</code> hoặc <kbd>Ctrl + N</kbd></td><td>📄 (New)</td></tr></tbody>
+                </table>
+            </div>
+            <p>Xuất hiện hộp thoại <strong>Select Template</strong>. Chọn biểu tượng <code>acad</code>, sau đó nhấn <strong>OK</strong> hoặc <kbd>Enter</kbd>.</p>
+
+            <h2>2. Lưu File bản vẽ - Lệnh SAVE</h2>
+            <div class="command-box">
+                <div class="cmd-header">
+                    <span class="cmd-label">SAVE</span>
+                    <span class="cmd-shortcut">Ctrl + S</span>
+                </div>
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Menu Bar</th><th>Nhập lệnh</th><th>Toolbar</th></tr></thead>
+                    <tbody><tr><td>File → Save...</td><td><code>Save</code> hoặc <kbd>Ctrl + S</kbd></td><td>💾 (Save)</td></tr></tbody>
+                </table>
+            </div>
+            <h3>Trường hợp bản vẽ chưa được ghi thành file:</h3>
+            <ol>
+                <li>Xuất hiện hộp thoại <strong>Save Drawing As</strong></li>
+                <li>Chọn thư mục, ổ đĩa ở mục <strong>Save In</strong></li>
+                <li>Đặt tên file vào ô <strong>File Name</strong></li>
+                <li>Chọn ô <strong>Files of type</strong> để chọn ghi file với phiên bản AutoCAD trước (nếu cần)</li>
+                <li>Nhấn nút <strong>SAVE</strong> hoặc <kbd>Enter</kbd></li>
+            </ol>
+            <h3>Trường hợp bản vẽ đã được ghi:</h3>
+            <p>Chỉ cần nhấp chuột vào biểu tượng Save trên thanh công cụ hoặc <kbd>Ctrl + S</kbd>, AutoCAD sẽ tự động cập nhật.</p>
+            
+            <div class="info-box warning">
+                <span class="icon">⚠️</span>
+                <div>
+                    <div class="info-title">Lưu ý</div>
+                    <div class="info-text">Nếu thoát khỏi AutoCAD mà chưa ghi bản vẽ, sẽ xuất hiện hộp thoại hỏi có ghi bản vẽ không. Chọn <strong>YES</strong> để lưu.</div>
+                </div>
+            </div>
+
+            <h2>3. Mở bản vẽ có sẵn - Lệnh OPEN</h2>
+            <div class="command-box">
+                <div class="cmd-header">
+                    <span class="cmd-label">OPEN</span>
+                    <span class="cmd-shortcut">Ctrl + O</span>
+                </div>
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Menu Bar</th><th>Nhập lệnh</th><th>Toolbar</th></tr></thead>
+                    <tbody><tr><td>File → Open...</td><td><code>Open</code> hoặc <kbd>Ctrl + O</kbd></td><td>📂 (Open)</td></tr></tbody>
+                </table>
+            </div>
+            <ol>
+                <li>Xuất hiện hộp thoại <strong>Select File</strong></li>
+                <li>Chọn thư mục và ổ đĩa chứa file cần mở: <strong>Look in</strong></li>
+                <li>Chọn kiểu file cần mở: <strong>File of type</strong></li>
+                <li>Chọn file cần mở trong khung</li>
+                <li>Nhấn nút <strong>OPEN</strong> hoặc <kbd>Enter</kbd></li>
+            </ol>
+
+            <h2>4. Đóng bản vẽ - Lệnh CLOSE</h2>
+            <div class="command-box">
+                <div class="cmd-header"><span class="cmd-label">CLOSE</span></div>
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                    <tbody><tr><td>File → Close</td><td><code>Close</code></td></tr></tbody>
+                </table>
+            </div>
+            <p>Nếu bản vẽ có sửa đổi, xuất hiện hộp thoại nhắc nhở:</p>
+            <ul>
+                <li><strong>YES:</strong> Ghi thay đổi trước khi đóng</li>
+                <li><strong>NO:</strong> Không ghi thay đổi</li>
+                <li><strong>Cancel:</strong> Huỷ bỏ lệnh Close</li>
+            </ul>
+
+            <h2>5. Thoát khỏi AutoCAD - Lệnh EXIT</h2>
+            <div class="command-box">
+                <div class="cmd-header">
+                    <span class="cmd-label">EXIT / QUIT</span>
+                    <span class="cmd-shortcut">Ctrl + Q</span>
+                </div>
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Menu Bar</th><th>Nhập lệnh</th><th>Phím tắt</th></tr></thead>
+                    <tbody><tr><td>File → Exit</td><td><code>Exit</code>, <code>Quit</code></td><td><kbd>Ctrl + Q</kbd> hoặc <kbd>Alt + F4</kbd></td></tr></tbody>
+                </table>
+            </div>
+            <p>Hoặc nhấn nút dấu X ở góc trên bên phải cửa sổ. Nếu chưa lưu sẽ có hộp thoại nhắc nhở tương tự lệnh Close.</p>
+
+            <h2>📋 Tổng hợp lệnh File</h2>
+            <table class="ref-table">
+                <thead><tr><th>Lệnh</th><th>Phím tắt</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><code>New</code></td><td><kbd>Ctrl + N</kbd></td><td>Tạo file bản vẽ mới</td></tr>
+                    <tr><td><code>Save</code></td><td><kbd>Ctrl + S</kbd></td><td>Lưu file bản vẽ</td></tr>
+                    <tr><td><code>Open</code></td><td><kbd>Ctrl + O</kbd></td><td>Mở bản vẽ có sẵn</td></tr>
+                    <tr><td><code>Close</code></td><td>—</td><td>Đóng bản vẽ</td></tr>
+                    <tr><td><code>Exit/Quit</code></td><td><kbd>Ctrl + Q</kbd></td><td>Thoát khỏi AutoCAD</td></tr>
+                </tbody>
+            </table>
+
+            <div class="chapter-nav">
+                <a href="chuong1.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Mở Đầu - Giới Thiệu</span></div></a>
+                <a href="chuong3.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Hệ Toạ Độ & Truy Bắt Điểm</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

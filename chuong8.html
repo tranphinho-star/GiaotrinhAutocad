@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 8: Biến Đổi & Sao Chép Hình | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html" class="active"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 8</span>
+                <h1>Các Lệnh Biến Đổi & Sao Chép Hình</h1>
+                <p class="chapter-desc">7 lệnh biến đổi và sao chép: Move, Copy, Rotate, Scale, Mirror, Stretch, Array.</p>
+            </div>
+
+            <h2>1. Lệnh di dời MOVE (M)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">MOVE</span><span class="cmd-shortcut">M</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">M</span> ↵
+<span class="prompt">Select objects:</span>             <span class="comment">Chọn đối tượng cần di chuyển</span>
+<span class="prompt">Select objects:</span> ↵            <span class="comment">Enter kết thúc chọn</span>
+<span class="prompt">Specify base point:</span>         <span class="comment">Chọn điểm gốc (điểm bắt đầu di chuyển)</span>
+<span class="prompt">Specify second point:</span>       <span class="comment">Chọn điểm đích</span>
+            </div>
+
+            <h2>2. Lệnh sao chép COPY (CO)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">COPY</span><span class="cmd-shortcut">CO</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">CO</span> ↵
+<span class="prompt">Select objects:</span>            <span class="comment">Chọn đối tượng cần sao chép</span>
+<span class="prompt">Select objects:</span> ↵           <span class="comment">Enter kết thúc chọn</span>
+<span class="prompt">Specify base point:</span>        <span class="comment">Chọn điểm gốc</span>
+<span class="prompt">Specify second point:</span>      <span class="comment">Chọn vị trí đặt bản sao</span>
+<span class="prompt">Specify second point:</span>      <span class="comment">Tiếp tục sao chép hoặc Enter kết thúc</span>
+            </div>
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Multiple Copy</div><div class="info-text">Trong AutoCAD 2007, lệnh Copy mặc định cho phép sao chép nhiều lần liên tiếp. Nhấn Enter để kết thúc.</div></div></div>
+
+            <h2>3. Lệnh quay đối tượng ROTATE (RO)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">ROTATE</span><span class="cmd-shortcut">RO</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">RO</span> ↵
+<span class="prompt">Select objects:</span>             <span class="comment">Chọn đối tượng</span>
+<span class="prompt">Select objects:</span> ↵
+<span class="prompt">Specify base point:</span>         <span class="comment">Chọn điểm tâm quay</span>
+<span class="prompt">Specify rotation angle</span>
+<span class="prompt">or [Copy/Reference]:</span> <span class="input">45</span>     <span class="comment">Nhập góc quay (45°)</span>
+            </div>
+            <p>Góc dương: ngược chiều kim đồng hồ. Góc âm: theo chiều kim đồng hồ. Option <code>Copy</code> cho phép giữ nguyên bản gốc.</p>
+
+            <h2>4. Lệnh thu phóng đối tượng SCALE (SC)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">SCALE</span><span class="cmd-shortcut">SC</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">SC</span> ↵
+<span class="prompt">Select objects:</span>               <span class="comment">Chọn đối tượng</span>
+<span class="prompt">Select objects:</span> ↵
+<span class="prompt">Specify base point:</span>           <span class="comment">Chọn điểm gốc thu phóng</span>
+<span class="prompt">Specify scale factor</span>
+<span class="prompt">or [Copy/Reference]:</span> <span class="input">2</span>       <span class="comment">Hệ số: 2 = gấp đôi, 0.5 = nửa</span>
+            </div>
+
+            <h2>5. Lệnh đối xứng qua trục MIRROR (MI)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">MIRROR</span><span class="cmd-shortcut">MI</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">MI</span> ↵
+<span class="prompt">Select objects:</span>                  <span class="comment">Chọn đối tượng</span>
+<span class="prompt">Select objects:</span> ↵
+<span class="prompt">Specify first point of mirror line:</span>   <span class="comment">Điểm 1 trục đối xứng</span>
+<span class="prompt">Specify second point of mirror line:</span>  <span class="comment">Điểm 2 trục đối xứng</span>
+<span class="prompt">Erase source objects? [Yes/No]:</span> <span class="input">N</span>    <span class="comment">N = giữ bản gốc</span>
+            </div>
+            <div class="info-box warning"><span class="icon">⚠️</span><div><div class="info-title">Biến MIRRTEXT</div><div class="info-text">Nếu giá trị <code>MIRRTEXT = 1</code>, text sẽ bị đảo ngược. Đặt <code>MIRRTEXT = 0</code> để text không bị đảo.</div></div></div>
+
+            <h2>6. Lệnh dời và kéo giãn STRETCH (S)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">STRETCH</span><span class="cmd-shortcut">S</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">S</span> ↵
+<span class="prompt">Select objects (Crossing):</span>  <span class="comment">Phải dùng cửa sổ Crossing!</span>
+<span class="prompt">Select objects:</span> ↵
+<span class="prompt">Specify base point:</span>         <span class="comment">Điểm gốc</span>
+<span class="prompt">Specify second point:</span>       <span class="comment">Điểm đích (kéo giãn)</span>
+            </div>
+            <div class="info-box warning"><span class="icon">⚠️</span><div><div class="info-title">Quan trọng</div><div class="info-text">Lệnh Stretch <strong>bắt buộc</strong> phải chọn đối tượng bằng cửa sổ <strong>Crossing</strong> (kéo từ phải sang trái). Đỉnh nào nằm trong Crossing sẽ bị di chuyển, đỉnh ngoài sẽ giữ nguyên.</div></div></div>
+
+            <h2>7. Lệnh sao chép dãy ARRAY (AR)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">ARRAY</span><span class="cmd-shortcut">AR</span></div></div>
+            <p>Có 2 kiểu Array:</p>
+            
+            <h3>a. Rectangular Array (Dãy chữ nhật)</h3>
+            <p>Sao chép đối tượng theo hàng và cột.</p>
+            <table class="ref-table">
+                <thead><tr><th>Tham số</th><th>Ý nghĩa</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Rows</strong></td><td>Số hàng</td></tr>
+                    <tr><td><strong>Columns</strong></td><td>Số cột</td></tr>
+                    <tr><td><strong>Row offset</strong></td><td>Khoảng cách giữa các hàng</td></tr>
+                    <tr><td><strong>Column offset</strong></td><td>Khoảng cách giữa các cột</td></tr>
+                    <tr><td><strong>Angle of array</strong></td><td>Góc nghiêng dãy</td></tr>
+                </tbody>
+            </table>
+
+            <h3>b. Polar Array (Dãy tròn)</h3>
+            <p>Sao chép đối tượng xoay quanh tâm.</p>
+            <table class="ref-table">
+                <thead><tr><th>Tham số</th><th>Ý nghĩa</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Center point</strong></td><td>Tâm xoay</td></tr>
+                    <tr><td><strong>Total number</strong></td><td>Tổng số bản sao (gồm cả bản gốc)</td></tr>
+                    <tr><td><strong>Angle to fill</strong></td><td>Góc tổng (360° = vòng tròn đầy)</td></tr>
+                    <tr><td><strong>Rotate items</strong></td><td>Xoay đối tượng theo hay không</td></tr>
+                </tbody>
+            </table>
+
+            <h2>📋 Tổng hợp lệnh biến đổi & sao chép</h2>
+            <table class="ref-table">
+                <thead><tr><th>Lệnh</th><th>Viết tắt</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><code>Move</code></td><td><code>M</code></td><td>Di dời đối tượng</td></tr>
+                    <tr><td><code>Copy</code></td><td><code>CO</code></td><td>Sao chép đối tượng</td></tr>
+                    <tr><td><code>Rotate</code></td><td><code>RO</code></td><td>Quay quanh điểm</td></tr>
+                    <tr><td><code>Scale</code></td><td><code>SC</code></td><td>Thu phóng theo tỷ lệ</td></tr>
+                    <tr><td><code>Mirror</code></td><td><code>MI</code></td><td>Đối xứng qua trục</td></tr>
+                    <tr><td><code>Stretch</code></td><td><code>S</code></td><td>Kéo giãn đối tượng</td></tr>
+                    <tr><td><code>Array</code></td><td><code>AR</code></td><td>Sao chép dãy (chữ nhật/tròn)</td></tr>
+                </tbody>
+            </table>
+
+            <h2>8. Grips — Chỉnh sửa nhanh bằng điểm nắm</h2>
+            <p>Click chọn đối tượng (không cần gọi lệnh) → xuất hiện các <strong>ô vuông xanh</strong> (grips). Click chọn 1 grip → nhấn <kbd>Space</kbd> xoay qua các chế độ:</p>
+            <table class="ref-table">
+                <thead><tr><th>Chế độ Grip</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>STRETCH</strong></td><td>Kéo dãn/dời grip đến vị trí mới</td></tr>
+                    <tr><td><strong>MOVE</strong></td><td>Di chuyển đối tượng từ grip đó</td></tr>
+                    <tr><td><strong>ROTATE</strong></td><td>Quay quanh grip</td></tr>
+                    <tr><td><strong>SCALE</strong></td><td>Thu phóng từ grip</td></tr>
+                    <tr><td><strong>MIRROR</strong></td><td>Đối xứng qua grip</td></tr>
+                </tbody>
+            </table>
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Copy nhanh bằng Grips</div><div class="info-text">Khi grip đang "nóng" (hot), nhấn <kbd>Ctrl</kbd> rồi click → sao chép đối tượng tại vị trí mới mà không mất bản gốc. Rất nhanh cho sao chép lặp lại.</div></div></div>
+
+            <h2>9. Tùy chọn Reference — Scale/Rotate theo tham chiếu</h2>
+            <p>Khi không biết góc quay chính xác nhưng biết 2 điểm chuẩn:</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">RO</span> ↵ → Chọn đối tượng → Base point
+<span class="prompt">Rotation angle [Reference]:</span> <span class="input">R</span> ↵
+<span class="prompt">Reference angle:</span> <span class="comment">Click 2 điểm xác định góc cũ</span>
+<span class="prompt">New angle:</span> <span class="input">0</span>  <span class="comment">← Quay đến góc mới (0 = nằm ngang)</span>
+            </div>
+            <p>Tương tự với <code>SCALE</code> → option <code>Reference</code>: cho phép scale từ chiều dài gốc sang chiều dài mong muốn.</p>
+
+            <h2>10. Lệnh ALIGN (AL) — Dời + Xoay + Scale một lần</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">ALIGN</span><span class="cmd-shortcut">AL</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">AL</span> ↵ → Chọn đối tượng ↵
+<span class="prompt">First source point:</span>  <span class="comment">Điểm gốc 1 trên đối tượng</span>
+<span class="prompt">First destination:</span>   <span class="comment">Điểm đích 1</span>
+<span class="prompt">Second source point:</span> <span class="comment">Điểm gốc 2 trên đối tượng</span>
+<span class="prompt">Second destination:</span>  <span class="comment">Điểm đích 2</span>
+<span class="prompt">Scale objects? [Yes/No]:</span> <span class="input">Y</span>
+            </div>
+
+            <div class="chapter-nav">
+                <a href="chuong7.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Lệnh Hiệu Chỉnh Tạo Hình</span></div></a>
+                <a href="chuong9.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Quản Lý Bản Vẽ Theo Lớp</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

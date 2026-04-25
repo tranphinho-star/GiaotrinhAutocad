@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 5: Các Lệnh Vẽ Cơ Bản | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html" class="active"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 5</span>
+                <h1>Các Lệnh Vẽ Cơ Bản</h1>
+                <p class="chapter-desc">13 lệnh vẽ cơ bản: Line, Circle, Arc, Pline, Polygon, Rectang, Ellipse, Spline, Mline, Point, Divide, Measure...</p>
+            </div>
+
+            <h2>1. Lệnh vẽ đường thẳng LINE (L)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">LINE</span><span class="cmd-shortcut">L</span></div></div>
+            <p>Đã học chi tiết ở <a href="chuong3.html">Chương 3</a>. Vẽ đoạn thẳng bằng cách xác định 2 điểm đầu và cuối.</p>
+
+            <h2>2. Lệnh vẽ đường tròn CIRCLE (C)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">CIRCLE</span><span class="cmd-shortcut">C</span></div></div>
+            <p>Đã học chi tiết ở <a href="chuong3.html">Chương 3</a>. 5 phương pháp: Tâm+R, 3P, 2P, TTR, TAN-TAN-TAN.</p>
+
+            <h2>3. Lệnh vẽ cung tròn ARC (A)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">ARC</span><span class="cmd-shortcut">A</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                <tbody><tr><td>Draw → Arc</td><td><code>Arc</code> hoặc <code>A</code></td></tr></tbody></table>
+            </div>
+            <p>Có nhiều phương pháp vẽ cung tròn. Dưới đây là <strong>3 phương pháp phổ biến nhất</strong>:</p>
+            
+            <h3>♦ Phương pháp 3 điểm (mặc định)</h3>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">A</span> ↵
+<span class="prompt">Specify start point:</span>           <span class="comment">Nhập điểm đầu</span>
+<span class="prompt">Specify second point:</span>          <span class="comment">Nhập điểm giữa trên cung</span>
+<span class="prompt">Specify end point:</span>             <span class="comment">Nhập điểm cuối</span>
+            </div>
+
+            <h3>♦ Start - Center - End (S,C,E)</h3>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">A</span> ↵
+<span class="prompt">Specify start point:</span>           <span class="comment">Nhập điểm đầu</span>
+<span class="prompt">Specify second point [CE]:</span> <span class="input">CE</span>  <span class="comment">Chọn Center</span>
+<span class="prompt">Specify center:</span>                <span class="comment">Nhập tâm cung</span>
+<span class="prompt">Specify end point [Angle]:</span>     <span class="comment">Nhập điểm cuối</span>
+            </div>
+
+            <h3>♦ Start - End - Radius (S,E,R)</h3>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">A</span> ↵
+<span class="prompt">Specify start point:</span>           <span class="comment">Nhập điểm đầu</span>
+<span class="prompt">Specify second point [CE]:</span> <span class="input">E</span>   <span class="comment">Chọn End</span>
+<span class="prompt">Specify end point:</span>             <span class="comment">Nhập điểm cuối</span>
+<span class="prompt">Specify [Angle/Direction/Radius]:</span> <span class="input">R</span> <span class="comment">Chọn Radius</span>
+<span class="prompt">Specify radius:</span> <span class="input">50</span>            <span class="comment">Bán kính = 50</span>
+            </div>
+
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 680 200" style="max-width:680px;width:100%;background:rgba(0,0,0,0.15);border-radius:12px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- 3-point arc -->
+              <path d="M 40 160 Q 110 40 180 160" fill="none" stroke="#4CAF50" stroke-width="2.5"/>
+              <circle cx="40" cy="160" r="4" fill="#4CAF50"/><text x="25" y="178" fill="#4CAF50" font-size="10">P1</text>
+              <circle cx="110" cy="60" r="4" fill="#4CAF50"/><text x="115" y="55" fill="#4CAF50" font-size="10">P2</text>
+              <circle cx="180" cy="160" r="4" fill="#4CAF50"/><text x="185" y="178" fill="#4CAF50" font-size="10">P3</text>
+              <text x="60" y="25" fill="#4CAF50" font-size="12" font-weight="bold">3-Point</text>
+              <!-- SCE arc -->
+              <path d="M 260 160 A 80 80 0 0 1 400 160" fill="none" stroke="#FF9800" stroke-width="2.5"/>
+              <circle cx="260" cy="160" r="4" fill="#FF9800"/><text x="240" y="178" fill="#FF9800" font-size="10">Start</text>
+              <circle cx="400" cy="160" r="4" fill="#FF9800"/><text x="405" y="178" fill="#FF9800" font-size="10">End</text>
+              <circle cx="330" cy="160" r="3" fill="#FF9800" stroke="#FF9800" stroke-dasharray="3"/>
+              <text x="310" y="178" fill="#FF9800" font-size="9">Center</text>
+              <line x1="330" y1="160" x2="330" y2="80" stroke="#FF9800" stroke-width="0.8" stroke-dasharray="3"/>
+              <text x="290" y="25" fill="#FF9800" font-size="12" font-weight="bold">Start-Center-End</text>
+              <!-- SER arc -->
+              <path d="M 480 160 A 70 70 0 0 1 620 160" fill="none" stroke="#E040FB" stroke-width="2.5"/>
+              <circle cx="480" cy="160" r="4" fill="#E040FB"/><text x="460" y="178" fill="#E040FB" font-size="10">Start</text>
+              <circle cx="620" cy="160" r="4" fill="#E040FB"/><text x="625" y="178" fill="#E040FB" font-size="10">End</text>
+              <text x="530" y="110" fill="#E040FB" font-size="10">R=70</text>
+              <text x="500" y="25" fill="#E040FB" font-size="12" font-weight="bold">Start-End-Radius</text>
+            </svg>
+            </div>
+
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Lưu ý quan trọng</div><div class="info-text">Cung tròn luôn được vẽ theo chiều <strong>ngược kim đồng hồ</strong> (mặc định). Để vẽ theo chiều kim đồng hồ, nhập bán kính hoặc góc âm. Dùng menu <strong>Draw → Arc</strong> để chọn nhanh phương pháp vẽ cụ thể.</div></div></div>
+
+            <h3>♦ TTR Circle - Đường tròn tiếp xúc</h3>
+            <p>Vẽ đường tròn <strong>tiếp xúc 2 đối tượng</strong> với bán kính cho trước (Tangent-Tangent-Radius):</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">C</span> ↵
+<span class="prompt">Specify center [3P/2P/Ttr]:</span> <span class="input">T</span>  <span class="comment">Chọn Ttr</span>
+<span class="prompt">Specify point on first tangent:</span>   <span class="comment">Chọn đối tượng tiếp xúc thứ 1</span>
+<span class="prompt">Specify point on second tangent:</span>  <span class="comment">Chọn đối tượng tiếp xúc thứ 2</span>
+<span class="prompt">Specify radius:</span> <span class="input">1.25</span>             <span class="comment">Bán kính đường tròn</span>
+            </div>
+
+            <h2>4. Lệnh vẽ đa tuyến PLINE (PL)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">PLINE</span><span class="cmd-shortcut">PL</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                <tbody><tr><td>Draw → Polyline</td><td><code>Pline</code> hoặc <code>PL</code></td></tr></tbody></table>
+            </div>
+            <p>Pline vẽ đường có bề rộng nét, gồm nhiều phân đoạn thẳng và cung tròn liên tiếp nhưng là <strong>một đối tượng duy nhất</strong>.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">PL</span> ↵
+<span class="prompt">Specify start point:</span>                  <span class="comment">Nhập điểm đầu</span>
+<span class="prompt">Specify next point [Arc/Halfwidth/</span>
+<span class="prompt">Length/Undo/Width]:</span>                   <span class="comment">Nhập điểm tiếp hoặc chọn option</span>
+            </div>
+            <table class="ref-table">
+                <thead><tr><th>Option</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><code>A</code> (Arc)</td><td>Chuyển sang vẽ cung tròn</td></tr>
+                    <tr><td><code>W</code> (Width)</td><td>Định bề rộng nét (đầu và cuối)</td></tr>
+                    <tr><td><code>H</code> (Halfwidth)</td><td>Định nửa bề rộng nét</td></tr>
+                    <tr><td><code>L</code> (Length)</td><td>Vẽ đoạn thẳng tiếp theo dài bằng L</td></tr>
+                    <tr><td><code>C</code> (Close)</td><td>Đóng đa tuyến</td></tr>
+                </tbody>
+            </table>
+
+            <h2>5. Lệnh vẽ đa giác đều POLYGON (POL)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">POLYGON</span><span class="cmd-shortcut">POL</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">POL</span> ↵
+<span class="prompt">Enter number of sides &lt;4&gt;:</span> <span class="input">6</span>   <span class="comment">Số cạnh (VD: 6 = lục giác)</span>
+<span class="prompt">Specify center of polygon:</span>       <span class="comment">Chọn tâm</span>
+<span class="prompt">Inscribed/Circumscribed [I/C]:</span> <span class="input">I</span> <span class="comment">I=Nội tiếp, C=Ngoại tiếp</span>
+<span class="prompt">Specify radius:</span> <span class="input">50</span>             <span class="comment">Bán kính</span>
+            </div>
+
+            <h2>6. Lệnh vẽ hình chữ nhật RECTANG (REC)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">RECTANG</span><span class="cmd-shortcut">REC</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">REC</span> ↵
+<span class="prompt">Specify first corner point:</span>  <span class="comment">Chọn góc thứ nhất</span>
+<span class="prompt">Specify other corner point:</span> <span class="input">@100,50</span> <span class="comment">Góc đối diện (100x50)</span>
+            </div>
+
+            <h2>7. Lệnh vẽ Elip ELLIPSE (EL)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">ELLIPSE</span><span class="cmd-shortcut">EL</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">EL</span> ↵
+<span class="prompt">Specify axis endpoint [Arc/Center]:</span> <span class="comment">Điểm đầu trục 1</span>
+<span class="prompt">Specify other endpoint of axis:</span>     <span class="comment">Điểm cuối trục 1</span>
+<span class="prompt">Specify distance to other axis:</span>     <span class="comment">Khoảng cách trục 2</span>
+            </div>
+
+            <h2>8. Lệnh vẽ đường cong SPLINE (SPL)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">SPLINE</span><span class="cmd-shortcut">SPL</span></div></div>
+            <p>Vẽ đường cong trơn đi qua các điểm xác định. Thường dùng để vẽ đường đồng mức, biểu đồ.</p>
+
+            <h2>9. Lệnh MLINE - Vẽ đường song song</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">MLINE</span></div></div>
+            <p>Vẽ nhiều đường song song cùng lúc. Dùng <code>MlStyle</code> để tạo kiểu và <code>MlEdit</code> để hiệu chỉnh.</p>
+
+            <h2>10. Lệnh vẽ điểm POINT (PO)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">POINT</span><span class="cmd-shortcut">PO</span></div></div>
+            <p>Vẽ điểm tại vị trí chỉ định. Kiểu hiển thị điểm được thay đổi bằng lệnh <code>DDPTYPE</code>.</p>
+
+            <h2>11. Lệnh định kiểu điểm DDPTYPE</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">DDPTYPE</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                <tbody><tr><td>Format → Point Style...</td><td><code>Ddptype</code></td></tr></tbody></table>
+            </div>
+            <p>Xuất hiện hộp thoại <strong>Point Style</strong> cho phép chọn kiểu hiển thị điểm (dấu cộng, dấu x, hình tròn...) và kích thước.</p>
+
+            <h2>12. Lệnh chia đối tượng DIVIDE (DIV)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">DIVIDE</span><span class="cmd-shortcut">DIV</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">DIV</span> ↵
+<span class="prompt">Select object to divide:</span>    <span class="comment">Chọn đối tượng cần chia</span>
+<span class="prompt">Enter number of segments:</span> <span class="input">5</span> <span class="comment">Chia thành 5 đoạn bằng nhau</span>
+            </div>
+
+            <h2>13. Lệnh chia theo chiều dài MEASURE (ME)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">MEASURE</span><span class="cmd-shortcut">ME</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">ME</span> ↵
+<span class="prompt">Select object to measure:</span>     <span class="comment">Chọn đối tượng</span>
+<span class="prompt">Specify length of segment:</span> <span class="input">10</span> <span class="comment">Mỗi đoạn dài 10 đơn vị</span>
+            </div>
+
+            <h2>📋 Tổng hợp lệnh vẽ cơ bản</h2>
+            <table class="ref-table">
+                <thead><tr><th>Lệnh</th><th>Viết tắt</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><code>Line</code></td><td><code>L</code></td><td>Vẽ đường thẳng</td></tr>
+                    <tr><td><code>Circle</code></td><td><code>C</code></td><td>Vẽ đường tròn</td></tr>
+                    <tr><td><code>Arc</code></td><td><code>A</code></td><td>Vẽ cung tròn</td></tr>
+                    <tr><td><code>Pline</code></td><td><code>PL</code></td><td>Vẽ đa tuyến (có bề rộng)</td></tr>
+                    <tr><td><code>Polygon</code></td><td><code>POL</code></td><td>Vẽ đa giác đều</td></tr>
+                    <tr><td><code>Rectang</code></td><td><code>REC</code></td><td>Vẽ hình chữ nhật</td></tr>
+                    <tr><td><code>Ellipse</code></td><td><code>EL</code></td><td>Vẽ Elip</td></tr>
+                    <tr><td><code>Spline</code></td><td><code>SPL</code></td><td>Vẽ đường cong trơn</td></tr>
+                    <tr><td><code>Mline</code></td><td>—</td><td>Vẽ đường song song</td></tr>
+                    <tr><td><code>Point</code></td><td><code>PO</code></td><td>Vẽ điểm</td></tr>
+                    <tr><td><code>Ddptype</code></td><td>—</td><td>Định kiểu hiển thị điểm</td></tr>
+                    <tr><td><code>Divide</code></td><td><code>DIV</code></td><td>Chia đối tượng thành N đoạn</td></tr>
+                    <tr><td><code>Measure</code></td><td><code>ME</code></td><td>Chia theo chiều dài cho trước</td></tr>
+                </tbody>
+            </table>
+
+            <h2>14. Lệnh vẽ vành khuyên DONUT (DO)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">DONUT</span><span class="cmd-shortcut">DO</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">DO</span> ↵
+<span class="prompt">Specify inside diameter:</span> <span class="input">10</span>   <span class="comment">Đường kính lỗ trong (0 = tô đặc)</span>
+<span class="prompt">Specify outside diameter:</span> <span class="input">20</span>  <span class="comment">Đường kính ngoài</span>
+<span class="prompt">Specify center of doughnut:</span>     <span class="comment">Click vị trí đặt</span>
+            </div>
+
+            <h2>15. Đường dựng XLINE (XL) & RAY</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">XLINE</span><span class="cmd-shortcut">XL</span></div></div>
+            <p>Vẽ đường thẳng vô hạn (XLINE = 2 phía, RAY = 1 phía). Rất hữu ích làm đường chiếu khi vẽ hình chiếu trục đo.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">XL</span> ↵
+<span class="prompt">Specify point [Hor/Ver/Ang/Bisect/Offset]:</span>
+<span class="comment">  Hor = Ngang, Ver = Đứng, Ang = Góc bất kỳ</span>
+<span class="comment">  Bisect = Phân giác, Offset = Song song cách khoảng</span>
+            </div>
+
+            <h2>16. Đám mây hiệu chỉnh REVCLOUD</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">REVCLOUD</span></div></div>
+            <p>Tạo đường mây bao quanh vùng cần đánh dấu sửa đổi trên bản vẽ:</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> REVCLOUD ↵
+<span class="prompt">Min arc length:</span> <span class="input">5</span>   Max arc length: <span class="input">10</span>
+<span class="comment">→ Rê chuột bao quanh vùng cần đánh dấu → tự đóng</span>
+            </div>
+
+            <div class="chapter-nav">
+                <a href="chuong4.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Thiết Lập Bản Vẽ Cơ Bản</span></div></a>
+                <a href="chuong6.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Lệnh Hiệu Chỉnh Căn Bản</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

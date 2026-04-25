@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chương 20: Hình Chiếu Trục Đo - Orthographic Views trong AutoCAD, vẽ 3 hình chiếu, hidden lines, mặt xiên">
+    <title>Chương 20: Hình Chiếu Trục Đo | AutoCAD</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav"><li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li><li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li><li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li><li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li><li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li><li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li><li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li><li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li><li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li><li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li><li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li><li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li><li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li><li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li><li><a href="chuong15.html"><span class="nav-number">15</span> Điểm nhìn 3D</a></li><li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li><li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li><li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li><li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li><li><a href="chuong20.html" class="active"><span class="nav-number">20</span> Hình chiếu trục đo</a></li><li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai kích thước</a></li><li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai hình học</a></li><li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li><li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ kỹ thuật</a></li><li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng &amp; Cam</a></li><li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li></ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 20</span>
+                <h1>Hình Chiếu Trục Đo (Orthographic Views)</h1>
+                <p class="chapter-desc">Vẽ 3 hình chiếu chuẩn từ vật thể 3D, đường khuất, mặt xiên, quy ước chiếu góc thứ nhất và thứ ba.</p>
+            </div>
+
+            <h2>1. Giới thiệu hình chiếu trục đo</h2>
+            <p>Hình chiếu trục đo (Orthographic Projection) là phương pháp biểu diễn vật thể 3D bằng các hình chiếu 2D trên các mặt phẳng vuông góc nhau. Đây là nền tảng của bản vẽ kỹ thuật cơ khí và xây dựng.</p>
+
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Tiêu chuẩn quốc tế</div><div class="info-text">Bản vẽ kỹ thuật tuân theo tiêu chuẩn <strong>ASME Y14.5-2009</strong> (Mỹ) hoặc <strong>ISO 128</strong> (Quốc tế). Việt Nam sử dụng <strong>TCVN</strong> tương đương ISO.</div></div></div>
+
+            <h2>2. Ba hình chiếu cơ bản</h2>
+            <p>Mỗi vật thể được biểu diễn qua 3 hình chiếu chính:</p>
+
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 650 400" style="max-width:650px;width:100%;background:rgba(0,0,0,0.2);border-radius:12px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Front View -->
+              <rect x="30" y="180" width="180" height="120" fill="none" stroke="#0696D7" stroke-width="2"/>
+              <rect x="60" y="220" width="40" height="40" fill="none" stroke="#0696D7" stroke-width="1.5" stroke-dasharray="5"/>
+              <text x="85" y="350" fill="#0696D7" font-size="13" font-weight="bold" text-anchor="middle">HÌNH CHIẾU ĐỨNG</text>
+              <text x="85" y="370" fill="#888" font-size="11" text-anchor="middle">(Front View)</text>
+
+              <!-- Top View -->
+              <rect x="30" y="20" width="180" height="120" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <rect x="60" y="50" width="40" height="60" fill="none" stroke="#4CAF50" stroke-width="1.5"/>
+              <text x="85" y="160" fill="#4CAF50" font-size="13" font-weight="bold" text-anchor="middle">HÌNH CHIẾU BẰNG</text>
+              <!-- Projection lines top-front -->
+              <line x1="60" y1="140" x2="60" y2="180" stroke="#aaa" stroke-width="0.5" stroke-dasharray="3"/>
+              <line x1="100" y1="140" x2="100" y2="180" stroke="#aaa" stroke-width="0.5" stroke-dasharray="3"/>
+              <line x1="210" y1="140" x2="210" y2="180" stroke="#aaa" stroke-width="0.5" stroke-dasharray="3"/>
+
+              <!-- Right Side View -->
+              <rect x="250" y="180" width="120" height="120" fill="none" stroke="#FF9800" stroke-width="2"/>
+              <rect x="250" y="220" width="60" height="40" fill="none" stroke="#FF9800" stroke-width="1.5" stroke-dasharray="5"/>
+              <text x="310" y="350" fill="#FF9800" font-size="13" font-weight="bold" text-anchor="middle">HÌNH CHIẾU CẠNH</text>
+              <text x="310" y="370" fill="#888" font-size="11" text-anchor="middle">(Right Side View)</text>
+              <!-- Projection lines front-side -->
+              <line x1="210" y1="200" x2="250" y2="200" stroke="#aaa" stroke-width="0.5" stroke-dasharray="3"/>
+              <line x1="210" y1="300" x2="250" y2="300" stroke="#aaa" stroke-width="0.5" stroke-dasharray="3"/>
+
+              <!-- 3D Isometric preview -->
+              <g transform="translate(440,50)">
+                <text x="60" y="-10" fill="#E040FB" font-size="12" font-weight="bold" text-anchor="middle">VẬT THỂ 3D</text>
+                <!-- Box isometric -->
+                <polygon points="0,120 80,160 80,80 0,40" fill="rgba(6,150,215,0.15)" stroke="#0696D7" stroke-width="1.5"/>
+                <polygon points="0,40 80,80 160,40 80,0" fill="rgba(76,175,80,0.15)" stroke="#4CAF50" stroke-width="1.5"/>
+                <polygon points="80,80 160,40 160,120 80,160" fill="rgba(255,152,0,0.15)" stroke="#FF9800" stroke-width="1.5"/>
+                <!-- Notch -->
+                <polygon points="0,80 30,96 30,60 0,44" fill="rgba(6,150,215,0.3)" stroke="#0696D7" stroke-width="1"/>
+                <polygon points="0,44 30,60 60,44 30,28" fill="rgba(76,175,80,0.3)" stroke="#4CAF50" stroke-width="1"/>
+                <!-- Labels -->
+                <text x="-15" y="90" fill="#0696D7" font-size="9">Front</text>
+                <text x="75" y="-5" fill="#4CAF50" font-size="9">Top</text>
+                <text x="155" y="85" fill="#FF9800" font-size="9">Side</text>
+              </g>
+
+              <!-- Legend -->
+              <line x1="440" y1="250" x2="470" y2="250" stroke="#0696D7" stroke-width="2"/>
+              <text x="478" y="255" fill="#aaa" font-size="10">Nét thấy (liền)</text>
+              <line x1="440" y1="275" x2="470" y2="275" stroke="#0696D7" stroke-width="1.5" stroke-dasharray="5"/>
+              <text x="478" y="280" fill="#aaa" font-size="10">Nét khuất (đứt)</text>
+              <line x1="440" y1="300" x2="470" y2="300" stroke="#aaa" stroke-width="0.5" stroke-dasharray="3"/>
+              <text x="478" y="305" fill="#aaa" font-size="10">Đường chiếu</text>
+            </svg>
+            </div>
+
+            <table class="ref-table">
+                <thead><tr><th>Hình chiếu</th><th>Tên tiếng Anh</th><th>Hướng nhìn</th><th>Hiển thị</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Hình chiếu đứng</strong></td><td>Front View</td><td>Nhìn thẳng phía trước</td><td>Chiều rộng × Chiều cao</td></tr>
+                    <tr><td><strong>Hình chiếu bằng</strong></td><td>Top View</td><td>Nhìn từ trên xuống</td><td>Chiều rộng × Chiều sâu</td></tr>
+                    <tr><td><strong>Hình chiếu cạnh</strong></td><td>Right Side View</td><td>Nhìn từ bên phải</td><td>Chiều sâu × Chiều cao</td></tr>
+                </tbody>
+            </table>
+
+            <h2>3. Đường khuất (Hidden Lines)</h2>
+            <p>Đường khuất biểu diễn các cạnh và đường bao bị che khuất khi nhìn từ một phía. Trong AutoCAD, dùng <strong>Layer</strong> riêng với linetype <code>HIDDEN</code>:</p>
+
+            <div class="command-syntax">
+<span class="prompt">Tạo Layer đường khuất:</span>
+<span class="comment">1. Gõ LA → Enter (mở Layer Manager)</span>
+<span class="comment">2. Tạo layer mới tên "Hidden"</span>
+<span class="comment">3. Chọn Color = Blue (Xanh dương)</span>
+<span class="comment">4. Chọn Linetype = HIDDEN hoặc DASHED</span>
+<span class="comment">5. Lineweight = 0.25mm (mảnh hơn nét thấy)</span>
+            </div>
+
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Quy tắc ưu tiên nét vẽ</div><div class="info-text">Khi nhiều đường trùng nhau: <strong>Nét liền (thấy)</strong> ưu tiên hơn <strong>nét đứt (khuất)</strong>, nét đứt ưu tiên hơn <strong>đường tâm</strong>. Đây gọi là quy tắc "Precedence of Lines".</div></div></div>
+
+            <h2>4. Mặt xiên (Slanted Surfaces)</h2>
+            <p>Khi vật thể có mặt xiên (bề mặt không song song với bất kỳ mặt phẳng chiếu nào), mặt đó sẽ hiện thành <strong>hình dạng méo</strong> (foreshortened) trên tất cả hình chiếu. Chỉ trên hình chiếu phụ (Auxiliary View) mới thấy hình dạng thật.</p>
+
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 450 200" style="max-width:450px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Front view with slanted -->
+              <rect x="20" y="40" width="120" height="130" fill="none" stroke="#0696D7" stroke-width="2"/>
+              <line x1="20" y1="40" x2="70" y2="80" stroke="#E040FB" stroke-width="2"/>
+              <line x1="140" y1="40" x2="70" y2="80" stroke="#E040FB" stroke-width="2"/>
+              <text x="55" y="190" fill="#0696D7" font-size="11" text-anchor="middle">Front</text>
+              <text x="55" y="55" fill="#E040FB" font-size="9">Mặt xiên</text>
+
+              <!-- Top view -->
+              <rect x="180" y="40" width="120" height="60" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <rect x="180" y="40" width="120" height="30" fill="rgba(224,64,251,0.1)" stroke="#E040FB" stroke-width="1.5"/>
+              <text x="240" y="120" fill="#4CAF50" font-size="11" text-anchor="middle">Top</text>
+              <text x="240" y="58" fill="#E040FB" font-size="9">Dạng thu hẹp</text>
+
+              <!-- Side view -->
+              <rect x="320" y="40" width="60" height="130" fill="none" stroke="#FF9800" stroke-width="2"/>
+              <line x1="320" y1="40" x2="320" y2="80" stroke="#E040FB" stroke-width="2"/>
+              <line x1="380" y1="40" x2="380" y2="80" stroke="#E040FB" stroke-width="2"/>
+              <line x1="320" y1="80" x2="380" y2="80" stroke="#E040FB" stroke-width="2"/>
+              <text x="350" y="190" fill="#FF9800" font-size="11" text-anchor="middle">Side</text>
+              <text x="350" y="55" fill="#E040FB" font-size="9">Đường thẳng</text>
+            </svg>
+            </div>
+
+            <h2>5. Lỗ và Trụ tròn trong hình chiếu</h2>
+            <p>Lỗ tròn khi chiếu lên các mặt phẳng sẽ hiển thị khác nhau:</p>
+            <ul>
+                <li><strong>Nhìn thẳng vào lỗ:</strong> Hiện thành hình tròn</li>
+                <li><strong>Nhìn ngang:</strong> Hiện thành hình chữ nhật (2 đường song song)</li>
+                <li><strong>Lỗ trên mặt xiên:</strong> Hiện thành hình elip trên hình chiếu</li>
+            </ul>
+
+            <div class="command-syntax">
+<span class="prompt">Vẽ elip biểu diễn lỗ trên mặt xiên:</span>
+<span class="comment">Command: ELLIPSE ↵</span>
+<span class="comment">Specify axis endpoint: (chọn điểm đầu trục chính)</span>
+<span class="comment">Specify other endpoint: (chọn điểm cuối trục chính)</span>
+<span class="comment">Specify distance: (khoảng cách bán trục phụ)</span>
+            </div>
+
+            <h2>6. Quy ước chiếu góc</h2>
+            <table class="ref-table">
+                <thead><tr><th>Đặc điểm</th><th>Chiếu góc thứ 3 (Third Angle)</th><th>Chiếu góc thứ 1 (First Angle)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Sử dụng tại</strong></td><td>Mỹ, Canada, Nhật Bản</td><td>Châu Âu, Châu Á (gồm Việt Nam)</td></tr>
+                    <tr><td><strong>Hình chiếu bằng</strong></td><td>Đặt <strong>phía trên</strong> hình chiếu đứng</td><td>Đặt <strong>phía dưới</strong> hình chiếu đứng</td></tr>
+                    <tr><td><strong>Hình chiếu cạnh phải</strong></td><td>Đặt bên <strong>phải</strong> hình chiếu đứng</td><td>Đặt bên <strong>trái</strong> hình chiếu đứng</td></tr>
+                    <tr><td><strong>Nguyên lý</strong></td><td>Nhìn phía nào → vẽ phía đó</td><td>Nhìn phía nào → vẽ phía đối diện</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box warning"><span class="icon">⚠️</span><div><div class="info-title">Lưu ý khi vẽ bản vẽ kỹ thuật</div><div class="info-text">Phải ghi rõ ký hiệu chiếu góc (⊕ cho góc 3, ⊖ cho góc 1) trong khung tên bản vẽ. Nếu không ghi, mặc định theo tiêu chuẩn quốc gia.</div></div></div>
+
+            <h2>7. Quy trình vẽ 3 hình chiếu trong AutoCAD</h2>
+            <div class="command-syntax">
+<span class="prompt">Bước 1:</span> Thiết lập bản vẽ (Units, Limits, Layers)
+<span class="prompt">Bước 2:</span> Vẽ hình chiếu đứng (Front View) trước
+<span class="prompt">Bước 3:</span> Kéo đường chiếu dọc lên trên → vẽ hình chiếu bằng (Top View)
+<span class="prompt">Bước 4:</span> Kéo đường chiếu ngang sang phải → vẽ hình chiếu cạnh (Side View)
+<span class="prompt">Bước 5:</span> Thêm nét khuất (chuyển Layer Hidden)
+<span class="prompt">Bước 6:</span> Thêm đường tâm cho các lỗ, trụ (layer Center, linetype CENTER)
+<span class="prompt">Bước 7:</span> Xóa đường chiếu phụ trợ, ghi kích thước
+            </div>
+
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Sử dụng XLINE (đường dựng)</div><div class="info-text">Dùng lệnh <code>XLINE</code> (viết tắt XL) để tạo đường chiếu vô hạn. Khi vẽ xong, Trim hoặc Erase các đường dựng không cần thiết.</div></div></div>
+
+            <div class="chapter-nav">
+                <a href="chuong19.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Ánh Sáng & Render</span></div></a>
+                <a href="chuong21.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Dung Sai Kích Thước</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

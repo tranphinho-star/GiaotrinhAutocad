@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chương 23: Ren và Bulong trong AutoCAD - Thread terminology, callouts, bolts, nuts, washers, springs">
+    <title>Chương 23: Ren & Bulong | AutoCAD</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav"><li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li><li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li><li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li><li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li><li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li><li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li><li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li><li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li><li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li><li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li><li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li><li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li><li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li><li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li><li><a href="chuong15.html"><span class="nav-number">15</span> Điểm nhìn 3D</a></li><li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li><li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li><li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li><li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li><li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu trục đo</a></li><li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai kích thước</a></li><li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai hình học</a></li><li><a href="chuong23.html" class="active"><span class="nav-number">23</span> Ren &amp; Bulong</a></li><li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ kỹ thuật</a></li><li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng &amp; Cam</a></li><li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li></ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 23</span>
+                <h1>Ren & Bulong (Threads and Fasteners)</h1>
+                <p class="chapter-desc">Thuật ngữ ren, ký hiệu gọi ren, cách vẽ biểu diễn ren, bulong, đai ốc, vòng đệm và lò xo.</p>
+            </div>
+
+            <h2>1. Thuật ngữ ren (Thread Terminology)</h2>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 500 200" style="max-width:500px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Thread profile -->
+              <path d="M 50,100 L 70,60 L 90,100 L 110,60 L 130,100 L 150,60 L 170,100 L 190,60 L 210,100 L 230,60 L 250,100 L 270,60 L 290,100" fill="none" stroke="#0696D7" stroke-width="2"/>
+              <path d="M 50,100 L 70,140 L 90,100 L 110,140 L 130,100 L 150,140 L 170,100 L 190,140 L 210,100 L 230,140 L 250,100 L 270,140 L 290,100" fill="none" stroke="#0696D7" stroke-width="2"/>
+              <!-- Dimension arrows - Pitch -->
+              <line x1="70" y1="40" x2="110" y2="40" stroke="#FF9800" stroke-width="1.5"/>
+              <polygon points="70,40 78,36 78,44" fill="#FF9800"/>
+              <polygon points="110,40 102,36 102,44" fill="#FF9800"/>
+              <text x="78" y="35" fill="#FF9800" font-size="10">Bước (Pitch)</text>
+              <!-- Major/Minor diameter -->
+              <line x1="330" y1="60" x2="330" y2="140" stroke="#4CAF50" stroke-width="1.5"/>
+              <text x="340" y="85" fill="#4CAF50" font-size="9">Đường kính</text>
+              <text x="340" y="100" fill="#4CAF50" font-size="9">ngoài (Major)</text>
+              <line x1="380" y1="73" x2="380" y2="127" stroke="#E040FB" stroke-width="1.5"/>
+              <text x="390" y="100" fill="#E040FB" font-size="9">Đường kính</text>
+              <text x="390" y="115" fill="#E040FB" font-size="9">trong (Minor)</text>
+              <!-- Labels -->
+              <text x="130" y="175" fill="#aaa" font-size="10">Crest (đỉnh) — Root (chân)</text>
+              <text x="150" y="190" fill="#aaa" font-size="10">Thread Angle (góc ren)</text>
+            </svg>
+            </div>
+
+            <table class="ref-table">
+                <thead><tr><th>Thuật ngữ</th><th>Tiếng Anh</th><th>Giải thích</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Bước ren</strong></td><td>Pitch</td><td>Khoảng cách từ đỉnh ren này đến đỉnh ren kế tiếp</td></tr>
+                    <tr><td><strong>Đường kính ngoài</strong></td><td>Major Diameter</td><td>Đường kính lớn nhất (đo từ ngoài cùng)</td></tr>
+                    <tr><td><strong>Đường kính trong</strong></td><td>Minor Diameter</td><td>Đường kính nhỏ nhất (đo ở chân ren)</td></tr>
+                    <tr><td><strong>Đường kính trung bình</strong></td><td>Pitch Diameter</td><td>Đường kính đo ở giữa chiều cao ren</td></tr>
+                    <tr><td><strong>Đỉnh ren</strong></td><td>Crest</td><td>Phần cao nhất của ren</td></tr>
+                    <tr><td><strong>Chân ren</strong></td><td>Root</td><td>Phần thấp nhất của ren</td></tr>
+                </tbody>
+            </table>
+
+            <h2>2. Ký hiệu gọi ren (Thread Callouts)</h2>
+            <h3>a. Ren hệ Mét (Metric)</h3>
+            <div class="command-syntax">
+<span class="prompt">Cú pháp:</span> M[đường kính] × [bước] - [cấp chính xác]
+<span class="comment">Ví dụ: M10 × 1.5 - 6g</span>
+<span class="comment">// M = Ren metric</span>
+<span class="comment">// 10 = Đường kính ngoài 10mm</span>
+<span class="comment">// 1.5 = Bước ren 1.5mm</span>
+<span class="comment">// 6g = Cấp chính xác ren ngoài</span>
+            </div>
+
+            <h3>b. Ren hệ Anh (English/Unified)</h3>
+            <div class="command-syntax">
+<span class="prompt">Cú pháp:</span> [đường kính]-[số ren/inch] [UNC/UNF]-[class]
+<span class="comment">Ví dụ: 1/2-13 UNC-2A</span>
+<span class="comment">// 1/2 = Đường kính ngoài ½ inch</span>
+<span class="comment">// 13 = 13 vòng ren trên 1 inch</span>
+<span class="comment">// UNC = Unified National Coarse (ren thô)</span>
+<span class="comment">// UNF = Unified National Fine (ren mịn)</span>
+<span class="comment">// 2A = Class 2 fit, ren ngoài (A=External)</span>
+            </div>
+
+            <h2>3. Biểu diễn ren trên bản vẽ</h2>
+            <table class="ref-table">
+                <thead><tr><th>Loại biểu diễn</th><th>Nét vẽ</th><th>Khi nào dùng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Chi tiết (Detailed)</strong></td><td>Vẽ từng vòng ren thực</td><td>Bản vẽ phóng đại, tài liệu giảng dạy</td></tr>
+                    <tr><td><strong>Sơ đồ (Schematic)</strong></td><td>Gạch chéo song song đều nhau</td><td>Bản vẽ kỹ thuật thông dụng</td></tr>
+                    <tr><td><strong>Đơn giản (Simplified)</strong></td><td>2 đường: liền + nét đứt</td><td>Bản vẽ lắp ráp, tổng quan</td></tr>
+                </tbody>
+            </table>
+
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 600 150" style="max-width:600px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Simplified external -->
+              <rect x="30" y="30" width="140" height="80" fill="none" stroke="#0696D7" stroke-width="2"/>
+              <line x1="30" y1="45" x2="170" y2="45" stroke="#0696D7" stroke-width="1" stroke-dasharray="5"/>
+              <line x1="30" y1="95" x2="170" y2="95" stroke="#0696D7" stroke-width="1" stroke-dasharray="5"/>
+              <text x="100" y="130" fill="#0696D7" font-size="10" text-anchor="middle">Ren ngoài (đơn giản)</text>
+              <!-- Simplified internal section -->
+              <rect x="220" y="30" width="140" height="80" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <line x1="220" y1="45" x2="360" y2="45" stroke="#4CAF50" stroke-width="2"/>
+              <line x1="220" y1="95" x2="360" y2="95" stroke="#4CAF50" stroke-width="2"/>
+              <line x1="220" y1="55" x2="360" y2="55" stroke="#4CAF50" stroke-width="1" stroke-dasharray="5"/>
+              <line x1="220" y1="85" x2="360" y2="85" stroke="#4CAF50" stroke-width="1" stroke-dasharray="5"/>
+              <!-- Hatch for section -->
+              <line x1="220" y1="30" x2="220" y2="55" stroke="#4CAF50" stroke-width="0.5"/>
+              <line x1="360" y1="30" x2="360" y2="55" stroke="#4CAF50" stroke-width="0.5"/>
+              <text x="290" y="130" fill="#4CAF50" font-size="10" text-anchor="middle">Ren trong (mặt cắt)</text>
+              <!-- Bolt head -->
+              <path d="M 420,30 L 420,110 M 420,30 L 560,30 L 560,110 L 420,110" fill="none" stroke="#FF9800" stroke-width="2"/>
+              <line x1="420" y1="45" x2="560" y2="45" stroke="#FF9800" stroke-width="1" stroke-dasharray="5"/>
+              <line x1="420" y1="95" x2="560" y2="95" stroke="#FF9800" stroke-width="1" stroke-dasharray="5"/>
+              <rect x="400" y="20" width="20" height="100" fill="none" stroke="#FF9800" stroke-width="2"/>
+              <text x="480" y="130" fill="#FF9800" font-size="10" text-anchor="middle">Bulong (mặt cắt)</text>
+            </svg>
+            </div>
+
+            <h2>4. Bulong và Đai ốc</h2>
+            <h3>a. Bulong lục giác (Hex Bolt)</h3>
+            <div class="command-syntax">
+<span class="prompt">Vẽ mặt đứng bulong:</span>
+<span class="comment">1. Vẽ RECTANG đầu bulong (rộng = 1.5d, cao = 0.7d)</span>
+<span class="comment">2. Vẽ RECTANG thân bulong (rộng = d, dài = chiều dài)</span>
+<span class="comment">3. Thêm nét Chamfer góc 30° tại đầu bulong</span>
+<span class="comment">4. Thêm đường ren (nét đứt song song cách = 0.85d)</span>
+<span class="prompt">Vẽ mặt bằng bulong:</span>
+<span class="comment">1. POLYGON 6 cạnh ngoại tiếp đường tròn R = d×0.87</span>
+<span class="comment">2. CIRCLE tâm (đường kính mũ bulong)</span>
+            </div>
+
+            <h3>b. Đai ốc lục giác (Hex Nut)</h3>
+            <p>Đai ốc có kích thước tương tự đầu bulong. Chiều cao đai ốc ≈ <strong>0.875 × đường kính ren</strong>.</p>
+
+            <h2>5. Vòng đệm (Washers)</h2>
+            <table class="ref-table">
+                <thead><tr><th>Loại</th><th>Đặc điểm</th><th>Ứng dụng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Plain Washer</strong></td><td>Phẳng, vòng tròn</td><td>Phân phối tải, bảo vệ bề mặt</td></tr>
+                    <tr><td><strong>Lock Washer</strong></td><td>Vòng xoắn (spring)</td><td>Chống tháo lỏng do rung</td></tr>
+                    <tr><td><strong>Tooth Lock Washer</strong></td><td>Có răng khía</td><td>Chống xoay, bám chặt bề mặt</td></tr>
+                </tbody>
+            </table>
+
+            <h2>6. Lò xo (Springs)</h2>
+            <p>AutoCAD vẽ lò xo bằng cách kết hợp <strong>HELIX</strong> (đường xoắn ốc 3D) và <strong>Circle</strong> (mặt cắt dây):</p>
+            <div class="command-syntax">
+<span class="prompt">Vẽ lò xo đơn giản 2D:</span>
+<span class="comment">1. Vẽ đường zíczắc bằng LINE (đường trung tâm)</span>
+<span class="comment">2. OFFSET hai bên = bán kính dây</span>
+<span class="comment">3. Thêm cung tròn ARC ở các đầu ngoặt</span>
+<span class="comment">4. Hai vòng đầu/cuối cuộn sít (Ground ends)</span>
+            </div>
+
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Tạo Wblock cho ren</div><div class="info-text">Vẽ một biểu diễn ren chuẩn, sau đó dùng lệnh <code>WBLOCK</code> lưu thành file .dwg riêng. Khi cần, dùng <code>INSERT</code> chèn vào bản vẽ và <code>SCALE</code> theo kích thước ren cần dùng.</div></div></div>
+
+            <div class="chapter-nav">
+                <a href="chuong22.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Dung Sai Hình Học</span></div></a>
+                <a href="chuong24.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Bản Vẽ Kỹ Thuật</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

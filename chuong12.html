@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 12: Kích Thước Bản Vẽ | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html" class="active"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 12</span>
+                <h1>Trình Bày Kích Thước (Dimension)</h1>
+                <p class="chapter-desc">Định dạng kiểu kích thước (Dimstyle), các lệnh ghi kích thước và hiệu chỉnh kích thước phức tạp.</p>
+            </div>
+
+            <h2>1. Thiết lập kiểu kích thước DIMSTYLE (D)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">DIMSTYLE</span><span class="cmd-shortcut">D</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                <tbody><tr><td>Format → Dimension Style...</td><td><code>Dimstyle</code> hoặc <code>D</code></td></tr></tbody></table>
+            </div>
+
+            <p>Lệnh quan trọng nhất để tạo chuẩn bản vẽ. Hộp thoại <strong>Dimension Style Manager</strong> gồm các thẻ:</p>
+
+            <h3>♦ Thẻ Lines (Đường nét)</h3>
+            <ul>
+                <li><strong>Dimension lines:</strong> Cài đặt đường ghi kích thước (màu, linetype, lineweight, Extend beyond ticks, Baseline spacing).</li>
+                <li><strong>Extension lines:</strong> Cài đặt đường dóng kích thước (Extend beyond dim lines: Nhô qua đường KT; Offset from origin: Cách gốc đo).</li>
+            </ul>
+
+            <h3>♦ Thẻ Symbols and Arrows (Ký hiệu và Mũi tên)</h3>
+            <ul>
+                <li><strong>Arrowheads:</strong> Chọn hình dáng mũi tên đầu mép (Architectural tick, Closed filled...).</li>
+                <li><strong>Arrow size:</strong> Độ lớn mũi tên (thường bằng chiểu cao Text đo).</li>
+            </ul>
+
+            <h3>♦ Thẻ Text (Dòng chữ kích thước)</h3>
+            <ul>
+                <li><strong>Text style/Text color/Text height:</strong> Định dạng kiểu, màu và chiều cao của con số kích thước.</li>
+                <li><strong>Text Placement:</strong> Vertical = Above (Đặt chữ nằm TRÊN đường KT), Horizontal = Centered (Căn giữa ngang).</li>
+                <li><strong>Text Alignment:</strong> Aligned with dimension line (Nằm dọc theo hướng nghiêng của đường KT).</li>
+            </ul>
+
+            <h3>♦ Thẻ Primary Units (Chữ số và Đơn vị)</h3>
+            <ul>
+                <li><strong>Unit format:</strong> Decimal (Thập phân).</li>
+                <li><strong>Precision:</strong> Số chữ số sau dấu phẩy (VD: 0 hoặc 0.00).</li>
+                <li><strong>Scale factor:</strong> Hệ số tỷ lệ kích thước in (Mặc định 1).</li>
+            </ul>
+
+            <h2>2. Các lệnh Ghi kích thước cơ bản</h2>
+            <table class="ref-table">
+                <thead><tr><th>Lệnh (Menu Dimension)</th><th>Viết tắt</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><code>Dimlinear</code></td><td><code>DLI</code></td><td>Ghi kích thước đoạn THẲNG (ngang/đứng/vuông góc hệ trục)</td></tr>
+                    <tr><td><code>Dimaligned</code></td><td><code>DAL</code></td><td>Ghi kích thước theo PHƯƠNG XIÊN (song song đoạn đo)</td></tr>
+                    <tr><td><code>Dimradius</code></td><td><code>DRA</code></td><td>Ghi BÁN KÍNH đường tròn / cung tròn (R)</td></tr>
+                    <tr><td><code>Dimdiameter</code></td><td><code>DDI</code></td><td>Ghi ĐƯỜNG KÍNH đường tròn (Ø)</td></tr>
+                    <tr><td><code>Dimangular</code></td><td><code>DAN</code></td><td>Ghi kích thước GÓC giữa 2 đường thẳng</td></tr>
+                    <tr><td><code>Dimarc</code></td><td><code>DAR</code></td><td>Ghi chiều dài của CUNG TRÒN</td></tr>
+                </tbody>
+            </table>
+
+            <h2>3. Các lệnh Ghi kích thước phức hợp</h2>
+            <h3>♦ Ghi kích thước nối tiếp DIMCONTINUE (DCO)</h3>
+            <p>Ghi liên tục thành một chuỗi, đường ghi sau nối tiếp đường dóng thứ 2 của kích thước gốc trước đó.</p>
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Cách dùng DCO</div><div class="info-text">Phải dùng <code>DLI</code> hoặc lệnh cơ bản ghi kích thước mốc ĐẦU TIÊN trước. Sau đó không thoát lệnh, gõ <code>DCO</code> ngay thì phần mềm tự lấy chân thứ 2 làm mốc, ta cứ Pick, Pick, Pick chuột...</div></div></div>
+
+            <h3>♦ Ghi kích thước song song mốc DIMBASELINE (DBA)</h3>
+            <p>Ghi kích thước dồn cấp (kiểu bậc thang). Các đường kích thước được tạo ra có cùng chung một chân mốc dóng xuất phát.</p>
+
+            <h3>♦ Đường dẫn chú thích MULTILEADER (MLEADER)</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">QLEADER / MLEADER</span><span class="cmd-shortcut">LE</span></div></div>
+            <p>Tạo một mũi tên chỉ và dòng ghi chú, rất hữu ích khi ghi tên chi tiết mặt cắt, thông số khoan lỗ...</p>
+
+            <h2>4. Hiệu chỉnh kích thước DIMEDIT (DED)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">DIMEDIT</span><span class="cmd-shortcut">DED</span></div></div>
+            <p>Phục vụ xoay đường dóng xiên, thay đổi nội dung chữ số:</p>
+            <ul>
+                <li><code>DED</code> → Option <strong>New</strong>: Sửa lại tên số đo thành chữ ý muốn.</li>
+                <li><code>DED</code> → Option <strong>Oblique</strong>: Bẻ xiên đường dóng kích thước cho khỏi cắt vào chi tiết bản vẽ (Trong Hình vẽ 3D Isometric).</li>
+            </ul>
+
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Sửa nhanh chữ số Dim</div><div class="info-text">Có thể dùng lệnh <code>ED</code> (Ddedit - sửa văn bản) click đúp vào chữ số để đổi lấy một con số "ảo" cho nhanh (khi không muốn Scale). Hộp thoại Properties (tổ hợp phím <code>Ctrl + 1</code>) chứa mục <i>Text override</i> cũng làm điều tương tự.</div></div></div>
+
+            <h2>5. Ghi kích thước nhanh QDIM</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">QDIM</span></div></div>
+            <p>Quét chọn nhiều đối tượng → AutoCAD tự ghi kích thước hàng loạt theo kiểu:</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> QDIM ↵ → Chọn nhiều đối tượng ↵
+<span class="prompt">Specify dim line position</span>
+<span class="prompt">[Continuous/Staggered/Baseline/Ordinate/Radius/Diameter]:</span>
+<span class="comment">• Continuous: liên tục nối nhau</span>
+<span class="comment">• Baseline: song song mốc chung</span>
+<span class="comment">• Ordinate: tọa độ X hoặc Y</span>
+            </div>
+
+            <h2>6. Kích thước tọa độ DIMORDINATE</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">DIMORDINATE</span><span class="cmd-shortcut">DOR</span></div></div>
+            <p>Ghi giá trị tọa độ X hoặc Y của một điểm so với gốc UCS. Thường dùng trong gia công CNC.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">DOR</span> ↵
+<span class="prompt">Specify feature location:</span> <span class="comment">Click vào điểm cần ghi tọa độ</span>
+<span class="prompt">Xdatum/Ydatum/Mtext/Text/Angle:</span>
+<span class="comment">→ Kéo ngang = ghi Y, kéo dọc = ghi X</span>
+            </div>
+
+            <h2>7. Ngắt đường kích thước DIMBREAK</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">DIMBREAK</span></div></div>
+            <p>Tạo khoảng trống tại nơi đường kích thước giao nhau. Giúp bản vẽ sạch sẽ hơn:</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> DIMBREAK ↵
+<span class="prompt">Select dimension:</span> <span class="comment">Chọn dim cần ngắt</span>
+<span class="prompt">Select object [Auto/Restore/Manual]:</span> <span class="input">A</span>
+<span class="comment">→ AutoCAD tự tìm giao và tạo khoảng ngắt</span>
+            </div>
+
+            <h2>8. Ghi kích thước có dung sai (Tab Tolerances)</h2>
+            <p>Trong Dimstyle → Modify → tab <strong>Tolerances</strong>:</p>
+            <table class="ref-table">
+                <thead><tr><th>Method</th><th>Hiển thị</th><th>Ví dụ</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Symmetrical</strong></td><td>±</td><td>50 ±0.05</td></tr>
+                    <tr><td><strong>Deviation</strong></td><td>+/−</td><td>50 +0.05/−0.02</td></tr>
+                    <tr><td><strong>Limits</strong></td><td>Max/Min</td><td>50.05 / 49.95</td></tr>
+                    <tr><td><strong>Basic</strong></td><td>Đóng khung</td><td>[50]</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Chỉ áp dụng dung sai cho 1 kích thước</div><div class="info-text">Tạo Dim Style con (child): trong Dim Style Manager → New → nhập tên → tại "Use for", chọn <strong>Linear dimensions</strong>. Chỉnh Tolerances trong child này. Cha (parent) vẫn không có dung sai.</div></div></div>
+
+            <div class="chapter-nav">
+                <a href="chuong11.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Trình Bày Văn Bản</span></div></a>
+                <a href="chuong13.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Tạo Khối (Block)</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

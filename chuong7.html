@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 7: Lệnh Hiệu Chỉnh Tạo Hình | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html" class="active"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 7</span>
+                <h1>Các Lệnh Hiệu Chỉnh Tạo Hình</h1>
+                <p class="chapter-desc">19 lệnh tạo hình mạnh mẽ: Offset, Trim, Extend, Chamfer, Fillet, và các lệnh tạo vùng Region.</p>
+            </div>
+
+            <h2>1. Lệnh tạo đối tượng song song OFFSET (O)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">OFFSET</span><span class="cmd-shortcut">O</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">O</span> ↵
+<span class="prompt">Specify offset distance:</span> <span class="input">50</span>     <span class="comment">Khoảng cách offset</span>
+<span class="prompt">Select object to offset:</span>        <span class="comment">Chọn đối tượng</span>
+<span class="prompt">Specify point on side to offset:</span> <span class="comment">Chọn phía cần offset</span>
+            </div>
+
+            <h2>2. Lệnh cắt đối tượng TRIM (TR)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">TRIM</span><span class="cmd-shortcut">TR</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">TR</span> ↵
+<span class="prompt">Select cutting edges:</span>       <span class="comment">Chọn cạnh cắt (Enter = chọn tất cả)</span>
+<span class="prompt">Select object to trim:</span>      <span class="comment">Chọn phần cần cắt bỏ</span>
+            </div>
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Mẹo Trim nhanh</div><div class="info-text">Nhấn Enter ngay khi chọn cutting edges → AutoCAD sẽ lấy tất cả đối tượng làm cạnh cắt (rất tiện dụng!).</div></div></div>
+
+            <h2>3. Lệnh cắt mở rộng EXTRIM</h2>
+            <p>Cắt tất cả đối tượng giao với đối tượng chọn về một phía. Nhanh hơn Trim khi cắt nhiều đối tượng cùng lúc.</p>
+
+            <h2>4. Lệnh xén một phần BREAK (BR)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">BREAK</span><span class="cmd-shortcut">BR</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">BR</span> ↵
+<span class="prompt">Select object:</span>           <span class="comment">Chọn đối tượng (điểm chọn = điểm 1)</span>
+<span class="prompt">Specify second break point</span>
+<span class="prompt">or [First point]:</span>        <span class="comment">Chọn điểm thứ 2 → xén phần giữa</span>
+            </div>
+
+            <h2>5. Lệnh kéo dài đối tượng EXTEND (EX)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">EXTEND</span><span class="cmd-shortcut">EX</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">EX</span> ↵
+<span class="prompt">Select boundary edges:</span>      <span class="comment">Chọn cạnh chặn</span>
+<span class="prompt">Select object to extend:</span>    <span class="comment">Chọn đối tượng cần kéo dài</span>
+            </div>
+
+            <h2>6. Lệnh thay đổi chiều dài LENGTHEN (LEN)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">LENGTHEN</span><span class="cmd-shortcut">LEN</span></div></div>
+            <p>Thay đổi chiều dài đối tượng bằng cách nhập giá trị tuyệt đối, tăng thêm, phần trăm hoặc kéo động.</p>
+
+            <h2>7. Lệnh vát mép CHAMFER (CHA)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">CHAMFER</span><span class="cmd-shortcut">CHA</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">CHA</span> ↵
+<span class="prompt">[Polyline/Distance/Angle/Trim/Method]:</span> <span class="input">D</span> ↵
+<span class="prompt">Specify first chamfer distance:</span> <span class="input">10</span>  <span class="comment">Khoảng cách vát 1</span>
+<span class="prompt">Specify second chamfer distance:</span> <span class="input">10</span> <span class="comment">Khoảng cách vát 2</span>
+<span class="prompt">Select first line:</span>   <span class="comment">Chọn cạnh 1</span>
+<span class="prompt">Select second line:</span>  <span class="comment">Chọn cạnh 2</span>
+            </div>
+
+            <h2>8. Lệnh bo góc FILLET (F)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">FILLET</span><span class="cmd-shortcut">F</span></div></div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">F</span> ↵
+<span class="prompt">[Polyline/Radius/Trim/Multiple]:</span> <span class="input">R</span> ↵
+<span class="prompt">Specify fillet radius:</span> <span class="input">15</span>   <span class="comment">Bán kính bo góc</span>
+<span class="prompt">Select first object:</span>          <span class="comment">Chọn đối tượng 1</span>
+<span class="prompt">Select second object:</span>         <span class="comment">Chọn đối tượng 2</span>
+            </div>
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Nối góc vuông nhanh</div><div class="info-text">Đặt bán kính Fillet = 0 → hai đường thẳng sẽ được nối lại tại giao điểm (rất hữu ích!).</div></div></div>
+
+            <h2>9. Lệnh hiệu chỉnh đa tuyến PEDIT</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">PEDIT</span><span class="cmd-shortcut">PE</span></div></div>
+            <p>Hiệu chỉnh Polyline: nối các đối tượng thành Polyline, thay đổi bề rộng, thêm/xóa đỉnh, làm trơn...</p>
+
+            <h2>10-11. Lệnh vẽ đường thẳng XLINE và RAY</h2>
+            <table class="ref-table">
+                <thead><tr><th>Lệnh</th><th>Viết tắt</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><code>XLINE</code></td><td><code>XL</code></td><td>Vẽ đường thẳng vô tận (qua 2 điểm, cả 2 hướng)</td></tr>
+                    <tr><td><code>RAY</code></td><td>—</td><td>Vẽ nửa đường thẳng (1 hướng từ điểm gốc)</td></tr>
+                </tbody>
+            </table>
+
+            <h2>12-14. Lệnh vẽ hình đặc biệt</h2>
+            <table class="ref-table">
+                <thead><tr><th>Lệnh</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><code>DONUT</code></td><td>Vẽ hình vành khăn (đường kính trong & ngoài)</td></tr>
+                    <tr><td><code>TRACE</code></td><td>Vẽ đoạn thẳng có độ dày</td></tr>
+                    <tr><td><code>SOLID</code></td><td>Vẽ miền được tô đặc</td></tr>
+                </tbody>
+            </table>
+
+            <h2>15-19. Lệnh tạo và xử lý vùng REGION</h2>
+            <table class="ref-table">
+                <thead><tr><th>Lệnh</th><th>Viết tắt</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><code>REGION</code></td><td><code>REG</code></td><td>Tạo miền từ các hình ghép</td></tr>
+                    <tr><td><code>UNION</code></td><td><code>UNI</code></td><td>Cộng (hợp) các vùng Region</td></tr>
+                    <tr><td><code>SUBTRACT</code></td><td><code>SU</code></td><td>Trừ các vùng Region</td></tr>
+                    <tr><td><code>INTERSECT</code></td><td><code>IN</code></td><td>Lấy giao của các vùng Region</td></tr>
+                    <tr><td><code>BOUNDARY</code></td><td><code>BO</code></td><td>Tạo Pline/Region đường bao kín</td></tr>
+                </tbody>
+            </table>
+
+            <h2>📋 Tổng hợp 19 lệnh hiệu chỉnh tạo hình</h2>
+            <table class="ref-table">
+                <thead><tr><th>Lệnh</th><th>Viết tắt</th><th>Chức năng chính</th></tr></thead>
+                <tbody>
+                    <tr><td><code>Offset</code></td><td><code>O</code></td><td>Tạo đối tượng song song</td></tr>
+                    <tr><td><code>Trim</code></td><td><code>TR</code></td><td>Cắt bỏ phần thừa</td></tr>
+                    <tr><td><code>Extrim</code></td><td>—</td><td>Cắt mở rộng</td></tr>
+                    <tr><td><code>Break</code></td><td><code>BR</code></td><td>Xén một phần giữa 2 điểm</td></tr>
+                    <tr><td><code>Extend</code></td><td><code>EX</code></td><td>Kéo dài đến cạnh chặn</td></tr>
+                    <tr><td><code>Lengthen</code></td><td><code>LEN</code></td><td>Thay đổi chiều dài</td></tr>
+                    <tr><td><code>Chamfer</code></td><td><code>CHA</code></td><td>Vát mép</td></tr>
+                    <tr><td><code>Fillet</code></td><td><code>F</code></td><td>Bo góc (tròn)</td></tr>
+                    <tr><td><code>Pedit</code></td><td><code>PE</code></td><td>Hiệu chỉnh Polyline</td></tr>
+                    <tr><td><code>Xline</code></td><td><code>XL</code></td><td>Đường thẳng vô tận</td></tr>
+                    <tr><td><code>Ray</code></td><td>—</td><td>Nửa đường thẳng</td></tr>
+                    <tr><td><code>Donut</code></td><td>—</td><td>Vành khăn</td></tr>
+                    <tr><td><code>Trace</code></td><td>—</td><td>Đoạn thẳng dày</td></tr>
+                    <tr><td><code>Solid</code></td><td>—</td><td>Miền tô đặc</td></tr>
+                    <tr><td><code>Region</code></td><td><code>REG</code></td><td>Tạo vùng Region</td></tr>
+                    <tr><td><code>Union</code></td><td><code>UNI</code></td><td>Hợp Region</td></tr>
+                    <tr><td><code>Subtract</code></td><td><code>SU</code></td><td>Trừ Region</td></tr>
+                    <tr><td><code>Intersect</code></td><td><code>IN</code></td><td>Giao Region</td></tr>
+                    <tr><td><code>Boundary</code></td><td><code>BO</code></td><td>Tạo đường bao kín</td></tr>
+                </tbody>
+            </table>
+
+
+            <h2>20. Chamfer — Phương pháp vát theo góc (Angle)</h2>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">CHA</span> ↵
+<span class="prompt">[Polyline/Distance/Angle/Trim/Method]:</span> <span class="input">A</span> ↵
+<span class="prompt">Chamfer length on first line:</span> <span class="input">15</span>  <span class="comment">Cạnh vát dài 15</span>
+<span class="prompt">Chamfer angle from first line:</span> <span class="input">30</span>  <span class="comment">Góc 30° so với cạnh 1</span>
+            </div>
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Chamfer/Fillet toàn bộ Polyline</div><div class="info-text">Dùng option <code>Polyline</code> (P) trong CHAMFER hoặc FILLET → chọn Polyline → vát/bo tất cả các góc cùng lúc. Rất nhanh cho hình chữ nhật hoặc đa giác!</div></div></div>
+
+            <h2>21. PEDIT Join — Nối nhiều đối tượng thành Polyline</h2>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">PE</span> ↵
+<span class="prompt">Select polyline [Multiple]:</span> <span class="input">M</span> ↵
+<span class="prompt">Select objects:</span> <span class="comment">Quét chọn tất cả Line/Arc cần nối</span>
+<span class="prompt">Convert Lines to polylines? [Yes/No]:</span> <span class="input">Y</span> ↵
+<span class="prompt">[Close/Open/Join/Width...]:</span> <span class="input">J</span> ↵
+<span class="prompt">Fuzz distance:</span> <span class="input">0.01</span>  <span class="comment">Sai số cho phép khi nối</span>
+            </div>
+
+            <div class="chapter-nav">
+                <a href="chuong6.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Lệnh Hiệu Chỉnh Căn Bản</span></div></a>
+                <a href="chuong8.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Biến Đổi & Sao Chép Hình</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

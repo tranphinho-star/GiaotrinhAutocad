@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 15: Điểm nhìn, hệ trục toạ độ 3D và Cao độ 2D | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html" class="active"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 15 (3D)</span>
+                <h1>Điểm nhìn, Hệ trục tọa độ 3D và Cao độ 2D</h1>
+                <p class="chapter-desc">Thay đổi góc nhìn 3D, làm việc với hệ tọa độ trong không gian và tạo hình 3D từ đối tượng 2D.</p>
+            </div>
+
+            <h2>1. Thay đổi góc nhìn (VPOINT)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">VPOINT / DDVPOINT</span><span class="cmd-shortcut">VP</span></div></div>
+            <p>Lệnh dùng để thay đổi điểm nhìn của người vẽ trong không gian 3D. Cho phép ta quan sát đối tượng ở các góc độ khác nhau.</p>
+            
+            <h3>Lệnh Vpoint (Nhập góc tĩnh)</h3>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">VP</span> ↵
+<span class="prompt">Hiện Tâm: phương nhìn từ trên thẳng góc với mặt phẳng XY</span>
+<span class="prompt">- Vòng tròn nhỏ:</span> phương nhìn song song mặt phẳng XY
+<span class="prompt">- Vòng tròn lớn:</span> giống tâm nhưng nhìn từ dưới lên.
+            </div>
+            
+            <table class="ref-table">
+                <thead><tr><th>Hình Chiếu</th><th>Tọa độ điểm nhìn (X,Y,Z)</th></tr></thead>
+                <tbody>
+                    <tr><td>Hình chiếu đứng</td><td><code>0, -1, 0</code></td></tr>
+                    <tr><td>Hình chiếu bằng</td><td><code>0, 0, 1</code></td></tr>
+                    <tr><td>Hình chiếu cạnh</td><td><code>-1, 0, 0</code></td></tr>
+                </tbody>
+            </table>
+
+            <h3>Lệnh Ddvpoint (Xác định góc nhìn theo độ)</h3>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">VP</span> ↵  (Hoặc View -> 3D Viewpoint -> Select)
+            </div>
+            <ul>
+                <li><strong>Absolute to WCS:</strong> Khung nhìn theo tọa độ toàn cục.</li>
+                <li><strong>Relative to UCS:</strong> Khung nhìn theo tọa độ người dùng.</li>
+                <li><strong>X axis:</strong> Góc xoay trên mặt phẳng XY (vd: 270 là chiếu đứng, 180 là chiếu cạnh).</li>
+                <li><strong>XY plane:</strong> Góc nâng từ mặt phẳng XY (vd: 90 là chiếu bằng, 0 là nhìn ngang).</li>
+            </ul>
+
+            <h2>2. Hệ trục tọa độ trong không gian 3D (UCS)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">USER COORDINATE SYSTEM</span><span class="cmd-shortcut">UCS</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Tính Năng</th><th>Cách Khởi Động</th></tr></thead>
+                <tbody><tr><td>Dời, xoay trục tọa độ 3 chiều</td><td><code>UCS</code> hoặc Tools -> UCS</td></tr></tbody></table>
+            </div>
+
+            <p>Bạn không thể vẽ ở các mặt phẳng trên không nếu không dời gốc tọa độ (UCS) và xoay các trục X, Y lên đúng mặt phẳng làm việc.</p>
+            <ul>
+                <li><strong>Origin:</strong> Dời gốc tọa độ đến điểm mới nhưng giữ nguyên phương chiều các trục XYZ hiện tại.</li>
+                <li><strong>3point:</strong> Dời gốc và định hướng lại qua 3 điểm (Gốc mới, Điểm thuộc trục X, Điểm thuộc phần dương trục Y).</li>
+                <li><strong>X / Y / Z:</strong> Giữ nguyên tâm, Xoay các trục tọa độ quanh trục X (hay Y, Z).</li>
+                <li><strong>View:</strong> Mặt phẳng XY sẽ đi song song với màn hình nhìn hiện tại.</li>
+                <li><strong>Save/Restore:</strong> Lưu lại UCS hiện hành và Khôi phục tên của UCS đã lưu.</li>
+                <li><strong>World:</strong> Trở về gốc tọa độ toàn cục (WCS) mặc định của AutoCAD.</li>
+            </ul>
+
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Nhập tọa độ 3D linh hoạt theo điểm lấy chuẩn</div><div class="info-text">Khi có một điểm gốc sẵn, bạn có thể gõ <b>.xy</b>, AutoCAD sẽ hỏi <b>of</b> (chọn điểm có sẵn lấy tọa độ x, y) và <b>need z</b> (chỉ đòi bạn nhập thêm cao độ z). Tương tự cho <b>.xz</b> và <b>.yz</b>.</div></div></div>
+
+            <h2>3. Tạo hình 3D từ hình 2 Chiều (Cao độ)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">THICKNESS & CHPROP</span><span class="cmd-shortcut">CH / THICKNESS</span></div></div>
+            <p>Đẩy một đường vẽ 2D (khép kín hoặc hở) lên thành một "mái vách" (mặt) có bề dày là z bằng cách cho cao độ (Thickness).</p>
+
+            <ul>
+                <li><strong>Cho bản vẽ mới:</strong> Gõ biến <code>THICKNESS</code> ↵ rồi nhập độ dày (chiều cao phương z). Các lệnh vẽ sau đó sẽ mặc định có vách cao này.</li>
+                <li><strong>Cho bản vẽ đã vẽ:</strong> Lệnh <code>CHPROP</code> (Lệnh chọn CH). Quét chọn đối tượng 2D -> <code>Thickness</code> -> nhập độ cao z. Đổi màu hoặc thuộc tính tương tự.</li>
+            </ul>
+            
+            <p><strong>Lưu ý về Nắp che 2 đầu (Face/Boundary):</strong> Khi kéo Thickness, nó chỉ rỗng ở giữa. Để bít lại tạo thành hộp có đáy/nắp ảo, sử dụng lệnh <code>BOUNDARY</code> (BO) hoặc <code>3DFace</code> che phủ nắp lại, hoặc <code>Render</code> xuất ảnh bóng.</p>
+
+            <h2>4. Vẽ đường 3D (3DPOLY & SPLINE)</h2>
+
+            <h3>Lệnh 3DPOLY — Đa tuyến Polyline 3D</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">3D POLYLINE</span><span class="cmd-shortcut">3DPOLY</span></div></div>
+            <p>Vẽ đa tuyến trong không gian 3D — mỗi đỉnh có thể nằm ở toạ độ (x, y, z) bất kỳ. Dùng lệnh <code>PEDIT</code> để hiệu chỉnh 3D Polyline sau khi vẽ (thêm/xoá đỉnh, chuyển Spline fit).</p>
+
+            <h3>Lệnh SPLINE — Đường cong trơn</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">SPLINE CURVE</span><span class="cmd-shortcut">SPL</span></div></div>
+            <p>Vẽ đường cong trơn (B-Spline) đi qua hoặc gần các điểm kiểm soát trong không gian 3D. Thích hợp cho các biên dạng cong mềm mại hơn so với 3DPoly.</p>
+
+            <h3>Biến ELEVATION — Nhảy mặt phẳng vẽ</h3>
+            <p>Nâng toàn bộ mặt phẳng vẽ lên một cao độ Z so với mặt phẳng XOY. Mọi đối tượng vẽ sau đó đều tự động nằm ở cao độ (Elevation) này.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">ELEV</span> ↵
+<span class="prompt">New current elevation &lt;0.0&gt;:</span> Nhập cao trình mới (vd: 100)
+<span class="prompt">New current thickness &lt;0.0&gt;:</span> Nhập độ dày khu vực (vd: 50)
+            </div>
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Kết hợp Elevation + Thickness</div><div class="info-text">Gán <b>Elevation = 100</b> và <b>Thickness = 50</b> rồi vẽ hình chữ nhật → AutoCAD tạo hộp 3D có đáy ở z=100, đỉnh ở z=150.</div></div></div>
+
+            <h2>5. Khung nhìn — Viewports & Layout</h2>
+
+            <h3>VPorts — Khung nhìn tĩnh (Model Space)</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">VIEWPORTS</span><span class="cmd-shortcut">VPORTS</span></div></div>
+            <p>Chia màn hình thành nhiều khung nhìn cố định kề nhau. Điều kiện: biến <code>TileMode = 1</code> (ON). Mỗi ô có thể đặt góc nhìn (Vpoint) riêng biệt.</p>
+
+            <h3>MView — Khung nhìn động (Paper Space)</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">MVIEW</span><span class="cmd-shortcut">MV</span></div></div>
+            <p>Tạo khung nhìn co giãn tự do trong không gian giấy (Layout). Điều kiện: biến <code>TileMode = 0</code> (OFF).</p>
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Trước khi dùng MView</div><div class="info-text">Cần đặt khổ giấy (<code>Limits</code>), <code>Zoom/All</code> và <code>TileMode=0</code>, rồi chuyển qua <b>Pspace</b> trước.</div></div></div>
+
+            <h3>VPlayer — Quản lý lớp theo khung nhìn</h3>
+            <p>Điều kiện: <code>TileMode = 0</code>. Cho phép đông (Freeze) hoặc tan (Thaw) các lớp riêng biệt trên mỗi khung nhìn, không ảnh hưởng lẫn nhau.</p>
+            <table class="ref-table">
+                <thead><tr><th>Tuỳ chọn</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Newfrz</strong></td><td>Tạo lớp mới và đóng băng trên mọi Viewports</td></tr>
+                    <tr><td><strong>Freeze</strong></td><td>Đóng băng lớp trên khung nhìn đã chọn</td></tr>
+                    <tr><td><strong>Thaw</strong></td><td>Làm tan lớp trên khung nhìn đã chọn</td></tr>
+                    <tr><td><strong>Vpvisdflt</strong></td><td>Thiết lập hiển thị mặc định Freeze/Thaw</td></tr>
+                    <tr><td><strong>Reset</strong></td><td>Khôi phục hiển thị theo Vpvisdflt</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Mvsetup — Thiết lập bố cục bản vẽ</h3>
+            <p>Trình tự: Chọn <b>N</b> (không chuyển Pspace) → Nhập đơn vị, tỷ lệ, chiều rộng/cao vùng vẽ. Chọn <b>Y</b> (chuyển Pspace) → Dùng các tuỳ chọn:</p>
+            <ul>
+                <li><strong>Align:</strong> Canh chỉnh vị trí mô hình giữa các khung nhìn (đường giống đứng & ngang).</li>
+                <li><strong>Create:</strong> Tạo khung nhìn động mới.</li>
+                <li><strong>Scale:</strong> Chỉnh tỷ lệ đối tượng trong khung nhìn.</li>
+                <li><strong>Title block:</strong> Chèn khung tên Block vào bản vẽ.</li>
+                <li><strong>Options:</strong> Gán đặc tính cho khung tên mới chèn.</li>
+            </ul>
+
+            <div class="chapter-nav">
+                <a href="chuong14.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Bảng Phím Tắt</span></div></a>
+                <a href="chuong16.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Tạo Hình Cơ Bản 3D</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

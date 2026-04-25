@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 3: Hệ Toạ Độ & Truy Bắt Điểm | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content">
+        <a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a>
+        <nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div>
+            <ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html" class="active"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 3</span>
+                <h1>Hệ Toạ Độ & Truy Bắt Điểm</h1>
+                <p class="chapter-desc">Hệ toạ độ Đề-các, toạ độ cực, 6 phương pháp nhập toạ độ và 15 phương thức truy bắt điểm OSNAP.</p>
+            </div>
+
+            <h2>1. Hệ toạ độ sử dụng trong AutoCAD</h2>
+            <h3>a. Hệ toạ độ Đề-các (Cartesian)</h3>
+            <p>Hệ toạ độ Đề-các được sử dụng phổ biến trong toán học và đồ hoạ, dùng để xác định vị trí các hình học trong mặt phẳng và không gian 3 chiều.</p>
+            <ul>
+                <li>Trong bản vẽ 2D: một điểm được xác định bằng hoành độ X và tung độ Y: <code>(X, Y)</code></li>
+                <li>Điểm gốc toạ độ là <code>(0, 0)</code></li>
+                <li>Trong bản vẽ 3D: cần thêm cao độ Z: <code>(X, Y, Z)</code></li>
+            </ul>
+
+            <h3>Toạ độ tuyệt đối</h3>
+            <p>Dựa theo gốc toạ độ <code>(0,0)</code> của bản vẽ để xác định điểm. Sử dụng khi biết chính xác giá trị X và Y.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">Line</span> ↵
+<span class="prompt">Specify first point:</span> <span class="input">-50,-50</span> ↵
+<span class="prompt">Specify next point:</span> <span class="input">30,-50</span> ↵
+            </div>
+
+            <h3>Toạ độ tương đối</h3>
+            <p>Dựa trên điểm nhập cuối cùng. Sử dụng dấu <code>@</code> trước toạ độ.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">Line</span> ↵
+<span class="prompt">Specify first point:</span> <span class="input">30,-50</span> ↵
+<span class="prompt">Specify next point:</span> <span class="input">@0,100</span> ↵   <span class="comment">// Vẽ đường thẳng dài 100 theo Y</span>
+            </div>
+
+            <h3>b. Hệ toạ độ cực</h3>
+            <p>Toạ độ cực chỉ định khoảng cách và góc so với gốc toạ độ. Dùng dấu <code>&lt;</code> để phân cách.</p>
+            <div class="command-syntax">
+<span class="prompt">Cú pháp:</span> <span class="input">Khoảng_cách&lt;Góc</span>
+<span class="prompt">Ví dụ:</span> <span class="input">50&lt;60</span>     <span class="comment">// Điểm cách gốc 50 đơn vị, góc 60°</span>
+<span class="prompt">Tương đối:</span> <span class="input">@1&lt;45</span>    <span class="comment">// Cách điểm trước 1 đơn vị, góc 45°</span>
+            </div>
+
+            <div class="info-box note">
+                <span class="icon">ℹ️</span>
+                <div>
+                    <div class="info-title">Quy ước góc</div>
+                    <div class="info-text">Góc tăng theo ngược chiều kim đồng hồ. Góc 0° ở hướng Đông (chiều dương trục X). Nhập giá trị âm cho góc theo chiều kim đồng hồ.</div>
+                </div>
+            </div>
+
+            <h4>Ví dụ: Vẽ lục giác đều bằng toạ độ cực</h4>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">Line</span> ↵
+<span class="prompt">Specify first point:</span> <span class="comment">(Toạ độ P1 bất kỳ)</span>
+<span class="prompt">Specify next point:</span> <span class="input">@60&lt;0</span>     <span class="comment">→ P2</span>
+<span class="prompt">Specify next point:</span> <span class="input">@60&lt;60</span>    <span class="comment">→ P3</span>
+<span class="prompt">Specify next point:</span> <span class="input">@60&lt;120</span>   <span class="comment">→ P4</span>
+<span class="prompt">Specify next point:</span> <span class="input">@60&lt;180</span>   <span class="comment">→ P5</span>
+<span class="prompt">Specify next point:</span> <span class="input">@60&lt;-120</span>  <span class="comment">→ P6</span>
+<span class="prompt">Specify next point:</span> <span class="input">C</span>          <span class="comment">→ Đóng điểm P6 với P1</span>
+            </div>
+
+            <h2>2. Các phương pháp nhập toạ độ</h2>
+            <table class="ref-table">
+                <thead><tr><th>Phương pháp</th><th>Cú pháp</th><th>Mô tả</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Pick (chuột)</strong></td><td>Nhấp chuột trái</td><td>Kết hợp với truy bắt điểm</td></tr>
+                    <tr><td><strong>Toạ độ tuyệt đối</strong></td><td><code>X,Y</code></td><td>Theo gốc toạ độ (0,0)</td></tr>
+                    <tr><td><strong>Toạ độ cực</strong></td><td><code>D&lt;α</code></td><td>Khoảng cách D, góc α theo gốc (0,0)</td></tr>
+                    <tr><td><strong>Toạ độ tương đối</strong></td><td><code>@X,Y</code></td><td>Theo điểm cuối cùng</td></tr>
+                    <tr><td><strong>Cực tương đối</strong></td><td><code>@D&lt;α</code></td><td>Khoảng cách D, góc α theo điểm trước</td></tr>
+                    <tr><td><strong>Khoảng cách trực tiếp</strong></td><td><code>D + Enter</code></td><td>Nhập khoảng cách, định hướng bằng cursor</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Minh họa: 4 phương pháp nhập tọa độ chính</h3>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 720 300" style="max-width:720px;width:100%;background:rgba(0,0,0,0.15);border-radius:12px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Grid -->
+              <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/></pattern></defs>
+              <rect width="720" height="300" fill="url(#grid)"/>
+              <!-- Axes -->
+              <line x1="60" y1="260" x2="340" y2="260" stroke="#0696D7" stroke-width="2"/>
+              <line x1="60" y1="260" x2="60" y2="40" stroke="#0696D7" stroke-width="2"/>
+              <polygon points="340,255 340,265 355,260" fill="#0696D7"/>
+              <polygon points="55,40 65,40 60,25" fill="#0696D7"/>
+              <text x="355" y="265" fill="#0696D7" font-size="14" font-weight="bold">X</text>
+              <text x="50" y="22" fill="#0696D7" font-size="14" font-weight="bold">Y</text>
+              <text x="45" y="278" fill="#aaa" font-size="11">0,0</text>
+              <!-- Point A absolute -->
+              <circle cx="180" cy="180" r="5" fill="#4CAF50"/>
+              <text x="185" y="175" fill="#4CAF50" font-size="12" font-weight="bold">A (3,2)</text>
+              <text x="100" y="155" fill="#4CAF50" font-size="10">Tuyệt đối</text>
+              <line x1="60" y1="180" x2="180" y2="180" stroke="#4CAF50" stroke-width="1" stroke-dasharray="4"/>
+              <line x1="180" y1="260" x2="180" y2="180" stroke="#4CAF50" stroke-width="1" stroke-dasharray="4"/>
+              <!-- Point B relative -->
+              <circle cx="260" cy="120" r="5" fill="#FF9800"/>
+              <text x="265" y="115" fill="#FF9800" font-size="12" font-weight="bold">B (@2,1.5)</text>
+              <line x1="180" y1="180" x2="260" y2="120" stroke="#FF9800" stroke-width="2"/>
+              <text x="200" y="145" fill="#FF9800" font-size="10">Tương đối</text>
+              <!-- Right side: Polar -->
+              <line x1="420" y1="260" x2="680" y2="260" stroke="#0696D7" stroke-width="2"/>
+              <line x1="420" y1="260" x2="420" y2="40" stroke="#0696D7" stroke-width="2"/>
+              <polygon points="680,255 680,265 695,260" fill="#0696D7"/>
+              <polygon points="415,40 425,40 420,25" fill="#0696D7"/>
+              <text x="695" y="265" fill="#0696D7" font-size="14" font-weight="bold">X</text>
+              <text x="410" y="22" fill="#0696D7" font-size="14" font-weight="bold">Y</text>
+              <!-- Polar point -->
+              <circle cx="420" cy="260" r="4" fill="#aaa"/>
+              <circle cx="560" cy="140" r="5" fill="#E040FB"/>
+              <line x1="420" y1="260" x2="560" y2="140" stroke="#E040FB" stroke-width="2"/>
+              <text x="565" y="135" fill="#E040FB" font-size="12" font-weight="bold">C (@5&lt;40°)</text>
+              <!-- Angle arc -->
+              <path d="M 460 260 A 40 40 0 0 0 445 235" fill="none" stroke="#E040FB" stroke-width="1.5"/>
+              <text x="462" y="248" fill="#E040FB" font-size="10">40°</text>
+              <text x="470" y="195" fill="#E040FB" font-size="10">d=5</text>
+              <text x="460" y="280" fill="#aaa" font-size="10">Cực tương đối</text>
+              <!-- Direct input -->
+              <circle cx="580" cy="260" r="4" fill="#aaa"/>
+              <line x1="580" y1="260" x2="660" y2="260" stroke="#00BCD4" stroke-width="2.5"/>
+              <circle cx="660" cy="260" r="5" fill="#00BCD4"/>
+              <text x="600" y="253" fill="#00BCD4" font-size="10">d=2 →</text>
+              <text x="590" y="280" fill="#aaa" font-size="10">Direct Input</text>
+            </svg>
+            </div>
+
+            <h3>Ví dụ thực tế: Vẽ chi tiết "Guide Plate"</h3>
+            <p>Sử dụng kết hợp cả 4 phương pháp nhập tọa độ để vẽ chi tiết cơ khí (kích thước inches):</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">L</span> ↵
+<span class="prompt">Specify first point:</span> <span class="input">0,0</span> ↵         <span class="comment">← Tuyệt đối: gốc tọa độ</span>
+<span class="prompt">Next point:</span> <span class="input">@8,0</span> ↵                    <span class="comment">← Tương đối: sang phải 8</span>
+<span class="prompt">Next point:</span> <span class="input">@0,5.5</span> ↵                  <span class="comment">← Tương đối: lên 5.5</span>
+<span class="prompt">Next point:</span> <span class="input">@-2.5,0</span> ↵                 <span class="comment">← Tương đối: sang trái 2.5</span>
+<span class="prompt">Next point:</span> <span class="input">@1.5&lt;120</span> ↵                <span class="comment">← Cực tương đối: vát xiên</span>
+<span class="prompt">Next point:</span> <span class="input">0,6.5</span> ↵                    <span class="comment">← Tuyệt đối: trở về cạnh trái</span>
+<span class="prompt">Next point:</span> <span class="input">C</span> ↵                          <span class="comment">← Close: đóng hình</span>
+            </div>
+
+            <h2>3. Phương thức truy bắt điểm đối tượng (OSNAP)</h2>
+            <p>AutoCAD 2007 có <strong>15 phương thức</strong> truy bắt điểm. Có thể sử dụng tạm trú hoặc thường trú.</p>
+            
+            <div class="info-box tip">
+                <span class="icon">💡</span>
+                <div>
+                    <div class="info-title">Cách kích hoạt OSNAP</div>
+                    <div class="info-text">Giữ <kbd>Shift</kbd> + nhấp chuột phải → Shortcut menu Object Snap. Hoặc nhập 3 chữ cái đầu (END, CEN, MID...) tại dòng lệnh.</div>
+                </div>
+            </div>
+
+            <table class="ref-table">
+                <thead><tr><th>#</th><th>Phương thức</th><th>Viết tắt</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td><strong>CENter</strong></td><td><code>CEN</code></td><td>Bắt điểm tâm đường tròn, cung tròn, elip</td></tr>
+                    <tr><td>2</td><td><strong>ENDpoint</strong></td><td><code>END</code></td><td>Bắt điểm cuối đường thẳng, Spline, cung tròn</td></tr>
+                    <tr><td>3</td><td><strong>INSert</strong></td><td><code>INS</code></td><td>Bắt điểm chèn của dòng chữ và Block</td></tr>
+                    <tr><td>4</td><td><strong>INTersection</strong></td><td><code>INT</code></td><td>Bắt giao điểm hai đối tượng</td></tr>
+                    <tr><td>5</td><td><strong>MIDpoint</strong></td><td><code>MID</code></td><td>Bắt điểm giữa đường thẳng, cung tròn, Spline</td></tr>
+                    <tr><td>6</td><td><strong>NEArest</strong></td><td><code>NEA</code></td><td>Bắt điểm gần nhất trên đối tượng</td></tr>
+                    <tr><td>7</td><td><strong>NODe</strong></td><td><code>NOD</code></td><td>Bắt điểm Point</td></tr>
+                    <tr><td>8</td><td><strong>PERpendicular</strong></td><td><code>PER</code></td><td>Bắt điểm vuông góc với đối tượng</td></tr>
+                    <tr><td>9</td><td><strong>QUAdrant</strong></td><td><code>QUA</code></td><td>Bắt các điểm 1/4 (Circle, Ellipse, Arc)</td></tr>
+                    <tr><td>10</td><td><strong>TANgent</strong></td><td><code>TAN</code></td><td>Bắt điểm tiếp xúc với đối tượng</td></tr>
+                    <tr><td>11</td><td><strong>FROm</strong></td><td><code>FRO</code></td><td>Truy bắt bằng toạ độ tương đối từ điểm chuẩn</td></tr>
+                    <tr><td>12</td><td><strong>APPint</strong></td><td><code>APP</code></td><td>Bắt giao điểm biểu kiến (3D)</td></tr>
+                    <tr><td>13</td><td><strong>Tracking</strong></td><td>—</td><td>Nhập toạ độ tương đối qua điểm xác định</td></tr>
+                    <tr><td>14</td><td><strong>MTP</strong></td><td><code>MTP</code></td><td>Bắt điểm giữa 2 điểm</td></tr>
+                    <tr><td>15</td><td><strong>EXTension</strong></td><td><code>EXT</code></td><td>Bắt điểm trên đường kéo dài</td></tr>
+                </tbody>
+            </table>
+
+            <h2>4. Lệnh OSNAP (OS) - Gán truy bắt điểm thường trú</h2>
+            <div class="command-box">
+                <div class="cmd-header"><span class="cmd-label">OSNAP</span><span class="cmd-shortcut">OS</span></div>
+                <table class="ref-table" style="margin:0">
+                    <thead><tr><th>Menu Bar</th><th>Nhập lệnh</th><th>Phím tắt</th></tr></thead>
+                    <tbody><tr><td>Tools → Drafting Settings...</td><td><code>OSnap</code> hoặc <code>OS</code></td><td><kbd>F3</kbd></td></tr></tbody>
+                </table>
+            </div>
+            <p>Hộp thoại <strong>Drafting Setting</strong> xuất hiện → chọn trang <strong>Object Snap</strong> → chọn các phương thức truy bắt điểm cần dùng → nhấn <strong>OK</strong>.</p>
+
+            <h2>5. Lệnh vẽ đường thẳng LINE</h2>
+            <div class="command-box">
+                <div class="cmd-header"><span class="cmd-label">LINE</span><span class="cmd-shortcut">L</span></div>
+            </div>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">L</span> ↵
+<span class="prompt">Specify first point:</span>      <span class="comment">Nhập toạ độ điểm đầu</span>
+<span class="prompt">Specify next point [Undo]:</span> <span class="comment">Nhập toạ độ điểm cuối</span>
+<span class="prompt">Specify next point [U/C]:</span>  <span class="comment">Tiếp tục hoặc Enter kết thúc</span>
+                                       <span class="comment">U = Undo, C = Close (đóng)</span>
+            </div>
+            <div class="info-box tip">
+                <span class="icon">💡</span>
+                <div>
+                    <div class="info-title">Mẹo vẽ nhanh với F8</div>
+                    <div class="info-text">Bật <kbd>F8</kbd> (Ortho On), đưa chuột sang phải rồi nhập số → được đoạn thẳng nằm ngang. Đưa chuột lên trên nhập số → đoạn thẳng đứng.</div>
+                </div>
+            </div>
+
+            <h2>6. Lệnh vẽ đường tròn CIRCLE</h2>
+            <div class="command-box">
+                <div class="cmd-header"><span class="cmd-label">CIRCLE</span><span class="cmd-shortcut">C</span></div>
+            </div>
+            <p>Có <strong>5 phương pháp</strong> vẽ đường tròn:</p>
+            <h3>♦ Tâm và bán kính/đường kính</h3>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">C</span> ↵
+<span class="prompt">Specify center point [3P/2P/Ttr]:</span> <span class="comment">Nhập toạ độ tâm</span>
+<span class="prompt">Specify Radius [Diameter]:</span> <span class="input">50</span>  <span class="comment">Bán kính = 50</span>
+            </div>
+            <h3>♦ 3 Point (3P) - Qua 3 điểm</h3>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">C</span> ↵
+<span class="prompt">Specify center [3P/2P/Ttr]:</span> <span class="input">3P</span>
+<span class="prompt">First Point:</span>  <span class="comment">Nhập điểm thứ nhất</span>
+<span class="prompt">Second Point:</span> <span class="comment">Nhập điểm thứ hai</span>
+<span class="prompt">Third Point:</span>  <span class="comment">Nhập điểm thứ ba</span>
+            </div>
+            <h3>♦ 2 Point (2P) - Qua 2 đầu đường kính</h3>
+            <h3>♦ TTR - Tiếp xúc 2 đối tượng + bán kính</h3>
+            <h3>♦ TAN, TAN, TAN - Tiếp xúc 3 đối tượng (qua menu Draw → Circle)</h3>
+
+            <h2>7. Object Snap Tracking (OTRACK) — Truy bắt nâng cao</h2>
+            <p>Kết hợp OSNAP với đường theo dõi (tracking) để xác định điểm chính xác không nằm trực tiếp trên đối tượng. Bật bằng <kbd>F11</kbd>.</p>
+            <div class="command-syntax">
+<span class="prompt">Ví dụ:</span> Vẽ đường tròn có tâm giao từ 2 Midpoint
+<span class="comment">1. Bật F3 (OSNAP Midpoint) + F11 (OTRACK)</span>
+<span class="comment">2. Command: C (Circle)</span>
+<span class="comment">3. Rê chuột qua Midpoint cạnh ngang → xuất hiện dấu +</span>
+<span class="comment">4. Rê chuột qua Midpoint cạnh đứng → xuất hiện dấu +</span>
+<span class="comment">5. Di chuột đến giao 2 đường tracking → Click</span>
+            </div>
+
+            <h2>8. Polar Tracking — Theo dõi phương cực</h2>
+            <p>Thay thế <kbd>F8</kbd> (Ortho) với nhiều góc hơn. Bật bằng <kbd>F10</kbd>.</p>
+            <div class="command-syntax">
+<span class="prompt">Thiết lập:</span> Nhấp phải vào nút Polar trên Status Bar → Settings
+<span class="comment">Increment Angle: chọn góc tăng (15°, 30°, 45°, 90°)</span>
+<span class="comment">Additional angles: thêm góc tùy ý (VD: 60°)</span>
+<span class="comment">Polar Angle measurement: Absolute / Relative to last segment</span>
+            </div>
+
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Kết hợp OTRACK + Polar Tracking</div><div class="info-text">Bật cả <kbd>F10</kbd> + <kbd>F11</kbd> để sử dụng AutoTrack: cursor tự động bắt vào các phương cực (30°, 45°, 60°...) đi qua các điểm OSNAP đã quét. Rất hữu ích khi vẽ chi tiết cơ khí phức tạp.</div></div></div>
+
+            <h2>9. Snap From — Xác định điểm cách gốc</h2>
+            <p>Dùng khi cần xác định một điểm cách một điểm chuẩn đã biết một khoảng nhất định:</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">L</span> ↵ (Line)
+<span class="prompt">Specify first point:</span> <span class="input">FROM</span> ↵
+<span class="prompt">Base point:</span> <span class="comment">Chọn điểm chuẩn (VD: Endpoint của cạnh)</span>
+<span class="prompt">Offset:</span> <span class="input">@20,15</span> ↵  <span class="comment">← Cách điểm chuẩn 20 theo X, 15 theo Y</span>
+            </div>
+
+            <div class="chapter-nav">
+                <a href="chuong2.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Các Lệnh Về File</span></div></a>
+                <a href="chuong4.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Thiết Lập Bản Vẽ Cơ Bản</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

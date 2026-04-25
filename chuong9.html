@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 9: Quản Lý Bản Vẽ Theo Lớp (Layer) | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html" class="active"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 9</span>
+                <h1>Quản Lý Bản Vẽ Theo Lớp (Layer)</h1>
+                <p class="chapter-desc">Tạo, hiệu chỉnh lớp (Layer), kiểu đường nét (Linetype) và màu sắc (Color).</p>
+            </div>
+
+            <h2>1. Khái niệm về Lớp (Layer)</h2>
+            <p>Layer giống như những tờ giấy can trong suốt xếp chồng lên nhau. Mỗi tờ chứa một loại nét vẽ (Nét thấy, Nét đứt, Trục, Kích thước...). Khi nhìn từ trên xuống, ta có một bản vẽ hoàn chỉnh.</p>
+            <ul>
+                <li><strong>Quản lý dễ dàng:</strong> Tắt/bật/khóa các nét cùng loại dễ dàng.</li>
+                <li><strong>Kiểm soát thuộc tính:</strong> Định nghĩa màu sắc (Color), kiểu nét (Linetype), độ dày in ấn (Lineweight) cho toàn bộ lớp.</li>
+            </ul>
+
+            <h2>2. Lệnh tạo và hiệu chỉnh Layer (LA)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">LAYER</span><span class="cmd-shortcut">LA</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                <tbody><tr><td>Format → Layer...</td><td><code>Layer</code> hoặc <code>LA</code></td></tr></tbody></table>
+            </div>
+            
+            <p>Hộp thoại <strong>Layer Properties Manager</strong> xuất hiện. Các thuộc tính quan trọng:</p>
+            
+            <table class="ref-table">
+                <thead><tr><th>Trạng thái/Nút</th><th>Khóa</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>On / Off</strong></td><td>Bóng đèn (💡)</td><td>Bật/Tắt hiển thị lớp (đối tượng vẫn được REGEN).</td></tr>
+                    <tr><td><strong>Thaw / Freeze</strong></td><td>Mặt trời/Bông tuyết (🌞/❄️)</td><td>Đóng băng lớp (không hiển thị & không REGEN, tăng tốc bản vẽ lớn).</td></tr>
+                    <tr><td><strong>Lock / Unlock</strong></td><td>Ổ khoá (🔒)</td><td>Khóa lớp (hiển thị nhưng không thể xóa/sửa).</td></tr>
+                    <tr><td><strong>Color</strong></td><td>—</td><td>Đổi màu cho lớp.</td></tr>
+                    <tr><td><strong>Linetype</strong></td><td>—</td><td>Kiểu đường nét (Continuous, Dashed, Center...). Phải <b>Load</b> mới có.</td></tr>
+                    <tr><td><strong>Lineweight</strong></td><td>—</td><td>Bề rộng nét để in.</td></tr>
+                    <tr><td><strong>Plot</strong></td><td>Máy in (🖨️)</td><td>Cho phép/Không cho phép in lớp này.</td></tr>
+                </tbody>
+            </table>
+
+            <h3>♦ Các biểu tượng (Icon) trong hộp thoại:</h3>
+            <ul>
+                <li><strong>New Layer (Alt+N):</strong> Tạo lớp mới.</li>
+                <li><strong>Delete Layer (Alt+D):</strong> Xóa lớp (chỉ xóa được lớp rỗng).</li>
+                <li><strong>Set Current Layer (Alt+C):</strong> Đặt lớp đang chọn làm lớp hiện hành (để vẽ).</li>
+            </ul>
+
+            <h2>3. Lệnh tạo kiểu đường nét LINETYPE (LT)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">LINETYPE</span><span class="cmd-shortcut">LT</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                <tbody><tr><td>Format → Linetype...</td><td><code>Linetype</code> hoặc <code>LT</code></td></tr></tbody></table>
+            </div>
+            <p>Mặc định AutoCAD chỉ có đường nét liền (Continuous). Để vẽ đường tâm hoặc nét đứt, ta phải dùng lệnh <code>LT</code> để tải (Load) từ thư viện (.lin).</p>
+
+            <h3>♦ Định tỷ lệ kiểu nét - Lệnh LTSCALE (LTS)</h3>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">LTS</span> ↵
+<span class="prompt">Enter new linetype scale factor &lt;1.0000&gt;:</span> <span class="input">10</span>  <span class="comment">Thay đổi tỷ lệ hiển thị đứt nét</span>
+            </div>
+            <p>Nếu đường tâm/nét đứt nhìn quá nhỏ (giống nét liền) hoặc quá to (thưa), hãy dùng <code>LTS</code> để chỉnh tỷ lệ.</p>
+
+            <h2>4. Lệnh thay đổi màu sắc COLOR (COL)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">COLOR</span><span class="cmd-shortcut">COL</span></div></div>
+            <p><strong>Khuyến nghị:</strong> Nên quản lý màu sắc theo <b>Bylayer</b> (màu đi theo lớp). Chỉ dùng lệnh <code>COL</code> khi cần một đoạn có màu khác với lớp hiện hành.</p>
+
+            <h2>5. Gán thuộc tính qua thanh công cụ Properties</h2>
+            <p>Thay vì mất công thiết lập trước, ta có thể vẽ bằng lớp 0, sau đó <strong>chọn đối tượng</strong> và sử dụng thanh công cụ <strong>Properties Object</strong> để thay đổi Color, Linetype, Lineweight, hoặc chuyển sang Layer khác.</p>
+
+            <h2>6. Lệnh sao chép thuộc tính MATCHPROP (MA)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">MATCHPROP</span><span class="cmd-shortcut">MA</span></div>
+                <table class="ref-table" style="margin:0"><thead><tr><th>Menu Bar</th><th>Nhập lệnh</th></tr></thead>
+                <tbody><tr><td>Modify → Match Properties</td><td><code>Matchprop</code> hoặc <code>MA</code></td></tr></tbody></table>
+            </div>
+            <p>Sao chép thuộc tính (layer, màu, nét, tỷ lệ, in...) từ một đối tượng gốc sang các đối tượng khác (Rất hay dùng để "quét" thuộc tính).</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">MA</span> ↵
+<span class="prompt">Select source object:</span>         <span class="comment">Chọn đối tượng mẫu (chổi cọ xuất hiện)</span>
+<span class="prompt">Select destination object(s):</span> <span class="comment">Quét chọn các đối tượng cần chuyển thuộc tính</span>
+            </div>
+
+            <div class="chapter-nav">
+                <a href="chuong8.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Biến Đổi & Sao Chép Hình</span></div></a>
+                <a href="chuong10.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Hình Cắt Mặt Cắt</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

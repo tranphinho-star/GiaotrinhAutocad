@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPL Mức độ 15: Hoàn thiện bản vẽ kỹ thuật | AutoCAD</title>
+    <meta name="description" content="One Point Lesson: Tạo Drawing Template, vẽ Gối đỡ trục 3 hình chiếu, bản vẽ lắp ráp Cụm van bi trong AutoCAD">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .opl-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(255,107,53,0.15),rgba(255,107,53,0.05));border:1px solid rgba(255,107,53,0.3);color:#FF8A5C;padding:0.5rem 1.2rem;border-radius:50px;font-size:0.85rem;font-weight:600;margin-bottom:1rem;letter-spacing:1px}
+        .calc-table{width:100%;border-collapse:separate;border-spacing:0;margin:1.5rem 0;border-radius:12px;overflow:hidden;border:1px solid var(--border-color)}.calc-table thead{background:linear-gradient(135deg,var(--primary-dark),var(--primary))}.calc-table th{color:white;padding:0.8rem 1.2rem;font-size:0.85rem;font-weight:600;text-align:left}.calc-table td{padding:0.7rem 1.2rem;border-top:1px solid var(--border-color);background:var(--bg-tertiary);font-size:0.92rem;color:var(--text-secondary)}.calc-table tr:hover td{background:var(--bg-card-hover)}.calc-table .result{color:#4CAF50;font-weight:700;font-family:'JetBrains Mono',monospace}
+        .step-card{background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.8rem;margin:1.5rem 0;position:relative;overflow:hidden}.step-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--primary),var(--accent))}
+        .step-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:50%;color:white;font-weight:700;font-size:0.9rem;margin-right:12px;flex-shrink:0;box-shadow:0 0 15px var(--primary-glow)}
+        .step-title{display:flex;align-items:center;margin-bottom:1rem;font-size:1.1rem;font-weight:600}
+        .step-cmd{background:var(--bg-primary);border-radius:8px;padding:0.8rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.85rem;line-height:1.8;margin:0.8rem 0;color:#A8D8B9;overflow-x:auto;border-left:3px solid var(--primary)}.step-cmd .prompt{color:var(--warning);font-weight:600}.step-cmd .val{color:#64FFDA}.step-cmd .cmt{color:var(--text-muted);font-style:italic}
+        .step-img{border-radius:12px;margin:1rem 0;border:1px solid var(--border-color);max-width:100%;box-shadow:var(--shadow-md);transition:transform 0.3s}.step-img:hover{transform:scale(1.02)}
+        .exercise-header{background:linear-gradient(135deg,rgba(6,150,215,0.1),rgba(255,107,53,0.05));border:1px solid rgba(6,150,215,0.2);border-radius:var(--radius-lg);padding:1.5rem 2rem;margin:2.5rem 0 1.5rem;text-align:center}.exercise-header h2{border:none!important;margin:0!important;padding:0!important;color:var(--primary-light);font-size:1.4rem}.exercise-header p{color:var(--text-secondary);margin:0.5rem 0 0!important;font-size:0.95rem}
+        .highlight-box{background:rgba(255,152,0,0.08);border:1px solid rgba(255,152,0,0.2);border-radius:var(--radius-md);padding:1rem 1.5rem;margin:1rem 0}.highlight-box strong{color:#FF9800}
+        .tip-inline{display:flex;align-items:flex-start;gap:8px;background:rgba(0,200,83,0.06);border-left:3px solid var(--success);padding:0.8rem 1rem;border-radius:0 8px 8px 0;margin:0.8rem 0;font-size:0.88rem;color:var(--text-secondary)}.tip-inline .tip-icon{color:var(--success);flex-shrink:0;font-size:1.1rem}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html">Lý thuyết</a></li><li><a href="bai-tap.html" class="active">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📖 OPL Mức 15</h3></div><ul class="sidebar-nav">
+<li><a href="#bt151" class="active"><span class="nav-number">1</span> BT15.1 Template</a></li>
+<li><a href="#bt152"><span class="nav-number">2</span> BT15.2 Gối đỡ trục</a></li>
+<li><a href="#bt153"><span class="nav-number">3</span> BT15.3 Cụm van bi</a></li>
+<li class="nav-header">Liên kết</li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Lý thuyết Bản vẽ KT</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+
+            <div class="chapter-header">
+                <span class="opl-badge">📖 ONE POINT LESSON</span>
+                <span class="chapter-label">📐 Mức Độ 15</span>
+                <h1>Hoàn Thiện Bản Vẽ Kỹ Thuật</h1>
+                <p class="chapter-desc">Hướng dẫn chi tiết: Tạo Drawing Template A3 → Vẽ chi tiết Gối đỡ trục (3 hình chiếu + mặt cắt) → Bản vẽ lắp ráp Cụm van bi.</p>
+            </div>
+
+            <!-- ====== BT15.1 ====== -->
+            <div class="exercise-header" id="bt151">
+                <h2>📋 BT15.1 — Tạo Drawing Template A3</h2>
+                <p>Tạo file .dwt khổ A3 (420×297) với khung bản vẽ, khung tên, revision block. Dùng ATTDEF tạo attributes.</p>
+            </div>
+
+            <h3>Bước 1: Tạo file mới và thiết lập</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">1</span> Khởi tạo bản vẽ khổ A3</div>
+                <div class="step-cmd">
+<span class="prompt">Command:</span> NEW ↵ <span class="cmt">(Tạo file mới từ scratch)</span><br>
+<br>
+<span class="cmt">── Thiết lập đơn vị</span><br>
+<span class="prompt">Command:</span> UNITS ↵ → Length Type: <span class="val">Decimal</span>, Precision: <span class="val">0.00</span><br>
+<br>
+<span class="cmt">── Thiết lập giới hạn bản vẽ</span><br>
+<span class="prompt">Command:</span> LIMITS ↵<br>
+<span class="prompt">Lower left corner:</span> <span class="val">0,0</span> ↵<br>
+<span class="prompt">Upper right corner:</span> <span class="val">420,297</span> ↵<br>
+<br>
+<span class="prompt">Command:</span> Z ↵ → A ↵ <span class="cmt">(Zoom All)</span>
+                </div>
+            </div>
+
+            <h3>Bước 2: Tạo Layer hệ thống</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">2</span> Thiết lập các Layer chuẩn</div>
+                <div class="step-cmd">
+<span class="prompt">Command:</span> LA ↵ <span class="cmt">(Layer Properties Manager)</span><br>
+<br>
+Layer <span class="val">"Border"</span> → Màu <span class="val">White (7)</span> → Lineweight: <span class="val">0.70mm</span><br>
+Layer <span class="val">"TitleBlock"</span> → Màu <span class="val">Yellow (2)</span> → Lineweight: <span class="val">0.35mm</span><br>
+Layer <span class="val">"Text"</span> → Màu <span class="val">Green (3)</span> → Lineweight: <span class="val">0.00mm</span><br>
+Layer <span class="val">"Viewport"</span> → Màu <span class="val">Cyan (4)</span> → Plot: <span class="val">No Print</span><br>
+Layer <span class="val">"Center"</span> → Màu <span class="val">Red (1)</span> → Linetype: <span class="val">CENTER</span><br>
+Layer <span class="val">"Hidden"</span> → Màu <span class="val">Magenta (6)</span> → Linetype: <span class="val">HIDDEN</span><br>
+Layer <span class="val">"Dim"</span> → Màu <span class="val">Cyan (4)</span> → Lineweight: <span class="val">0.00mm</span><br>
+Layer <span class="val">"Hatch"</span> → Màu <span class="val">8 (Gray)</span>
+                </div>
+            </div>
+
+            <h3>Bước 3: Vẽ khung bản vẽ</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">3</span> Vẽ khung viền A3 (lề 10mm, lề trái 20mm)</div>
+                <div class="step-cmd">
+<span class="cmt">── Chuyển Layer "Border"</span><br>
+<span class="prompt">Command:</span> RECTANG ↵<br>
+<span class="prompt">First corner:</span> <span class="val">20,10</span> ↵ <span class="cmt">(lề trái 20mm cho đóng gáy)</span><br>
+<span class="prompt">Other corner:</span> <span class="val">410,287</span> ↵
+                </div>
+                <div style="overflow-x:auto;">
+                <svg viewBox="0 0 500 340" style="max-width:500px;width:100%;background:rgba(0,0,0,0.3);border-radius:12px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="10" width="480" height="320" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                    <rect x="30" y="20" width="450" height="300" fill="none" stroke="#0696D7" stroke-width="2"/>
+                    <text x="20" y="175" fill="#aaa" font-size="9" transform="rotate(-90,20,175)">20mm</text>
+                    <text x="250" y="335" fill="#aaa" font-size="9" text-anchor="middle">420mm</text>
+                    <text x="490" y="175" fill="#aaa" font-size="9" transform="rotate(90,490,175)">297mm</text>
+                    <rect x="300" y="260" width="180" height="60" fill="rgba(255,152,0,0.05)" stroke="#FF9800" stroke-width="1.5"/>
+                    <text x="390" y="280" fill="#FF9800" font-size="10" text-anchor="middle" font-weight="600">KHUNG TÊN</text>
+                    <text x="390" y="295" fill="#aaa" font-size="8" text-anchor="middle">Title Block (180×60)</text>
+                    <rect x="300" y="240" width="180" height="20" fill="rgba(224,64,251,0.05)" stroke="#E040FB" stroke-width="1"/>
+                    <text x="390" y="254" fill="#E040FB" font-size="8" text-anchor="middle">Revision Block</text>
+                </svg>
+                </div>
+            </div>
+
+            <h3>Bước 4: Vẽ khung tên (Title Block)</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">4</span> Tạo khung tên 180×60 ở góc dưới phải</div>
+                <div class="step-cmd">
+<span class="cmt">── Chuyển Layer "TitleBlock"</span><br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">230,10</span> → <span class="val">410,70</span> ↵<br>
+<br>
+<span class="cmt">── Chia các ô trong khung tên bằng LINE:</span><br>
+<span class="prompt">Command:</span> L ↵ → <span class="val">230,50</span> → <span class="val">410,50</span> ↵ → ↵ <span class="cmt">(ngăn Tên bản vẽ/info)</span><br>
+<span class="prompt">Command:</span> L ↵ → <span class="val">230,35</span> → <span class="val">410,35</span> ↵ → ↵ <span class="cmt">(ngăn dưới)</span><br>
+<span class="prompt">Command:</span> L ↵ → <span class="val">320,10</span> → <span class="val">320,50</span> ↵ → ↵ <span class="cmt">(cột dọc)</span><br>
+<span class="prompt">Command:</span> L ↵ → <span class="val">365,10</span> → <span class="val">365,50</span> ↵ → ↵
+                </div>
+                <img src="opl-images/bt15_1_template_a3_1773593118219.png" alt="Drawing Template A3 hoàn chỉnh" class="step-img">
+            </div>
+
+            <h3>Bước 5: Tạo Attributes bằng ATTDEF</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">5</span> Dùng ATTDEF tạo thuộc tính động cho khung tên</div>
+                <div class="step-cmd">
+<span class="prompt">Command:</span> ATTDEF ↵<br>
+<br>
+<span class="cmt">── Attribute 1: Tên bản vẽ</span><br>
+Tag: <span class="val">TITLE</span> | Prompt: <span class="val">Nhập tên bản vẽ:</span> | Default: <span class="val">UNTITLED</span><br>
+Justification: <span class="val">Middle Center</span> | Height: <span class="val">7</span><br>
+→ Click vào giữa ô Tên bản vẽ (khoảng <span class="val">320,57</span>)<br>
+<br>
+<span class="cmt">── Attribute 2: Tỷ lệ</span><br>
+Tag: <span class="val">SCALE</span> | Prompt: <span class="val">Nhập tỷ lệ:</span> | Default: <span class="val">1:1</span><br>
+Height: <span class="val">3.5</span> → Click tại <span class="val">275,42</span><br>
+<br>
+<span class="cmt">── Attribute 3: Ngày vẽ</span><br>
+Tag: <span class="val">DATE</span> | Prompt: <span class="val">Nhập ngày:</span> | Default: <span class="val">DD/MM/YYYY</span><br>
+Height: <span class="val">3.5</span> → Click tại <span class="val">275,22</span><br>
+<br>
+<span class="cmt">── Attribute 4: Người vẽ</span><br>
+Tag: <span class="val">DRAWNBY</span> | Prompt: <span class="val">Người vẽ:</span> | Default: <span class="val">---</span><br>
+Height: <span class="val">3.5</span> → Click tại <span class="val">342,42</span><br>
+<br>
+<span class="cmt">── Attribute 5: Vật liệu</span><br>
+Tag: <span class="val">MATERIAL</span> | Prompt: <span class="val">Vật liệu:</span> | Default: <span class="val">---</span><br>
+Height: <span class="val">3.5</span> → Click tại <span class="val">387,42</span>
+                </div>
+                <img src="opl-images/bt15_1_attdef_dialog_1773593136050.png" alt="ATTDEF dialog box" class="step-img">
+            </div>
+
+            <h3>Bước 6: Tạo Revision Block</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">6</span> Vẽ bảng lịch sử chỉnh sửa phía trên khung tên</div>
+                <div class="step-cmd">
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">300,70</span> → <span class="val">410,95</span> ↵<br>
+<span class="prompt">Command:</span> L ↵ → <span class="val">300,85</span> → <span class="val">410,85</span> ↵ → ↵ <span class="cmt">(header row)</span><br>
+<span class="prompt">Command:</span> L ↵ → <span class="val">325,70</span> → <span class="val">325,95</span> ↵ → ↵ <span class="cmt">(cột Rev)</span><br>
+<span class="prompt">Command:</span> L ↵ → <span class="val">360,70</span> → <span class="val">360,95</span> ↵ → ↵ <span class="cmt">(cột Date)</span><br>
+<br>
+<span class="cmt">── Ghi tiêu đề: DT (DTEXT)</span><br>
+<span class="prompt">Command:</span> DT ↵ → Tại <span class="val">312,88</span>: <span class="val">REV</span><br>
+<span class="prompt">Command:</span> DT ↵ → Tại <span class="val">342,88</span>: <span class="val">DATE</span><br>
+<span class="prompt">Command:</span> DT ↵ → Tại <span class="val">385,88</span>: <span class="val">DESCRIPTION</span>
+                </div>
+            </div>
+
+            <h3>Bước 7: Tạo Block và lưu Template</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">7</span> Gộp thành Block và lưu .dwt</div>
+                <div class="step-cmd">
+<span class="cmt">── Chọn tất cả khung + attributes → tạo Block</span><br>
+<span class="prompt">Command:</span> B ↵ <span class="cmt">(BLOCK)</span><br>
+Name: <span class="val">TitleBlock_A3</span><br>
+Base point: <span class="val">0,0</span><br>
+→ Select objects: <span class="val">(quét chọn toàn bộ khung + attributes)</span> ↵<br>
+<br>
+<span class="cmt">── Lưu làm Template</span><br>
+<span class="prompt">Command:</span> SAVEAS ↵<br>
+File type: <span class="val">AutoCAD Drawing Template (*.dwt)</span><br>
+File name: <span class="val">A3_Template</span> → Save
+                </div>
+                <div class="tip-inline"><span class="tip-icon">💡</span>Khi dùng template: File → New → chọn <code>A3_Template.dwt</code>. AutoCAD sẽ hỏi nhập giá trị cho từng Attribute (TITLE, SCALE, DATE...).</div>
+            </div>
+
+
+            <!-- ====== BT15.2 ====== -->
+            <div class="exercise-header" id="bt152">
+                <h2>📐 BT15.2 — Vẽ chi tiết "Gối đỡ trục"</h2>
+                <p>3 hình chiếu + mặt cắt + kích thước + dung sai + vật liệu → Xuất Layout viewport 1:2</p>
+            </div>
+
+            <h3>Thông số chi tiết Gối đỡ trục</h3>
+            <table class="calc-table">
+                <thead><tr><th>Thông số</th><th>Giá trị</th><th>Ghi chú</th></tr></thead>
+                <tbody>
+                    <tr><td>Đế (L×W×H)</td><td class="result">120 × 80 × 15 mm</td><td>Tấm đế hình chữ nhật</td></tr>
+                    <tr><td>Tai đỡ (bán kính)</td><td class="result">R25 mm</td><td>2 tai bán trụ, cao 50mm từ đế</td></tr>
+                    <tr><td>Khoảng cách 2 tai</td><td class="result">60 mm</td><td>Đối xứng qua trục giữa</td></tr>
+                    <tr><td>Lỗ trục xuyên</td><td class="result">Ø20 mm</td><td>Xuyên qua 2 tai</td></tr>
+                    <tr><td>Lỗ bắt bulong đế</td><td class="result">4 × Ø8 mm</td><td>Ở 4 góc, cách mép 12mm</td></tr>
+                    <tr><td>Vật liệu</td><td class="result">Thép C45</td><td>Tôi cải thiện</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Bước 1: Thiết lập và vẽ Hình chiếu đứng (Front View)</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">1</span> Vẽ mặt trước — hình dạng chính</div>
+                <div class="step-cmd">
+<span class="cmt">── Mở template A3_Template.dwt, chuyển Layer "0"</span><br>
+<span class="cmt">── Vẽ đế (hình chữ nhật 120×15)</span><br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">0,0</span> → <span class="val">120,15</span> ↵<br>
+<br>
+<span class="cmt">── Vẽ tai đỡ trái (bán trụ)</span><br>
+<span class="prompt">Command:</span> L ↵ → <span class="val">30,15</span> → <span class="val">30,40</span> ↵ → ↵<br>
+<span class="prompt">Command:</span> ARC ↵ → Start: <span class="val">30,40</span> → End: <span class="val">30,65</span> → Radius: <span class="val">25</span><br>
+<span class="cmt">(hoặc dùng Center: 30,52.5 với bán kính 25 — đường tròn + trim)</span><br>
+<br>
+<span class="cmt">── Mirror sang tai đỡ phải</span><br>
+<span class="prompt">Command:</span> MI ↵ → Select tai trái → Mirror line: <span class="val">60,0</span> to <span class="val">60,70</span><br>
+<br>
+<span class="cmt">── Vẽ lỗ trục Ø20 (vòng tròn ẩn nét đứt)</span><br>
+<span class="cmt">── Chuyển Layer "Hidden"</span><br>
+<span class="prompt">Command:</span> C ↵ → Center: <span class="val">60,40</span> → Radius: <span class="val">10</span>
+                </div>
+            </div>
+
+            <h3>Bước 2: Vẽ Hình chiếu bằng (Top View)</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">2</span> Vẽ mặt bằng bên dưới Front View</div>
+                <div class="step-cmd">
+<span class="cmt">── Vẽ phía dưới Front View, cách ~30mm</span><br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">0,-30</span> → <span class="val">120,-110</span> ↵ <span class="cmt">(đế 120×80)</span><br>
+<br>
+<span class="cmt">── Vẽ 2 hình chữ nhật tai đỡ (nét ẩn)</span><br>
+Layer "Hidden":<br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">17.5,-30</span> → <span class="val">42.5,-110</span> ↵ <span class="cmt">(tai trái)</span><br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">77.5,-30</span> → <span class="val">102.5,-110</span> ↵ <span class="cmt">(tai phải)</span><br>
+<br>
+<span class="cmt">── Vẽ lỗ trục (nét ẩn) và 4 lỗ bulong</span><br>
+<span class="prompt">Command:</span> C ↵ → Center: <span class="val">60,-70</span> → R: <span class="val">10</span> <span class="cmt">(lỗ trục Ø20)</span><br>
+<span class="prompt">Command:</span> C ↵ → <span class="val">12,-42</span> → R: <span class="val">4</span> <span class="cmt">(lỗ bulong Ø8)</span><br>
+→ Mirror + Array cho 4 lỗ còn lại
+                </div>
+            </div>
+
+            <h3>Bước 3: Vẽ Hình chiếu cạnh (Side View)</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">3</span> Vẽ mặt bên — bên phải Front View</div>
+                <div class="step-cmd">
+<span class="cmt">── Bên phải Front, cách ~30mm</span><br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">150,0</span> → <span class="val">230,15</span> ↵ <span class="cmt">(đế 80×15)</span><br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">165,15</span> → <span class="val">215,65</span> ↵ <span class="cmt">(tai đỡ 50×50, ARC trên)</span><br>
+<br>
+<span class="cmt">── Vẽ lỗ trục (mặt bên → vòng tròn thấy được)</span><br>
+<span class="prompt">Command:</span> C ↵ → Center: <span class="val">190,40</span> → R: <span class="val">10</span>
+                </div>
+            </div>
+
+            <h3>Bước 4: Vẽ mặt cắt A-A</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">4</span> Tạo mặt cắt ngang qua lỗ trục</div>
+                <div class="step-cmd">
+<span class="cmt">── Vẽ đường cắt A-A trên Front View</span><br>
+Layer "Center":<br>
+<span class="prompt">Command:</span> L ↵ → <span class="val">-5,40</span> → <span class="val">125,40</span> ↵ → ↵<br>
+<span class="cmt">── Ghi TEXT "A" ở 2 đầu đường cắt</span><br>
+<br>
+<span class="cmt">── Vẽ mặt cắt A-A (bên phải Side View)</span><br>
+<span class="cmt">── Hình dạng: tai đỡ bán trụ + đế — nhìn cắt ngang</span><br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">260,0</span> → <span class="val">340,15</span> ↵ <span class="cmt">(đế)</span><br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">275,15</span> → <span class="val">325,40</span> ↵ <span class="cmt">(thân tai)</span><br>
+<span class="prompt">Command:</span> ARC ↵ → semicircle trên đầu tai → R25<br>
+<br>
+<span class="cmt">── CIRCLE lỗ trục tại tâm tai</span><br>
+<span class="prompt">Command:</span> C ↵ → Center: <span class="val">300,40</span> → R: <span class="val">10</span><br>
+<br>
+<span class="cmt">── Hatch mặt cắt</span><br>
+<span class="prompt">Command:</span> H ↵ <span class="cmt">(HATCH)</span><br>
+Pattern: <span class="val">ANSI31</span> | Scale: <span class="val">1</span> | Angle: <span class="val">45</span><br>
+→ Pick vùng đặc (không tô vào lỗ trục!)
+                </div>
+                <img src="opl-images/bt15_2_bearing_support_1773593159084.png" alt="Gối đỡ trục — 3 hình chiếu + mặt cắt" class="step-img">
+            </div>
+
+            <h3>Bước 5: Ghi kích thước và dung sai</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">5</span> Ghi DIM đầy đủ + dung sai lỗ trục</div>
+                <div class="step-cmd">
+<span class="cmt">── Chuyển Layer "Dim"</span><br>
+<span class="prompt">Command:</span> DIMLINEAR ↵ → ghi kích thước đế: <span class="val">120, 80, 15</span><br>
+<span class="prompt">Command:</span> DIMRADIUS ↵ → chọn ARC tai đỡ: <span class="val">R25</span><br>
+<span class="prompt">Command:</span> DIMDIA ↵ → chọn lỗ trục: <span class="val">Ø20</span><br>
+<br>
+<span class="cmt">── Ghi dung sai lỗ trục</span><br>
+<span class="prompt">Command:</span> D ↵ <span class="cmt">(Dim Style Manager)</span><br>
+→ Modify → Tab "Tolerances"<br>
+→ Method: <span class="val">Deviation</span><br>
+→ Upper: <span class="val">+0.021</span> | Lower: <span class="val">0.000</span><br>
+→ OK → ghi lại kích thước: <span class="val">Ø20 H7 (+0.021/0)</span><br>
+<br>
+<span class="cmt">── Ghi vật liệu bằng MLEADER</span><br>
+<span class="prompt">Command:</span> MLD ↵ → chỉ vào chi tiết → ghi: <span class="val">C45 Steel</span>
+                </div>
+            </div>
+
+            <h3>Bước 6: Xuất sang Layout (Paper Space) tỷ lệ 1:2</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">6</span> Chuyển sang Layout, tạo Viewport 1:2</div>
+                <div class="step-cmd">
+<span class="cmt">── Click tab "Layout1" ở dưới bản vẽ</span><br>
+<span class="cmt">── Xóa viewport mặc định (nếu có)</span><br>
+<span class="prompt">Command:</span> ERASE ↵ → chọn viewport cũ → ↵<br>
+<br>
+<span class="cmt">── Tạo viewport mới</span><br>
+<span class="prompt">Command:</span> MV ↵ <span class="cmt">(MVIEW)</span><br>
+<span class="prompt">First corner:</span> <span class="val">25,80</span> ↵<br>
+<span class="prompt">Other corner:</span> <span class="val">395,280</span> ↵<br>
+<br>
+<span class="cmt">── Double-click vào viewport → chuyển Model Space</span><br>
+<span class="prompt">Command:</span> Z ↵ → E ↵ <span class="cmt">(Zoom Extents)</span><br>
+<br>
+<span class="cmt">── Set tỷ lệ 1:2</span><br>
+<span class="prompt">Command:</span> Z ↵ → <span class="val">1/2xp</span> ↵ <span class="cmt">(XP = scale relative to paper)</span><br>
+<br>
+<span class="cmt">── Khóa viewport để không bị zoom lỗi</span><br>
+→ Double-click ra ngoài viewport (Paper Space)<br>
+→ Chọn viewport → Properties → Display Locked = <span class="val">Yes</span>
+                </div>
+                <img src="opl-images/bt15_2_layout_viewport_1773593189759.png" alt="Layout viewport tỷ lệ 1:2" class="step-img">
+                <div class="tip-inline"><span class="tip-icon">💡</span>Điều chỉnh <code>DIMLFAC</code> = 2 khi ghi kích thước trong viewport 1:2 để kích thước hiển thị đúng giá trị thực.</div>
+            </div>
+
+
+            <!-- ====== BT15.3 ====== -->
+            <div class="exercise-header" id="bt153">
+                <h2>🔧 BT15.3 — Bản vẽ lắp ráp "Cụm van bi"</h2>
+                <p>Vẽ mặt cắt cụm van bi (5 chi tiết) + Ghi số thứ tự balloon + Bảng kê chi tiết BOM</p>
+            </div>
+
+            <h3>Danh sách 5 chi tiết</h3>
+            <table class="calc-table">
+                <thead><tr><th>STT</th><th>Tên chi tiết</th><th>Vật liệu</th><th>SL</th></tr></thead>
+                <tbody>
+                    <tr><td class="result">1</td><td>Thân van (Body)</td><td>Gang xám GX15-32</td><td>1</td></tr>
+                    <tr><td class="result">2</td><td>Bi van (Ball)</td><td>Inox SUS304</td><td>1</td></tr>
+                    <tr><td class="result">3</td><td>Trục van (Stem)</td><td>Thép Cr-Mo</td><td>1</td></tr>
+                    <tr><td class="result">4</td><td>Vòng đệm (Seal)</td><td>PTFE / Cao su</td><td>2</td></tr>
+                    <tr><td class="result">5</td><td>Tay nắm (Handle)</td><td>Thép CT3</td><td>1</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Bước 1: Vẽ mặt cắt thân van</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">1</span> Vẽ profile mặt cắt dọc thân van</div>
+                <div class="step-cmd">
+<span class="cmt">── Thân van: hình trụ rỗng có 2 mặt bích</span><br>
+<span class="prompt">Command:</span> PL ↵ <span class="cmt">(PLINE — vẽ nửa mặt cắt trên)</span><br>
+From: <span class="val">0,0</span> → <span class="val">60,0</span> → <span class="val">60,5</span> → <span class="val">50,5</span> → <span class="val">50,30</span><br>
+→ <span class="val">40,30</span> → <span class="val">40,35</span> <span class="cmt">(khoang bi)</span><br>
+→ <span class="val">40,45</span> → <span class="val">50,45</span> → <span class="val">50,70</span><br>
+→ <span class="val">60,70</span> → <span class="val">60,75</span> → <span class="val">0,75</span> ↵ C ↵ <span class="cmt">(Close)</span><br>
+<br>
+<span class="cmt">── Mirror profile xuống dưới đường tâm</span><br>
+<span class="prompt">Command:</span> MI ↵ → Mirror line: trục ngang giữa<br>
+<br>
+<span class="cmt">── Hatch thân van</span><br>
+<span class="prompt">Command:</span> H ↵ → Pattern: <span class="val">ANSI31</span> → Angle: <span class="val">45</span> → Pick vùng đặc thân van
+                </div>
+            </div>
+
+            <h3>Bước 2: Vẽ bi van + trục + vòng đệm</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">2</span> Vẽ các chi tiết bên trong</div>
+                <div class="step-cmd">
+<span class="cmt">── Bi van: hình tròn ở khoang giữa</span><br>
+<span class="prompt">Command:</span> C ↵ → Center: <span class="val">30,37.5</span> → R: <span class="val">15</span><br>
+<span class="cmt">(Hatch bi với pattern ANSI32 để phân biệt)</span><br>
+<br>
+<span class="cmt">── Trục van: hình chữ nhật đi lên từ bi</span><br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">25,52</span> → <span class="val">35,90</span><br>
+<span class="cmt">(Hatch trục với ANSI33, góc khác)</span><br>
+<br>
+<span class="cmt">── Vòng đệm: 2 hình chữ nhật nhỏ quanh trục</span><br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">23,50</span> → <span class="val">37,53</span> <span class="cmt">(đệm trên)</span><br>
+<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">23,22</span> → <span class="val">37,25</span> <span class="cmt">(đệm dưới)</span><br>
+<span class="cmt">(Hatch seal với DOTS hoặc solid đen)</span><br>
+<br>
+<span class="cmt">── Tay nắm: LINE phía trên trục</span><br>
+<span class="prompt">Command:</span> L ↵ → <span class="val">10,90</span> → <span class="val">50,90</span> ↵ → ↵<br>
+<span class="prompt">Command:</span> L ↵ → <span class="val">10,95</span> → <span class="val">50,95</span> ↵ → ↵
+                </div>
+                <img src="opl-images/bt15_3_ball_valve_1773593210294.png" alt="Cụm van bi — mặt cắt lắp ráp" class="step-img">
+            </div>
+
+            <h3>Bước 3: Ghi số thứ tự Balloon</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">3</span> Dùng MLEADER tạo balloon số chi tiết</div>
+                <div class="step-cmd">
+<span class="cmt">── Thiết lập MLEADER style dạng balloon</span><br>
+<span class="prompt">Command:</span> MLEADERSTYLE ↵<br>
+→ New style: <span class="val">Balloon</span><br>
+→ Tab "Content": Type = <span class="val">Block</span>, Block = <span class="val">Circle</span> hoặc <span class="val">_TagSlot</span><br>
+<span class="cmt">(Hoặc dùng Text + vẽ Circle bao quanh thủ công)</span><br>
+<br>
+<span class="cmt">── Cách nhanh: dùng MLEADER text + CIRCLE</span><br>
+<span class="prompt">Command:</span> MLD ↵ → chỉ vào thân van → ghi: <span class="val">1</span><br>
+<span class="prompt">Command:</span> C ↵ → bao quanh text "1" bán kính <span class="val">4</span><br>
+<br>
+<span class="cmt">── Lặp lại cho 5 chi tiết:</span><br>
+① → Thân van &nbsp;&nbsp; ② → Bi van &nbsp;&nbsp; ③ → Trục van<br>
+④ → Vòng đệm &nbsp;&nbsp; ⑤ → Tay nắm
+                </div>
+            </div>
+
+            <h3>Bước 4: Tạo bảng kê chi tiết (BOM)</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">4</span> Dùng TABLE tạo bảng kê chi tiết</div>
+                <div class="step-cmd">
+<span class="prompt">Command:</span> TABLE ↵<br>
+Columns: <span class="val">4</span> | Data rows: <span class="val">5</span><br>
+Column width: <span class="val">35</span> | Row height: <span class="val">8</span><br>
+<br>
+<span class="cmt">── Nhập dữ liệu bảng:</span><br>
+<span class="val">Header: BẢNG KÊ CHI TIẾT</span><br>
+Col 1: <span class="val">STT</span> | Col 2: <span class="val">Tên chi tiết</span> | Col 3: <span class="val">Vật liệu</span> | Col 4: <span class="val">SL</span><br>
+Row 1: <span class="val">1 | Thân van | Gang GX15-32 | 1</span><br>
+Row 2: <span class="val">2 | Bi van | Inox SUS304 | 1</span><br>
+Row 3: <span class="val">3 | Trục van | Thép Cr-Mo | 1</span><br>
+Row 4: <span class="val">4 | Vòng đệm | PTFE | 2</span><br>
+Row 5: <span class="val">5 | Tay nắm | Thép CT3 | 1</span>
+                </div>
+                <img src="opl-images/bt15_3_bom_table_1773593227034.png" alt="Bảng kê chi tiết BOM" class="step-img">
+            </div>
+
+            <h3>Bước 5: Hoàn thiện bản vẽ lắp ráp</h3>
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">5</span> Ghi kích thước lắp ráp + Xuất Layout</div>
+                <div class="step-cmd">
+<span class="cmt">── Ghi kích thước tổng thể (Overall dimensions)</span><br>
+<span class="prompt">Command:</span> DIMLINEAR ↵ → chiều dài tổng, chiều rộng bích<br>
+<span class="prompt">Command:</span> DIMDIA ↵ → đường kính lỗ nối ống<br>
+<br>
+<span class="cmt">── Xuất Layout (tương tự BT15.2, bước 6)</span><br>
+→ Tab "Layout1" → MVIEW → set scale 1:2 → Lock viewport<br>
+→ Kiểm tra khung tên đã điền đủ thông tin
+                </div>
+                <div class="tip-inline"><span class="tip-icon">💡</span>Bản vẽ lắp ráp <b>không ghi kích thước chi tiết</b> (chỉ ghi kích thước tổng thể). Kích thước chi tiết ghi trong bản vẽ chế tạo riêng.</div>
+            </div>
+
+
+            <!-- ====== SUMMARY ====== -->
+            <div class="info-box warning"><span class="icon">🏆</span><div><div class="info-title">Tổng kết OPL — Mức độ 15</div><div class="info-text">
+                <b>BT15.1:</b> Template A3 (420×297) với 8 layers, khung tên ATTDEF (5 attributes), revision block → SAVEAS .dwt<br>
+                <b>BT15.2:</b> Gối đỡ trục: Front + Top + Side + Section A-A + Hatch ANSI31 + DIM + Dung sai Ø20H7 → Layout 1:2<br>
+                <b>BT15.3:</b> Cụm van bi: 5 chi tiết mặt cắt + 5 balloon MLEADER + TABLE BOM 4 cột
+            </div></div></div>
+
+            <div class="info-box tip"><span class="icon">📑</span><div><div class="info-title">Cần ôn lại lý thuyết?</div><div class="info-text">Xem <a href="chuong24.html"><b>Chương 24: Bản vẽ kỹ thuật</b></a> để nắm vững quy trình tạo bản vẽ hoàn chỉnh.</div></div></div>
+
+            <div class="chapter-nav">
+                <a href="bai-tap.html"><div><span class="nav-dir">← Về bài tập</span><span class="nav-title">Bài Tập Thực Hành</span></div></a>
+                <a href="chuong24.html" class="nav-next"><div><span class="nav-dir">Lý thuyết →</span><span class="nav-title">Ch.24: Bản Vẽ Kỹ Thuật</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

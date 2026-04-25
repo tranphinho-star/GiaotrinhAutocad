@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 19: Ánh Sáng, Vật Liệu và Render | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html" class="active"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 19 (3D Đỉnh Cao)</span>
+                <h1>Ánh Sáng, Vật Liệu và Bơm Bóng Rendering</h1>
+                <p class="chapter-desc">Thay lớp vỏ nhựa đơn điệu của Solid bằng màu, ốp vân nhám gạch (Material), bật sương mù để xuất phim ảnh chuyên khảo.</p>
+            </div>
+
+            <h2>1. Góc Camera Động Nhìn (DVIEW)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">DYNAMIC VIEW</span><span class="cmd-shortcut">DV</span></div></div>
+            <p>Điều khiển Camera như một người thợ quay phim rảo bước góc nhìn phố phường bản vẽ.</p>
+            <ul>
+                <li><strong>Pan (PA):</strong> Trượt quay phim qua lại khung.</li>
+                <li><strong>Point (PO):</strong> Chăm chú chọn lấy 2 điểm (Điểm đặt mắt quay và Điểm mục tiêu nhìn thấy).</li>
+                <li><strong>Zoom (Z):</strong> Vặn cái Lens thấu kính ống nhòm máy (Đổi tiêu cự rúc 50mm chà xát ra lồi phình 35mm mắt cá). Hình chóp không gian hút sẽ tạo viễn cảnh chân thật.</li>
+                <li><strong>Twist (TW):</strong> Cổ nhào lộn mâm xoay góc. Hình chán lệch độ.</li>
+            </ul>
+
+            <h2>2. Gán Vật Liệu Da Ngoài (RMAT)</h2>
+            <p>Trải chiếu gỗ lim bóng hoặc phủ đá nhám mờ thủy tinh cản quang lên khối Box ban nãy.</p>
+            <div class="command-syntax">
+<span class="prompt">Lệnh vật liệu:</span> <span class="input">RMAT</span> ↵  (View/Render/Material)
+            </div>
+            <ul>
+                <li>Hộp thoại bật ra chứa các tên như GLOBAL mặc định xấu hoắc. Kích nút <strong>Materials Library (Thư viện lớn AutoCAD cài theo máy)</strong>. Tải vật liệu từ list phải sang list cột trái.</li>
+                <li><strong>Attach:</strong> Chỉnh quét chuột đụng vào cánh cửa tủ -> tủ đã bám vân gỗ hương.</li>
+                <li><strong>Bump map:</strong> Ốp sần sùi cộm tay.</li>
+                <li><strong>Reflection/Transparency:</strong> Độ bóng chiếu và thủy tinh trong của mica nhựa dẻo.</li>
+            </ul>
+
+            <h2>3. Chỉnh Ánh Sáng (LIGHT)</h2>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">LIGHT</span> ↵  (View/Render/Light...)
+            </div>
+            <p>Không có sáng mờ xịt. Ta thêm nguồn để tạo tia hắt bóng đổ bóng ma trên tường.</p>
+            <ul>
+                <li><strong>Point light:</strong> Bóng đèn tròn bóng quả lê tự tỏa xung quanh.</li>
+                <li><strong>Spot light:</strong> Đèn pha ôtô ô-trượt sân khấu hình nón rọi thẳng hắt mặt ca sĩ target. (Có Hotspot gắt ở lõi giữa, Falloff mờ loe viền phễu).</li>
+                <li><strong>Distant light:</strong> Mặt trời (Tia thẳng chiếu xuống trái đất, bóng không loe ra).</li>
+            </ul>
+
+            <h2>4. Xuất Hình Kết Trái Ảnh Render (RENDER)</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">RENDER</span><span class="cmd-shortcut">RR</span></div></div>
+            <p>Xoa xoa nấu chín cái chảo lộn xộn ta làm tốn đồ họa nhất trong CAD.</p>
+            <ul>
+                <li>Lệnh <code>SHADE</code> (Shade mode = gouraud) chỉ chà tay tô nhạy vỏ rác rưởi sơ sài nhìn góc che mắt.</li>
+                <li>Lệnh <code>RENDER</code> -> Bật hộp thoại bảng bự Render Box. Chọn mục **Render type: Photo Raytrace** (Tia vết đổ hình xịn cực đẹp của CAD thời 2007 đổ sáng siêu nét). Đánh dấu **Shadows** bật để khối nhà có vệt đen đỗ thềm hiên. Bật **Smooth shading**. Chọn **Render Window** hay JPG File in ấn cho sếp. OK enter đợi máy PC rên ồ ồ chục phút là ra Cực Phẩm!.</li>
+            </ul>
+            
+            <div class="info-box tip"><span class="icon">💎</span><div><div class="info-title">Phong cách Tranh Ảnh 3D Nền Cảnh Quan</div><div class="info-text">Có tuỳ chọn mục <b>Background</b> ốp Solid sậm mây núi. Và lệnh <b>Landscape (LSNEW)</b> chèn các mặt bìa dập cây chuối, người lính nhựa đứng vào phối cảnh dạo phố.</div></div></div>
+
+            <h2>5. Cảnh, Nền & Sương mù (Scene, Background, Fog)</h2>
+
+            <h3>SCENE — Liên kết nguồn sáng thành cảnh</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">SCENE</span><span class="cmd-shortcut">SCENE</span></div></div>
+            <p>Liên kết phần ảnh với nguồn sáng để tạo thành cảnh (Scene). Mỗi Scene ghi nhớ góc View + tổ hợp đèn Light → khi Render sẽ chọn đúng Scene cần xuất.</p>
+
+            <h3>BACKGROUND — Ảnh nền render</h3>
+            <p>Tạo ảnh màu nền quanh ảnh tô bóng. Có thể chọn: <strong>Solid</strong> (màu phẳng), <strong>Gradient</strong> (chuyển sắc), hoặc <strong>Image</strong> (nhập ảnh BMP/TGA/TIFF làm nền).</p>
+
+            <h3>FOG — Sương mù</h3>
+            <p>Tạo cảnh nền mờ sương mù quanh ảnh tô bóng. Hiệu ứng FOG cho phối cảnh thêm chiều sâu mờ dần theo khoảng cách.</p>
+
+            <h3>SAVING & REPLAY — Lưu và Xem lại ảnh render</h3>
+            <table class="ref-table">
+                <thead><tr><th>Lệnh</th><th>Chức năng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>SAVEIMG</strong></td><td>Save ảnh đã tô bóng dạng *.BMP, *.TGA, *.TIFF</td></tr>
+                    <tr><td><strong>REPLAY</strong></td><td>Gọi lại các ảnh đã tô bóng để xem</td></tr>
+                    <tr><td><strong>RPREF</strong></td><td>Thiết lập tuỳ chọn Render (tương tự Render dialog)</td></tr>
+                </tbody>
+            </table>
+
+            <h2>6. Tạo hình chiếu 2D từ mô hình 3D (Solview / Soldraw)</h2>
+
+            <h3>SOLVIEW — Tạo khung nhìn hình chiếu tự động</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">SOLID VIEW</span><span class="cmd-shortcut">SOLVIEW</span></div></div>
+            <p>Tạo các khung nhìn động (Viewport) đối với các hình chiếu vuông góc, hình chiếu phụ, hình cắt của Solid. Thực hiện trong không gian giấy <code>Pspace</code>.</p>
+            <ul>
+                <li><strong>UCS:</strong> Tạo hình chiếu theo tỉ lệ UCS đã cắt giữ.</li>
+                <li><strong>Ortho:</strong> Tạo khung nhìn với hình chiếu thẳng góc từ khung nhìn đang có.</li>
+                <li><strong>Auxiliary:</strong> Tạo hình chiếu phụ từ hình chiếu hiện có.</li>
+                <li><strong>Section:</strong> Dùng vẽ hình cắt cho Solid.</li>
+            </ul>
+
+            <h3>SOLDRAW — Gạch mặt cắt & hoàn chỉnh bản vẽ</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">SOLID DRAW</span><span class="cmd-shortcut">SOLDRAW</span></div></div>
+            <p>Sau khi dùng <code>Solview</code> tạo khung nhìn, lệnh <code>Soldraw</code> sẽ tự động gạch mặt cắt (Hatch). Tham số: <strong>HPname</strong> (tên mẫu cắt), <strong>HPscale</strong> (tỉ lệ gạch), <strong>HPang</strong> (góc nghiêng đường gạch).</p>
+
+            <h2>7. Phân tích khối lượng & Ghi kích thước</h2>
+
+            <h3>MASSPROP — Phân tích khối lượng và thể tích</h3>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">MASS PROPERTIES</span><span class="cmd-shortcut">MASSPROP</span></div></div>
+            <p>Tính toán và hiển thị các đặc tính vật lý của khối rắn (Solid): thể tích, diện tích bề mặt, trọng tâm, moment quán tính, bán kính hồi chuyển.</p>
+
+            <h3>DIMLFAC — Ghi kích thước đúng tỉ lệ trong Layout</h3>
+            <p>Biến <code>DIMLFAC</code> cho phép ghi kích thước trong không gian giấy (Pspace) đúng kích thước thật của mô hình. Kết hợp với lệnh <code>DIM</code> để hoàn chỉnh bản vẽ kỹ thuật.</p>
+
+            <div class="chapter-nav">
+                <a href="chuong18.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Hiệu Chỉnh Khối 3D</span></div></a>
+                <a href="bai-tap.html" class="nav-next"><div><span class="nav-dir">Tiếp theo →</span><span class="nav-title">Bài Tập Thực Hành</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chương 22: Dung Sai Hình Học GD&T trong AutoCAD - Flatness, Straightness, Perpendicularity, Positional">
+    <title>Chương 22: Dung Sai Hình Học (GD&T) | AutoCAD</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav"><li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li><li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li><li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li><li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li><li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li><li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li><li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li><li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li><li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li><li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li><li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li><li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li><li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li><li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li><li><a href="chuong15.html"><span class="nav-number">15</span> Điểm nhìn 3D</a></li><li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li><li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li><li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li><li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li><li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu trục đo</a></li><li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai kích thước</a></li><li><a href="chuong22.html" class="active"><span class="nav-number">22</span> Dung sai hình học</a></li><li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li><li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ kỹ thuật</a></li><li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng &amp; Cam</a></li><li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li></ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 22</span>
+                <h1>Dung Sai Hình Học (GD&T)</h1>
+                <p class="chapter-desc">Geometric Dimensioning & Tolerancing: dung sai hình dạng, hướng, vị trí, độ đảo và cách ghi trong AutoCAD.</p>
+            </div>
+
+            <h2>1. Giới thiệu GD&T</h2>
+            <p><strong>GD&T</strong> (Geometric Dimensioning and Tolerancing) là hệ thống ký hiệu chuẩn theo <strong>ASME Y14.5</strong> để kiểm soát hình dạng, hướng và vị trí các bề mặt trên chi tiết gia công.</p>
+
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Tại sao cần GD&T?</div><div class="info-text">Dung sai kích thước (±) chỉ kiểm soát được khoảng cách, nhưng không đảm bảo bề mặt phẳng, thẳng hay vuông góc. GD&T bổ sung các yêu cầu hình học mà dung sai thông thường không thể mô tả.</div></div></div>
+
+            <h2>2. Khung dung sai hình học</h2>
+            <p>Thông tin GD&T được ghi trong <strong>khung kiểm soát đặc tính</strong> (Feature Control Frame):</p>
+
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 500 100" style="max-width:500px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Frame boxes -->
+              <rect x="30" y="25" width="60" height="50" fill="none" stroke="#0696D7" stroke-width="2"/>
+              <rect x="90" y="25" width="100" height="50" fill="none" stroke="#0696D7" stroke-width="2"/>
+              <rect x="190" y="25" width="60" height="50" fill="none" stroke="#0696D7" stroke-width="2"/>
+              <rect x="250" y="25" width="60" height="50" fill="none" stroke="#0696D7" stroke-width="2"/>
+              <!-- Content -->
+              <text x="60" y="55" fill="#E040FB" font-size="18" text-anchor="middle" font-weight="bold">⊥</text>
+              <text x="140" y="55" fill="#FF9800" font-size="14" text-anchor="middle">Ø 0.05 Ⓜ</text>
+              <text x="220" y="55" fill="#4CAF50" font-size="16" text-anchor="middle" font-weight="bold">A</text>
+              <text x="280" y="55" fill="#4CAF50" font-size="16" text-anchor="middle" font-weight="bold">B</text>
+              <!-- Labels -->
+              <text x="60" y="95" fill="#E040FB" font-size="9" text-anchor="middle">Ký hiệu</text>
+              <text x="140" y="95" fill="#FF9800" font-size="9" text-anchor="middle">Vùng dung sai</text>
+              <text x="220" y="95" fill="#4CAF50" font-size="9" text-anchor="middle">Chuẩn 1</text>
+              <text x="280" y="95" fill="#4CAF50" font-size="9" text-anchor="middle">Chuẩn 2</text>
+              <!-- Leader -->
+              <line x1="30" y1="50" x2="10" y2="50" stroke="#0696D7" stroke-width="1.5"/>
+              <line x1="10" y1="50" x2="10" y2="15" stroke="#0696D7" stroke-width="1.5"/>
+              <polygon points="10,15 6,22 14,22" fill="#0696D7"/>
+              <text x="350" y="45" fill="#aaa" font-size="11">← Feature Control Frame</text>
+            </svg>
+            </div>
+
+            <h2>3. Dung sai hình dạng (Form Tolerances)</h2>
+            <table class="ref-table">
+                <thead><tr><th>Ký hiệu</th><th>Tên</th><th>Tiếng Việt</th><th>Ý nghĩa</th></tr></thead>
+                <tbody>
+                    <tr><td style="font-size:18px;text-align:center">▱</td><td><strong>Flatness</strong></td><td>Độ phẳng</td><td>Bề mặt phải nằm giữa 2 mặt phẳng song song cách nhau = dung sai</td></tr>
+                    <tr><td style="font-size:18px;text-align:center">—</td><td><strong>Straightness</strong></td><td>Độ thẳng</td><td>Đường hoặc trục phải nằm trong vùng giữa 2 đường thẳng song song</td></tr>
+                    <tr><td style="font-size:18px;text-align:center">○</td><td><strong>Circularity</strong></td><td>Độ tròn</td><td>Mọi điểm trên tiết diện ngang nằm giữa 2 vòng tròn đồng tâm</td></tr>
+                    <tr><td style="font-size:18px;text-align:center">⌭</td><td><strong>Cylindricity</strong></td><td>Độ trụ</td><td>Mọi điểm trên bề mặt trụ nằm giữa 2 mặt trụ đồng trục</td></tr>
+                </tbody>
+            </table>
+
+            <h2>4. Dung sai hướng (Orientation Tolerances)</h2>
+            <table class="ref-table">
+                <thead><tr><th>Ký hiệu</th><th>Tên</th><th>Tiếng Việt</th><th>Yêu cầu chuẩn (Datum)</th></tr></thead>
+                <tbody>
+                    <tr><td style="font-size:18px;text-align:center">⊥</td><td><strong>Perpendicularity</strong></td><td>Độ vuông góc</td><td>Có – so với mặt chuẩn</td></tr>
+                    <tr><td style="font-size:18px;text-align:center">∥</td><td><strong>Parallelism</strong></td><td>Độ song song</td><td>Có – so với mặt chuẩn</td></tr>
+                    <tr><td style="font-size:18px;text-align:center">∠</td><td><strong>Angularity</strong></td><td>Độ nghiêng</td><td>Có – so với mặt chuẩn + góc danh nghĩa</td></tr>
+                </tbody>
+            </table>
+
+            <h2>5. Dung sai vị trí (Positional Tolerances)</h2>
+            <p>Kiểm soát vị trí đặc tính (thường là lỗ) so với các mặt chuẩn. Vùng dung sai thường là hình tròn (Ø):</p>
+            <div class="command-syntax">
+<span class="prompt">Ký hiệu:</span> ⊕ (Position)
+<span class="comment">Ví dụ: ⊕ | Ø 0.5 Ⓜ | A | B | C</span>
+<span class="comment">// Tâm lỗ phải nằm trong vòng tròn Ø0.5</span>
+<span class="comment">// so với chuẩn A, B, C ở điều kiện MMC (Ⓜ)</span>
+            </div>
+
+            <h2>6. Độ đảo (Runout)</h2>
+            <ul>
+                <li><strong>Circular Runout (↗):</strong> Đo tại một tiết diện quay</li>
+                <li><strong>Total Runout (↗↗):</strong> Đo toàn bộ bề mặt quay</li>
+            </ul>
+
+            <h2>7. Ghi GD&T trong AutoCAD</h2>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> TOLERANCE ↵  (hoặc TOL)
+<span class="comment">→ Hộp thoại Geometric Tolerance xuất hiện</span>
+<span class="comment">→ Click ô Sym → Chọn ký hiệu (⊥, ∥, ⊕...)</span>
+<span class="comment">→ Nhập Tolerance 1 (giá trị dung sai)</span>
+<span class="comment">→ Nhập Datum 1,2,3 (chuẩn A, B, C...)</span>
+<span class="comment">→ OK → Pick điểm đặt khung</span>
+            </div>
+
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Tạo Datum nhanh</div><div class="info-text">Dùng lệnh <code>TOLERANCE</code> rồi trong hộp thoại, phần <strong>Datum Identifier</strong> nhập tên chuẩn (A, B, C). Hoặc dùng <code>MLEADER</code> kết hợp text để tạo tam giác datum thủ công.</div></div></div>
+
+            <div class="chapter-nav">
+                <a href="chuong21.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Dung Sai Kích Thước</span></div></a>
+                <a href="chuong23.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Ren & Bulong</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

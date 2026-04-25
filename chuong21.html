@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chương 21: Dung Sai Kích Thước - Tolerancing trong AutoCAD, dung sai cộng trừ, dung sai giới hạn, lắp ghép tiêu chuẩn">
+    <title>Chương 21: Dung Sai Kích Thước | AutoCAD</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav"><li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li><li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li><li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li><li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li><li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li><li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li><li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li><li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li><li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li><li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li><li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li><li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li><li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li><li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li><li><a href="chuong15.html"><span class="nav-number">15</span> Điểm nhìn 3D</a></li><li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li><li><a href="chuong17.html"><span class="nav-number">17</span> Khối rắn Boolean</a></li><li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li><li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li><li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu trục đo</a></li><li><a href="chuong21.html" class="active"><span class="nav-number">21</span> Dung sai kích thước</a></li><li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai hình học</a></li><li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li><li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ kỹ thuật</a></li><li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng &amp; Cam</a></li><li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li></ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 21</span>
+                <h1>Dung Sai Kích Thước (Tolerancing)</h1>
+                <p class="chapter-desc">Dung sai trực tiếp, cộng trừ, giới hạn, dung sai góc, lắp ghép tiêu chuẩn Metric/Inch.</p>
+            </div>
+
+            <h2>1. Khái niệm dung sai</h2>
+            <p>Trong gia công cơ khí, không thể chế tạo chi tiết chính xác tuyệt đối. <strong>Dung sai</strong> (Tolerance) xác định phạm vi sai lệch cho phép của kích thước so với kích thước danh nghĩa.</p>
+
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 500 180" style="max-width:500px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Shaft -->
+              <rect x="50" y="60" width="400" height="60" fill="rgba(6,150,215,0.1)" stroke="#0696D7" stroke-width="2" rx="3"/>
+              <text x="250" y="95" fill="#0696D7" font-size="14" text-anchor="middle" font-weight="bold">CHI TIẾT TRỤC (Shaft)</text>
+              <!-- Dimension line -->
+              <line x1="50" y1="140" x2="450" y2="140" stroke="#FF9800" stroke-width="1.5"/>
+              <line x1="50" y1="130" x2="50" y2="150" stroke="#FF9800" stroke-width="1.5"/>
+              <line x1="450" y1="130" x2="450" y2="150" stroke="#FF9800" stroke-width="1.5"/>
+              <!-- Nominal -->
+              <text x="250" y="160" fill="#FF9800" font-size="14" text-anchor="middle" font-weight="bold">50.00 ± 0.05</text>
+              <!-- Labels -->
+              <text x="250" y="30" fill="#4CAF50" font-size="12" text-anchor="middle">Kích thước lớn nhất: 50.05</text>
+              <text x="250" y="48" fill="#FF5722" font-size="12" text-anchor="middle">Kích thước nhỏ nhất: 49.95</text>
+              <!-- Arrows -->
+              <polygon points="50,140 58,136 58,144" fill="#FF9800"/>
+              <polygon points="450,140 442,136 442,144" fill="#FF9800"/>
+            </svg>
+            </div>
+
+            <table class="ref-table">
+                <thead><tr><th>Thuật ngữ</th><th>Tiếng Anh</th><th>Giải thích</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Kích thước danh nghĩa</strong></td><td>Nominal Size</td><td>Kích thước thiết kế (ví dụ: 50mm)</td></tr>
+                    <tr><td><strong>Sai lệch trên</strong></td><td>Upper Deviation</td><td>Giá trị lớn nhất chấp nhận (+0.05)</td></tr>
+                    <tr><td><strong>Sai lệch dưới</strong></td><td>Lower Deviation</td><td>Giá trị nhỏ nhất chấp nhận (-0.05)</td></tr>
+                    <tr><td><strong>Dung sai</strong></td><td>Tolerance</td><td>Hiệu = Sai lệch trên - Sai lệch dưới</td></tr>
+                    <tr><td><strong>Kích thước giới hạn lớn</strong></td><td>Maximum Limit</td><td>50.00 + 0.05 = 50.05</td></tr>
+                    <tr><td><strong>Kích thước giới hạn nhỏ</strong></td><td>Minimum Limit</td><td>50.00 - 0.05 = 49.95</td></tr>
+                </tbody>
+            </table>
+
+            <h2>2. Các cách ghi dung sai</h2>
+            <h3>a. Dung sai cộng trừ (Plus/Minus)</h3>
+            <p>Có 2 dạng: <strong>đối xứng</strong> (±) và <strong>không đối xứng</strong> (sai lệch trên ≠ dưới):</p>
+            <div class="command-syntax">
+<span class="prompt">Đối xứng:</span>  50 ± 0.05
+<span class="prompt">Không đối xứng:</span>  50 +0.05 / -0.02
+<span class="comment">// Kích thước từ 49.98 đến 50.05</span>
+            </div>
+
+            <h3>b. Dung sai giới hạn (Limit Tolerances)</h3>
+            <p>Ghi trực tiếp kích thước lớn nhất và nhỏ nhất:</p>
+            <div class="command-syntax">
+<span class="prompt">Ghi dạng giới hạn:</span>  50.05 / 49.95
+<span class="comment">// Số lớn ghi phía trên, số nhỏ ghi phía dưới</span>
+            </div>
+
+            <h2>3. Ghi dung sai trong AutoCAD</h2>
+            <h3>Tạo dung sai qua Dimension Style Manager</h3>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> D ↵  (mở Dimension Style Manager)
+<span class="comment">→ Chọn style → Modify → Tab "Tolerances"</span>
+<span class="prompt">Method:</span> Chọn kiểu dung sai:
+<span class="comment">  • Symmetrical: Đối xứng (±)</span>
+<span class="comment">  • Deviation: Không đối xứng (+/−)</span>
+<span class="comment">  • Limits: Giới hạn (Max/Min)</span>
+<span class="comment">  • Basic: Kích thước cơ bản (đóng khung)</span>
+<span class="prompt">Upper value:</span> 0.05  (sai lệch trên)
+<span class="prompt">Lower value:</span> 0.02  (sai lệch dưới)
+<span class="prompt">Precision:</span> 0.00 (2 chữ số thập phân)
+            </div>
+
+            <h3>Ghi dung sai nhanh bằng Text Override</h3>
+            <div class="command-syntax">
+<span class="prompt">Trong Mtext editor:</span>
+<span class="comment">Gõ: 50 {\H0.7x;\S+0.05^-0.02;}</span>
+<span class="comment">// \H0.7x: chiều cao ký hiệu = 70% text chính</span>
+<span class="comment">// \S: stacked text (xếp chồng trên/dưới)</span>
+            </div>
+
+            <h2>4. Dung sai góc (Angular Tolerances)</h2>
+            <p>Áp dụng tương tự cho kích thước góc:</p>
+            <div class="command-syntax">
+<span class="prompt">Ví dụ:</span> 45° ± 0.5°
+<span class="comment">// Trong Dim Style, tab Tolerances,</span>
+<span class="comment">// chọn Method = Symmetrical, Value = 0.5</span>
+            </div>
+
+            <h2>5. Lắp ghép tiêu chuẩn (Standard Fits)</h2>
+            <p>Hệ thống lắp ghép xác định mối quan hệ kích thước giữa lỗ và trục:</p>
+
+            <table class="ref-table">
+                <thead><tr><th>Loại lắp ghép</th><th>Tiếng Anh</th><th>Đặc điểm</th><th>Ứng dụng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Lắp lỏng</strong></td><td>Clearance Fit</td><td>Trục luôn < Lỗ → có khe hở</td><td>Bạc đạn, trục quay tự do</td></tr>
+                    <tr><td><strong>Lắp trung gian</strong></td><td>Transition Fit</td><td>Có thể hở hoặc dôi nhẹ</td><td>Vỏ ổ lăn, chốt định vị</td></tr>
+                    <tr><td><strong>Lắp chặt</strong></td><td>Interference Fit</td><td>Trục luôn > Lỗ → phải ép vào</td><td>Bánh răng ép trục, vành ổ bi</td></tr>
+                </tbody>
+            </table>
+
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 550 160" style="max-width:550px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Clearance -->
+              <circle cx="90" cy="80" r="50" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <circle cx="90" cy="80" r="35" fill="rgba(76,175,80,0.15)" stroke="#4CAF50" stroke-width="2"/>
+              <text x="90" y="150" fill="#4CAF50" font-size="11" text-anchor="middle" font-weight="bold">Lắp lỏng</text>
+              <text x="90" y="85" fill="#4CAF50" font-size="9" text-anchor="middle">Khe hở</text>
+              <!-- Transition -->
+              <circle cx="270" cy="80" r="50" fill="none" stroke="#FF9800" stroke-width="2"/>
+              <circle cx="270" cy="80" r="48" fill="rgba(255,152,0,0.15)" stroke="#FF9800" stroke-width="2"/>
+              <text x="270" y="150" fill="#FF9800" font-size="11" text-anchor="middle" font-weight="bold">Lắp trung gian</text>
+              <text x="270" y="85" fill="#FF9800" font-size="9" text-anchor="middle">Hở/Dôi nhẹ</text>
+              <!-- Interference -->
+              <circle cx="450" cy="80" r="50" fill="none" stroke="#FF5722" stroke-width="2"/>
+              <circle cx="450" cy="80" r="53" fill="rgba(255,87,34,0.15)" stroke="#FF5722" stroke-width="2"/>
+              <text x="450" y="150" fill="#FF5722" font-size="11" text-anchor="middle" font-weight="bold">Lắp chặt</text>
+              <text x="450" y="85" fill="#FF5722" font-size="9" text-anchor="middle">Dôi (ép)</text>
+            </svg>
+            </div>
+
+            <h2>6. Ký hiệu lắp ghép ISO</h2>
+            <p>Hệ thống ISO dùng chữ cái + số để ký hiệu. <strong>Chữ IN HOA</strong> = Lỗ, <strong>chữ thường</strong> = Trục:</p>
+            <div class="command-syntax">
+<span class="prompt">Ví dụ:</span> Ø50 H7/g6
+<span class="comment">// H7 = Dung sai lỗ (H = zero deviation dưới)</span>
+<span class="comment">// g6 = Dung sai trục (g = clearance fit)</span>
+<span class="comment">// Kết quả: Lắp lỏng có khe hở nhỏ</span>
+            </div>
+
+            <table class="ref-table">
+                <thead><tr><th>Ký hiệu lỗ</th><th>Ký hiệu trục</th><th>Loại lắp</th></tr></thead>
+                <tbody>
+                    <tr><td>H7</td><td>f6, g6, h6</td><td>Lắp lỏng</td></tr>
+                    <tr><td>H7</td><td>js6, k6, m6</td><td>Lắp trung gian</td></tr>
+                    <tr><td>H7</td><td>p6, r6, s6</td><td>Lắp chặt</td></tr>
+                </tbody>
+            </table>
+
+            <div class="chapter-nav">
+                <a href="chuong20.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Hình Chiếu Trục Đo</span></div></a>
+                <a href="chuong22.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Dung Sai Hình Học</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

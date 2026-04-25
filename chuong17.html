@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 17: Khối rắn và Các phép toán Boolean | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav">
+<li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li>
+<li><a href="chuong2.html"><span class="nav-number">02</span> Lệnh về File</a></li>
+<li><a href="chuong3.html"><span class="nav-number">03</span> Hệ toạ độ</a></li>
+<li><a href="chuong4.html"><span class="nav-number">04</span> Thiết lập bản vẽ</a></li>
+<li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ cơ bản</a></li>
+<li><a href="chuong6.html"><span class="nav-number">06</span> Hiệu chỉnh căn bản</a></li>
+<li><a href="chuong7.html"><span class="nav-number">07</span> Hiệu chỉnh tạo hình</a></li>
+<li><a href="chuong8.html"><span class="nav-number">08</span> Biến đổi &amp; Sao chép</a></li>
+<li><a href="chuong9.html"><span class="nav-number">09</span> Quản lý theo lớp</a></li>
+<li><a href="chuong10.html"><span class="nav-number">10</span> Hình cắt mặt cắt</a></li>
+<li><a href="chuong11.html"><span class="nav-number">11</span> Văn bản</a></li>
+<li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li>
+<li><a href="chuong13.html"><span class="nav-number">13</span> Tạo khối</a></li>
+<li><a href="chuong14.html"><span class="nav-number">14</span> Bảng phím tắt</a></li>
+<li class="nav-header">AutoCAD 3D</li>
+<li><a href="chuong15.html"><span class="nav-number">15</span> Tọa độ 3D</a></li>
+<li><a href="chuong16.html"><span class="nav-number">16</span> Tạo hình 3D</a></li>
+<li><a href="chuong17.html" class="active"><span class="nav-number">17</span> Khối rắn Boolean</a></li>
+<li><a href="chuong18.html"><span class="nav-number">18</span> Hiệu chỉnh 3D</a></li>
+<li><a href="chuong19.html"><span class="nav-number">19</span> Render</a></li>
+<li class="nav-header">Chuyên ngành</li>
+<li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li>
+<li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li>
+<li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li>
+<li><a href="chuong23.html"><span class="nav-number">23</span> Ren &amp; Bulong</a></li>
+<li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li>
+<li><a href="chuong25.html"><span class="nav-number">25</span> Bánh răng</a></li>
+<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
+</ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 17 (3D)</span>
+                <h1>Khối rắn (Solid) và Các Phép Tóan Boolean</h1>
+                <p class="chapter-desc">Tạo vật thể đặc ruột từ các hình 2D, và kết hợp nhiều khối bằng phương pháp Cộng, Trừ, Giao.</p>
+            </div>
+
+            <h2>1. Tạo vật thể đặc từ hình 2 Chiều</h2>
+            <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Yêu cầu tuyệt đối</div><div class="info-text">Hình quét 2 chiều phải là một đa tuyến khép kín (<b>Pline</b>) hoặc mặt cắt <b>Region</b>, các mảnh lẻ không thể dựng nên khối (Solid). Dùng lệnh <code>PEDIT</code> (PE) hoặc <code>BOUNDARY</code> (BO) nối liền khối hộp nháp lại.</div></div></div>
+
+            <h3>Lệnh EXTRUDE (EXT) - Nâng chiều cao Solid đứng</h3>
+            <p>Menu <code>Draw / Solids / Extrude</code>. Tạo bề dày đặc ruột, đẩy khối dọc theo phương Z thẳng đứng vuông góc hoặc chạy dọc theo sợi nháp chỉ đường <code>Path</code>.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">EXT</span> ↵
+<span class="prompt">Select objects:</span> chọn mặt 2D tiết diện chân đế (Pline kín)
+<span class="prompt">Path/&lt;Height of Extrusion&gt;:</span> Mặc định là nhập chiều cao lên (số dương là lồi lên Z dương). Góc Taper là xoay thu nhọn 1 chút trong khi trồi lên. Lựa chọn P (Path) là nó đùn tuốt dọc theo chỉ tay vẽ sợi Line (ống cong cong).
+            </div>
+
+            <h3>Lệnh REVOLVE (REV) - Quay khối đặc (Tượng sành)</h3>
+            <p>Trục đối xứng vòng vây (như bình chai lọ). Mặt bao ngoài quay xoay tít bù.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">REV</span> ↵ 
+<span class="prompt">Select objects:</span> Chọn diện cắt nửa của chai Pline.
+<span class="prompt">Axis of... Object/X/Y/<Start point>:</span> Kích chọn 2 điểm giới hạn làm cái trục rọc giữa (tâm chai lọ).
+<span class="prompt">Angle of revolution <360>:</span> Vòng tròn xoay. Nhập Enter làm xoay full 360 bóng vút.
+            </div>
+
+            <h2>2. Các Phép Toán Trên Vật Thể Đặc (Boolean)</h2>
+            <p>Bản chất của vẽ 3D máy là tạo từ khối cơ bản (Solid bự) ráp với khối thứ yếu dính nhau hoặc khoét lỗ vứt lõi. Đó là phép gộp Boolean.</p>
+
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">1. CỘNG KHỐI (UNION)</span><span class="cmd-shortcut">UNI</span></div></div>
+            <p>Hợp nhất hai hay nhiều cục Solid dính chùm liền vào nhau thành một khối vướng nguyên vẹn mộc.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">UNI</span> ↵ 
+<span class="prompt">Select objects:</span> Chọn hết cục mẹ cục con. Enter (Mọi nét dư ranh giới giao nhau giáp ranh đi mờ luôn).
+            </div>
+
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">2. TRỪ KHỐI / KHOÉT LỖ (SUBTRACT)</span><span class="cmd-shortcut">SU</span></div></div>
+            <p>Lấy cục To cắt bớt thọc đi cục bị đâm. Rất quan trọng khi rạch ngàm hoặc bu lông khoan tay.</p>
+            <div class="command-syntax">
+<span class="prompt">Command:</span> <span class="input">SU</span> ↵ 
+<span class="prompt">Select solids and regions to subtract from..:</span> CHỌN KHỐI BỊ TRỪ NGUYÊN (Khối ở lại sống sót). Xong ENTER.
+<span class="prompt">Select solids and regions to subtract..:</span> Chọn cục BỊ VỨT BỎ MÓC lấy dao cạo mất rồi ấn Móc Enter!
+            </div>
+
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">3. LẤY PHẦN GIAO CHUNG NHAU (INTERSECT)</span><span class="cmd-shortcut">IN</span></div></div>
+            <p>Dao thoa. Lấy cái mẩu thịt ngập giao ở ngã 3 dính nhau làm khối riêng (giống phép chập gạch trên Solidworks).</p>
+
+            <h2>3. Tạo miền đặc — REGION</h2>
+            <div class="command-box"><div class="cmd-header"><span class="cmd-label">REGION</span><span class="cmd-shortcut">REG</span></div></div>
+            <p>Biến đường khép kín (Pline, Circle, Ellipse…) thành miền đặc phẳng (Region). Sau đó có thể dùng <code>Union</code>, <code>Subtract</code>, <code>Intersect</code> trên Region, hoặc <code>Extrude</code> / <code>Revolve</code> biến thành Solid.</p>
+
+            <h2>4. Biến hiển thị khung dây & mật độ lưới</h2>
+            <table class="ref-table">
+                <thead><tr><th>Biến</th><th>Chức năng</th><th>Giá trị</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>ISOLINES</strong></td><td>Xác định mật độ khung dây biểu diễn mô hình 3D</td><td>Số nguyên (mặc định 4)</td></tr>
+                    <tr><td><strong>DISPSILH</strong></td><td>Hiện (1) / Ẩn (0) các đường bao quanh của mô hình 3D</td><td>0 hoặc 1</td></tr>
+                    <tr><td><strong>FACETRES</strong></td><td>Mật độ lưới cho mô hình 3D khi thực hiện Hide, Shade, Render</td><td>0.01 – 10 (mặc định 0.5)</td></tr>
+                </tbody>
+            </table>
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Khi nào cần chỉnh biến?</div><div class="info-text">Tăng <b>ISOLINES</b> (vd: 12–20) để mô hình wireframe trông rõ ràng hơn. Tăng <b>FACETRES</b> (vd: 2–5) trước khi Render để bề mặt cong mềm mại, tránh gãy khấc đa giác.</div></div></div>
+
+            <div class="chapter-nav">
+                <a href="chuong16.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Tạo Hình Cơ Bản 3D</span></div></a>
+                <a href="chuong18.html" class="nav-next"><div><span class="nav-dir">Chương tiếp →</span><span class="nav-title">Hiệu Chỉnh Khối 3D</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

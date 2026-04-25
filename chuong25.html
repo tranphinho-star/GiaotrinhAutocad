@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 25: Bánh Răng, Ổ Lăn & Cam | AutoCAD</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html" class="active">Lý thuyết</a></li><li><a href="bai-tap.html">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
+    <div class="sidebar-overlay"></div>
+    <div class="page-layout">
+        <aside class="sidebar"><div class="sidebar-header"><h3>📚 Mục Lục</h3></div><ul class="sidebar-nav"><li><a href="chuong1.html"><span class="nav-number">01</span> Mở đầu</a></li><li><a href="chuong5.html"><span class="nav-number">05</span> Lệnh vẽ</a></li><li><a href="chuong12.html"><span class="nav-number">12</span> Kích thước</a></li><li><a href="chuong20.html"><span class="nav-number">20</span> Hình chiếu</a></li><li><a href="chuong21.html"><span class="nav-number">21</span> Dung sai KT</a></li><li><a href="chuong22.html"><span class="nav-number">22</span> Dung sai HH</a></li><li><a href="chuong23.html"><span class="nav-number">23</span> Ren Bulong</a></li><li><a href="chuong24.html"><span class="nav-number">24</span> Bản vẽ KT</a></li><li><a href="chuong25.html" class="active"><span class="nav-number">25</span> Bánh răng</a></li><li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li></ul></aside>
+        <main class="main-content"><div class="content-wrapper">
+            <div class="chapter-header">
+                <span class="chapter-label">📘 Chương 25</span>
+                <h1>Bánh Răng, Ổ Lăn & Cam</h1>
+                <p class="chapter-desc">Gears, Bearings & Cams: thuật ngữ, công thức tính toán, cách vẽ và thiết kế trong AutoCAD.</p>
+            </div>
+
+            <h2>1. Các loại bánh răng</h2>
+            <table class="ref-table">
+                <thead><tr><th>Loại</th><th>Tiếng Anh</th><th>Đặc điểm</th><th>Ứng dụng</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Bánh răng thẳng</strong></td><td>Spur Gear</td><td>Răng song song trục, truyền động giữa 2 trục song song</td><td>Hộp số đơn giản, đồng hồ</td></tr>
+                    <tr><td><strong>Bánh răng côn</strong></td><td>Bevel Gear</td><td>Truyền động giữa 2 trục giao nhau (thường 90°)</td><td>Cầu vi sai ô tô</td></tr>
+                    <tr><td><strong>Bánh răng trục vít</strong></td><td>Worm Gear</td><td>Tỷ số truyền lớn, tự hãm</td><td>Thiết bị nâng, điều chỉnh</td></tr>
+                    <tr><td><strong>Bánh răng nghiêng</strong></td><td>Helical Gear</td><td>Răng nghiêng, êm hơn spur</td><td>Hộp số ô tô, công nghiệp</td></tr>
+                    <tr><td><strong>Thanh răng</strong></td><td>Rack</td><td>Biến chuyển động quay → tịnh tiến</td><td>Cổng trượt, lái xe</td></tr>
+                </tbody>
+            </table>
+
+            <h2>2. Thuật ngữ bánh răng thẳng (Spur Gear)</h2>
+            <div style="overflow-x:auto;">
+            <svg viewBox="0 0 400 280" style="max-width:400px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Pitch circle -->
+              <circle cx="200" cy="140" r="100" fill="none" stroke="#FF9800" stroke-width="1.5" stroke-dasharray="6"/>
+              <!-- Addendum circle -->
+              <circle cx="200" cy="140" r="115" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <!-- Dedendum circle -->
+              <circle cx="200" cy="140" r="82" fill="none" stroke="#FF5722" stroke-width="1.5" stroke-dasharray="4"/>
+              <!-- Center -->
+              <circle cx="200" cy="140" r="3" fill="#0696D7"/>
+              <!-- Tooth shape (simplified) -->
+              <path d="M 298,125 L 315,140 L 298,155" fill="none" stroke="#0696D7" stroke-width="2"/>
+              <path d="M 285,110 L 315,140 L 285,170" fill="none" stroke="#ccc" stroke-width="0.5"/>
+              <!-- Labels -->
+              <text x="320" y="100" fill="#4CAF50" font-size="10">Vòng đỉnh (Addendum)</text>
+              <text x="320" y="140" fill="#FF9800" font-size="10">Vòng chia (Pitch)</text>
+              <text x="320" y="180" fill="#FF5722" font-size="10">Vòng chân (Dedendum)</text>
+              <text x="160" y="145" fill="#0696D7" font-size="10">Tâm</text>
+              <!-- Dimension -->
+              <line x1="200" y1="140" x2="200" y2="25" stroke="#aaa" stroke-width="0.5" stroke-dasharray="3"/>
+              <line x1="200" y1="140" x2="315" y2="140" stroke="#aaa" stroke-width="0.5" stroke-dasharray="3"/>
+              <text x="205" y="80" fill="#aaa" font-size="9">R pitch</text>
+            </svg>
+            </div>
+
+            <h3>Công thức tính toán (hệ Metric - Module)</h3>
+            <table class="ref-table">
+                <thead><tr><th>Đại lượng</th><th>Ký hiệu</th><th>Công thức</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Module</strong></td><td>m</td><td>m = D / Z (D: đường kính chia, Z: số răng)</td></tr>
+                    <tr><td><strong>Đường kính chia</strong></td><td>D</td><td>D = m × Z</td></tr>
+                    <tr><td><strong>Đường kính đỉnh</strong></td><td>Da</td><td>Da = m × (Z + 2)</td></tr>
+                    <tr><td><strong>Đường kính chân</strong></td><td>Df</td><td>Df = m × (Z − 2.5)</td></tr>
+                    <tr><td><strong>Bước răng</strong></td><td>p</td><td>p = π × m</td></tr>
+                    <tr><td><strong>Chiều cao răng</strong></td><td>h</td><td>h = 2.25 × m</td></tr>
+                    <tr><td><strong>Khoảng cách trục</strong></td><td>a</td><td>a = m × (Z₁ + Z₂) / 2</td></tr>
+                </tbody>
+            </table>
+
+            <h2>3. Vẽ bánh răng trong AutoCAD</h2>
+            <div class="command-syntax">
+<span class="prompt">VD: Bánh răng m=3, Z=20</span>
+<span class="comment">D = 3×20 = 60mm → R chia = 30</span>
+<span class="comment">Da = 3×22 = 66mm → R đỉnh = 33</span>
+<span class="comment">Df = 3×17.5 = 52.5 → R chân = 26.25</span>
+<span class="prompt">Bước vẽ:</span>
+<span class="comment">1. CIRCLE tâm → R=30 (vòng chia, nét chấm gạch)</span>
+<span class="comment">2. CIRCLE tâm → R=33 (vòng đỉnh, nét liền đậm)</span>
+<span class="comment">3. CIRCLE tâm → R=26.25 (vòng chân, nét liền mảnh)</span>
+<span class="comment">4. Vẽ profile 1 răng (cung thân khai involute)</span>
+<span class="comment">5. ARRAY Polar: 20 răng, 360° quanh tâm</span>
+            </div>
+
+            <h2>4. Ổ lăn (Ball Bearings)</h2>
+            <p>Ổ lăn giảm ma sát giữa trục quay và vỏ máy. Trên bản vẽ, ổ lăn thường được biểu diễn đơn giản:</p>
+            <div class="command-syntax">
+<span class="prompt">Biểu diễn ổ lăn mặt cắt:</span>
+<span class="comment">1. Vẽ RECTANG vòng ngoài (outer race)</span>
+<span class="comment">2. Vẽ RECTANG vòng trong (inner race)</span>
+<span class="comment">3. Vẽ CIRCLE nhỏ (viên bi) giữa 2 vòng</span>
+<span class="comment">4. HATCH = ANSI31 cho mặt cắt kim loại</span>
+            </div>
+
+            <h2>5. Cam — Cơ cấu cam</h2>
+            <h3>Biểu đồ chuyển vị (Displacement Diagram)</h3>
+            <p>Biểu đồ thể hiện mối quan hệ giữa <strong>góc quay cam</strong> (trục X) và <strong>hành trình cần đẩy</strong> (trục Y):</p>
+            <table class="ref-table">
+                <thead><tr><th>Loại chuyển động</th><th>Đặc điểm</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Uniform Motion</strong></td><td>Vận tốc đều → đường thẳng nghiêng</td></tr>
+                    <tr><td><strong>Harmonic Motion</strong></td><td>Tăng tốc-giảm tốc mượt → đường sin</td></tr>
+                    <tr><td><strong>Uniform Acceleration</strong></td><td>Gia tốc đều → đường parabol</td></tr>
+                    <tr><td><strong>Dwell</strong></td><td>Đứng yên → đường ngang</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box tip"><span class="icon">💡</span><div><div class="info-title">Vẽ profile cam</div><div class="info-text">Sau khi vẽ biểu đồ chuyển vị, dùng phương pháp đồ giải: chia vòng tròn cơ sở thành các phần bằng nhau (theo góc), đo bán kính tại mỗi góc theo biểu đồ, rồi nối các điểm bằng <code>SPLINE</code>.</div></div></div>
+
+            <div class="chapter-nav">
+                <a href="chuong24.html"><div><span class="nav-dir">← Chương trước</span><span class="nav-title">Bản Vẽ Kỹ Thuật</span></div></a>
+                <a href="bai-tap.html" class="nav-next"><div><span class="nav-dir">Hoàn thành →</span><span class="nav-title">Bài Tập Thực Hành</span></div></a>
+            </div>
+        </div></main>
+    </div>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>
