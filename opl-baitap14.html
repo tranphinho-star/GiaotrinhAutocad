@@ -3,418 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPL Mức độ 14: Vẽ Biểu Diễn Ren và Bulong | AutoCAD</title>
-    <meta name="description" content="One Point Lesson: Vẽ bulong M12×40 lục giác, ghép bulong M10×50 với đai ốc/vòng đệm, lỗ ren trong M16×1.5 simplified trong AutoCAD">
+    <title>OPL - Lời Giải Bài 14: Biểu diễn ren và bulong | AutoCAD 2007</title>
     <link rel="stylesheet" href="index.css">
     <style>
-        .opl-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(255,107,53,0.15),rgba(255,107,53,0.05));border:1px solid rgba(255,107,53,0.3);color:#FF8A5C;padding:0.5rem 1.2rem;border-radius:50px;font-size:0.85rem;font-weight:600;margin-bottom:1rem;letter-spacing:1px}
-        .calc-table{width:100%;border-collapse:separate;border-spacing:0;margin:1.5rem 0;border-radius:12px;overflow:hidden;border:1px solid var(--border-color)}.calc-table thead{background:linear-gradient(135deg,var(--primary-dark),var(--primary))}.calc-table th{color:white;padding:0.8rem 1.2rem;font-size:0.85rem;font-weight:600;text-align:left}.calc-table td{padding:0.7rem 1.2rem;border-top:1px solid var(--border-color);background:var(--bg-tertiary);font-size:0.92rem;color:var(--text-secondary)}.calc-table tr:hover td{background:var(--bg-card-hover)}.calc-table .result{color:#4CAF50;font-weight:700;font-family:'JetBrains Mono',monospace}
-        .step-card{background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.8rem;margin:1.5rem 0;position:relative;overflow:hidden}.step-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--primary),var(--accent))}
-        .step-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:50%;color:white;font-weight:700;font-size:0.9rem;margin-right:12px;flex-shrink:0;box-shadow:0 0 15px var(--primary-glow)}
-        .step-title{display:flex;align-items:center;margin-bottom:1rem;font-size:1.1rem;font-weight:600}
-        .step-cmd{background:var(--bg-primary);border-radius:8px;padding:0.8rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.85rem;line-height:1.8;margin:0.8rem 0;color:#A8D8B9;overflow-x:auto;border-left:3px solid var(--primary)}.step-cmd .prompt{color:var(--warning);font-weight:600}.step-cmd .val{color:#64FFDA}.step-cmd .cmt{color:var(--text-muted);font-style:italic}
-        .step-img{border-radius:12px;margin:1rem 0;border:1px solid var(--border-color);max-width:100%;box-shadow:var(--shadow-md);transition:transform 0.3s}.step-img:hover{transform:scale(1.02)}
-        .exercise-header{background:linear-gradient(135deg,rgba(6,150,215,0.1),rgba(255,107,53,0.05));border:1px solid rgba(6,150,215,0.2);border-radius:var(--radius-lg);padding:1.5rem 2rem;margin:2.5rem 0 1.5rem;text-align:center}.exercise-header h2{border:none!important;margin:0!important;padding:0!important;color:var(--primary-light);font-size:1.4rem}.exercise-header p{color:var(--text-secondary);margin:0.5rem 0 0!important;font-size:0.95rem}
-        .highlight-box{background:rgba(255,152,0,0.08);border:1px solid rgba(255,152,0,0.2);border-radius:var(--radius-md);padding:1rem 1.5rem;margin:1rem 0}.highlight-box strong{color:#FF9800}
-        .tip-inline{display:flex;align-items:flex-start;gap:8px;background:rgba(0,200,83,0.06);border-left:3px solid var(--success);padding:0.8rem 1rem;border-radius:0 8px 8px 0;margin:0.8rem 0;font-size:0.88rem;color:var(--text-secondary)}.tip-inline .tip-icon{color:var(--success);flex-shrink:0;font-size:1.1rem}
+        .opl-step { background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border-left: 4px solid #FF8A5C; }
+        .opl-step h3 { margin-top: 0; color: #FF8A5C; }
+        .download-btn { display: inline-block; padding: 10px 20px; background: #FF8A5C; color: #111; font-weight: bold; border-radius: 5px; text-decoration: none; margin-bottom: 20px; }
+        .download-btn:hover { background: #E67E55; }
     </style>
 </head>
 <body>
-    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html">Lý thuyết</a></li><li><a href="bai-tap.html" class="active">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav><button class="menu-toggle" id="menuToggle">☰</button></div></header>
-    <div class="sidebar-overlay"></div>
-    <div class="page-layout">
-        <aside class="sidebar"><div class="sidebar-header"><h3>📖 OPL Mức 14</h3></div><ul class="sidebar-nav">
-<li><a href="#bt141" class="active"><span class="nav-number">1</span> BT14.1 Bulong M12</a></li>
-<li><a href="#bt142"><span class="nav-number">2</span> BT14.2 Ghép bulong</a></li>
-<li><a href="#bt143"><span class="nav-number">3</span> BT14.3 Lỗ ren trong</a></li>
-<li class="nav-header">Liên kết</li>
-<li><a href="chuong23.html"><span class="nav-number">23</span> Lý thuyết Ren & Bulong</a></li>
-<li><a href="bai-tap.html"><span class="nav-number">BT</span> Bài tập</a></li>
-</ul></aside>
-        <main class="main-content"><div class="content-wrapper">
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html">Lý thuyết</a></li><li><a href="bai-tap.html" class="active">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav></div></header>
+    <div class="page-layout" style="display:block; padding: 20px; max-width: 900px; margin: 0 auto; padding-top: 80px;">
+        <div class="chapter-header">
+            <span class="chapter-label" style="color:#FF8A5C">📖 One Point Lesson (OPL)</span>
+            <h1 style="color:#FF8A5C">Giải bài 14: Biểu diễn Ren và Bulong</h1>
+            <p class="chapter-desc">Quy trình vẽ đơn giản hóa mối ghép ren tiêu chuẩn M16 và M12.</p>
+        </div>
 
-            <div class="chapter-header">
-                <span class="opl-badge">📖 ONE POINT LESSON</span>
-                <span class="chapter-label">🔩 Mức Độ 14</span>
-                <h1>Vẽ Biểu Diễn Ren và Bulong</h1>
-                <p class="chapter-desc">Hướng dẫn chi tiết: Vẽ bulong M12×40 lục giác → Ghép 2 tấm bằng bulong M10×50 + đai ốc + vòng đệm → Vẽ lỗ ren trong M16×1.5 + MLEADER callout.</p>
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="downloads/BT_MucDo12-16_Templates.zip" download class="download-btn">📥 Tải File Template (.dwg) Hệ thống Chuyên ngành</a>
+        </div>
+
+        <div class="opl-step">
+            <h3>Bước 1: Tính toán thông số Bulong lục giác</h3>
+            <p>Đối với Bulong M12x40: d = 12, L = 40. Bề dày mũ bulong H = 0.7d = 8.4mm. Đường kính đường tròn ngoại tiếp lục giác D = 1.5d = 18mm.</p>
+        </div>
+        <div class="opl-step">
+            <h3>Bước 2: Vẽ mặt cắt lỗ ren trong M16</h3>
+            <p>Sử dụng nét liền đậm cho đường kính đỉnh ren (lỗ nhỏ D1). Sử dụng nét mảnh cho đường kính chân ren (D). Đánh mặt cắt Hatch (ANSI31) chạy đè qua nét mảnh và dừng lại ở nét đậm.</p>
+            <div style="overflow-x:auto; margin-top:1rem;">
+            <svg viewBox="0 0 300 200" style="max-width:300px;width:100%;background:#1E1E1E;border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Hatch pattern representation -->
+              <defs>
+                <pattern id="hatch" patternUnits="userSpaceOnUse" width="10" height="10">
+                  <path d="M-1,1 l2,-2 M0,10 l10,-10 M9,11 l2,-2" stroke="#666" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect x="50" y="20" width="200" height="160" fill="url(#hatch)" stroke="#fff" stroke-width="2"/>
+              <!-- Hole -->
+              <rect x="110" y="20" width="80" height="160" fill="#1E1E1E"/>
+              <line x1="110" y1="20" x2="110" y2="180" stroke="#fff" stroke-width="3"/>
+              <line x1="190" y1="20" x2="190" y2="180" stroke="#fff" stroke-width="3"/>
+              <!-- Thread minor diameter (thin line) -->
+              <line x1="90" y1="20" x2="90" y2="180" stroke="#fff" stroke-width="1"/>
+              <line x1="210" y1="20" x2="210" y2="180" stroke="#fff" stroke-width="1"/>
+              <!-- Callout -->
+              <line x1="210" y1="50" x2="250" y2="30" stroke="#FF8A5C" stroke-width="1"/>
+              <line x1="250" y1="30" x2="290" y2="30" stroke="#FF8A5C" stroke-width="1"/>
+              <text x="250" y="25" fill="#FF8A5C" font-size="10">M16x1.5</text>
+            </svg>
             </div>
+        </div>
 
-            <div class="info-box note"><span class="icon">📐</span><div><div class="info-title">Quy ước kích thước bulong theo tiêu chuẩn</div><div class="info-text">
-                Với bulong lục giác chuẩn: <b>Đầu bulong</b> rộng = <code>1.5 × d</code>, cao = <code>0.7 × d</code>. <b>Đai ốc</b> rộng = <code>1.5 × d</code>, cao = <code>0.875 × d</code>. <b>Đường kính ren trong (minor)</b> ≈ <code>d − 1.3 × bước</code>. Trong biểu diễn đơn giản: nét liền = đường kính ngoài, nét đứt = đường kính trong.
-            </div></div></div>
-
-
-            <!-- ====== BT14.1 ====== -->
-            <div class="exercise-header" id="bt141">
-                <h2>🔩 BT14.1 — Bulong M12×40 Lục Giác</h2>
-                <p>Vẽ mặt đứng (Front View) + mặt bằng (Top View). Đường kính đầu = 1.5d = 18mm, cao đầu = 0.7d = 8.4mm.</p>
-            </div>
-
-            <h3>Thông số tính toán</h3>
-            <table class="calc-table">
-                <thead><tr><th>Thông số</th><th>Công thức</th><th>Giá trị</th></tr></thead>
-                <tbody>
-                    <tr><td>Đường kính ren (d)</td><td>—</td><td class="result">12 mm</td></tr>
-                    <tr><td>Chiều dài bulong (l)</td><td>—</td><td class="result">40 mm</td></tr>
-                    <tr><td>Bề rộng đầu (S)</td><td>1.5 × d</td><td class="result">18 mm</td></tr>
-                    <tr><td>Chiều cao đầu (k)</td><td>0.7 × d</td><td class="result">8.4 mm</td></tr>
-                    <tr><td>Đường kính ren trong</td><td>≈ 0.85 × d</td><td class="result">10.2 mm</td></tr>
-                    <tr><td>Bán kính ngoại tiếp lục giác</td><td>S / (2 × cos30°)</td><td class="result">≈ 10.4 mm</td></tr>
-                </tbody>
-            </table>
-
-            <h3>Bước 1: Thiết lập bản vẽ và Layer</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">1</span> Thiết lập môi trường vẽ</div>
-                <div class="step-cmd">
-<span class="cmt">── Tạo file mới, thiết lập đơn vị mm</span><br>
-<span class="prompt">Command:</span> UNITS ↵ → Length Type: <span class="val">Decimal</span>, Precision: <span class="val">0.00</span><br>
-<span class="prompt">Command:</span> LIMITS ↵ → <span class="val">0,0</span> → <span class="val">200,150</span> ↵<br>
-<span class="prompt">Command:</span> Z ↵ → A ↵ <span class="cmt">(Zoom All)</span><br>
-<br>
-<span class="cmt">── Tạo Layer</span><br>
-<span class="prompt">Command:</span> LA ↵<br>
-Layer <span class="val">"Object"</span> → Màu <span class="val">White (7)</span> → Lineweight: <span class="val">0.35mm</span><br>
-Layer <span class="val">"Center"</span> → Màu <span class="val">Red (1)</span> → Linetype: <span class="val">CENTER</span><br>
-Layer <span class="val">"Hidden"</span> → Màu <span class="val">Magenta (6)</span> → Linetype: <span class="val">HIDDEN</span><br>
-Layer <span class="val">"Dim"</span> → Màu <span class="val">Cyan (4)</span>
-                </div>
-            </div>
-
-            <h3>Bước 2: Vẽ mặt đứng bulong (Front View)</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">2</span> Vẽ đầu bulong + thân bulong</div>
-                <div class="step-cmd">
-<span class="cmt">── Chuyển Layer "Object"</span><br>
-<span class="cmt">── Vẽ đầu bulong (RECTANG 18×8.4)</span><br>
-<span class="prompt">Command:</span> RECTANG ↵<br>
-<span class="prompt">First corner:</span> <span class="val">0,0</span> ↵<br>
-<span class="prompt">Other corner:</span> <span class="val">18,8.4</span> ↵<br>
-<br>
-<span class="cmt">── Vẽ thân bulong (RECTANG 12×40, canh giữa)</span><br>
-<span class="prompt">Command:</span> RECTANG ↵<br>
-<span class="prompt">First corner:</span> <span class="val">3,-40</span> ↵ <span class="cmt">(offset = (18-12)/2 = 3)</span><br>
-<span class="prompt">Other corner:</span> <span class="val">15,0</span> ↵<br>
-<br>
-<span class="cmt">── Vẽ chamfer 30° trên đầu bulong</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">0,8.4</span> → <span class="val">3,5.7</span> ↵ → ↵ <span class="cmt">(góc trái)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">18,8.4</span> → <span class="val">15,5.7</span> ↵ → ↵ <span class="cmt">(góc phải)</span><br>
-<br>
-<span class="cmt">── Vẽ đường phân chia mũ (ARC cong nhẹ giữa đầu)</span><br>
-<span class="prompt">Command:</span> ARC ↵<br>
-<span class="prompt">Start:</span> <span class="val">3,5.7</span> → <span class="prompt">Second:</span> <span class="val">9,4</span> → <span class="prompt">End:</span> <span class="val">15,5.7</span>
-                </div>
-            </div>
-
-            <h3>Bước 3: Thêm biểu diễn ren (Simplified)</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">3</span> Vẽ đường ren đơn giản hóa trên thân bulong</div>
-                <div class="step-cmd">
-<span class="cmt">── Chuyển Layer "Hidden" (nét đứt)</span><br>
-<span class="cmt">── Vẽ 2 đường nét đứt song song biểu diễn ren trong (d₁ ≈ 0.85d = 10.2mm)</span><br>
-<span class="prompt">Command:</span> L ↵<br>
-<span class="prompt">From:</span> <span class="val">3.9,-40</span> ↵ → <span class="val">3.9,0</span> ↵ → ↵ <span class="cmt">(nét đứt trái, offset = (18-10.2)/2 = 3.9)</span><br>
-<span class="prompt">Command:</span> L ↵<br>
-<span class="prompt">From:</span> <span class="val">14.1,-40</span> ↵ → <span class="val">14.1,0</span> ↵ → ↵ <span class="cmt">(nét đứt phải)</span><br>
-<br>
-<span class="cmt">── Chuyển Layer "Center" (nét tâm)</span><br>
-<span class="prompt">Command:</span> L ↵<br>
-<span class="prompt">From:</span> <span class="val">9,-43</span> ↵ → <span class="val">9,11</span> ↵ → ↵ <span class="cmt">(đường tâm dọc)</span>
-                </div>
-                <div class="tip-inline"><span class="tip-icon">💡</span>Trong biểu diễn đơn giản (Simplified): đường kính ngoài (Major) vẽ nét liền, đường kính trong (Minor) vẽ nét đứt. Khoảng cách giữa 2 nét ≈ 15% đường kính.</div>
-            </div>
-
-            <h3>Bước 4: Vẽ mặt bằng bulong (Top View)</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">4</span> Vẽ lục giác đầu bulong nhìn từ trên</div>
-                <div class="step-cmd">
-<span class="cmt">── Chuyển Layer "Object"</span><br>
-<span class="cmt">── Vẽ lục giác đều ngoại tiếp (Circumscribed)</span><br>
-<span class="prompt">Command:</span> POLYGON ↵<br>
-<span class="prompt">Enter number of sides:</span> <span class="val">6</span> ↵<br>
-<span class="prompt">Specify center of polygon:</span> <span class="val">50,30</span> ↵ <span class="cmt">(vị trí bên phải Front View)</span><br>
-<span class="prompt">Enter option [Inscribed/Circumscribed]:</span> <span class="val">C</span> ↵<br>
-<span class="prompt">Specify radius of circle:</span> <span class="val">9</span> ↵ <span class="cmt">(= S/2 = 18/2)</span><br>
-<br>
-<span class="cmt">── Vẽ vòng tròn biểu diễn mũ vát (chamfer circle)</span><br>
-<span class="prompt">Command:</span> C ↵ → Center: <span class="val">50,30</span> → Radius: <span class="val">10.4</span> <span class="cmt">(= S / 2cos30°)</span><br>
-<br>
-<span class="cmt">── Vẽ vòng tròn thân bulong</span><br>
-<span class="prompt">Command:</span> C ↵ → Center: <span class="val">50,30</span> → Radius: <span class="val">6</span> <span class="cmt">(= d/2 = 12/2)</span><br>
-<br>
-<span class="cmt">── Chuyển Layer "Center" → vẽ 2 đường tâm</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">38,30</span> → <span class="val">62,30</span> ↵ → ↵ <span class="cmt">(tâm ngang)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">50,18</span> → <span class="val">50,42</span> ↵ → ↵ <span class="cmt">(tâm dọc)</span>
-                </div>
-                <img src="opl-images/bt14_1_bolt_views_1773594148223.png" alt="Bulong M12×40 — Mặt đứng + Mặt bằng" class="step-img">
-                <img src="opl-images/bt14_1_step_polygon_1773594163902.png" alt="Lệnh POLYGON tạo lục giác" class="step-img">
-            </div>
-
-            <h3>Bước 5: Ghi kích thước</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">5</span> Ghi đầy đủ kích thước bulong</div>
-                <div class="step-cmd">
-<span class="cmt">── Chuyển Layer "Dim"</span><br>
-<span class="prompt">Command:</span> DIMLINEAR ↵ → ghi chiều rộng đầu: <span class="val">18</span><br>
-<span class="prompt">Command:</span> DIMLINEAR ↵ → ghi chiều cao đầu: <span class="val">8.4</span><br>
-<span class="prompt">Command:</span> DIMLINEAR ↵ → ghi chiều dài thân: <span class="val">40</span><br>
-<span class="prompt">Command:</span> DIMLINEAR ↵ → ghi đường kính thân: <span class="val">Ø12</span><br>
-<br>
-<span class="cmt">── Ghi callout tên bulong</span><br>
-<span class="prompt">Command:</span> MLD ↵ <span class="cmt">(MLEADER)</span><br>
-→ Chỉ vào bulong → ghi: <span class="val">M12×40</span>
-                </div>
-            </div>
-
-            <!-- ====== BT14.2 ====== -->
-            <div class="exercise-header" id="bt142">
-                <h2>🔗 BT14.2 — Ghép 2 Tấm bằng Bulong M10×50</h2>
-                <p>Vẽ mặt cắt: 2 tấm ghép + bulong M10×50 + đai ốc + vòng đệm. Hatch mặt cắt tấm ghép bằng ANSI31.</p>
-            </div>
-
-            <h3>Thông số lắp ghép</h3>
-            <table class="calc-table">
-                <thead><tr><th>Chi tiết</th><th>Kích thước</th><th>Ghi chú</th></tr></thead>
-                <tbody>
-                    <tr><td>Bulong</td><td class="result">M10×50</td><td>d = 10mm, l = 50mm</td></tr>
-                    <tr><td>Đầu bulong</td><td class="result">15 × 7 mm</td><td>S = 1.5d = 15, k = 0.7d = 7</td></tr>
-                    <tr><td>Tấm ghép trên</td><td class="result">60 × 15 mm</td><td>Lỗ suốt Ø10.5</td></tr>
-                    <tr><td>Tấm ghép dưới</td><td class="result">60 × 15 mm</td><td>Lỗ suốt Ø10.5</td></tr>
-                    <tr><td>Vòng đệm</td><td class="result">OD=20, ID=10.5, t=2</td><td>Đệm phẳng (Plain washer)</td></tr>
-                    <tr><td>Đai ốc</td><td class="result">15 × 8.75 mm</td><td>S = 1.5d, H = 0.875d</td></tr>
-                </tbody>
-            </table>
-
-            <h3>Bước 1: Vẽ 2 tấm ghép (mặt cắt)</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">1</span> Vẽ 2 tấm thép chồng lên nhau</div>
-                <div class="step-cmd">
-<span class="cmt">── Tấm trên (60×15, tâm lỗ tại x=30)</span><br>
-<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">0,0</span> → <span class="val">60,15</span> ↵<br>
-<br>
-<span class="cmt">── Tấm dưới (60×15, ngay bên dưới tấm trên)</span><br>
-<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">0,-15</span> → <span class="val">60,0</span> ↵<br>
-<br>
-<span class="cmt">── Vẽ lỗ suốt (2 đường dọc qua 2 tấm)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">24.75,-15</span> → <span class="val">24.75,15</span> ↵ → ↵ <span class="cmt">(trái lỗ, 30-10.5/2)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">35.25,-15</span> → <span class="val">35.25,15</span> ↵ → ↵ <span class="cmt">(phải lỗ, 30+10.5/2)</span>
-                </div>
-            </div>
-
-            <h3>Bước 2: Vẽ bulong + vòng đệm + đai ốc</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">2</span> Vẽ các chi tiết kẹp chặt</div>
-                <div class="step-cmd">
-<span class="cmt">── Đầu bulong (phía trên tấm trên)</span><br>
-<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">22.5,17</span> → <span class="val">37.5,24</span> ↵ <span class="cmt">(S=15, k=7, cách vòng đệm)</span><br>
-<br>
-<span class="cmt">── Vòng đệm trên (giữa đầu bulong và tấm trên)</span><br>
-<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">20,15</span> → <span class="val">40,17</span> ↵ <span class="cmt">(OD=20mm, t=2mm)</span><br>
-<br>
-<span class="cmt">── Thân bulong (nét liền xuyên qua lỗ)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">25,24</span> → <span class="val">25,-26</span> ↵ → ↵ <span class="cmt">(bên trái thân)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">35,24</span> → <span class="val">35,-26</span> ↵ → ↵ <span class="cmt">(bên phải thân)</span><br>
-<br>
-<span class="cmt">── Vòng đệm dưới (giữa tấm dưới và đai ốc)</span><br>
-<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">20,-17</span> → <span class="val">40,-15</span> ↵<br>
-<br>
-<span class="cmt">── Đai ốc (phía dưới vòng đệm dưới)</span><br>
-<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">22.5,-25.75</span> → <span class="val">37.5,-17</span> ↵ <span class="cmt">(S=15, H=8.75)</span><br>
-<br>
-<span class="cmt">── Thêm chamfer 30° trên đầu bulong và đai ốc</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">22.5,24</span> → <span class="val">25,22</span> ↵ → ↵<br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">37.5,24</span> → <span class="val">35,22</span> ↵ → ↵
-                </div>
-            </div>
-
-            <h3>Bước 3: Thêm biểu diễn ren trên thân bulong</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">3</span> Vẽ nét đứt ren trên phần thân lộ ra</div>
-                <div class="step-cmd">
-<span class="cmt">── Chuyển Layer "Hidden"</span><br>
-<span class="cmt">── Phần thân bulong lộ ra (dưới tấm dưới đến đai ốc): y = -15 → -17</span><br>
-<span class="cmt">── Nét đứt biểu diễn ren phía trong (d₁ = 0.85×10 = 8.5mm)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">25.75,-15</span> → <span class="val">25.75,-17</span> ↵ → ↵ <span class="cmt">(trái, 30-8.5/2)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">34.25,-15</span> → <span class="val">34.25,-17</span> ↵ → ↵ <span class="cmt">(phải, 30+8.5/2)</span>
-                </div>
-            </div>
-
-            <h3>Bước 4: Hatch mặt cắt tấm ghép (ANSI31)</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">4</span> Tô mặt cắt 2 tấm ghép bằng ANSI31</div>
-                <div class="step-cmd">
-<span class="cmt">── Chuyển Layer "Hatch" (nếu có) hoặc Layer "0"</span><br>
-<span class="prompt">Command:</span> H ↵ <span class="cmt">(HATCH)</span><br>
-Pattern: <span class="val">ANSI31</span><br>
-Scale: <span class="val">1</span><br>
-Angle: <span class="val">0</span><br>
-→ Click <span class="val">"Pick Points"</span><br>
-→ Click vào vùng đặc tấm trên (BÊN TRÁI lỗ) → Click vùng đặc (BÊN PHẢI lỗ)<br>
-→ ↵ (xác nhận) → Preview → OK<br>
-<br>
-<span class="cmt">── Hatch tấm dưới (PHẢI đổi góc để phân biệt 2 chi tiết)</span><br>
-<span class="prompt">Command:</span> H ↵<br>
-Pattern: <span class="val">ANSI31</span> | Scale: <span class="val">1</span> | Angle: <span class="val">90</span> <span class="cmt">(hoặc 135° để rõ ràng)</span><br>
-→ Pick vùng đặc tấm dưới bên trái + bên phải lỗ
-                </div>
-                <div class="highlight-box">
-                    <strong>⚠️ Quy tắc quan trọng:</strong> Trong mặt cắt lắp ghép, <b>bulong, đai ốc, vòng đệm KHÔNG được hatch</b> (theo TCVN/ISO). Chỉ hatch các tấm ghép bị cắt. Hai chi tiết sát nhau phải có <b>góc hatch khác nhau</b> để phân biệt.
-                </div>
-                <img src="opl-images/bt14_2_bolt_assembly_1773594180299.png" alt="Mặt cắt ghép bulong M10×50 hoàn chỉnh" class="step-img">
-                <img src="opl-images/bt14_2_step_hatch_1773594200143.png" alt="Lệnh HATCH ANSI31 cho mặt cắt" class="step-img">
-            </div>
-
-            <h3>Bước 5: Ghi kích thước lắp ghép</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">5</span> Ghi DIM các kích thước chính</div>
-                <div class="step-cmd">
-<span class="cmt">── Chuyển Layer "Dim"</span><br>
-<span class="prompt">Command:</span> DIMLINEAR ↵ → chiều dày tấm trên: <span class="val">15</span><br>
-<span class="prompt">Command:</span> DIMLINEAR ↵ → chiều dày tấm dưới: <span class="val">15</span><br>
-<span class="prompt">Command:</span> DIMLINEAR ↵ → tổng chiều dài bulong: <span class="val">50</span><br>
-<span class="prompt">Command:</span> DIMDIA ↵ → đường kính lỗ: <span class="val">Ø10.5</span><br>
-<br>
-<span class="cmt">── Ghi callout</span><br>
-<span class="prompt">Command:</span> MLD ↵ → chỉ vào bulong → ghi: <span class="val">M10×50</span>
-                </div>
-                <div class="tip-inline"><span class="tip-icon">💡</span>Lỗ bulong thường lớn hơn đường kính bulong 0.5mm (Ø10.5 cho bulong M10) để dễ lắp ráp.</div>
-            </div>
-
-            <!-- ====== BT14.3 ====== -->
-            <div class="exercise-header" id="bt143">
-                <h2>🕳️ BT14.3 — Lỗ Ren Trong M16×1.5 (Simplified)</h2>
-                <p>Vẽ lỗ ren trong theo biểu diễn đơn giản hóa. Ghi callout: M16×1.5 - 6H bằng MLEADER.</p>
-            </div>
-
-            <h3>Thông số lỗ ren</h3>
-            <table class="calc-table">
-                <thead><tr><th>Thông số</th><th>Công thức</th><th>Giá trị</th></tr></thead>
-                <tbody>
-                    <tr><td>Đường kính ngoài (Major D)</td><td>—</td><td class="result">16 mm</td></tr>
-                    <tr><td>Bước ren (Pitch P)</td><td>—</td><td class="result">1.5 mm</td></tr>
-                    <tr><td>Đường kính trong (Minor d₁)</td><td>D − 1.3 × P</td><td class="result">≈ 14.05 mm</td></tr>
-                    <tr><td>Cấp chính xác</td><td>—</td><td class="result">6H (ren trong)</td></tr>
-                    <tr><td>Chiều sâu ren</td><td>≈ 1.5 × D</td><td class="result">24 mm</td></tr>
-                    <tr><td>Chiều sâu khoan</td><td>≈ 1.5D + 3mm</td><td class="result">27 mm</td></tr>
-                </tbody>
-            </table>
-
-            <h3>Bước 1: Vẽ chi tiết (mặt cắt có lỗ ren)</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">1</span> Vẽ khối chi tiết với lỗ ren trong</div>
-                <div class="step-cmd">
-<span class="cmt">── Vẽ thân chi tiết (mặt cắt dọc qua lỗ)</span><br>
-<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">0,0</span> → <span class="val">50,40</span> ↵ <span class="cmt">(khối 50×40mm)</span><br>
-<br>
-<span class="cmt">── Vẽ lỗ khoan (đường kính trong d₁ = 14.05mm)</span><br>
-<span class="cmt">── Tâm lỗ tại x = 25 (giữa khối)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">17.975,40</span> → <span class="val">17.975,13</span> ↵ → ↵ <span class="cmt">(thành lỗ trái, 25-14.05/2)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">32.025,40</span> → <span class="val">32.025,13</span> ↵ → ↵ <span class="cmt">(thành lỗ phải, 25+14.05/2)</span><br>
-<br>
-<span class="cmt">── Đáy lỗ khoan (hình chóp mũi khoan 120°)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">17.975,13</span> → <span class="val">25,9</span> → <span class="val">32.025,13</span> ↵ → ↵
-                </div>
-            </div>
-
-            <h3>Bước 2: Thêm biểu diễn ren (Simplified)</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">2</span> Vẽ đường ren theo biểu diễn đơn giản</div>
-                <div class="step-cmd">
-<span class="cmt">── Quy tắc ren trong (Simplified):</span><br>
-<span class="cmt">── • Đường kính TRONG (Minor) = nét LIỀN (đã vẽ ở bước 1)</span><br>
-<span class="cmt">── • Đường kính NGOÀI (Major) = nét ĐỨT</span><br>
-<br>
-<span class="cmt">── Chuyển Layer "Hidden" (nét đứt)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">17,40</span> → <span class="val">17,16</span> ↵ → ↵ <span class="cmt">(Major trái, 25-16/2 = 17)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">33,40</span> → <span class="val">33,16</span> ↵ → ↵ <span class="cmt">(Major phải, 25+16/2 = 33)</span><br>
-<br>
-<span class="cmt">── Đường ngang giới hạn chiều sâu ren (tại y = 16 = 40 - 24)</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">17,16</span> → <span class="val">33,16</span> ↵ → ↵ <span class="cmt">(nét liền đáy ren)</span>
-                </div>
-                <div class="highlight-box">
-                    <strong>📌 Lưu ý quan trọng:</strong> Ren TRONG và ren NGOÀI có quy tắc <b>ngược nhau</b>:
-                    <ul style="margin:0.5rem 0 0;padding-left:1.2rem">
-                        <li><b>Ren ngoài (bulong):</b> Major = nét liền, Minor = nét đứt</li>
-                        <li><b>Ren trong (lỗ):</b> Minor = nét liền, Major = nét đứt</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3>Bước 3: Vẽ mặt bằng (Top View) lỗ ren</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">3</span> Vẽ nhìn từ trên xuống lỗ ren</div>
-                <div class="step-cmd">
-<span class="cmt">── Vẽ bên dưới mặt cắt, cách ~20mm</span><br>
-<span class="prompt">Command:</span> RECTANG ↵ → <span class="val">0,-20</span> → <span class="val">50,-60</span> ↵ <span class="cmt">(khung ngoài 50×40)</span><br>
-<br>
-<span class="cmt">── Chuyển Layer "Object" — Vẽ đường tròn Minor (nét liền, đầy đủ 360°)</span><br>
-<span class="prompt">Command:</span> C ↵ → Center: <span class="val">25,-40</span> → R: <span class="val">7.025</span> <span class="cmt">(= d₁/2 = 14.05/2)</span><br>
-<br>
-<span class="cmt">── Chuyển Layer "Hidden" — Vẽ đường tròn Major (nét đứt, ¾ vòng)</span><br>
-<span class="prompt">Command:</span> ARC ↵<br>
-<span class="prompt">Start:</span> <span class="val">25,-32</span> <span class="cmt">(đỉnh, 25-0, -40+8)</span><br>
-<span class="prompt">Center:</span> <span class="val">25,-40</span><br>
-<span class="prompt">Angle:</span> <span class="val">270</span> <span class="cmt">(¾ vòng, chừa khe hở ~90° theo TCVN)</span><br>
-<br>
-<span class="cmt">── Chuyển Layer "Center" — Đường tâm</span><br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">14,-40</span> → <span class="val">36,-40</span> ↵ → ↵<br>
-<span class="prompt">Command:</span> L ↵ → <span class="val">25,-51</span> → <span class="val">25,-29</span> ↵ → ↵
-                </div>
-                <div class="tip-inline"><span class="tip-icon">💡</span>Trong mặt bằng, đường tròn Major (đường kính ngoài ren) chỉ vẽ <b>¾ vòng</b> (khe hở khoảng 90°) theo quy ước TCVN/ISO để phân biệt với đường tròn thường.</div>
-            </div>
-
-            <h3>Bước 4: Hatch mặt cắt chi tiết</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">4</span> Tô mặt cắt vật liệu bằng ANSI31</div>
-                <div class="step-cmd">
-<span class="prompt">Command:</span> H ↵ <span class="cmt">(HATCH)</span><br>
-Pattern: <span class="val">ANSI31</span><br>
-Scale: <span class="val">1</span> | Angle: <span class="val">45</span><br>
-→ Pick Points → Click vào vùng đặc (bên trái + bên phải lỗ)<br>
-<span class="cmt">── Chú ý: KHÔNG tô vào vùng lỗ ren!</span>
-                </div>
-                <img src="opl-images/bt14_3_internal_thread_1773594217314.png" alt="Lỗ ren trong M16×1.5 — Simplified" class="step-img">
-            </div>
-
-            <h3>Bước 5: Ghi callout bằng MLEADER</h3>
-            <div class="step-card">
-                <div class="step-title"><span class="step-number">5</span> Ghi ký hiệu ren M16×1.5 - 6H</div>
-                <div class="step-cmd">
-<span class="prompt">Command:</span> MLD ↵ <span class="cmt">(MLEADER)</span><br>
-<span class="prompt">Specify leader arrowhead location:</span> <span class="val">(click vào thành lỗ ren)</span><br>
-<span class="prompt">Specify leader landing location:</span> <span class="val">(click ra ngoài, phía phải)</span><br>
-<br>
-<span class="cmt">── Nhập nội dung text:</span><br>
-<span class="val">M16×1.5 - 6H</span><br>
-<br>
-<span class="cmt">── Giải thích ký hiệu:</span><br>
-<span class="cmt">── M = Ren hệ mét</span><br>
-<span class="cmt">── 16 = Đường kính ngoài 16mm</span><br>
-<span class="cmt">── 1.5 = Bước ren 1.5mm (ren mịn)</span><br>
-<span class="cmt">── 6H = Cấp chính xác ren trong (H viết hoa = Internal)</span>
-                </div>
-                <img src="opl-images/bt14_3_step_mleader_1773594236625.png" alt="MLEADER ghi callout M16×1.5 - 6H" class="step-img">
-                <div class="tip-inline"><span class="tip-icon">💡</span>Phân biệt: <b>6g</b> (chữ thường) = cấp chính xác ren <b>ngoài</b> (bulong). <b>6H</b> (chữ hoa) = cấp chính xác ren <b>trong</b> (đai ốc, lỗ ren). Nếu bước ren là bước thô tiêu chuẩn thì không cần ghi bước (ví dụ: M16 - 6H).</div>
-            </div>
-
-
-            <!-- ====== SUMMARY ====== -->
-            <div class="info-box warning"><span class="icon">🏆</span><div><div class="info-title">Tổng kết OPL — Mức độ 14</div><div class="info-text">
-                <b>BT14.1:</b> Bulong M12×40: RECTANG đầu (18×8.4) + thân (12×40) + chamfer 30° + nét đứt ren (0.85d) + POLYGON 6 cạnh cho Top View<br>
-                <b>BT14.2:</b> Ghép bulong M10×50: 2 tấm + bulong + đai ốc + vòng đệm → Hatch ANSI31 chỉ tấm ghép, bulong KHÔNG hatch<br>
-                <b>BT14.3:</b> Lỗ ren M16×1.5: Minor = nét liền, Major = nét đứt (NGƯỢC với ren ngoài) + ¾ vòng tròn Major ở Top View + MLEADER "M16×1.5 - 6H"
-            </div></div></div>
-
-            <div class="info-box tip"><span class="icon">📑</span><div><div class="info-title">Cần ôn lại lý thuyết?</div><div class="info-text">Xem <a href="chuong23.html"><b>Chương 23: Ren & Bulong</b></a> để nắm vững thuật ngữ ren, quy tắc biểu diễn và các loại bulong/đai ốc/vòng đệm.</div></div></div>
-
-            <div class="chapter-nav">
-                <a href="bai-tap.html"><div><span class="nav-dir">← Về bài tập</span><span class="nav-title">Bài Tập Thực Hành</span></div></a>
-                <a href="chuong23.html" class="nav-next"><div><span class="nav-dir">Lý thuyết →</span><span class="nav-title">Ch.23: Ren & Bulong</span></div></a>
-            </div>
-        </div></main>
+        <div style="margin-top: 30px;">
+            <a href="bai-tap.html" class="download-btn" style="background:#555; color:#fff;">← Quay lại danh sách Bài tập</a>
+        </div>
     </div>
-    <button class="back-to-top" id="backToTop">↑</button>
-    <script src="script.js"></script>
 </body>
 </html>

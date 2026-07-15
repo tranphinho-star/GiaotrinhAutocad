@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPL - Lời Giải Mức Độ 6-9 | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .opl-step { background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border-left: 4px solid #0696D7; }
+        .opl-step h3 { margin-top: 0; color: #0696D7; }
+        .download-btn { display: inline-block; padding: 10px 20px; background: #0696D7; color: #fff; font-weight: bold; border-radius: 5px; text-decoration: none; margin-bottom: 20px; }
+        .download-btn:hover { background: #0585C0; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html">Lý thuyết</a></li><li><a href="bai-tap.html" class="active">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav></div></header>
+    <div class="page-layout" style="display:block; padding: 20px; max-width: 900px; margin: 0 auto; padding-top: 80px;">
+        <div class="chapter-header">
+            <span class="chapter-label" style="color:#0696D7">📖 One Point Lesson (OPL)</span>
+            <h1 style="color:#0696D7">Lời giải chi tiết Mức độ 6-9 (3D Cơ bản)</h1>
+            <p class="chapter-desc">Hướng dẫn dựng hình Solid, khoét khối và áp vật liệu Render.</p>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="downloads/BT_MucDo6-9_Templates.zip" download class="download-btn">📥 Tải File Template (.dwg) Mức độ 6-9</a>
+        </div>
+
+        <h2>Mức độ 6: Xây Kim tự tháp (Box + Cone)</h2>
+        <div class="opl-step">
+            <h3>Bước 1: Chuyển sang không gian 3D</h3>
+            <p>Đầu tiên gõ <code>VPOINT</code> và nhập tọa độ <code>1,-1,1</code> để nhìn chéo từ trên xuống (SE Isometric).</p>
+        </div>
+        <div class="opl-step">
+            <h3>Bước 2: Tạo Box và Cone</h3>
+            <p>Dùng lệnh <code>BOX</code> vẽ phần đế móng vuông 100x100 dày 50. Kế tiếp, dời UCS lên mặt trên của hộp. Cuối cùng, dùng lệnh <code>CONE</code> tạo hình chóp vuông (Kim tự tháp) đặt lên trên.</p>
+        </div>
+
+        <h2>Mức độ 7: Khoét lỗ mặt bích (Extrude & Subtract)</h2>
+        <div class="opl-step">
+            <h3>Bước 1: Xoay phôi mặt bích</h3>
+            <p>Vẽ một đa giác phẳng mặt cắt dọc (PLine), sau đó dùng <code>REVOLVE</code> quay 360 độ quanh trục tâm dọc để tạo thành hình trụ bậc.</p>
+        </div>
+        <div class="opl-step">
+            <h3>Bước 2: Trừ khối Solid</h3>
+            <p>Vẽ một <code>CIRCLE</code> nằm trên mặt phẳng mặt bích. <code>EXTRUDE</code> đường tròn đó xuyên qua bích thành một cái trụ đặc ảo. Dùng <code>SUBTRACT</code> (SU) trừ khối bích lớn đi khối trụ nhỏ, bạn sẽ có một cái lỗ lủng qua tấm kim loại.</p>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="bai-tap.html" class="download-btn" style="background:#555; color:#fff;">← Quay lại danh sách Bài tập</a>
+        </div>
+    </div>
+</body>
+</html>

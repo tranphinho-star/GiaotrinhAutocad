@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPL - Lời Giải Mức Độ 10-11 | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .opl-step { background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border-left: 4px solid #F44336; }
+        .opl-step h3 { margin-top: 0; color: #F44336; }
+        .download-btn { display: inline-block; padding: 10px 20px; background: #F44336; color: #fff; font-weight: bold; border-radius: 5px; text-decoration: none; margin-bottom: 20px; }
+        .download-btn:hover { background: #D32F2F; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html">Lý thuyết</a></li><li><a href="bai-tap.html" class="active">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav></div></header>
+    <div class="page-layout" style="display:block; padding: 20px; max-width: 900px; margin: 0 auto; padding-top: 80px;">
+        <div class="chapter-header">
+            <span class="chapter-label" style="color:#F44336">📖 One Point Lesson (OPL)</span>
+            <h1 style="color:#F44336">Lời giải chi tiết Mức độ 10-11 (3D Nâng Cao)</h1>
+            <p class="chapter-desc">Bố cục bản vẽ 3D sang hình chiếu 2D và kiểm tra Solid (Interfere, Massprop).</p>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="downloads/BT_MucDo10-11_Templates.zip" download class="download-btn">📥 Tải File Template (.dwg) Mức độ 10-11</a>
+        </div>
+
+        <h2>Mức độ 10: Quy trình 3 hình chiếu (Solview/Soldraw)</h2>
+        <div class="opl-step">
+            <h3>Bước 1: Chuyển sang Paper Space</h3>
+            <p>Sau khi vẽ xong 3D model, nhấn sang thẻ <code>Layout1</code>. Nhập lệnh <code>SOLVIEW</code>, chọn UCS để tạo hình chiếu đứng đầu tiên.</p>
+        </div>
+        <div class="opl-step">
+            <h3>Bước 2: Gạch mặt cắt với Soldraw</h3>
+            <p>Sau khi trải đủ hình chiếu bằng <code>SOLVIEW Ortho</code>, gõ <code>SOLDRAW</code> và quét toàn bộ các khung nhìn (Viewports). AutoCAD sẽ tự động tính toán nét khuất, nét thấy và gạch vật liệu mặt cắt cho hình chiếu cắt.</p>
+        </div>
+
+        <h2>Mức độ 11: Kiểm tra khối lượng & Giao tuyến</h2>
+        <div class="opl-step">
+            <h3>Kiểm tra trọng lượng bằng Massprop</h3>
+            <p>Gõ <code>MASSPROP</code> và chọn chi tiết kim loại rắn. Lệnh này sẽ mở ra một bảng liệt kê Bounding Box, Thể tích, Tâm khối lượng. Cực kỳ hữu ích cho thiết kế khuôn mẫu.</p>
+        </div>
+        <div class="opl-step">
+            <h3>Xác định tiết diện cắt (Section)</h3>
+            <p>Gõ <code>SECTION</code>, chọn mặt phẳng cắt ngang qua vật thể. AutoCAD sẽ trả về một mặt phẳng Region đóng kín (Profile). Bạn có thể lôi Profile này ra ngoài để tính diện tích hoặc mô phỏng.</p>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="bai-tap.html" class="download-btn" style="background:#555; color:#fff;">← Quay lại danh sách Bài tập</a>
+        </div>
+    </div>
+</body>
+</html>

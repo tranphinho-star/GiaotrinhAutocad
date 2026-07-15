@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPL - Lời Giải Mức Độ 1-5 | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .opl-step { background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border-left: 4px solid #0696D7; }
+        .opl-step h3 { margin-top: 0; color: #0696D7; }
+        .download-btn { display: inline-block; padding: 10px 20px; background: #FF9800; color: #111; font-weight: bold; border-radius: 5px; text-decoration: none; margin-bottom: 20px; }
+        .download-btn:hover { background: #F57C00; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html">Lý thuyết</a></li><li><a href="bai-tap.html" class="active">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav></div></header>
+    <div class="page-layout" style="display:block; padding: 20px; max-width: 900px; margin: 0 auto; padding-top: 80px;">
+        <div class="chapter-header">
+            <span class="chapter-label">📖 One Point Lesson (OPL)</span>
+            <h1>Lời giải chi tiết Mức độ 1-5 (2D Cơ bản)</h1>
+            <p class="chapter-desc">Hướng dẫn từng bước bằng hình ảnh SVG để giải các bài tập AutoCAD cơ bản.</p>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="downloads/BT_MucDo1-5_Templates.zip" download class="download-btn">📥 Tải File Template (.dwg) Mức độ 1-5</a>
+        </div>
+
+        <h2>Mức độ 1: Hình Lục Giác Đều (Tọa độ cực)</h2>
+        <div class="opl-step">
+            <h3>Bước 1: Khởi tạo lệnh Line</h3>
+            <p>Gõ <code>L</code> và chọn một điểm bất kỳ làm P1.</p>
+        </div>
+        <div class="opl-step">
+            <h3>Bước 2: Nhập chuỗi tọa độ cực liên tiếp</h3>
+            <p>Nhập tọa độ có dạng <code>@chiều_dài&lt;góc</code>. Với lục giác đều, góc tăng thêm 60 độ sau mỗi cạnh.</p>
+            <div class="command-syntax">
+@50&lt;0 (Enter)<br>
+@50&lt;60 (Enter)<br>
+@50&lt;120 (Enter)<br>
+@50&lt;180 (Enter)<br>
+@50&lt;-120 (Enter)<br>
+C (Close để đóng hình)
+            </div>
+            <div style="overflow-x:auto; margin-top:1rem;">
+            <svg viewBox="0 0 300 200" style="max-width:300px;width:100%;background:#1E1E1E;border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="100,160 200,160 250,73.4 200,-13.2 100,-13.2 50,73.4" fill="none" stroke="#2196F3" stroke-width="2" transform="translate(0, 20)"/>
+              <text x="100" y="195" fill="#FF9800" font-size="12">P1</text>
+              <text x="200" y="195" fill="#FF9800" font-size="12">P2</text>
+              <line x1="100" y1="180" x2="200" y2="180" stroke="#FF9800" stroke-width="2" stroke-dasharray="4"/>
+              <text x="150" y="175" fill="#fff" font-size="10">@50&lt;0</text>
+            </svg>
+            </div>
+        </div>
+
+        <h2>Mức độ 2: Tam giác đều & 3 vòng tròn tiếp xúc</h2>
+        <div class="opl-step">
+            <h3>Bước 1: Vẽ tam giác đều</h3>
+            <p>Sử dụng lệnh <code>POL</code> (Polygon), nhập 3 cạnh. Hoặc dùng <code>L</code> với tọa độ cực @100&lt;0, @100&lt;120, C.</p>
+        </div>
+        <div class="opl-step">
+            <h3>Bước 2: Vẽ vòng tròn TAN TAN TAN</h3>
+            <p>Chọn Menu Draw > Circle > <strong>Tan, Tan, Tan</strong>. Kích lần lượt vào 3 cạnh của tam giác.</p>
+            <div style="overflow-x:auto; margin-top:1rem;">
+            <svg viewBox="0 0 300 250" style="max-width:300px;width:100%;background:#1E1E1E;border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="50,200 250,200 150,26.8" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <circle cx="150" cy="142" r="57.7" fill="none" stroke="#FF9800" stroke-width="2"/>
+              <text x="150" y="146" fill="#fff" font-size="12" text-anchor="middle">TAN TAN TAN</text>
+            </svg>
+            </div>
+        </div>
+
+        <h2>Mức độ 4: Đồng hồ mặt kim (Array Polar)</h2>
+        <div class="opl-step">
+            <h3>Bước 1: Vẽ khung</h3>
+            <p>Vẽ <code>CIRCLE</code> tâm và bán kính to. Vẽ vạch phút 12 giờ ở đỉnh đường tròn bằng <code>LINE</code>.</p>
+        </div>
+        <div class="opl-step">
+            <h3>Bước 2: Sử dụng Array Polar</h3>
+            <p>Gõ <code>AR</code> (Array Classic) > Chọn Polar Array. Chọn vạch 12 giờ. Chọn tâm quay là tâm đường tròn. Nhập số lượng 60 chi tiết. Điền góc 360 độ.</p>
+            <div style="overflow-x:auto; margin-top:1rem;">
+            <svg viewBox="0 0 300 300" style="max-width:300px;width:100%;background:#1E1E1E;border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="150" cy="150" r="100" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <circle cx="150" cy="150" r="3" fill="#FF9800"/>
+              <!-- Ticks using transforms -->
+              <g stroke="#0696D7" stroke-width="2">
+                <line x1="150" y1="50" x2="150" y2="60"/>
+                <line x1="150" y1="50" x2="150" y2="60" transform="rotate(30 150 150)"/>
+                <line x1="150" y1="50" x2="150" y2="60" transform="rotate(60 150 150)"/>
+                <line x1="150" y1="50" x2="150" y2="60" transform="rotate(90 150 150)"/>
+                <line x1="150" y1="50" x2="150" y2="60" transform="rotate(120 150 150)"/>
+                <line x1="150" y1="50" x2="150" y2="60" transform="rotate(150 150 150)"/>
+                <line x1="150" y1="50" x2="150" y2="60" transform="rotate(180 150 150)"/>
+                <line x1="150" y1="50" x2="150" y2="60" transform="rotate(210 150 150)"/>
+                <line x1="150" y1="50" x2="150" y2="60" transform="rotate(240 150 150)"/>
+                <line x1="150" y1="50" x2="150" y2="60" transform="rotate(270 150 150)"/>
+                <line x1="150" y1="50" x2="150" y2="60" transform="rotate(300 150 150)"/>
+                <line x1="150" y1="50" x2="150" y2="60" transform="rotate(330 150 150)"/>
+              </g>
+              <text x="150" y="270" fill="#fff" font-size="12" text-anchor="middle">Polar Array - Tâm, Số lượng=12 (hoặc 60), Góc=360°</text>
+            </svg>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="bai-tap.html" class="download-btn" style="background:#555; color:#fff;">← Quay lại danh sách Bài tập</a>
+        </div>
+    </div>
+</body>
+</html>

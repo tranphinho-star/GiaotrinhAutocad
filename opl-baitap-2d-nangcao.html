@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPL - Lời Giải 2D Nâng Cao | AutoCAD 2007</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .opl-step { background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem; border-left: 4px solid #0696D7; }
+        .opl-step h3 { margin-top: 0; color: #0696D7; }
+        .download-btn { display: inline-block; padding: 10px 20px; background: #E040FB; color: #fff; font-weight: bold; border-radius: 5px; text-decoration: none; margin-bottom: 20px; }
+        .download-btn:hover { background: #D500F9; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">CAD</div><span>AutoCAD 2007</span></a><nav><ul class="nav-links"><li><a href="index.html">Trang chủ</a></li><li><a href="chuong1.html">Lý thuyết</a></li><li><a href="bai-tap.html" class="active">Bài tập</a></li><li><a href="chuong14.html">Phím tắt</a></li></ul></nav></div></header>
+    <div class="page-layout" style="display:block; padding: 20px; max-width: 900px; margin: 0 auto; padding-top: 80px;">
+        <div class="chapter-header">
+            <span class="chapter-label" style="color:#E040FB">📖 One Point Lesson (OPL)</span>
+            <h1 style="color:#E040FB">Lời giải chi tiết 9 Bài 2D Nâng Cao</h1>
+            <p class="chapter-desc">Hướng dẫn tư duy dựng hình và kết hợp lệnh cho các chi tiết máy phức tạp.</p>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="downloads/BT_2DNangCao_Templates.zip" download class="download-btn">📥 Tải File Template (.dwg) 2D Nâng Cao</a>
+        </div>
+
+        <h2>Bài 1: Angle Spacer</h2>
+        <div class="opl-step">
+            <h3>Bước 1: Vẽ khung đường bao ngoài</h3>
+            <p>Dùng lệnh <code>LINE</code> xuất phát từ góc dưới cùng bên trái. Đi thẳng đứng lên, sang phải. Đối với đoạn vát chéo, dùng tọa độ tương đối <code>@dx,dy</code> (ví dụ: @2,-1.5).</p>
+        </div>
+        <div class="opl-step">
+            <h3>Bước 2: Vẽ lỗ tròn và ghi kích thước</h3>
+            <p>Dùng <code>CIRCLE</code> vẽ lỗ tròn tại tọa độ đã cho. Sau đó dùng <code>DIMLINEAR</code> để ghi các kích thước thẳng và <code>DIMDIAMETER</code> cho lỗ tròn.</p>
+        </div>
+
+        <h2>Bài 4: Channel Plate</h2>
+        <div class="opl-step">
+            <h3>Bước 1: Vẽ đường viền hình chữ C</h3>
+            <p>Dùng lệnh <code>PLINE</code> vẽ thành một vòng khép kín chữ C theo kích thước 4.00 x 6.50.</p>
+        </div>
+        <div class="opl-step">
+            <h3>Bước 2: Xử lý 4 góc vát (Chamfer)</h3>
+            <p>Sử dụng lệnh <code>CHAMFER</code> (CHA). Chọn tùy chọn <strong>Angle</strong> (Góc), nhập chiều dài Chamfer thứ nhất, sau đó nhập góc 45 độ. Click lần lượt vào 4 góc để vát cạnh tự động.</p>
+        </div>
+
+        <h2>Bài 6: Circular Spacer</h2>
+        <div class="opl-step">
+            <h3>Bước 1: Vẽ các vòng tròn đồng tâm</h3>
+            <p>Xác định một điểm làm tâm chung. Dùng lệnh <code>C</code> (Circle) vẽ 4 vòng tròn với đường kính lần lượt là: Ø7.00, Ø5.00, Ø2.75, Ø1.00.</p>
+        </div>
+        <div class="opl-step">
+            <h3>Bước 2: Tạo mảng 3 lỗ tròn (Array Polar)</h3>
+            <p>Vẽ một lỗ tròn Ø.50 (Bán kính 0.25) tại vị trí 12 giờ (Giao của vòng Ø5.00 và đường tâm dọc). Dùng <code>ARRAY</code> (AR), chọn Polar, tâm quay là tâm hình, số lượng 3, góc 360 độ. Xóa các đoạn thừa bằng lệnh <code>TRIM</code>.</p>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="bai-tap.html" class="download-btn" style="background:#555; color:#fff;">← Quay lại danh sách Bài tập</a>
+        </div>
+    </div>
+</body>
+</html>
