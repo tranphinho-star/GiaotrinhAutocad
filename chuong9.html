@@ -75,6 +75,47 @@
                 </tbody>
             </table>
 
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 150" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Layer header -->
+              <rect x="0" y="0" width="680" height="40" fill="#2D2D2D"/>
+              <text x="20" y="25" fill="#aaa" font-size="12" font-weight="bold">Name</text>
+              <text x="180" y="25" fill="#aaa" font-size="12" font-weight="bold">On</text>
+              <text x="240" y="25" fill="#aaa" font-size="12" font-weight="bold">Freeze</text>
+              <text x="310" y="25" fill="#aaa" font-size="12" font-weight="bold">Lock</text>
+              <text x="380" y="25" fill="#aaa" font-size="12" font-weight="bold">Color</text>
+              <text x="450" y="25" fill="#aaa" font-size="12" font-weight="bold">Linetype</text>
+
+              <!-- Layer 1 -->
+              <text x="20" y="65" fill="#fff" font-size="12">0 (Mặc định)</text>
+              <text x="180" y="65" fill="#FFC107" font-size="16">💡</text>
+              <text x="245" y="65" fill="#FFC107" font-size="16">🌞</text>
+              <text x="315" y="65" fill="#aaa" font-size="16">🔓</text>
+              <rect x="380" y="52" width="20" height="15" fill="#FFFFFF" stroke="#555"/>
+              <text x="410" y="65" fill="#fff" font-size="12">White</text>
+              <text x="450" y="65" fill="#fff" font-size="12">Continuous</text>
+
+              <!-- Layer 2 -->
+              <rect x="0" y="80" width="680" height="30" fill="#252525"/>
+              <text x="20" y="100" fill="#4CAF50" font-size="12">NetThay</text>
+              <text x="180" y="100" fill="#555" font-size="16">💡</text> <!-- Off -->
+              <text x="245" y="100" fill="#FFC107" font-size="16">🌞</text>
+              <text x="315" y="100" fill="#aaa" font-size="16">🔒</text> <!-- Locked -->
+              <rect x="380" y="88" width="20" height="15" fill="#4CAF50" stroke="#555"/>
+              <text x="410" y="100" fill="#fff" font-size="12">Green</text>
+              <text x="450" y="100" fill="#fff" font-size="12">Continuous</text>
+
+              <!-- Layer 3 -->
+              <text x="20" y="135" fill="#F44336" font-size="12">NetTruc</text>
+              <text x="180" y="135" fill="#FFC107" font-size="16">💡</text>
+              <text x="245" y="135" fill="#00BCD4" font-size="16">❄️</text> <!-- Frozen -->
+              <text x="315" y="135" fill="#aaa" font-size="16">🔓</text>
+              <rect x="380" y="122" width="20" height="15" fill="#F44336" stroke="#555"/>
+              <text x="410" y="135" fill="#fff" font-size="12">Red</text>
+              <text x="450" y="135" fill="#fff" font-size="12">CENTER</text>
+            </svg>
+            </div>
+
             <h3>♦ Các biểu tượng (Icon) trong hộp thoại:</h3>
             <ul>
                 <li><strong>New Layer (Alt+N):</strong> Tạo lớp mới.</li>
@@ -96,6 +137,19 @@
             </div>
             <p>Nếu đường tâm/nét đứt nhìn quá nhỏ (giống nét liền) hoặc quá to (thưa), hãy dùng <code>LTS</code> để chỉnh tỷ lệ.</p>
 
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 120" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <text x="30" y="30" fill="#E0E0E0" font-size="12">Continuous</text>
+              <line x1="150" y1="25" x2="600" y2="25" stroke="#fff" stroke-width="2"/>
+              
+              <text x="30" y="65" fill="#E0E0E0" font-size="12">Dashed (Nét đứt)</text>
+              <line x1="150" y1="60" x2="600" y2="60" stroke="#FF9800" stroke-width="2" stroke-dasharray="10 5"/>
+              
+              <text x="30" y="100" fill="#E0E0E0" font-size="12">Center (Nét trục)</text>
+              <line x1="150" y1="95" x2="600" y2="95" stroke="#F44336" stroke-width="2" stroke-dasharray="30 5 5 5"/>
+            </svg>
+            </div>
+
             <h2>4. Lệnh thay đổi màu sắc COLOR (COL)</h2>
             <div class="command-box"><div class="cmd-header"><span class="cmd-label">COLOR</span><span class="cmd-shortcut">COL</span></div></div>
             <p><strong>Khuyến nghị:</strong> Nên quản lý màu sắc theo <b>Bylayer</b> (màu đi theo lớp). Chỉ dùng lệnh <code>COL</code> khi cần một đoạn có màu khác với lớp hiện hành.</p>
@@ -113,6 +167,33 @@
 <span class="prompt">Command:</span> <span class="input">MA</span> ↵
 <span class="prompt">Select source object:</span>         <span class="comment">Chọn đối tượng mẫu (chổi cọ xuất hiện)</span>
 <span class="prompt">Select destination object(s):</span> <span class="comment">Quét chọn các đối tượng cần chuyển thuộc tính</span>
+            </div>
+
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 180" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Source -->
+              <circle cx="150" cy="80" r="40" fill="none" stroke="#F44336" stroke-width="3" stroke-dasharray="10 5"/>
+              <text x="150" y="145" fill="#F44336" font-size="12" text-anchor="middle">Source Object</text>
+              <text x="150" y="160" fill="#aaa" font-size="10" text-anchor="middle">(Layer: Truc, Red, Dashed)</text>
+
+              <!-- Arrow -->
+              <path d="M 230 80 L 450 80" stroke="#4CAF50" stroke-width="3" stroke-dasharray="6" marker-end="url(#arrow-green)"/>
+              <text x="340" y="70" fill="#4CAF50" font-size="14" font-weight="bold" text-anchor="middle">MATCHPROP (MA)</text>
+              <!-- Brush icon -->
+              <path d="M 320 100 L 330 85 L 340 85 L 335 100 z" fill="#FFC107"/>
+              <rect x="330" y="85" width="10" height="20" fill="#8D6E63" transform="rotate(30 330 85)"/>
+
+              <!-- Dest -->
+              <rect x="500" y="50" width="80" height="60" fill="none" stroke="#F44336" stroke-width="3" stroke-dasharray="10 5"/>
+              <text x="540" y="145" fill="#E0E0E0" font-size="12" text-anchor="middle">Destination Object</text>
+              <text x="540" y="160" fill="#aaa" font-size="10" text-anchor="middle">Become Red &amp; Dashed</text>
+
+              <defs>
+                <marker id="arrow-green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#4CAF50"/>
+                </marker>
+              </defs>
+            </svg>
             </div>
 
             <div class="chapter-nav">

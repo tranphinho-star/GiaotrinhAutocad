@@ -67,6 +67,32 @@
 <span class="prompt">Specify second point:</span>      <span class="comment">Chọn vị trí đặt bản sao</span>
 <span class="prompt">Specify second point:</span>      <span class="comment">Tiếp tục sao chép hoặc Enter kết thúc</span>
             </div>
+
+            <div style="overflow-x:auto; margin-top:1rem;">
+            <svg viewBox="0 0 680 180" style="max-width:680px;width:100%;background:rgba(0,0,0,0.15);border-radius:12px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- MOVE / COPY -->
+              <rect x="100" y="60" width="80" height="60" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2.5" stroke-dasharray="4"/>
+              <text x="105" y="50" fill="rgba(255,255,255,0.4)" font-size="11">Original (Move)</text>
+              
+              <rect x="350" y="60" width="80" height="60" fill="none" stroke="#00BCD4" stroke-width="2.5"/>
+              <text x="360" y="50" fill="#00BCD4" font-size="11">New position</text>
+              
+              <circle cx="140" cy="90" r="4" fill="#E91E63"/>
+              <text x="130" y="110" fill="#E91E63" font-size="11">Base pt</text>
+              
+              <circle cx="390" cy="90" r="4" fill="#E91E63"/>
+              <text x="380" y="110" fill="#E91E63" font-size="11">Second pt</text>
+              
+              <line x1="140" y1="90" x2="390" y2="90" stroke="#E91E63" stroke-width="1.5" stroke-dasharray="3" marker-end="url(#arrow)"/>
+              
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#E91E63"/>
+                </marker>
+              </defs>
+            </svg>
+            </div>
+
             <div class="info-box note"><span class="icon">ℹ️</span><div><div class="info-title">Multiple Copy</div><div class="info-text">Trong AutoCAD 2007, lệnh Copy mặc định cho phép sao chép nhiều lần liên tiếp. Nhấn Enter để kết thúc.</div></div></div>
 
             <h2>3. Lệnh quay đối tượng ROTATE (RO)</h2>
@@ -81,6 +107,25 @@
             </div>
             <p>Góc dương: ngược chiều kim đồng hồ. Góc âm: theo chiều kim đồng hồ. Option <code>Copy</code> cho phép giữ nguyên bản gốc.</p>
 
+            <div style="overflow-x:auto; margin-top:1rem;">
+            <svg viewBox="0 0 680 180" style="max-width:680px;width:100%;background:rgba(0,0,0,0.15);border-radius:12px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <rect x="300" y="90" width="100" height="40" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="4"/>
+              <!-- Rotated rect (45 deg around 300, 130) -->
+              <g transform="rotate(-45 300 130)">
+                <rect x="300" y="90" width="100" height="40" fill="none" stroke="#4CAF50" stroke-width="2.5"/>
+              </g>
+              <circle cx="300" cy="130" r="4" fill="#FF9800"/>
+              <text x="250" y="145" fill="#FF9800" font-size="11">Base pt</text>
+              <path d="M 340 130 A 40 40 0 0 0 328.2 101.7" fill="none" stroke="#FF9800" stroke-width="1.5" marker-end="url(#arrow-orange)"/>
+              <text x="350" y="120" fill="#FF9800" font-size="11">Angle</text>
+              <defs>
+                <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#FF9800"/>
+                </marker>
+              </defs>
+            </svg>
+            </div>
+
             <h2>4. Lệnh thu phóng đối tượng SCALE (SC)</h2>
             <div class="command-box"><div class="cmd-header"><span class="cmd-label">SCALE</span><span class="cmd-shortcut">SC</span></div></div>
             <div class="command-syntax">
@@ -90,6 +135,17 @@
 <span class="prompt">Specify base point:</span>           <span class="comment">Chọn điểm gốc thu phóng</span>
 <span class="prompt">Specify scale factor</span>
 <span class="prompt">or [Copy/Reference]:</span> <span class="input">2</span>       <span class="comment">Hệ số: 2 = gấp đôi, 0.5 = nửa</span>
+            </div>
+
+            <div style="overflow-x:auto; margin-top:1rem;">
+            <svg viewBox="0 0 680 180" style="max-width:680px;width:100%;background:rgba(0,0,0,0.15);border-radius:12px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <rect x="300" y="90" width="60" height="40" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="4"/>
+              <text x="310" y="80" fill="rgba(255,255,255,0.4)" font-size="10">Original</text>
+              <rect x="300" y="50" width="120" height="80" fill="none" stroke="#9C27B0" stroke-width="2.5"/>
+              <text x="430" y="110" fill="#9C27B0" font-size="11">Scaled (Factor=2)</text>
+              <circle cx="300" cy="130" r="4" fill="#FF9800"/>
+              <text x="250" y="145" fill="#FF9800" font-size="11">Base pt</text>
+            </svg>
             </div>
 
             <h2>5. Lệnh đối xứng qua trục MIRROR (MI)</h2>
@@ -103,6 +159,22 @@
 <span class="prompt">Erase source objects? [Yes/No]:</span> <span class="input">N</span>    <span class="comment">N = giữ bản gốc</span>
             </div>
             <div class="info-box warning"><span class="icon">⚠️</span><div><div class="info-title">Biến MIRRTEXT</div><div class="info-text">Nếu giá trị <code>MIRRTEXT = 1</code>, text sẽ bị đảo ngược. Đặt <code>MIRRTEXT = 0</code> để text không bị đảo.</div></div></div>
+
+            <div style="overflow-x:auto; margin-top:1rem;">
+            <svg viewBox="0 0 680 180" style="max-width:680px;width:100%;background:rgba(0,0,0,0.15);border-radius:12px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="200,60 280,120 200,120" fill="none" stroke="#00BCD4" stroke-width="2"/>
+              <text x="220" y="110" fill="#00BCD4" font-size="11">Original</text>
+              
+              <polygon points="480,60 400,120 480,120" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <text x="420" y="110" fill="#4CAF50" font-size="11">Mirrored</text>
+              
+              <line x1="340" y1="30" x2="340" y2="150" stroke="#FF9800" stroke-width="2" stroke-dasharray="6"/>
+              <text x="350" y="40" fill="#FF9800" font-size="11">Mirror line</text>
+              
+              <circle cx="340" cy="50" r="4" fill="#FF9800"/><text x="315" y="55" fill="#FF9800" font-size="10">P1</text>
+              <circle cx="340" cy="130" r="4" fill="#FF9800"/><text x="315" y="135" fill="#FF9800" font-size="10">P2</text>
+            </svg>
+            </div>
 
             <h2>6. Lệnh dời và kéo giãn STRETCH (S)</h2>
             <div class="command-box"><div class="cmd-header"><span class="cmd-label">STRETCH</span><span class="cmd-shortcut">S</span></div></div>
@@ -132,6 +204,11 @@
                 </tbody>
             </table>
 
+            <div style="text-align:center; margin: 1.5rem 0;">
+                <img src="images/array_rectangular_1784118229309.png" alt="Rectangular Array Pattern" style="max-width:100%; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: #aaa; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">Minh họa dãy chữ nhật (Rectangular Array)</p>
+            </div>
+
             <h3>b. Polar Array (Dãy tròn)</h3>
             <p>Sao chép đối tượng xoay quanh tâm.</p>
             <table class="ref-table">
@@ -143,6 +220,11 @@
                     <tr><td><strong>Rotate items</strong></td><td>Xoay đối tượng theo hay không</td></tr>
                 </tbody>
             </table>
+
+            <div style="text-align:center; margin: 1.5rem 0;">
+                <img src="images/array_polar_1784118243932.png" alt="Polar Array Pattern" style="max-width:100%; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: #aaa; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">Minh họa dãy tròn (Polar Array)</p>
+            </div>
 
             <h2>📋 Tổng hợp lệnh biến đổi & sao chép</h2>
             <table class="ref-table">

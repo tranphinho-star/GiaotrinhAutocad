@@ -27,28 +27,40 @@
             <h2>2. Khung dung sai hình học</h2>
             <p>Thông tin GD&T được ghi trong <strong>khung kiểm soát đặc tính</strong> (Feature Control Frame):</p>
 
-            <div style="overflow-x:auto;">
-            <svg viewBox="0 0 500 100" style="max-width:500px;width:100%;background:rgba(0,0,0,0.2);border-radius:10px;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 650 150" style="max-width:650px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
               <!-- Frame boxes -->
-              <rect x="30" y="25" width="60" height="50" fill="none" stroke="#0696D7" stroke-width="2"/>
-              <rect x="90" y="25" width="100" height="50" fill="none" stroke="#0696D7" stroke-width="2"/>
-              <rect x="190" y="25" width="60" height="50" fill="none" stroke="#0696D7" stroke-width="2"/>
-              <rect x="250" y="25" width="60" height="50" fill="none" stroke="#0696D7" stroke-width="2"/>
-              <!-- Content -->
-              <text x="60" y="55" fill="#E040FB" font-size="18" text-anchor="middle" font-weight="bold">⊥</text>
-              <text x="140" y="55" fill="#FF9800" font-size="14" text-anchor="middle">Ø 0.05 Ⓜ</text>
-              <text x="220" y="55" fill="#4CAF50" font-size="16" text-anchor="middle" font-weight="bold">A</text>
-              <text x="280" y="55" fill="#4CAF50" font-size="16" text-anchor="middle" font-weight="bold">B</text>
-              <!-- Labels -->
-              <text x="60" y="95" fill="#E040FB" font-size="9" text-anchor="middle">Ký hiệu</text>
-              <text x="140" y="95" fill="#FF9800" font-size="9" text-anchor="middle">Vùng dung sai</text>
-              <text x="220" y="95" fill="#4CAF50" font-size="9" text-anchor="middle">Chuẩn 1</text>
-              <text x="280" y="95" fill="#4CAF50" font-size="9" text-anchor="middle">Chuẩn 2</text>
-              <!-- Leader -->
-              <line x1="30" y1="50" x2="10" y2="50" stroke="#0696D7" stroke-width="1.5"/>
-              <line x1="10" y1="50" x2="10" y2="15" stroke="#0696D7" stroke-width="1.5"/>
-              <polygon points="10,15 6,22 14,22" fill="#0696D7"/>
-              <text x="350" y="45" fill="#aaa" font-size="11">← Feature Control Frame</text>
+              <g transform="translate(150, 40)">
+                <rect x="0" y="0" width="60" height="50" fill="#2C3E50" stroke="#0696D7" stroke-width="2"/>
+                <rect x="60" y="0" width="120" height="50" fill="#2C3E50" stroke="#0696D7" stroke-width="2"/>
+                <rect x="180" y="0" width="60" height="50" fill="#2C3E50" stroke="#0696D7" stroke-width="2"/>
+                <rect x="240" y="0" width="60" height="50" fill="#2C3E50" stroke="#0696D7" stroke-width="2"/>
+                
+                <!-- Content -->
+                <!-- Perpendicularity symbol -->
+                <path d="M 20 35 L 40 35 M 30 15 L 30 35" stroke="#E040FB" stroke-width="3" fill="none"/>
+                
+                <text x="120" y="32" fill="#FF9800" font-size="16" text-anchor="middle" font-weight="bold">Ø 0.05 Ⓜ</text>
+                
+                <text x="210" y="32" fill="#4CAF50" font-size="18" text-anchor="middle" font-weight="bold">A</text>
+                <text x="270" y="32" fill="#4CAF50" font-size="18" text-anchor="middle" font-weight="bold">B</text>
+                
+                <!-- Annotations -->
+                <line x1="30" y1="50" x2="30" y2="80" stroke="#E040FB" stroke-width="1" stroke-dasharray="2"/>
+                <text x="30" y="95" fill="#E040FB" font-size="11" text-anchor="middle">Ký hiệu đặc tính</text>
+
+                <line x1="120" y1="50" x2="120" y2="80" stroke="#FF9800" stroke-width="1" stroke-dasharray="2"/>
+                <text x="120" y="95" fill="#FF9800" font-size="11" text-anchor="middle">Vùng dung sai &amp; Modifier</text>
+
+                <line x1="240" y1="50" x2="240" y2="80" stroke="#4CAF50" stroke-width="1" stroke-dasharray="2"/>
+                <text x="240" y="95" fill="#4CAF50" font-size="11" text-anchor="middle">Các mặt chuẩn (Datums)</text>
+              </g>
+
+              <!-- Leader line -->
+              <line x1="150" y1="65" x2="80" y2="65" stroke="#0696D7" stroke-width="2"/>
+              <line x1="80" y1="65" x2="80" y2="30" stroke="#0696D7" stroke-width="2"/>
+              <polygon points="80,30 75,40 85,40" fill="#0696D7"/>
+              <text x="80" y="20" fill="#E0E0E0" font-size="12" text-anchor="middle">Chỉ vào bề mặt</text>
             </svg>
             </div>
 
@@ -87,6 +99,63 @@
                 <li><strong>Circular Runout (↗):</strong> Đo tại một tiết diện quay</li>
                 <li><strong>Total Runout (↗↗):</strong> Đo toàn bộ bề mặt quay</li>
             </ul>
+
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 650 200" style="max-width:650px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Flatness -->
+              <g transform="translate(40, 20)">
+                <text x="60" y="20" fill="#4CAF50" font-size="14" font-weight="bold" text-anchor="middle">Flatness (Độ phẳng)</text>
+                <!-- Surface -->
+                <path d="M 10 90 Q 40 70 70 95 T 120 85" fill="none" stroke="#2196F3" stroke-width="2"/>
+                <!-- Tolerance Zone -->
+                <line x1="10" y1="70" x2="120" y2="70" stroke="#4CAF50" stroke-width="1" stroke-dasharray="4"/>
+                <line x1="10" y1="100" x2="120" y2="100" stroke="#4CAF50" stroke-width="1" stroke-dasharray="4"/>
+                
+                <text x="65" y="140" fill="#aaa" font-size="11" text-anchor="middle">Bề mặt gợn sóng phải</text>
+                <text x="65" y="155" fill="#aaa" font-size="11" text-anchor="middle">nằm giữa 2 mp song song</text>
+              </g>
+
+              <!-- Position -->
+              <g transform="translate(250, 20)">
+                <text x="60" y="20" fill="#FF9800" font-size="14" font-weight="bold" text-anchor="middle">Position (Vị trí)</text>
+                <!-- True position -->
+                <line x1="60" y1="50" x2="60" y2="110" stroke="#555" stroke-width="1" stroke-dasharray="5"/>
+                <line x1="30" y1="80" x2="90" y2="80" stroke="#555" stroke-width="1" stroke-dasharray="5"/>
+                <!-- Tolerance zone -->
+                <circle cx="60" cy="80" r="25" fill="rgba(255,152,0,0.1)" stroke="#FF9800" stroke-width="1" stroke-dasharray="2"/>
+                <!-- Actual hole -->
+                <circle cx="50" cy="70" r="10" fill="none" stroke="#2196F3" stroke-width="2"/>
+                <circle cx="50" cy="70" r="1" fill="#2196F3"/>
+                
+                <text x="60" y="140" fill="#aaa" font-size="11" text-anchor="middle">Tâm lỗ thực tế phải nằm</text>
+                <text x="60" y="155" fill="#aaa" font-size="11" text-anchor="middle">trong vòng tròn vùng DS</text>
+              </g>
+
+              <!-- Perpendicularity -->
+              <g transform="translate(460, 20)">
+                <text x="60" y="20" fill="#E040FB" font-size="14" font-weight="bold" text-anchor="middle">Perpendicularity</text>
+                <!-- Datum A -->
+                <line x1="10" y1="100" x2="110" y2="100" stroke="#555" stroke-width="3"/>
+                <rect x="30" y="105" width="20" height="20" fill="none" stroke="#555" stroke-width="1"/>
+                <text x="40" y="120" fill="#555" font-size="12" text-anchor="middle">A</text>
+                <polygon points="40,105 35,100 45,100" fill="#555"/>
+                
+                <!-- Actual feature -->
+                <line x1="60" y1="40" x2="70" y2="100" stroke="#2196F3" stroke-width="2"/>
+                
+                <!-- Tolerance zone -->
+                <line x1="55" y1="40" x2="55" y2="100" stroke="#E040FB" stroke-width="1" stroke-dasharray="4"/>
+                <line x1="75" y1="40" x2="75" y2="100" stroke="#E040FB" stroke-width="1" stroke-dasharray="4"/>
+                
+                <text x="60" y="140" fill="#aaa" font-size="11" text-anchor="middle">Trục vuông góc mặt A</text>
+                <text x="60" y="155" fill="#aaa" font-size="11" text-anchor="middle">phải nằm trong 2 mp song song</text>
+              </g>
+
+              <!-- Separators -->
+              <line x1="210" y1="30" x2="210" y2="170" stroke="#555" stroke-dasharray="4"/>
+              <line x1="420" y1="30" x2="420" y2="170" stroke="#555" stroke-dasharray="4"/>
+            </svg>
+            </div>
 
             <h2>7. Ghi GD&T trong AutoCAD</h2>
             <div class="command-syntax">

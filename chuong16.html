@@ -70,6 +70,52 @@
                 </table>
             </div>
 
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 180" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Box -->
+              <g transform="translate(40, 60)">
+                <polygon points="0,40 50,40 50,100 0,100" fill="none" stroke="#2196F3" stroke-width="2"/>
+                <polygon points="20,20 70,20 70,80 20,80" fill="none" stroke="#2196F3" stroke-width="2"/>
+                <line x1="0" y1="40" x2="20" y2="20" stroke="#2196F3" stroke-width="2"/>
+                <line x1="50" y1="40" x2="70" y2="20" stroke="#2196F3" stroke-width="2"/>
+                <line x1="50" y1="100" x2="70" y2="80" stroke="#2196F3" stroke-width="2"/>
+                <line x1="0" y1="100" x2="20" y2="80" stroke="#2196F3" stroke-width="2"/>
+                <text x="35" y="130" fill="#E0E0E0" font-size="14" font-weight="bold" text-anchor="middle">BOX</text>
+              </g>
+
+              <!-- Cone / Cylinder -->
+              <g transform="translate(180, 60)">
+                <ellipse cx="40" cy="20" rx="30" ry="10" fill="none" stroke="#4CAF50" stroke-width="2"/>
+                <ellipse cx="40" cy="100" rx="30" ry="10" fill="none" stroke="#4CAF50" stroke-width="2"/>
+                <line x1="10" y1="20" x2="10" y2="100" stroke="#4CAF50" stroke-width="2"/>
+                <line x1="70" y1="20" x2="70" y2="100" stroke="#4CAF50" stroke-width="2"/>
+                <text x="40" y="130" fill="#E0E0E0" font-size="14" font-weight="bold" text-anchor="middle">CYLINDER</text>
+              </g>
+
+              <g transform="translate(320, 60)">
+                <ellipse cx="40" cy="100" rx="30" ry="10" fill="none" stroke="#FFC107" stroke-width="2"/>
+                <line x1="40" y1="20" x2="10" y2="100" stroke="#FFC107" stroke-width="2"/>
+                <line x1="40" y1="20" x2="70" y2="100" stroke="#FFC107" stroke-width="2"/>
+                <text x="40" y="130" fill="#E0E0E0" font-size="14" font-weight="bold" text-anchor="middle">CONE</text>
+              </g>
+
+              <!-- Sphere -->
+              <g transform="translate(460, 60)">
+                <circle cx="40" cy="60" r="40" fill="none" stroke="#F44336" stroke-width="2"/>
+                <ellipse cx="40" cy="60" rx="40" ry="15" fill="none" stroke="#F44336" stroke-width="2" stroke-dasharray="4"/>
+                <ellipse cx="40" cy="60" rx="15" ry="40" fill="none" stroke="#F44336" stroke-width="2" stroke-dasharray="4"/>
+                <text x="40" y="130" fill="#E0E0E0" font-size="14" font-weight="bold" text-anchor="middle">SPHERE</text>
+              </g>
+              
+              <!-- Torus -->
+              <g transform="translate(560, 60)">
+                <ellipse cx="50" cy="60" rx="45" ry="20" fill="none" stroke="#9C27B0" stroke-width="2"/>
+                <ellipse cx="50" cy="60" rx="25" ry="10" fill="none" stroke="#9C27B0" stroke-width="2"/>
+                <text x="50" y="130" fill="#E0E0E0" font-size="14" font-weight="bold" text-anchor="middle">TORUS</text>
+              </g>
+            </svg>
+            </div>
+
             <p style="margin-top: 20px;">Ngoài ra còn có <code>Pyramid (P)</code>: Vẽ kim tự tháp khối chóp chóp cụt, <code>Mesh (M)</code>: Lưới bề mặt qua 4 điểm góc, <code>Wedge (W)</code>: Khối hình nêm (Cây Chêm).</p>
 
 
@@ -103,6 +149,50 @@
 <span class="prompt">Select axis of revolution:</span> nhấp trục xoay (Line)
 <span class="prompt">Start angle:</span> Góc ban đầu (mặc định 0).
 <span class="prompt">Included angle (<full circle>):</span> Nhấn Enter để quay kín 360 độ vòng tròn.
+            </div>
+
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 200" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Path Curve -->
+              <path d="M 100 50 C 150 50, 150 150, 100 150" fill="none" stroke="#2196F3" stroke-width="3"/>
+              <text x="120" y="100" fill="#2196F3" font-size="12">1. Path curve (Đường sinh)</text>
+              
+              <!-- Axis -->
+              <line x1="50" y1="30" x2="50" y2="170" stroke="#FFC107" stroke-width="2" stroke-dasharray="5"/>
+              <text x="30" y="100" fill="#FFC107" font-size="12" transform="rotate(-90 30 100)">2. Axis of revolution</text>
+
+              <!-- Arrow -->
+              <path d="M 220 100 L 280 100" stroke="#fff" stroke-width="3" marker-end="url(#arrow-rev)"/>
+              <text x="250" y="90" fill="#fff" font-size="14" font-weight="bold" text-anchor="middle">REVSURF</text>
+
+              <!-- Resulting 3D Object (Wireframe) -->
+              <g transform="translate(300, 0)">
+                <!-- Axis -->
+                <line x1="150" y1="30" x2="150" y2="170" stroke="#555" stroke-width="1" stroke-dasharray="5"/>
+                
+                <!-- Main silhouette -->
+                <path d="M 150 50 C 200 50, 200 150, 150 150" fill="none" stroke="#4CAF50" stroke-width="2"/>
+                <path d="M 150 50 C 100 50, 100 150, 150 150" fill="none" stroke="#4CAF50" stroke-width="2"/>
+
+                <!-- Circular meshes (Surftab2 effect) -->
+                <ellipse cx="150" cy="50" rx="0" ry="0" fill="none" stroke="#4CAF50" stroke-width="1" stroke-dasharray="2"/>
+                <ellipse cx="150" cy="70" rx="30" ry="8" fill="none" stroke="#4CAF50" stroke-width="1" stroke-dasharray="2"/>
+                <ellipse cx="150" cy="100" rx="38" ry="10" fill="none" stroke="#4CAF50" stroke-width="1" stroke-dasharray="2"/>
+                <ellipse cx="150" cy="130" rx="30" ry="8" fill="none" stroke="#4CAF50" stroke-width="1" stroke-dasharray="2"/>
+                
+                <!-- Vertical meshes (Surftab1 effect) -->
+                <path d="M 150 50 C 175 50, 175 150, 150 150" fill="none" stroke="#4CAF50" stroke-width="1" stroke-dasharray="2"/>
+                <path d="M 150 50 C 125 50, 125 150, 150 150" fill="none" stroke="#4CAF50" stroke-width="1" stroke-dasharray="2"/>
+
+                <text x="150" y="190" fill="#4CAF50" font-size="14" font-weight="bold" text-anchor="middle">Bề mặt 3D màng lưới (Mesh)</text>
+              </g>
+
+              <defs>
+                <marker id="arrow-rev" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#fff"/>
+                </marker>
+              </defs>
+            </svg>
             </div>
 
             <div class="info-box warning"><span class="icon">🏆</span><div><div class="info-title">SURFTAB1 và SURFTAB2</div><div class="info-text">Số lượng lưới chia chẻ các mặt này ra được tùy thuộc vào 2 biến hệ thống <b>Surftab1</b> và <b>Surftab2</b>. Mặc định là 6 x 6. Trước khi vẽ màng xoay, bạn phải gõ biến để tăng lên ví dụ "24" để bề mặt mịn, không bị gãy khấc đa giác nát.</div></div></div>

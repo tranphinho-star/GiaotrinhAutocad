@@ -86,6 +86,58 @@
             </div>
 
             <p>Bạn không thể vẽ ở các mặt phẳng trên không nếu không dời gốc tọa độ (UCS) và xoay các trục X, Y lên đúng mặt phẳng làm việc.</p>
+
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 200" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- UCS Icon -->
+              <g transform="translate(150, 140)">
+                <!-- Z axis (Up) -->
+                <line x1="0" y1="0" x2="0" y2="-80" stroke="#2196F3" stroke-width="3" marker-end="url(#arrow-z)"/>
+                <text x="-15" y="-85" fill="#2196F3" font-size="14" font-weight="bold">Z</text>
+                
+                <!-- X axis (Right/Down) -->
+                <line x1="0" y1="0" x2="70" y2="30" stroke="#F44336" stroke-width="3" marker-end="url(#arrow-x)"/>
+                <text x="80" y="40" fill="#F44336" font-size="14" font-weight="bold">X</text>
+                
+                <!-- Y axis (Right/Up) -->
+                <line x1="0" y1="0" x2="80" y2="-40" stroke="#4CAF50" stroke-width="3" marker-end="url(#arrow-y)"/>
+                <text x="90" y="-45" fill="#4CAF50" font-size="14" font-weight="bold">Y</text>
+
+                <!-- Origin square -->
+                <rect x="-4" y="-4" width="8" height="8" fill="#fff"/>
+              </g>
+
+              <!-- Right Hand Rule Text -->
+              <g transform="translate(380, 50)">
+                <text x="0" y="0" fill="#E0E0E0" font-size="16" font-weight="bold">Quy tắc Bàn tay phải (Right-Hand Rule):</text>
+                
+                <rect x="0" y="20" width="15" height="15" fill="#F44336"/>
+                <text x="25" y="33" fill="#F44336" font-size="14">Ngón cái chỉ chiều dương trục X</text>
+
+                <rect x="0" y="45" width="15" height="15" fill="#4CAF50"/>
+                <text x="25" y="58" fill="#4CAF50" font-size="14">Ngón trỏ chỉ chiều dương trục Y</text>
+
+                <rect x="0" y="70" width="15" height="15" fill="#2196F3"/>
+                <text x="25" y="83" fill="#2196F3" font-size="14">Ngón giữa chỉ chiều dương trục Z</text>
+                
+                <text x="0" y="115" fill="#aaa" font-size="12">Chiều xoay dương (Angle &gt; 0) là chiều quay ngược</text>
+                <text x="0" y="135" fill="#aaa" font-size="12">chiều kim đồng hồ khi nhìn từ ngọn mũi tên về gốc.</text>
+              </g>
+
+              <defs>
+                <marker id="arrow-x" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#F44336"/>
+                </marker>
+                <marker id="arrow-y" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#4CAF50"/>
+                </marker>
+                <marker id="arrow-z" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#2196F3"/>
+                </marker>
+              </defs>
+            </svg>
+            </div>
+
             <ul>
                 <li><strong>Origin:</strong> Dời gốc tọa độ đến điểm mới nhưng giữ nguyên phương chiều các trục XYZ hiện tại.</li>
                 <li><strong>3point:</strong> Dời gốc và định hướng lại qua 3 điểm (Gốc mới, Điểm thuộc trục X, Điểm thuộc phần dương trục Y).</li>

@@ -74,6 +74,37 @@
                 </div>
             </div>
 
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 200" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Grid background representing drawing area -->
+              <defs><pattern id="grid-limits" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs>
+              <rect width="680" height="200" fill="url(#grid-limits)"/>
+              
+              <!-- Inner Limit -->
+              <rect x="80" y="40" width="240" height="120" fill="none" stroke="#4CAF50" stroke-width="2" stroke-dasharray="6"/>
+              <text x="200" y="100" fill="#4CAF50" font-size="14" font-weight="bold" text-anchor="middle">A3 (420 x 297)</text>
+              <circle cx="80" cy="160" r="4" fill="#4CAF50"/>
+              <text x="75" y="175" fill="#aaa" font-size="10" text-anchor="end">0,0</text>
+              <circle cx="320" cy="40" r="4" fill="#4CAF50"/>
+              <text x="325" y="35" fill="#aaa" font-size="10">420,297</text>
+
+              <!-- Expanded Limit -->
+              <rect x="360" y="20" width="280" height="160" fill="none" stroke="#FF9800" stroke-width="2" stroke-dasharray="6"/>
+              <text x="500" y="100" fill="#FF9800" font-size="14" font-weight="bold" text-anchor="middle">LIMITS Mở rộng</text>
+              <circle cx="360" cy="180" r="4" fill="#FF9800"/>
+              <text x="355" y="195" fill="#aaa" font-size="10" text-anchor="end">0,0</text>
+              <circle cx="640" cy="20" r="4" fill="#FF9800"/>
+              <text x="645" y="15" fill="#aaa" font-size="10">42000,29700</text>
+              
+              <line x1="330" y1="100" x2="350" y2="100" stroke="#fff" stroke-width="2" marker-end="url(#arrow-limit)"/>
+              <defs>
+                <marker id="arrow-limit" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#fff"/>
+                </marker>
+              </defs>
+            </svg>
+            </div>
+
             <h2>2. Thu phóng màn hình - Lệnh ZOOM</h2>
             <div class="command-box">
                 <div class="cmd-header"><span class="cmd-label">ZOOM</span><span class="cmd-shortcut">Z</span></div>
@@ -105,6 +136,34 @@
                 </table>
             </div>
             <p>Lệnh Pan dùng để di chuyển vùng nhìn mà không thay đổi tỷ lệ. Giữ nút giữa chuột (con lăn) và kéo để đẩy bản vẽ.</p>
+
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 160" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- ZOOM Window -->
+              <rect x="50" y="40" width="100" height="80" fill="none" stroke="#555" stroke-width="2"/>
+              <circle cx="100" cy="80" r="15" fill="none" stroke="#2196F3" stroke-width="2"/>
+              <path d="M 110 90 L 125 105" stroke="#2196F3" stroke-width="3"/>
+              <rect x="70" y="60" width="60" height="40" fill="rgba(33,150,243,0.2)" stroke="#2196F3" stroke-width="1.5" stroke-dasharray="4"/>
+              <text x="100" y="140" fill="#E0E0E0" font-size="12" text-anchor="middle">ZOOM Window</text>
+
+              <!-- ZOOM Extents -->
+              <rect x="250" y="40" width="100" height="80" fill="none" stroke="#555" stroke-width="2"/>
+              <circle cx="300" cy="80" r="15" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <path d="M 310 90 L 325 105" stroke="#4CAF50" stroke-width="3"/>
+              <polygon points="260,50 270,50 260,60" fill="#4CAF50"/>
+              <polygon points="340,50 330,50 340,60" fill="#4CAF50"/>
+              <polygon points="260,110 270,110 260,100" fill="#4CAF50"/>
+              <polygon points="340,110 330,110 340,100" fill="#4CAF50"/>
+              <text x="300" y="140" fill="#E0E0E0" font-size="12" text-anchor="middle">ZOOM Extents</text>
+
+              <!-- PAN -->
+              <rect x="450" y="40" width="100" height="80" fill="none" stroke="#555" stroke-width="2"/>
+              <path d="M 480 80 C 480 60, 520 60, 520 80 C 520 100, 480 100, 480 80" fill="#FF9800" opacity="0.3"/>
+              <!-- Hand icon simple -->
+              <path d="M 495 85 L 495 70 A 3 3 0 0 1 501 70 L 501 85 M 501 75 A 3 3 0 0 1 507 75 L 507 85 M 507 78 A 3 3 0 0 1 513 78 L 513 88 C 513 95, 495 95, 495 85" fill="none" stroke="#FF9800" stroke-width="2"/>
+              <text x="500" y="140" fill="#E0E0E0" font-size="12" text-anchor="middle">PAN (Middle Mouse)</text>
+            </svg>
+            </div>
 
             <h2>4. Đơn vị đo bản vẽ - Lệnh UNITS</h2>
             <div class="command-box">
@@ -143,6 +202,42 @@
 
             <h3>c. Lệnh ORTHO</h3>
             <p>Giới hạn chuyển động chuột theo phương thẳng đứng hoặc nằm ngang. Bật/tắt bằng <kbd>F8</kbd>.</p>
+
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 180" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- GRID -->
+              <rect x="50" y="40" width="120" height="100" fill="none" stroke="#555" stroke-width="2"/>
+              <defs><pattern id="grid-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="#777"/></pattern></defs>
+              <rect x="50" y="40" width="120" height="100" fill="url(#grid-dots)"/>
+              <text x="110" y="160" fill="#E0E0E0" font-size="12" text-anchor="middle">GRID (F7)</text>
+
+              <!-- SNAP -->
+              <rect x="250" y="40" width="120" height="100" fill="none" stroke="#555" stroke-width="2"/>
+              <rect x="250" y="40" width="120" height="100" fill="url(#grid-dots)" opacity="0.5"/>
+              <path d="M 260 130 L 260 110 L 280 110 L 280 90 L 300 90" fill="none" stroke="#4CAF50" stroke-width="2"/>
+              <circle cx="260" cy="130" r="3" fill="#4CAF50"/>
+              <circle cx="260" cy="110" r="3" fill="#4CAF50"/>
+              <circle cx="280" cy="110" r="3" fill="#4CAF50"/>
+              <circle cx="280" cy="90" r="3" fill="#4CAF50"/>
+              <circle cx="300" cy="90" r="3" fill="#4CAF50"/>
+              <text x="310" y="160" fill="#E0E0E0" font-size="12" text-anchor="middle">SNAP (F9)</text>
+
+              <!-- ORTHO -->
+              <rect x="450" y="40" width="120" height="100" fill="none" stroke="#555" stroke-width="2"/>
+              <line x1="510" y1="90" x2="550" y2="90" stroke="#2196F3" stroke-width="3" marker-end="url(#arrow-blue)"/>
+              <line x1="510" y1="90" x2="510" y2="50" stroke="#2196F3" stroke-width="3" marker-end="url(#arrow-blue)"/>
+              <circle cx="510" cy="90" r="4" fill="#2196F3"/>
+              <!-- Crosshair moving diagonally but forced straight -->
+              <line x1="510" y1="90" x2="540" y2="60" stroke="#F44336" stroke-width="2" stroke-dasharray="4"/>
+              <text x="510" y="160" fill="#E0E0E0" font-size="12" text-anchor="middle">ORTHO (F8)</text>
+
+              <defs>
+                <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#2196F3"/>
+                </marker>
+              </defs>
+            </svg>
+            </div>
 
             <h3>📌 Tổng hợp phím tắt Status Bar</h3>
             <table class="ref-table">

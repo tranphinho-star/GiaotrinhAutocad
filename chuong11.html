@@ -66,6 +66,23 @@
                 </tbody>
             </table>
 
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 140" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <text x="50" y="40" fill="#4CAF50" font-size="20">Standard Text</text>
+              <text x="50" y="60" fill="#aaa" font-size="12">Width Factor: 1.0, Angle: 0°</text>
+
+              <text x="350" y="40" fill="#FFC107" font-size="20" transform="scale(0.7, 1) translate(150, 0)">Narrow Text</text>
+              <text x="350" y="60" fill="#aaa" font-size="12">Width Factor: 0.7 (Chữ hẹp lại)</text>
+
+              <text x="50" y="100" fill="#2196F3" font-size="20" transform="skewX(-15) translate(25, 0)">Italic Text</text>
+              <text x="50" y="120" fill="#aaa" font-size="12">Oblique Angle: 15° (Chữ nghiêng)</text>
+
+              <!-- Upside down text -->
+              <text x="350" y="100" fill="#F44336" font-size="20" transform="scale(1, -1) translate(0, -200)">Upside Down</text>
+              <text x="350" y="120" fill="#aaa" font-size="12">Effect: Upside down</text>
+            </svg>
+            </div>
+
             <h2>2. Lệnh viết chữ DTEXT (DT) - Single Line Text</h2>
             <div class="command-box"><div class="cmd-header"><span class="cmd-label">DTEXT</span><span class="cmd-shortcut">DT</span></div></div>
             <p>Viết chữ đơn dòng. Thích hợp viết nhãn, chú thích ngắn.</p>
@@ -86,6 +103,32 @@
 <span class="prompt">Specify opposite corner:</span> <span class="comment">Chọn góc 2 (đáy) của khung văn bản</span>
             </div>
             <p>Sau đó hộp thoại Text Formatting hiện ra. Ta có thể bôi đen chữ để đổi Font, Color, in đậm, in nghiêng, chèn phân số (Stack), hay chia cột như Word.</p>
+
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 180" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <!-- DTEXT -->
+              <rect x="50" y="40" width="250" height="100" fill="none" stroke="#555" stroke-width="2"/>
+              <text x="60" y="65" fill="#4CAF50" font-size="14">Dòng 1: DTEXT (DT)</text>
+              <text x="60" y="90" fill="#4CAF50" font-size="14">Dòng 2: Là các đối tượng</text>
+              <text x="60" y="115" fill="#4CAF50" font-size="14">Dòng 3: Hoàn toàn ĐỘC LẬP</text>
+              
+              <circle cx="60" cy="61" r="3" fill="#FFC107"/>
+              <circle cx="60" cy="86" r="3" fill="#FFC107"/>
+              <circle cx="60" cy="111" r="3" fill="#FFC107"/>
+              <text x="175" y="160" fill="#E0E0E0" font-size="12" text-anchor="middle">Single Line Text (Mỗi dòng 1 điểm chèn)</text>
+
+              <!-- MTEXT -->
+              <rect x="350" y="40" width="280" height="100" fill="none" stroke="#2196F3" stroke-width="2" stroke-dasharray="6"/>
+              <text x="360" y="65" fill="#2196F3" font-size="14">Đây là đoạn văn bản MTEXT (T).</text>
+              <text x="360" y="90" fill="#2196F3" font-size="14">Toàn bộ chữ trong khung này là</text>
+              <text x="360" y="115" fill="#2196F3" font-size="14">MỘT đối tượng duy nhất.</text>
+              
+              <circle cx="360" cy="55" r="4" fill="#FFC107"/>
+              <circle cx="630" cy="135" r="4" fill="#FFC107"/>
+              <path d="M 360 55 L 630 135" stroke="#FFC107" stroke-width="1" stroke-dasharray="4" opacity="0.5"/>
+              <text x="490" y="160" fill="#E0E0E0" font-size="12" text-anchor="middle">Multi Line Text (1 Block duy nhất, tự xuống dòng)</text>
+            </svg>
+            </div>
 
             <h2>4. Hiệu chỉnh văn bản DED / ED</h2>
             <div class="command-box"><div class="cmd-header"><span class="cmd-label">DDEDIT</span><span class="cmd-shortcut">ED</span></div></div>

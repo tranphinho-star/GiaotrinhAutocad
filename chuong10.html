@@ -96,6 +96,40 @@
             </ul>
             <p>Rất phù hợp để tô màu khối ống trụ, mặt kính, giả lập bóng đổ 3D trong không gian 2D.</p>
 
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 180" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad-one" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#2196F3" />
+                  <stop offset="100%" stop-color="#E3F2FD" />
+                </linearGradient>
+                <linearGradient id="grad-two" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#FF5722" />
+                  <stop offset="100%" stop-color="#FFEB3B" />
+                </linearGradient>
+                <radialGradient id="grad-cylinder" cx="50%" cy="50%" r="50%" fx="30%" fy="50%">
+                  <stop offset="0%" stop-color="#fff" />
+                  <stop offset="70%" stop-color="#9E9E9E" />
+                  <stop offset="100%" stop-color="#424242" />
+                </radialGradient>
+              </defs>
+
+              <!-- One Color -->
+              <rect x="50" y="40" width="120" height="100" fill="url(#grad-one)" rx="8" stroke="#555" stroke-width="2"/>
+              <text x="110" y="160" fill="#E0E0E0" font-size="12" text-anchor="middle">One Color (Xanh → Sáng)</text>
+
+              <!-- Two Colors -->
+              <rect x="250" y="40" width="120" height="100" fill="url(#grad-two)" rx="8" stroke="#555" stroke-width="2"/>
+              <text x="310" y="160" fill="#E0E0E0" font-size="12" text-anchor="middle">Two Colors (Đỏ → Vàng)</text>
+
+              <!-- Cylinder Simulation -->
+              <rect x="480" y="40" width="80" height="100" fill="url(#grad-cylinder)" stroke="#555" stroke-width="2"/>
+              <ellipse cx="520" cy="40" rx="40" ry="10" fill="#E0E0E0" stroke="#555" stroke-width="2"/>
+              <ellipse cx="520" cy="140" rx="40" ry="10" fill="none" stroke="#555" stroke-width="2"/>
+              <text x="520" y="160" fill="#E0E0E0" font-size="12" text-anchor="middle">Trụ 3D bằng Gradient</text>
+            </svg>
+            </div>
+
             <h2>3. Lệnh hiệu chỉnh mặt cắt HATCHEDIT (HE)</h2>
             <div class="command-box"><div class="cmd-header"><span class="cmd-label">HATCHEDIT</span><span class="cmd-shortcut">HE</span></div></div>
             <p>Khi cần sửa loại vật liệu, góc nghiêng hay tỷ lệ của mặt cắt đã tạo, ta không cần xóa đi làm lại, mà chỉ cần:</p>
@@ -118,6 +152,48 @@
                     <tr><td><strong>GRASS</strong></td><td>Nét ngắn vạch dọc</td><td>Mặt cắt cỏ/thực vật</td></tr>
                 </tbody>
             </table>
+
+            <div style="overflow-x:auto; margin-bottom: 1.5rem; margin-top: 1rem;">
+            <svg viewBox="0 0 680 160" style="max-width:680px;width:100%;background:#1E1E1E;border-radius:8px;border:1px solid #333;font-family:'Segoe UI',sans-serif;" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="hatch-ansi31" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                  <line x1="0" y1="0" x2="0" y2="10" stroke="#fff" stroke-width="1.5" />
+                </pattern>
+                <pattern id="hatch-ansi37" width="15" height="15" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                  <line x1="0" y1="0" x2="0" y2="15" stroke="#fff" stroke-width="1.5" />
+                  <line x1="7.5" y1="0" x2="7.5" y2="15" stroke="#fff" stroke-width="1.5" stroke-dasharray="2 6"/>
+                </pattern>
+                <pattern id="hatch-earth" width="15" height="15" patternUnits="userSpaceOnUse">
+                  <line x1="0" y1="5" x2="15" y2="5" stroke="#fff" stroke-width="1" />
+                  <line x1="0" y1="10" x2="15" y2="10" stroke="#fff" stroke-width="1" />
+                  <line x1="0" y1="15" x2="15" y2="15" stroke="#fff" stroke-width="2" />
+                </pattern>
+                <pattern id="hatch-ar-conc" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <polygon points="5,5 8,7 4,9" fill="none" stroke="#fff" stroke-width="1"/>
+                  <polygon points="15,12 18,10 16,16" fill="none" stroke="#fff" stroke-width="1"/>
+                  <circle cx="10" cy="15" r="1" fill="#fff"/>
+                  <circle cx="4" cy="18" r="0.5" fill="#fff"/>
+                  <circle cx="18" cy="4" r="0.8" fill="#fff"/>
+                </pattern>
+              </defs>
+
+              <!-- ANSI31 -->
+              <rect x="50" y="40" width="100" height="80" fill="url(#hatch-ansi31)" stroke="#555" stroke-width="2"/>
+              <text x="100" y="140" fill="#E0E0E0" font-size="12" text-anchor="middle">ANSI31</text>
+
+              <!-- ANSI37 -->
+              <rect x="200" y="40" width="100" height="80" fill="url(#hatch-ansi37)" stroke="#555" stroke-width="2"/>
+              <text x="250" y="140" fill="#E0E0E0" font-size="12" text-anchor="middle">ANSI37</text>
+
+              <!-- AR-CONC -->
+              <rect x="350" y="40" width="100" height="80" fill="url(#hatch-ar-conc)" stroke="#555" stroke-width="2"/>
+              <text x="400" y="140" fill="#E0E0E0" font-size="12" text-anchor="middle">AR-CONC</text>
+
+              <!-- EARTH -->
+              <rect x="500" y="40" width="100" height="80" fill="url(#hatch-earth)" stroke="#555" stroke-width="2"/>
+              <text x="550" y="140" fill="#E0E0E0" font-size="12" text-anchor="middle">EARTH</text>
+            </svg>
+            </div>
 
             <h2>5. Hatch Origin — Gốc mẫu Hatch</h2>
             <p>Khi mẫu Hatch (như gạch AR-BRSTD) bị lệch, cần chỉnh lại gốc:</p>
